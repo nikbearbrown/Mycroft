@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Causal Reasoning: the identification layer no algorithm supplies — course syllabus</title>
+  <meta name="description" content="Graduate course syllabus for Irreducibly Human: Causal Reasoning at Northeastern University College of Engineering. Develops the ability to build a defensible causal model for a domain problem — DAG construction, confounder/mediator/collider identification, the backdoor criterion, and the estimation handoff — with every identification decision performed by the student, not delegated to a tool.">
+  <meta name="keywords" content="Causal Reasoning, syllabus, DAG, directed acyclic graph, causal inference, Irreducibly Human, Northeastern University, graduate engineering, Nik Bear Brown, identification layer, backdoor criterion, confounders, mediators, colliders, DoWhy, causal AI, domain expertise">
+
+  <style>
+    :root {
+      --bb-1: #1a0a00;
+      --bb-2: #8B3A0F;
+      --bb-3: #C0392B;
+      --bb-4: #E8A020;
+      --bb-5: #D4500A;
+      --bb-6: #B8860B;
+      --bb-7: #C8A96E;
+      --bb-8: #F0E6D0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background-color: var(--bb-8);
+      color: var(--bb-1);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    .page-wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 32px 64px;
+    }
+
+    /* ── COVER ── */
+    .cover {
+      border-bottom: 3px solid var(--bb-2);
+      padding-bottom: 32px;
+      margin-bottom: 40px;
+    }
+
+    .cover-series {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+      margin-bottom: 8px;
+    }
+
+    .cover h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--bb-2);
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+
+    .cover h2 {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--bb-5);
+      margin-bottom: 18px;
+    }
+
+    .cover-meta { font-size: 13px; color: var(--bb-6); }
+
+    .version-meta {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 11px;
+      color: var(--bb-6);
+      border: 1px solid var(--bb-7);
+      border-radius: 3px;
+      padding: 4px 10px;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: white;
+      border-left: 4px solid var(--bb-2);
+      padding: 24px 28px;
+      margin-bottom: 48px;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .toc h3 {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+      margin-bottom: 14px;
+    }
+
+    .toc ol { padding-left: 20px; }
+    .toc li { margin-bottom: 4px; font-size: 14px; }
+    .toc a { color: var(--bb-2); text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+
+    /* ── SECTIONS ── */
+    .section { margin-bottom: 56px; }
+
+    .section-number {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+      margin-bottom: 4px;
+    }
+
+    h2.section-title {
+      font-size: 22px;
+      color: var(--bb-2);
+      border-bottom: 1px solid var(--bb-7);
+      padding-bottom: 8px;
+      margin-bottom: 24px;
+    }
+
+    h3 { font-size: 16px; color: var(--bb-5); margin: 28px 0 10px; }
+
+    h4 {
+      font-size: 14px;
+      color: var(--bb-2);
+      font-style: italic;
+      font-weight: 600;
+      margin: 18px 0 8px;
+    }
+
+    p { margin-bottom: 14px; }
+    ul { padding-left: 20px; margin-bottom: 14px; }
+    ul li { margin-bottom: 6px; font-size: 15px; }
+    a { color: var(--bb-5); }
+    strong { color: var(--bb-1); }
+
+    /* ── TABLES ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin: 16px 0 24px;
+    }
+
+    th {
+      background: var(--bb-2);
+      color: var(--bb-8);
+      padding: 10px 14px;
+      text-align: left;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+    }
+
+    td {
+      padding: 9px 14px;
+      border-bottom: 1px solid var(--bb-7);
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td { background: rgba(200,169,110,0.12); }
+
+    /* ── CALLOUTS ── */
+    .callout {
+      padding: 16px 20px;
+      border-radius: 4px;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+    .callout-warn { background: rgba(192,57,43,0.08); border-left: 4px solid var(--bb-3); }
+    .callout-note { background: rgba(232,160,32,0.10); border-left: 4px solid var(--bb-4); }
+    .callout-info { background: white; border-left: 4px solid var(--bb-7); }
+    .callout strong { color: var(--bb-2); }
+
+    /* ── WELCOME ── */
+    .welcome-letter {
+      background: white;
+      border-left: 4px solid var(--bb-4);
+      padding: 28px 32px;
+      border-radius: 0 4px 4px 0;
+      font-style: italic;
+    }
+
+    .welcome-letter em { font-style: normal; font-weight: 600; color: var(--bb-2); }
+
+    .welcome-letter .signature {
+      font-style: normal;
+      margin-top: 20px;
+      font-size: 14px;
+      color: var(--bb-6);
+    }
+
+    /* ── OUTCOMES LIST ── */
+    ol.outcomes-list {
+      list-style: none;
+      padding: 0;
+      counter-reset: outcome-counter;
+    }
+
+    .outcomes-list li {
+      counter-increment: outcome-counter;
+      padding: 12px 14px 12px 36px;
+      border-bottom: 1px solid var(--bb-7);
+      font-size: 14px;
+      position: relative;
+    }
+
+    .outcomes-list li::before {
+      content: counter(outcome-counter);
+      position: absolute;
+      left: 12px;
+      top: 13px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--bb-4);
+      background: var(--bb-2);
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── GRADE BANDS ── */
+    .grade-band {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin: 12px 0;
+    }
+
+    .band-card {
+      flex: 1;
+      min-width: 180px;
+      background: white;
+      border: 1px solid var(--bb-7);
+      border-radius: 4px;
+      padding: 14px 16px;
+    }
+
+    .band-card .band-label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+      margin-bottom: 8px;
+    }
+
+    /* ── AI DISCLOSURE ── */
+    pre {
+      background: var(--bb-1);
+      color: var(--bb-8);
+      padding: 18px 20px;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      overflow-x: auto;
+      margin: 16px 0;
+    }
+
+    /* ── ACT HEADERS ── */
+    .act-header {
+      background: var(--bb-1);
+      color: var(--bb-8);
+      padding: 20px 24px;
+      border-radius: 4px;
+      margin: 40px 0 24px;
+    }
+
+    .act-header .act-label {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--bb-7);
+      margin-bottom: 4px;
+    }
+
+    .act-header h3 { font-size: 18px; color: var(--bb-4); margin: 0 0 6px; }
+    .act-header p { font-size: 13px; color: var(--bb-7); margin: 0; font-style: italic; }
+
+    /* ── WEEK BLOCKS ── */
+    .week-block {
+      border: 1px solid var(--bb-7);
+      border-radius: 4px;
+      margin-bottom: 28px;
+      overflow: hidden;
+    }
+
+    .week-header {
+      background: var(--bb-2);
+      color: var(--bb-8);
+      padding: 12px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .week-header .week-label {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.75;
+    }
+
+    .week-header .week-title { font-size: 16px; font-weight: 700; }
+    .week-header .week-chapter { font-size: 12px; opacity: 0.8; font-style: italic; }
+
+    .week-body { padding: 18px 20px; }
+
+    .week-goal {
+      font-size: 13px;
+      color: var(--bb-5);
+      font-style: italic;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--bb-7);
+    }
+
+    .session-row {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .session-label {
+      min-width: 90px;
+      font-weight: 600;
+      color: var(--bb-2);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding-top: 2px;
+    }
+
+    .deliverable-block {
+      background: rgba(139,58,15,0.06);
+      border: 1px solid var(--bb-7);
+      border-radius: 3px;
+      padding: 12px 16px;
+      margin-top: 12px;
+      font-size: 13px;
+    }
+
+    .deliverable-block .deliverable-label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bb-5);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    /* ── MAJOR DELIVERABLES ── */
+    .major-deliverable {
+      background: var(--bb-1);
+      color: var(--bb-8);
+      border-radius: 4px;
+      padding: 22px 26px;
+      margin: 24px 0;
+    }
+
+    .major-deliverable h4 {
+      color: var(--bb-4);
+      font-size: 15px;
+      font-style: normal;
+      margin-bottom: 10px;
+    }
+
+    .major-deliverable p, .major-deliverable ul li {
+      font-size: 14px;
+      color: var(--bb-7);
+    }
+
+    .major-deliverable ul { padding-left: 18px; }
+
+    .midterm-block {
+      background: var(--bb-1);
+      color: var(--bb-8);
+      border-radius: 4px;
+      padding: 22px 26px;
+      margin: 32px 0;
+    }
+
+    .midterm-block h4 { color: var(--bb-4); font-size: 15px; font-style: normal; margin-bottom: 10px; }
+    .midterm-block p { font-size: 14px; color: var(--bb-7); }
+
+    .schedule-table td:first-child {
+      font-weight: 600;
+      white-space: nowrap;
+      color: var(--bb-2);
+    }
+
+    @media (max-width: 600px) {
+      .page-wrapper { padding: 24px 16px 48px; }
+      .week-header { flex-direction: column; }
+      .grade-band { flex-direction: column; }
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 11px;
+      color: #999;
+      border-top: 1px solid #e0e0e0;
+      margin-top: 40px;
+    }
+
+    footer a { color: #999; }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-series">Irreducibly Human Series · Northeastern University · College of Engineering</div>
+    <h1>Causal Reasoning: the identification layer no algorithm supplies</h1>
+    <h2>What AI can and can't do — building a defensible model of what causes what</h2>
+    <div class="cover-meta">
+      Course [XXXX 5XXX] &nbsp;·&nbsp; 4 Credit Hours &nbsp;·&nbsp; Fall [Year] &nbsp;·&nbsp; In-person<br>
+      Instructor: Nik Bear Brown &nbsp;·&nbsp; <a href="mailto:ni.brown@neu.edu">ni.brown@neu.edu</a>
+    </div>
+    <div class="version-meta">Version 1.0 &nbsp;·&nbsp; [Distribution Date] &nbsp;·&nbsp; Reviewed by Dev the Dev</div>
+  </div>
+
+  <!-- TOC -->
+  <div class="toc">
+    <h3>Contents</h3>
+    <ol>
+      <li><a href="#welcome">Welcome</a></li>
+      <li><a href="#series">The Irreducibly Human Series</a></li>
+      <li><a href="#info">Course Information</a></li>
+      <li><a href="#outcomes">Learning Outcomes</a></li>
+      <li><a href="#materials">Required Materials</a></li>
+      <li><a href="#assessment">Assessment and Grading</a></li>
+      <li><a href="#schedule">Course Schedule</a></li>
+      <li><a href="#policies">Course Policies</a></li>
+    </ol>
+  </div>
+
+
+  <!-- 1. WELCOME -->
+  <div class="section" id="welcome">
+    <div class="section-number">Section 1</div>
+    <h2 class="section-title">Welcome</h2>
+
+    <div class="welcome-letter">
+      <p>I've spent years watching capable engineers make confident causal claims from data that couldn't support them — not because they weren't smart, but because no one had ever taught them the layer of reasoning that sits between the data and the claim. They knew how to build the model. They didn't know how to ask whether the model was measuring what they thought it was measuring.</p>
+
+      <p>That gap is what this course closes.</p>
+
+      <p>Causal AI tools are genuinely powerful. They can estimate effects, run sensitivity analyses, and produce clean output with narrow confidence intervals. What they cannot do is draw your causal graph, choose what to condition on, or defend the assumptions that make a result trustworthy. That layer — the identification layer — requires domain expertise that no algorithm supplies. It requires you to know your field well enough to argue, in writing, why the arrows in your causal model point the way they do. No training data replaces that. No model learns it. It is the irreducibly human part.</p>
+
+      <p>This course teaches you to perform it.</p>
+
+      <p>You will leave this course able to build a defensible causal model for a problem in your own engineering domain, hand it off to an estimation tool with confidence, and evaluate whether the result should be trusted. More importantly, you will be able to answer — clearly, in a job interview or a boardroom — the question that separates engineers who use AI well from engineers who use it confidently and incorrectly: "Is what your system is measuring actually causing the outcome, or just correlated with it?"</p>
+
+      <p>The course is demanding in a specific way. It will not ask you to memorize frameworks or reproduce procedures. It will ask you to make judgment calls, defend them to skeptical peers, and revise them when the argument doesn't hold. That is harder than a methods course — and more valuable.</p>
+
+      <p>I am looking forward to the reasoning you will bring from your domains. The cases you work through in your own field will teach your classmates things I cannot. That exchange is the course working as intended.</p>
+
+      <p>Here is what to do before we meet: read Chapter 1 of <em>Irreducibly Human: Causal Reasoning</em>. Come to Session A with the case in your head. You don't need to understand it yet. You just need to feel the problem.</p>
+
+      <div class="signature">— Nik Bear Brown | ni.brown@neu.edu</div>
+    </div>
+  </div>
+
+
+  <!-- 2. SERIES -->
+  <div class="section" id="series">
+    <div class="section-number">Section 2</div>
+    <h2 class="section-title">The Irreducibly Human Series</h2>
+
+    <p>We are in the early years of the most powerful cognitive tools ever built. AI systems are superhuman at pattern recognition, fact retrieval, arithmetic, and syntactic correctness. They are genuinely poor at constructing causal models, formulating the right questions, auditing the plausibility of their own outputs, and knowing when not to proceed.</p>
+
+    <p>The Irreducibly Human series develops exactly those capacities — the forms of reasoning that AI tools require humans to supply, and that your competitors who only learned to use the tools will not have.</p>
+
+    <p>This course — <strong>Causal Reasoning</strong> — develops one specific, high-value cognitive skill: the ability to build a defensible model of what causes what in your domain, and to know what that model can and cannot support. It is not a course about causal AI tools. It is a course about the thinking those tools cannot do, that you will need to do every time you use them.</p>
+
+    <p>The companion course — <em>Conducting AI</em> — builds the broader metacognitive and supervisory toolkit: problem formulation, plausibility auditing, interpretive judgment, and tool orchestration. The two courses can be taken in either order; they are designed to complement, not to require each other.</p>
+  </div>
+
+
+  <!-- 3. COURSE INFO -->
+  <div class="section" id="info">
+    <div class="section-number">Section 3</div>
+    <h2 class="section-title">Course Information</h2>
+
+    <h3>Course Identifiers</h3>
+    <table>
+      <tr><th>Field</th><th>Value</th></tr>
+      <tr><td>Course Title</td><td>Irreducibly Human: What AI Can and Can't Do — Causal Reasoning</td></tr>
+      <tr><td>Course Number</td><td>[XXXX 5XXX — assigned at CourseLeaf submission]</td></tr>
+      <tr><td>Credit Hours</td><td>4</td></tr>
+      <tr><td>Term</td><td>Fall [Year]</td></tr>
+      <tr><td>Mode of Delivery</td><td>In-person</td></tr>
+      <tr><td>Components</td><td>Lecture/Seminar (1× weekly) + TA-led DAG Workshop (1× weekly in-class lab)</td></tr>
+      <tr><td>Department</td><td>College of Engineering</td></tr>
+    </table>
+
+    <h3>Meeting Information</h3>
+    <p>Lecture/Seminar: [TBD] &nbsp;·&nbsp; Location: [Building, Room]<br>
+    DAG Workshop (TA-led): [TBD] &nbsp;·&nbsp; Location: [Building, Room]</p>
+
+    <div class="callout callout-warn">
+      <strong>The DAG Workshop is a required course component, not an optional recitation.</strong> It is where concepts become skills. Missing the workshop is not equivalent to missing a lecture — it is missing the part of the course where learning consolidates.
+    </div>
+
+    <h3>Instructor</h3>
+    <table>
+      <tr><th>Field</th><th>Value</th></tr>
+      <tr><td>Name</td><td>Nik Bear Brown</td></tr>
+      <tr><td>Email</td><td><a href="mailto:ni.brown@neu.edu">ni.brown@neu.edu</a></td></tr>
+      <tr><td>Response time</td><td>Within 48 hours on weekdays. Put URGENT in subject line for time-sensitive questions.</td></tr>
+      <tr><td>Office / Zoom</td><td>[TBD]</td></tr>
+      <tr><td>Student hours</td><td>[Days, times, location] — <a href="#">booking link TBD</a></td></tr>
+      <tr><td>Preferred contact</td><td>Email for logistics. Student hours for anything that takes more than two sentences to answer well.</td></tr>
+    </table>
+
+    <p>I hold student hours for you — not only for students with emergencies. Come because you're uncertain about your DAG, because you want to think through your domain problem before committing to it for the final project, because you want to understand where this field is going, or simply because you want to know what this work looks like in practice. The most productive conversations I have with students happen outside scheduled sessions.</p>
+
+    <h3>Teaching Assistant</h3>
+    <table>
+      <tr><th>Field</th><th>Value</th></tr>
+      <tr><td>Name</td><td>TBA</td></tr>
+      <tr><td>Email</td><td>TBA</td></tr>
+      <tr><td>DAG Workshop hours</td><td>TBA</td></tr>
+    </table>
+
+    <p>The TA runs the weekly DAG Workshop — designing critique sessions, facilitating peer review, and returning written feedback on workshop submissions. For questions about DAG construction, node identification, and backdoor criterion application, the TA is your first resource. Programming and tool questions go to the TA first; if unresolved, the TA will forward to the professor.</p>
+
+    <h3>Prerequisites</h3>
+
+    <div class="callout callout-info">
+      <strong>Official prerequisites:</strong> Graduate standing in Engineering or related field (exact CourseLeaf string TBD)
+    </div>
+
+    <h4>What this course assumes you know</h4>
+    <p>You have completed at least one applied statistics or machine learning course at the graduate level. You are comfortable reading and writing Python. You have encountered regression — you know what a coefficient means in practice, even if you could not derive it from first principles.</p>
+
+    <h4>What this course does not assume</h4>
+    <p>Prior knowledge of causal inference, DAGs, or graph theory. No econometrics. No measure-theoretic probability. If you have read Pearl's <em>The Book of Why</em> — useful background, not required.</p>
+
+    <h4>A note for students with strong ML backgrounds</h4>
+    <p>Students who arrive most confident in their modeling skills sometimes find the early weeks the most disorienting. That disorientation is the course working as intended. The identification layer is not a harder version of what you already know — it is a different cognitive operation. Students who treat it as an extension of their modeling fluency will struggle more than students who approach it as genuinely new terrain.</p>
+
+    <p>If you are missing a prerequisite, contact the instructor or your advisor before the first week. This course builds on applied quantitative fluency from Session 1 — there is no ramp.</p>
+  </div>
+
+
+  <!-- 4. LEARNING OUTCOMES -->
+  <div class="section" id="outcomes">
+    <div class="section-number">Section 4</div>
+    <h2 class="section-title">Learning Outcomes</h2>
+
+    <p>By the end of this course, students will be able to:</p>
+
+    <ol class="outcomes-list">
+      <li>Distinguish statistical association from causal effect, naming the assumption required to move from one claim to the other</li>
+      <li>Identify the identification layer within a causal analysis workflow and name decisions within it that require domain judgment</li>
+      <li>Diagnose a causal claim as well-identified or under-identified, specifying which assumption is load-bearing and where it could fail</li>
+      <li>Construct a directed acyclic graph (DAG) for a domain problem, correctly placing confounders, mediators, and colliders with every arrow stated as a causal claim</li>
+      <li>Distinguish confounders, mediators, and colliders by structural position and predict the consequence of conditioning on each</li>
+      <li>Apply the backdoor criterion to derive a valid adjustment set for a given DAG</li>
+      <li>Defend the assumptions encoded in a DAG to a skeptical collaborator, with explicit plausibility rankings</li>
+      <li>Translate a completed DAG into an estimation specification document for a causal tool</li>
+      <li>Evaluate causal estimation tool output against the original DAG's assumptions</li>
+      <li>Design a complete causal analysis plan for a novel domain problem, from DAG construction through output evaluation</li>
+      <li>Assess whether a causal analysis should be attempted or reported as definitive given the available data and assumptions</li>
+    </ol>
+  </div>
+
+
+  <!-- 5. MATERIALS -->
+  <div class="section" id="materials">
+    <div class="section-number">Section 5</div>
+    <h2 class="section-title">Required Materials</h2>
+
+    <h3>Textbook</h3>
+    <table>
+      <tr><th>Field</th><th>Value</th></tr>
+      <tr><td>Title</td><td><em>Irreducibly Human: What AI Can and Can't Do — A Practical Guide to Causal Inference for Domain Experts</em></td></tr>
+      <tr><td>Author</td><td>Nik Bear Brown</td></tr>
+      <tr><td>Publisher</td><td>Bear Brown &amp; Company / Kindle Direct Publishing, 2026</td></tr>
+      <tr><td>Availability</td><td>[Amazon Kindle / print link — TBD at publication]</td></tr>
+      <tr><td>Cost</td><td>[TBD]</td></tr>
+      <tr><td>Edition</td><td>First edition. No prior edition exists.</td></tr>
+    </table>
+
+    <h3>Supplementary Readings</h3>
+    <p>Distributed via Canvas throughout the semester at no cost. Required supplementary readings are marked <strong>[Required]</strong> in the weekly schedule; optional readings are marked <strong>[Recommended]</strong> and are genuinely optional.</p>
+
+    <h3>Required Technology</h3>
+
+    <h4>DAG drawing tools (free, browser-based — no installation required)</h4>
+    <ul>
+      <li>DAGitty — <a href="https://dagitty.net" target="_blank" rel="noopener">dagitty.net</a></li>
+      <li>draw.io — <a href="https://draw.io" target="_blank" rel="noopener">draw.io</a></li>
+    </ul>
+    <p>Hand-drawn submissions accepted in workshop sessions only. All graded assignments require digital submission.</p>
+
+    <h4>Causal estimation (Act Three — Weeks 12–15 only)</h4>
+    <ul>
+      <li>DoWhy (Python library) — installation instructions distributed in Week 11</li>
+      <li>Prior Python experience assumed; this course does not teach Python</li>
+    </ul>
+
+    <h4>Course platforms</h4>
+    <ul>
+      <li><strong>Canvas</strong> — all assignment submission and feedback</li>
+      <li><strong>GitHub:</strong> <a href="https://github.com/nikbearbrown" target="_blank" rel="noopener">github.com/nikbearbrown</a> — all lectures, assignments, and project materials</li>
+      <li><strong>YouTube:</strong> <a href="https://www.youtube.com/user/nikbearbrown" target="_blank" rel="noopener">youtube.com/user/nikbearbrown</a> — all lectures posted as 5–15 minute bite-sized lessons throughout the semester</li>
+    </ul>
+  </div>
+
+
+  <!-- 6. ASSESSMENT -->
+  <div class="section" id="assessment">
+    <div class="section-number">Section 6</div>
+    <h2 class="section-title">Assessment and Grading</h2>
+
+    <h3>Point Summary</h3>
+    <table>
+      <tr><th>Assessment</th><th>Points</th><th>Quality/Portfolio</th></tr>
+      <tr><td>Reading Responses (5 × 30 pts)</td><td>150</td><td>✓ 20 pts each</td></tr>
+      <tr><td>Weekly DAG Assignments (8 × 25 pts, drop lowest of 9)</td><td>200</td><td>✓ 20 pts each</td></tr>
+      <tr><td>DAG Workshop Participation</td><td>100</td><td>✓ 20 pts component</td></tr>
+      <tr><td>Midterm</td><td>100</td><td>—</td></tr>
+      <tr><td>Final Project — DAG Draft Checkpoint</td><td>100</td><td>✓ 20 pts</td></tr>
+      <tr><td>Final Project — Specification Checkpoint</td><td>100</td><td>✓ 20 pts</td></tr>
+      <tr><td>Final Project — Final Submission</td><td>250</td><td>✓ 20 pts</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>1000</strong></td><td></td></tr>
+    </table>
+
+    <h3>AI-Based Grading Approach</h3>
+
+    <div class="grade-band">
+      <div class="band-card">
+        <div class="band-label">800+ points — relative scale</div>
+        <table style="margin:0;">
+          <tr><td>Top 25%</td><td><strong>A</strong></td></tr>
+          <tr><td>Next 25%</td><td><strong>A–</strong></td></tr>
+          <tr><td>Next 25%</td><td><strong>B+</strong></td></tr>
+          <tr><td>Final 25%</td><td><strong>B</strong></td></tr>
+        </table>
+      </div>
+      <div class="band-card">
+        <div class="band-label">Below 800 — absolute scale</div>
+        <table style="margin:0;">
+          <tr><td>780–799</td><td><strong>C+</strong></td></tr>
+          <tr><td>730–779</td><td><strong>C</strong></td></tr>
+          <tr><td>700–729</td><td><strong>C–</strong></td></tr>
+          <tr><td>600–699</td><td><strong>D</strong></td></tr>
+          <tr><td>Below 600</td><td><strong>F</strong></td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="callout callout-note">
+      Students below 800 points cannot earn a grade higher than B–, even if the relative curve would otherwise place them higher. The instructor reserves the right to make minor adjustments for fairness.
+    </div>
+
+    <h3>Quality/Portfolio Score (20 points — on all qualifying assignments)</h3>
+    <p>Every assignment carrying the Quality/Portfolio component is evaluated on a relative 20-point scale comparing your work to peers, emphasizing depth of causal reasoning, quality of domain judgment, and evidence that the identification layer was performed by you — not delegated to a tool.</p>
+    <table>
+      <tr><th>Percentile Band</th><th>Score</th></tr>
+      <tr><td>Bottom 25%</td><td>5 pts</td></tr>
+      <tr><td>26–50th percentile</td><td>10 pts</td></tr>
+      <tr><td>51–75th percentile</td><td>15 pts</td></tr>
+      <tr><td>Top 25%</td><td>20 pts</td></tr>
+    </table>
+
+    <h3>AI Use in Assignments</h3>
+    <p>You are encouraged to use generative AI tools on every assignment. Citation is required. Undisclosed AI use is an academic integrity violation. Disclosed AI use is not.</p>
+    <p>Every submission must include an AI Use Disclosure block:</p>
+
+    <pre>AI USE DISCLOSURE
+Tool(s) used:
+Portions assisted:
+How used:
+What I changed:
+What the AI could not do: [name at least one identification decision
+that required your domain knowledge — this field is not optional]</pre>
+
+    <div class="callout callout-warn">
+      The last field is the <strong>Irreducibly Human declaration</strong>. A disclosure that cannot name one thing the AI could not do has not demonstrated that the student performed the identification layer.
+    </div>
+
+    <h3>Drop Policy</h3>
+    <p>The lowest-scoring DAG assignment is dropped. Eight of nine assignments count. This absorbs one week where the concept didn't click. It does not absorb a pattern of non-engagement.</p>
+  </div>
+
+
+  <!-- 7. SCHEDULE -->
+  <div class="section" id="schedule">
+    <div class="section-number">Section 7</div>
+    <h2 class="section-title">Course Schedule</h2>
+
+    <p>The schedule maps each week to a chapter in <em>Irreducibly Human: Causal Reasoning</em>. Read the assigned chapter before Session A. Come to Session A with the case in your head. Come to Session B ready to use the concept. Come to the workshop ready to draw.</p>
+
+    <p><strong>Reading time per chapter:</strong> approximately 45–75 minutes &nbsp;·&nbsp; ⚑ = graded deliverable due &nbsp;·&nbsp; ★ = transition week</p>
+
+
+    <!-- ACT ONE -->
+    <div class="act-header">
+      <div class="act-label">Act One · Weeks 1–4 · Chapters 1–4</div>
+      <h3>Establish</h3>
+      <p>What breaks when causal reasoning is absent — and why it matters for the work you already do</p>
+    </div>
+
+    <!-- Week 1 -->
+    <div class="week-block">
+      <div class="week-header">
+        <span class="week-label">Week 1</span>
+        <span class="week-title">The Decision That Looked Right</span>
+        <span class="week-chapter">Chapter 1</span>
+      </div>
+      <div class="week-body">
+        <div class="week-goal">By the end of this week: Describe the difference between a pattern in data and a causal claim — using an example from your own domain.</div>
+        <div class="session-row"><span class="session-label">Session A</span><span>In medias res — one complete causal failure, no definitions yet.</span></div>
+        <div class="session-row"><span class="session-label">Session B</span><span>The hidden variable named; the three-node structure drawn together.</span></div>
+        <div class="session-row"><span class="session-label">DAG Workshop</span><span>Draw the Ch. 1 case DAG; label every arrow as a claim.</span></div>
+        <div class="deliverable-block">
+          <div class="deliverable-label">⚑ Reading Response #1 (30 pts)</div>
+          Describe a causal claim from your own engineering domain. What data supports it? What would have to be true for the data to be misleading? Due before Session A, Week 2.
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 2 -->
+    <div class="week-block">
+      <div class="week-header">
+        <span class="week-label">Week 2</span>
+        <span class="week-title">Three Words for the Same Problem</span>
+        <span class="week-chapter">Chapter 2 &nbsp;·&nbsp; Conditioning · Confounding · Controlling For</span>
+      </div>
+      <div class="week-body">
+        <div class="week-goal">By the end of this week: Translate a causal claim from your domain into all three disciplinary registers.</div>
+        <div class="session-row"><span class="session-label">Session A</span><span>Conditioning, confounding, controlling for — one operation, three registers; aspirin/headache case.</span></div>
+        <div class="session-row"><span class="session-label">Session B</span><span>Why the vocabulary isn't neutral; mobile app/demographics case.</span></div>
+        <div class="session-row"><span class="session-label">DAG Workshop</span><span>Draw the aspirin/headache DAG; label every arrow.</span></div>
+        <div class="deliverable-block">
+          <div class="deliverable-label">⚑ Reading Response #2 (30 pts)</div>
+          Take the causal claim from RR1. Describe it in all three registers. What does each framing reveal that the others obscure? Due before Session A, Week 3.
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 3 -->
+    <div class="week-block">
+      <div class="week-header">
+        <span class="week-label">Week 3 ★</span>
+        <span class="week-title">The Map Before the Territory</span>
+        <span class="week-chapter">Chapter 3 &nbsp;·&nbsp; An Introduction to Directed Acyclic Graphs</span>
+      </div>
+      <div class="week-body">
+        <div class="week-goal">By the end of this week: Draw a DAG for a known domain problem, label every arrow as a causal claim, and identify missing arrows as assumptions by omission.</div>
+        <div class="session-row"><span class="session-label">Session A</span><span>What a DAG is and isn't; London Underground analogy; graph literacy primer.</span></div>
+        <div class="session-row"><span class="session-label">Session B</span><span>What a DAG assumes by omission; the job training case.</span></div>
+        <div class="session-row"><span class="session-label">DAG Workshop</span><span>Weekly DAG Assignment #1 — scaffolded DAG construction.</span></div>
+        <div class="deliverable-block">
+          <div class="deliverable-label">⚑ Weekly DAG Assignment #1 (25 pts)</div>
+          Domain, variables, and causal direction provided. Draw the graph, label every arrow as an explicit causal claim, identify two missing arrows as assumptions by omission. Due before DAG Workshop, Week 4.
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 4 -->
+    <div class="week-block">
+      <div class="week-header">
+        <span class="week-label">Week 4 ★⚑</span>
+        <span class="week-title">The Identification Layer: What Only You Can Do</span>
+        <span class="week-chapter">Chapter 4 &nbsp;·&nbsp; The Decisions That Require Domain Expertise</span>
+      </div>
+      <div class="week-body">
+        <div class="week-goal">By the end of this week: Name the identification layer, distinguish it from the estimation layer, and describe the three identification failure types using an unseen case.</div>
+        <div class="session-row"><span class="session-label">Session A</span><span>The vendor demo case — what the tool received and what it assumed.</span></div>
+        <div class="session-row"><span class="session-label">Session B</span><span>The three identification failures; the irreducibly human layer named explicitly.</span></div>
+        <div class="session-row"><span class="session-label">DAG Workshop</span><span>Annotate a given DAG: explicit claim / default assumption / unconsidered.</span></div>
+
+        <div class="midterm-block">
+          <h4>⚑ Midterm (100 pts)</h4>
+          <p>Two unseen causal scenarios. For each: draw the implied DAG, diagnose the identification failure, name the load-bearing assumption, explain what domain knowledge would address it. No definitions asked. No recall tested.</p>
+        </div>
+
+        <div class="deliverable-block">
+          <div class="deliverable-label">⚑ Reading Response #3 (30 pts)</div>
+          What is one decision in your final project domain problem that belongs to you and cannot be delegated to a tool? Name it specifically. Due before Session A, Week 5.
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ACT TWO -->
+    <div class="act-header">
+      <div class="act-label">Act Two · Weeks 5–11 · Chapters 5–9</div>
+      <h3>Build</h3>
+      <p>The identification toolkit — built piece by piece through cases you recognize. You enter Act Two able to name the identification layer. You leave Act Two able to perform it.</p>
+    </div>
+
+    <!-- Week 5 -->
+    <div class="week-block">
+      <div class="week-header">
+        <span class="week-label">Week 5</span>
+        <span class="week-title">Confounders: The Variable You Forgot</span>
+        <span class="week-chapter">Chapter 5</span>
+      </div>
+      <div class="week-body">
+        <div class="week-goal">By the end of this week: Find confounders in a DAG using the three questions, identify backdoor paths, and determine a valid adjustment set.</div>
+        <div class="session-row"><span class="session-label">Session A</span><span>Structural definition — the three questions; backdoor paths introduced intuitively.</span></div>
+        <div class="session-row"><span class="session-label">Session B</span><span>The confounder you can't measure; bias direction.</span></div>
+        <div class="session-row"><span class="session-label">DAG Workshop</span><span>Weekly DAG Assignment #2 — confounder identification.</span></div>
+        <div class="deliverable-block">
+          <div class="deliverable-label">⚑ Weekly DAG Assignment #2 (25 pts)</div>
+          Given domain and variable list. Apply the three questions, draw backdoor paths, determine adjustment set, name any unmeasured confounder with bias direction. Due before DAG Workshop, Week 6.
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 6 -->
+    <div class="week-block">
+      <div class="week-header">
+        <span class="week-label">Week 6</span>
+        <span class="week-title">Mediators: The Variable You Shouldn't Touch</span>
+        <span class="week-chapter">Chapter 6</span>
+      </div>
+      <div class="week-body">
+        <div class="week-goal">By the end of this week: Identify mediators by structural position and make an explicit analytical choice between total and direct effect estimation.</div>
+        <div class="session-row"><span class="session-label">Session A</span><span>What conditioning on a mediator does; workplace wellness case.</span></div>
+        <div class="session-row"><span class="session-label">Session B</span><span>Total vs. direct effect; when you actually want the direct effect.</span></div>
+        <div class="session-row"><span class="session-label">DAG Workshop</span><span>Weekly DAG Assignment #3 — confounder vs. mediator distinction.</span></div>
+        <div class="deliverable-block">
+          <div class="deliverable-label">⚑ Weekly DAG Assignment #3 (25 pts)</div>
+          Given DAG with one confounder and one mediator. Identify each by structural position. Predict consequence of conditioning on each. State which effect to estimate and why. Due before DAG Workshop, Week 7.
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 7 -->
+    <div class="week-block">
+      <div class="week-header">
+        <span class="week-label">Week 7 ★</span>
+        <span class="week-title">Colliders: The Variable That Breaks Everything (Part 1 of 2)</span>
+        <span class="week-chapter">Chapter 7</span>
+      </div>
+      <div class="week-body">
+        <div class="week-goal">By the end of this week: Recognize that a spurious association can be created — not merely revealed — by conditioning.</div>
+        <div class="session-row"><span class="session-label">Session A</span><span>The hiring puzzle — case only, no definition. Session ends with the question open.</span></div>
+        <div class="session-row"><span class="session-label">Session B</span><span>Structural definition emerges from the puzzle; path opening named.</span></div>
+        <div class="session-row"><span class="session-label">DAG Workshop</span><span>Weekly DAG Assignment #4 — find the collider without being told where it is.</span></div>
+        <div class="callout callout-warn" style="margin-top:12px;">
+          <strong>⚠ Hardest conceptual week in the course.</strong> The definition is withheld until Session B deliberately. If the case doesn't produce discomfort before the concept is named, the concept will not stick. Read Chapter 7 only through "The Structural Definition" before Session A. Read the rest after.
+        </div>
+        <div class="deliverable-block">
+          <div class="deliverable-label">⚑ Weekly DAG Assignment #4 (25 pts)</div>
+          Given domain scenario with a hidden collider. Identify it by structural reasoning. Draw the DAG. Label the path that conditioning opens. Explain in one paragraph why the spurious association is created by conditioning — not present in the underlying data. Due before DAG Workshop, Week 8.
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 8 -->
+    <div class="week-block">
+      <div class="week-header">
+        <span class="week-label">Week 8</span>
+        <span class="week-title">Colliders: The Variable That Breaks Everything (Part 2 of 2)</span>
+        <span class="week-chapter">Chapter 7 continued</span>
+      </div>
+      <div class="week-body">
+        <div class="week-goal">By the end of this week: Recognize selection bias as a structural collider problem — and explain why a larger sample does not fix it.</div>
+        <div class="session-row"><span class="session-label">Session A</span><span>The obesity paradox — second collider instance; hospitalization as collider.</span></div>
+        <div class="session-row"><span class="session-label">Session B</span><span>Selection bias is collider bias; M-bias introduced; AI training data implication.</span></div>
+        <div class="session-row"><span class="session-label">DAG Workshop</span><span>Weekly DAG Assignment #5 — selection bias as structural collider bias.</span></div>
+        <div class="deliverable-block">
+          <div class="deliverable-label">⚑ Weekly DAG Assignment #5 (25 pts)</div>
+          Given study with defined sample restriction. Draw full DAG including sampling mechanism. Identify the collider. Explain bias direction. Explain why increasing sample size within the restricted population does not resolve the problem. Due before DAG Workshop, Week 9.
+        </div>
+        <div class="deliverable-block">
+          <div class="deliverable-label">⚑ Reading Response #4 (30 pts)</div>
+          Describe one place in your engineering domain where selection into a sample might be a collider. Name it and explain what would have to be true for it to be a problem. Due before Session A, Week 9.
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 9 -->
+    <div class="week-block">
+      <div class="week-header">
+        <span class="week-label">Week 9 ★</span>
+        <span class="week-title">The Backdoor Criterion: Closing the Paths That Don't Belong (Part 1 of 2)</span>
+        <span class="week-chapter">Chapter 8</span>
+      </div>
+      <div class="week-body">
+        <div class="week-goal">By the end of this week: Trace all backdoor paths in a complex DAG and apply the first condition of the backdoor criterion.</div>
+        <div class="callout callout-note" style="margin-top:0; margin-bottom:12px;">
+          The backdoor criterion is introduced here as relief — you have been building intuition about path blocking for four weeks. This is the procedure that replaces guesswork.
+        </div>
+        <div class="session-row"><span class="session-label">Session A</span><span>The problem Act Two created; two conditions in plain language; path-tracing introduced.</span></div>
+        <div class="session-row"><span class="session-label">Session B</span><span>Path-tracing practiced on two cases; sensitivity seed planted — deferred explicitly to Week 14.</span></div>
+        <div class="session-row"><span class="session-label">DAG Workshop</span><span>Weekly DAG Assignment #6 — path tracing only; listing is the deliverable.</span></div>
+        <div class="deliverable-block">
+          <div class="deliverable-label">⚑ Weekly DAG Assignment #6 (25 pts)</div>
+          Given six-node DAG. List every backdoor path. For each: name every node, identify its type, state whether open or closed. Do not derive the adjustment set yet. Due before DAG Workshop, Week 10.
+        </div>
+        <div class="deliverable-block">
+          <div class="deliverable-label">⚑ Reading Response #5 (30 pts)</div>
+          Two-register writing exercise. Describe the key causal relationship in your final project domain in one technical sentence (for a statistician) and one plain-language sentence (for a product manager). The two must differ in framing and intellectual structure — not just vocabulary. Due before Session A, Week 10.
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 10 -->
+    <div class="week-block">
+      <div class="week-header">
+        <span class="week-label">Week 10</span>
+        <span class="week-title">The Backdoor Criterion: Closing the Paths That Don't Belong (Part 2 of 2)</span>
+        <span class="week-chapter">Chapter 8 continued</span>
+      </div>
+      <div class="week-body">
+        <div class="week-goal">By the end of this week: Derive a minimal valid adjustment set — and recognize when no valid adjustment set exists.</div>
+        <div class="session-row"><span class="session-label">Session A</span><span>Minimal adjustment set; why less is sometimes more; finance analyst case.</span></div>
+        <div class="session-row"><span class="session-label">Session B</span><span>When no valid adjustment set exists; unidentifiable effects.</span></div>
+        <div class="session-row"><span class="session-label">DAG Workshop</span><span>Weekly DAG Assignment #7 — full backdoor criterion application.</span></div>
+        <div class="deliverable-block">
+          <div class="deliverable-label">⚑ Weekly DAG Assignment #7 (25 pts)</div>
+          Given complex DAG. Apply both conditions. Derive minimal valid adjustment set. Verify conditions (a) and (b). State whether the effect is identifiable and why. Due before DAG Workshop, Week 11.
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 11 -->
+    <div class="week-block">
+      <div class="week-header">
+        <span class="week-label">Week 11 ★⚑</span>
+        <span class="week-title">Defending Your DAG: What You're Claiming, Assuming, and Leaving Open</span>
+        <span class="week-chapter">Chapter 9</span>
+      </div>
+      <div class="week-body">
+        <div class="week-goal">By the end of this week: Construct a three-part DAG defense in two registers — and submit your final project DAG draft for feedback.</div>
+        <div class="session-row"><span class="session-label">Session A</span><span>The three-part defense structure — explicit claims, ranked assumptions, open questions.</span></div>
+        <div class="session-row"><span class="session-label">Session B</span><span>Two-register translation; a failing example shown alongside the model.</span></div>
+        <div class="session-row"><span class="session-label">DAG Workshop</span><span>Defense writing for final project DAG; TA provides written feedback.</span></div>
+
+        <div class="major-deliverable">
+          <h4>⚑ Final Project — DAG Draft Checkpoint (100 pts)</h4>
+          <p>Your domain problem DAG with three-part defense: (1) every arrow stated as a causal claim; (2) missing arrows listed and ranked by plausibility; (3) unmeasured confounders named with bias directions. One paragraph each in technical and plain-language registers. Due end of Week 11.</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ACT THREE -->
+    <div class="act-header">
+      <div class="act-label">Act Three · Weeks 12–15 · Chapters 10–13</div>
+      <h3>Apply</h3>
+      <p>The identification toolkit deployed — answers get less clean, and that is the point. You enter Act Three with a defended DAG. You leave with a complete causal analysis you can put in a portfolio and discuss in a job interview. Act Three stops giving you well-formed problems and starts giving you the kind of problems you will actually encounter — cases that recombine earlier concepts rather than introducing new structural problems. That is not easier. It is harder in the way that matters.</p>
+    </div>
+
+    <!-- Week 12 -->
+    <div class="week-block">
+      <div class="week-header">
+        <span class="week-label">Week 12 ★⚑</span>
+        <span class="week-title">From DAG to Data: What the Machine Needs</span>
+        <span class="week-chapter">Chapter 10</span>
+      </div>
+      <div class="week-body">
+        <div class="week-goal">By the end of this week: Translate your defended DAG into an estimation specification document that preserves every identification decision through the handoff to a tool.</div>
+        <div class="session-row"><span class="session-label">Session A</span><span>The handoff failure — what gets lost in translation.</span></div>
+        <div class="session-row"><span class="session-label">Session B</span><span>The specification document; three handoff failures named; DoWhy sidebar.</span></div>
+        <div class="session-row"><span class="session-label">DAG Workshop</span><span>Write a specification document for a given DAG; identify what tool defaults would change.</span></div>
+
+        <div class="major-deliverable">
+          <h4>⚑ Final Project — Specification Checkpoint (100 pts)</h4>
+          <p>Revised DAG (incorporating Week 11 feedback) + complete estimation specification: treatment variable, outcome variable, adjustment set with justification, identification assumptions, "do not add" list. Due end of Week 12.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 13 -->
+    <div class="week-block">
+      <div class="week-header">
+        <span class="week-label">Week 13</span>
+        <span class="week-title">Reading the Output: What to Trust and What to Interrogate</span>
+        <span class="week-chapter">Chapter 11</span>
+      </div>
+      <div class="week-body">
+        <div class="week-goal">By the end of this week: Apply a three-question diagnostic to any causal estimation output and name four things the output cannot tell you.</div>
+        <div class="session-row"><span class="session-label">Session A</span><span>The three questions; why clean formatting and narrow CIs don't address identification.</span></div>
+        <div class="session-row"><span class="session-label">Session B</span><span>What the output cannot tell you — four things; paid search incrementality case.</span></div>
+        <div class="session-row"><span class="session-label">DAG Workshop</span><span>Weekly DAG Assignment #8 — output evaluation.</span></div>
+        <div class="deliverable-block">
+          <div class="deliverable-label">⚑ Weekly DAG Assignment #8 (25 pts)</div>
+          Given causal estimation output and original specification. Apply the three-question diagnostic. Identify at least one discrepancy between specification and implementation. State what the output can and cannot support as a causal claim. Due before DAG Workshop, Week 14.
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 14 -->
+    <div class="week-block">
+      <div class="week-header">
+        <span class="week-label">Week 14</span>
+        <span class="week-title">When the Assumptions Don't Hold: Limits, Sensitivity, and Honesty</span>
+        <span class="week-chapter">Chapter 12</span>
+      </div>
+      <div class="week-body">
+        <div class="week-goal">By the end of this week: Calculate an E-value, interpret it as a comparator against domain knowledge, and write a qualified conclusion.</div>
+        <div class="session-row"><span class="session-label">Session A</span><span>The E-value as comparator — the sensitivity question from Week 9 answered here.</span></div>
+        <div class="session-row"><span class="session-label">Session B</span><span>When the analysis should not proceed; the honest qualified conclusion.</span></div>
+        <div class="session-row"><span class="session-label">DAG Workshop</span><span>Weekly DAG Assignment #9 — sensitivity and qualified conclusion.</span></div>
+        <div class="deliverable-block">
+          <div class="deliverable-label">⚑ Weekly DAG Assignment #9 (25 pts)</div>
+          Given domain scenario, causal estimate, and E-value. Compare against domain knowledge about likely confounders. Write qualified conclusion in two registers. State whether the analysis supports a definitive recommendation and why. Due before DAG Workshop, Week 15.
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 15 -->
+    <div class="week-block">
+      <div class="week-header">
+        <span class="week-label">Week 15 ★⚑</span>
+        <span class="week-title">The Full Analysis: One Problem, Every Decision</span>
+        <span class="week-chapter">Chapter 13</span>
+      </div>
+      <div class="week-body">
+        <div class="week-goal">By the end of this week: Present a complete causal analysis plan for your own domain problem — every identification decision made explicitly, every limit named honestly.</div>
+        <div class="session-row"><span class="session-label">Session A</span><span>Structured peer review — each student reviews one peer's specification and defense using the three-question diagnostic.</span></div>
+        <div class="session-row"><span class="session-label">Session B</span><span>Final presentations or written submission with recorded walkthrough.</span></div>
+        <div class="session-row"><span class="session-label">DAG Workshop</span><span>Open session — TA available for final questions; no new material.</span></div>
+
+        <div class="major-deliverable">
+          <h4>⚑ Final Project — Final Submission (250 pts)</h4>
+          <p>Complete causal analysis plan: domain question and specification; DAG with three-part defense; identification decisions stated as decisions; estimation specification; output evaluation; sensitivity analysis with E-value and domain argument; qualified conclusion in two registers. Due end of Week 15.</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- SCHEDULE AT A GLANCE -->
+    <h3>Schedule at a Glance</h3>
+    <table class="schedule-table">
+      <tr><th>Week</th><th>Chapter</th><th>Act</th><th>Major Deliverable</th><th>Points</th></tr>
+      <tr><td>1</td><td>Ch. 1 — The Decision That Looked Right</td><td>One</td><td>Reading Response #1</td><td>30</td></tr>
+      <tr><td>2</td><td>Ch. 2 — Three Words for the Same Problem</td><td>One</td><td>Reading Response #2</td><td>30</td></tr>
+      <tr><td>3</td><td>Ch. 3 — The Map Before the Territory</td><td>One</td><td>Weekly DAG #1</td><td>25</td></tr>
+      <tr><td>4</td><td>Ch. 4 — The Identification Layer</td><td>One</td><td>Midterm + RR #3</td><td>100 + 30</td></tr>
+      <tr><td>5</td><td>Ch. 5 — Confounders</td><td>Two</td><td>Weekly DAG #2</td><td>25</td></tr>
+      <tr><td>6</td><td>Ch. 6 — Mediators</td><td>Two</td><td>Weekly DAG #3</td><td>25</td></tr>
+      <tr><td>7</td><td>Ch. 7 — Colliders (Part 1)</td><td>Two</td><td>Weekly DAG #4</td><td>25</td></tr>
+      <tr><td>8</td><td>Ch. 7 — Colliders (Part 2)</td><td>Two</td><td>Weekly DAG #5 + RR #4</td><td>25 + 30</td></tr>
+      <tr><td>9</td><td>Ch. 8 — Backdoor Criterion (Part 1)</td><td>Two</td><td>Weekly DAG #6 + RR #5</td><td>25 + 30</td></tr>
+      <tr><td>10</td><td>Ch. 8 — Backdoor Criterion (Part 2)</td><td>Two</td><td>Weekly DAG #7</td><td>25</td></tr>
+      <tr><td>11</td><td>Ch. 9 — Defending Your DAG</td><td>Two</td><td>DAG Draft Checkpoint</td><td>100</td></tr>
+      <tr><td>12</td><td>Ch. 10 — From DAG to Data</td><td>Three</td><td>Specification Checkpoint</td><td>100</td></tr>
+      <tr><td>13</td><td>Ch. 11 — Reading the Output</td><td>Three</td><td>Weekly DAG #8</td><td>25</td></tr>
+      <tr><td>14</td><td>Ch. 12 — When Assumptions Don't Hold</td><td>Three</td><td>Weekly DAG #9</td><td>25</td></tr>
+      <tr><td>15</td><td>Ch. 13 — The Full Analysis</td><td>Three</td><td>Final Project Submission</td><td>250</td></tr>
+    </table>
+    <p style="font-size:13px; color:var(--bb-6);">DAG Workshop participation (100 pts) assessed continuously across all 15 weeks. Lowest DAG assignment dropped — 8 of 9 count toward final grade.</p>
+  </div>
+
+
+  <!-- 8. POLICIES -->
+  <div class="section" id="policies">
+    <div class="section-number">Section 8</div>
+    <h2 class="section-title">Course Policies</h2>
+
+    <h3>Attendance and Participation</h3>
+    <p>This course has three weekly contact points: two lecture/seminar sessions and one TA-led DAG Workshop. Each serves a different function. Missing any of them is not equivalent to missing the same thing twice.</p>
+    <p>Per College of Engineering MGEN policy, students are allowed a maximum of 2 absences per course. 3 or more absences result in an F. More than 3 unexcused DAG Workshop absences will result in a failing participation grade regardless of Quality/Portfolio score.</p>
+    <p>Students who do not attend during the first week risk being dropped from the course. Please inform me of any anticipated absence before class.</p>
+    <p>Participation means engagement — drawing, revising, critiquing, asking structural questions, and connecting today's concept to your domain. Physical presence without engagement does not count as participation.</p>
+
+    <h3>Late Work</h3>
+    <ul>
+      <li>Assignments due by 11:59 PM on the due date</li>
+      <li>5% deduction per day, rounded up</li>
+      <li>No credit after solutions are posted (posted the Monday after the due date)</li>
+      <li>Extensions via email before the deadline with a specific proposed new due date</li>
+      <li>Work submitted late without prior communication will not be graded</li>
+      <li>The midterm cannot be made up without prior arrangements</li>
+      <li>Exceptions for long-term illness or family emergencies must be approved by the professor — reach out early</li>
+    </ul>
+    <div class="callout callout-note">
+      DAG assignments feed the following week's workshop. A late submission that arrives after the workshop has missed the feedback loop it was designed to produce.
+    </div>
+
+    <h3>Academic Integrity</h3>
+    <p>What you submit is supposed to represent your domain judgment, your identification decisions, your argument for why the arrows in your DAG point the way they do. Submitting borrowed identification work is not just an integrity violation — it is practicing the appearance of the irreducibly human reasoning layer rather than performing it.</p>
+    <p>Violations include: submitting AI-generated work without citation, using another student's DAG or defense without attribution, submitting work substantially similar to a peer's submission. All violations will be reported to OSCCR. No exceptions.</p>
+    <p><strong>Collaboration policy:</strong> You are encouraged to discuss concepts, cases, and strategies. You may not share DAGs, defenses, written analyses, or specifications. Work you submit with your name on it must reflect your own reasoning in your own words. If you collaborated on ideas, list your collaborators clearly.</p>
+    <p>If you are unsure whether something crosses a line — ask. I would rather answer that question than navigate a violation.</p>
+
+    <h3>Generative AI Policy</h3>
+    <p>You are encouraged to use generative AI tools in this course. This is not a reluctant permission — it is a deliberate pedagogical choice grounded in the course's thesis.</p>
+    <p>Use Claude to generate your first-pass DAG. Use ChatGPT to draft your assumption defense. Then ask: What did it get wrong? What did it assume that I would never assume, knowing what I know about this domain? That gap is the irreducibly human part. Finding it, naming it, and correcting it is the work of this course.</p>
+    <p>Every submission requires the AI Use Disclosure block specified in Section 6. Undisclosed AI use is an academic integrity violation. The TA or instructor may ask you to walk through and explain any part of your submitted work.</p>
+    <div class="callout callout-info">
+      <strong>Instructor disclosure:</strong> I use generative AI tools in developing this course — for drafting case study scenarios, generating first-pass DAG structures that I then evaluate and revise, and editing course materials. I document my own AI use in the same format I am asking of you.
+    </div>
+
+    <h3>Incomplete Grades</h3>
+    <p>An incomplete grade may be reported when a student has failed to complete a major course component. Missing work must be submitted within 30 days of the term's end or the agreed-upon due date, or it receives no credit. Contact the instructor before the final week if circumstances warrant discussion.</p>
+  </div>
+
+
+  <div style="font-size:13px; color:var(--bb-6); border-top:1px solid var(--bb-7); padding-top:20px; margin-top:40px;">
+    <em>Irreducibly Human: What AI Can and Can't Do — Causal Reasoning</em><br>
+    Syllabus v1.0 · Nik Bear Brown · Northeastern University · Fall [Year]<br><br>
+    This syllabus reflects course information as of the distribution date. Learning outcomes, assessment architecture, and policies are stable. If meeting times, room assignments, or textbook availability change, updates will be posted to Canvas and communicated by email with at least one week's notice.
+  </div>
+
+</div><!-- /page-wrapper -->
+
+<footer>
+  Built with <a href="https://www.bearbrown.co" target="_blank" rel="noopener">bearbrown.co</a> ·
+  AI tools for educators, creators &amp; founders
+</footer>
+
+</body>
+</html>

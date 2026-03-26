@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conducting AI: concept brief — pre-TIC TOC</title>
+  <meta name="description" content="Concept brief for Irreducibly Human: Conducting AI — Course 4 of 6 in the graduate engineering series. Covers the five supervisory capacities (plausibility auditing, problem formulation, tool orchestration, interpretive judgment, executive integration), reader profile, three-act chapter map, and pedagogical architecture. Chapter specifications pending.">
+  <meta name="keywords" content="Conducting AI, concept brief, Irreducibly Human, graduate engineering, supervisory capacities, plausibility auditing, problem formulation, tool orchestration, interpretive judgment, executive integration, AI supervision, Northeastern University, human-AI collaboration, metacognition">
+
+  <style>
+    :root {
+      --bb-1: #1a0a00;
+      --bb-2: #8B3A0F;
+      --bb-3: #C0392B;
+      --bb-4: #E8A020;
+      --bb-5: #D4500A;
+      --bb-6: #B8860B;
+      --bb-7: #C8A96E;
+      --bb-8: #F0E6D0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background-color: var(--bb-8);
+      color: var(--bb-1);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    .page-wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 32px 64px;
+    }
+
+    /* ── COVER ── */
+    .cover {
+      border-bottom: 3px solid var(--bb-2);
+      padding-bottom: 32px;
+      margin-bottom: 40px;
+    }
+
+    .cover-series {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+      margin-bottom: 8px;
+    }
+
+    .cover h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--bb-2);
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+
+    .cover h2 {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--bb-5);
+      margin-bottom: 18px;
+    }
+
+    .cover-meta { font-size: 13px; color: var(--bb-6); }
+
+    .version-meta {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 11px;
+      color: var(--bb-6);
+      border: 1px solid var(--bb-7);
+      border-radius: 3px;
+      padding: 4px 10px;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── STATUS BANNER ── */
+    .status-banner {
+      background: rgba(192, 57, 43, 0.08);
+      border: 2px solid var(--bb-3);
+      border-radius: 4px;
+      padding: 18px 22px;
+      margin-bottom: 40px;
+    }
+
+    .status-banner .sb-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bb-3);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .status-banner p {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .status-banner p:last-child { margin-bottom: 0; }
+
+    .status-banner strong { color: var(--bb-3); }
+
+    .pending-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 8px;
+    }
+
+    .pending-list li {
+      font-size: 13px;
+      padding: 4px 0 4px 18px;
+      position: relative;
+      color: var(--bb-5);
+    }
+
+    .pending-list li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--bb-3);
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: white;
+      border-left: 4px solid var(--bb-2);
+      padding: 24px 28px;
+      margin-bottom: 48px;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .toc h3 {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+      margin-bottom: 14px;
+    }
+
+    .toc ol { padding-left: 20px; }
+    .toc li { margin-bottom: 4px; font-size: 14px; }
+    .toc a { color: var(--bb-2); text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+
+    /* ── SECTIONS ── */
+    .section { margin-bottom: 56px; }
+
+    .section-number {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+      margin-bottom: 4px;
+    }
+
+    h2.section-title {
+      font-size: 22px;
+      color: var(--bb-2);
+      border-bottom: 1px solid var(--bb-7);
+      padding-bottom: 8px;
+      margin-bottom: 24px;
+    }
+
+    h3 { font-size: 16px; color: var(--bb-5); margin: 28px 0 10px; }
+
+    h4 {
+      font-size: 14px;
+      color: var(--bb-2);
+      font-style: italic;
+      font-weight: 600;
+      margin: 18px 0 8px;
+    }
+
+    p { margin-bottom: 14px; }
+    ul { padding-left: 20px; margin-bottom: 14px; }
+    ul li { margin-bottom: 6px; font-size: 15px; }
+    a { color: var(--bb-5); }
+    strong { color: var(--bb-1); }
+
+    /* ── TABLES ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin: 16px 0 24px;
+    }
+
+    th {
+      background: var(--bb-2);
+      color: var(--bb-8);
+      padding: 10px 14px;
+      text-align: left;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+    }
+
+    td {
+      padding: 9px 14px;
+      border-bottom: 1px solid var(--bb-7);
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td { background: rgba(200, 169, 110, 0.12); }
+
+    /* ── CALLOUTS ── */
+    .callout {
+      padding: 16px 20px;
+      border-radius: 4px;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+    .callout-note {
+      background: rgba(232, 160, 32, 0.10);
+      border-left: 4px solid var(--bb-4);
+    }
+
+    .callout-info {
+      background: white;
+      border-left: 4px solid var(--bb-7);
+    }
+
+    .callout strong { color: var(--bb-2); }
+
+    /* ── THESIS BLOCK ── */
+    .thesis-block {
+      background: var(--bb-1);
+      color: var(--bb-8);
+      padding: 28px 32px;
+      border-radius: 4px;
+      margin-bottom: 28px;
+    }
+
+    .thesis-block .thesis-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bb-7);
+      margin-bottom: 10px;
+    }
+
+    .thesis-block .thesis-sentence {
+      font-size: 17px;
+      color: var(--bb-4);
+      font-style: italic;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .thesis-block p { font-size: 14px; color: var(--bb-7); margin-bottom: 0; }
+
+    /* ── FIVE CAPACITIES ── */
+    .capacities-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 20px 0;
+    }
+
+    .capacity-card {
+      background: white;
+      border: 1px solid var(--bb-7);
+      border-top: 3px solid var(--bb-2);
+      border-radius: 0 0 4px 4px;
+      padding: 16px;
+    }
+
+    .capacity-card .cap-num {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+      margin-bottom: 4px;
+    }
+
+    .capacity-card .cap-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--bb-2);
+      margin-bottom: 6px;
+    }
+
+    .capacity-card p { font-size: 13px; margin: 0; }
+
+    .capacity-card-full {
+      background: var(--bb-2);
+      border-radius: 4px;
+      padding: 16px;
+      grid-column: 1 / -1;
+    }
+
+    .capacity-card-full .cap-num { color: var(--bb-7); }
+    .capacity-card-full .cap-name { color: var(--bb-8); }
+    .capacity-card-full p { color: rgba(240,230,208,0.8); font-size: 13px; margin: 0; }
+
+    /* ── ACT HEADERS (chapter map) ── */
+    .act-header {
+      background: var(--bb-2);
+      color: var(--bb-8);
+      padding: 14px 18px;
+      border-radius: 4px 4px 0 0;
+      margin-top: 28px;
+    }
+
+    .act-header .act-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bb-7);
+      margin-bottom: 3px;
+    }
+
+    .act-header h3 { font-size: 15px; color: var(--bb-8); margin: 0; }
+
+    .chapter-row-block {
+      border: 1px solid var(--bb-7);
+      border-top: none;
+      border-radius: 0 0 4px 4px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .chapter-row {
+      display: grid;
+      grid-template-columns: 90px 1fr 1fr;
+      gap: 0;
+      border-bottom: 1px solid var(--bb-7);
+      font-size: 14px;
+    }
+
+    .chapter-row:last-child { border-bottom: none; }
+
+    .chapter-row:nth-child(even) { background: rgba(200,169,110,0.08); }
+
+    .cr-num {
+      padding: 10px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--bb-6);
+      border-right: 1px solid var(--bb-7);
+    }
+
+    .cr-title {
+      padding: 10px 14px;
+      font-weight: 600;
+      color: var(--bb-2);
+      border-right: 1px solid var(--bb-7);
+    }
+
+    .cr-builds {
+      padding: 10px 14px;
+      font-style: italic;
+      color: var(--bb-5);
+      font-size: 13px;
+    }
+
+    .cr-pending {
+      color: var(--bb-7);
+      font-style: italic;
+      font-size: 12px;
+    }
+
+    /* ── PEDAGOGICAL FEATURES ── */
+    .feature-block {
+      border: 1px solid var(--bb-7);
+      border-radius: 4px;
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+
+    .feature-header {
+      background: rgba(139,58,15,0.08);
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--bb-7);
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .feature-tag {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      background: var(--bb-2);
+      color: var(--bb-8);
+      padding: 2px 7px;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+
+    .feature-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--bb-2);
+    }
+
+    .feature-body {
+      padding: 14px 18px;
+      font-size: 14px;
+    }
+
+    /* ── READER PROFILE ── */
+    .reader-block {
+      background: white;
+      border-left: 4px solid var(--bb-4);
+      padding: 20px 24px;
+      border-radius: 0 4px 4px 0;
+      font-style: italic;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .page-wrapper { padding: 24px 16px 48px; }
+      .capacities-grid { grid-template-columns: 1fr; }
+      .capacity-card-full { grid-column: 1; }
+      .chapter-row { grid-template-columns: 60px 1fr; }
+      .cr-builds { display: none; }
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 11px;
+      color: #999;
+      border-top: 1px solid #e0e0e0;
+      margin-top: 40px;
+    }
+
+    footer a { color: #999; }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-series">Irreducibly Human Series · Course 4 of 6 · Concept Brief · Graduate Engineering · Northeastern University</div>
+    <h1>Conducting AI: the five supervisory capacities no algorithm possesses</h1>
+    <h2>What AI can and can't do — directing AI systems toward meaningful outcomes</h2>
+    <div class="cover-meta">
+      Bear Brown &amp; Company / Kindle Direct Publishing, 2026 &nbsp;·&nbsp; 15-week semester
+    </div>
+    <div class="version-meta">Concept Brief v0.1 &nbsp;·&nbsp; [Date] &nbsp;·&nbsp; Reviewed by Dev the Dev</div>
+  </div>
+
+  <!-- STATUS BANNER -->
+  <div class="status-banner">
+    <div class="sb-label">Document status — pre-TIC TOC</div>
+    <p>This is a concept brief, not a chapter specification document. It accurately represents the course at its current stage of development. The thesis, reader profile, three-act chapter map, and pedagogical architecture are documented here. <strong>Chapter specifications are pending.</strong></p>
+    <p>This document is not ready for course delivery. The following must be completed before this reaches TIC TOC status:</p>
+    <ul class="pending-list">
+      <li>Chapter-by-chapter learning outcomes (Bloom's level, assessability, Human Half Declaration instances)</li>
+      <li>Opening strategy per chapter</li>
+      <li>Worked examples (longitudinal cases named but not specified)</li>
+      <li>Sequencing logic and transition tests</li>
+      <li>Bridge statements between chapters</li>
+      <li>Full Bloom's distribution across all 47+ outcomes</li>
+      <li>Assessment architecture beyond the spine description</li>
+      <li>Plausibility Audit prompt specification (Week 14–15)</li>
+    </ul>
+  </div>
+
+  <!-- TOC -->
+  <div class="toc">
+    <h3>Contents</h3>
+    <ol>
+      <li><a href="#thesis">Thesis and Central Argument</a></li>
+      <li><a href="#reader">Reader Profile</a></li>
+      <li><a href="#capacities">The Five Supervisory Capacities</a></li>
+      <li><a href="#map">Three-Act Chapter Map</a></li>
+      <li><a href="#features">Pedagogical Architecture</a></li>
+    </ol>
+  </div>
+
+
+  <!-- 1. THESIS -->
+  <div class="section" id="thesis">
+    <div class="section-number">Section 1</div>
+    <h2 class="section-title">Thesis and Central Argument</h2>
+
+    <div class="thesis-block">
+      <div class="thesis-label">Thesis</div>
+      <div class="thesis-sentence">AI solves faster than any human. Verification, reframing, interpretation, orchestration, and integration remain irreducibly human. These five capacities are now the decisive professional differentiator in AI-assisted knowledge work.</div>
+      <p>Training programs that build tool competence without building supervisory metacognition are producing performers when they need conductors.</p>
+    </div>
+
+    <p>Graduate engineers learn to use AI tools. They learn to prompt, delegate, and verify. Then they encounter the situation every employer now recognizes: something feels wrong and they cannot say why. The problem they have been handed is the wrong problem. The AI output is accurate, efficient, and pointed in the wrong direction.</p>
+
+    <p>The conductor metaphor unifies all five capacities: a conductor does not play any instrument — they hold the whole performance in their head, hear the wrong note before the score confirms it, and decide which piece is worth performing. The performance collapses without them even though they produce no sound themselves. As AI capability scales, the conductor role becomes more consequential, not less.</p>
+
+    <table>
+      <tr><th>Field</th><th>Value</th></tr>
+      <tr><td>Series position</td><td>Course 4 of 6 · Irreducibly Human: What AI Can and Can't Do</td></tr>
+      <tr><td>Deployment context</td><td>15-week graduate course · College of Engineering · Northeastern University</td></tr>
+      <tr><td>Also appropriate for</td><td>Professional development; executive education</td></tr>
+      <tr><td>Prerequisite</td><td>AI tool competence — Course 1 of the series (AI Literacy, Fluency, and Trust) or equivalent professional experience</td></tr>
+    </table>
+  </div>
+
+
+  <!-- 2. READER -->
+  <div class="section" id="reader">
+    <div class="section-number">Section 2</div>
+    <h2 class="section-title">Reader Profile</h2>
+
+    <div class="reader-block">
+      A second-year graduate engineer who prompts well, delegates confidently, and still freezes when an AI output feels wrong before she can prove it. She has never been asked to conduct. Only to play.
+    </div>
+
+    <p>This reader can describe what went wrong after the fact. She cannot yet name it in the moment — which means she cannot stop it. The five capacities this course builds are the ones that turn the felt wrongness into a located, correctable judgment before the performance goes off the rails.</p>
+  </div>
+
+
+  <!-- 3. CAPACITIES -->
+  <div class="section" id="capacities">
+    <div class="section-number">Section 3</div>
+    <h2 class="section-title">The Five Supervisory Capacities</h2>
+
+    <p>Each capacity is developed across two weeks: a framework week (peaks at Analyze) and an application week (peaks at Create or Evaluate). No student goes more than one week without an Apply-or-above deliverable.</p>
+
+    <div class="capacities-grid">
+      <div class="capacity-card">
+        <div class="cap-num">Capacity 1 · Chapters 4–5</div>
+        <div class="cap-name">Plausibility Auditing</div>
+        <p>Hears the wrong note before the score confirms it. Evaluates AI output for coherence, domain fit, and hidden assumptions — before the output is acted on.</p>
+      </div>
+      <div class="capacity-card">
+        <div class="cap-num">Capacity 2 · Chapters 6–7</div>
+        <div class="cap-name">Problem Formulation</div>
+        <p>Decides which problem is worth solving. Reframes the brief before generating. Identifies when the AI is solving the stated problem rather than the real one.</p>
+      </div>
+      <div class="capacity-card">
+        <div class="cap-num">Capacity 3 · Chapters 8–9</div>
+        <div class="cap-name">Tool Orchestration</div>
+        <p>Knows when to bring in the brass. Selects, sequences, and combines AI tools based on what the problem actually requires — not habit or availability.</p>
+      </div>
+      <div class="capacity-card">
+        <div class="cap-num">Capacity 4 · Chapters 10–11</div>
+        <div class="cap-name">Interpretive Judgment</div>
+        <p>Supplies the meaning the output cannot supply for itself. Translates AI findings into consequential decisions — knowing what the data shows and what it cannot show.</p>
+      </div>
+      <div class="capacity-card-full">
+        <div class="cap-num">Capacity 5 · Chapters 12–13</div>
+        <div class="cap-name">Executive Integration</div>
+        <p>Holds the whole performance in their head. Synthesizes outputs across tools, timelines, and stakeholders into a coherent course of action the professional can defend.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 4. CHAPTER MAP -->
+  <div class="section" id="map">
+    <div class="section-number">Section 4</div>
+    <h2 class="section-title">Three-Act Chapter Map</h2>
+
+    <div class="callout callout-note">
+      <strong>Status:</strong> Chapter titles and deliverable descriptions are concept-level only. Learning outcomes, opening strategies, worked examples, and bridge statements are pending. This map is a structural skeleton, not a specification.
+    </div>
+
+    <!-- Act One -->
+    <div class="act-header">
+      <div class="act-label">Act One · Weeks 1–3 · Chapters 1–3</div>
+      <h3>The Gap — diagnosing the conductor problem</h3>
+    </div>
+    <div class="chapter-row-block">
+      <div class="chapter-row">
+        <span class="cr-num">Ch. 1</span>
+        <span class="cr-title">The Conductorless Orchestra</span>
+        <span class="cr-builds">Diagnoses the failure; names the gap</span>
+      </div>
+      <div class="chapter-row">
+        <span class="cr-num">Ch. 2</span>
+        <span class="cr-title">The Solve-Verify Asymmetry</span>
+        <span class="cr-builds">Understands why the conductor role is structural, not temporary</span>
+      </div>
+      <div class="chapter-row">
+        <span class="cr-num">Ch. 3</span>
+        <span class="cr-title">Three Levels of AI Usage</span>
+        <span class="cr-builds">Identifies their own supervisory gap</span>
+      </div>
+    </div>
+
+    <!-- Act Two -->
+    <div class="act-header">
+      <div class="act-label">Act Two · Weeks 4–13 · Chapters 4–13</div>
+      <h3>The Five Capacities — one per two-week block</h3>
+    </div>
+    <div class="chapter-row-block">
+      <div class="chapter-row">
+        <span class="cr-num">Ch. 4–5</span>
+        <span class="cr-title">Plausibility Auditing</span>
+        <span class="cr-builds">Hears the wrong note before the score confirms it</span>
+      </div>
+      <div class="chapter-row">
+        <span class="cr-num">Ch. 6–7</span>
+        <span class="cr-title">Problem Formulation</span>
+        <span class="cr-builds">Decides which problem is worth solving</span>
+      </div>
+      <div class="chapter-row">
+        <span class="cr-num">Ch. 8–9</span>
+        <span class="cr-title">Tool Orchestration</span>
+        <span class="cr-builds">Knows when to bring in the brass</span>
+      </div>
+      <div class="chapter-row">
+        <span class="cr-num">Ch. 10–11</span>
+        <span class="cr-title">Interpretive Judgment</span>
+        <span class="cr-builds">Supplies the meaning the output cannot supply for itself</span>
+      </div>
+      <div class="chapter-row">
+        <span class="cr-num">Ch. 12–13</span>
+        <span class="cr-title">Executive Integration</span>
+        <span class="cr-builds">Holds the whole performance in their head</span>
+      </div>
+    </div>
+
+    <!-- Act Three -->
+    <div class="act-header">
+      <div class="act-label">Act Three · Weeks 14–15 · Chapters 14–15</div>
+      <h3>The Full Performance — adversarial assessment</h3>
+    </div>
+    <div class="chapter-row-block">
+      <div class="chapter-row">
+        <span class="cr-num">Ch. 14</span>
+        <span class="cr-title">The Full Performance</span>
+        <span class="cr-builds">Peer critique and revision under pressure</span>
+      </div>
+      <div class="chapter-row">
+        <span class="cr-num">Ch. 15</span>
+        <span class="cr-title">The Plausibility Audit</span>
+        <span class="cr-builds">Survives adversarial AI audit; names what the auditor cannot catch</span>
+      </div>
+    </div>
+
+    <h3>Longitudinal cases</h3>
+    <p>Three cases run across multiple chapters, producing a through-line that connects every capacity to a single arc of professional development. Case content is pending specification.</p>
+    <table>
+      <tr><th>Case</th><th>Chapters</th><th>Status</th></tr>
+      <tr><td>Biomedical engineering analysis</td><td>2, 4, 5, 11</td><td><em>Named — content pending</em></td></tr>
+      <tr><td>Supervisory analysis</td><td>13, 14, 15</td><td><em>Named — content pending</em></td></tr>
+      <tr><td>Personal case inventory</td><td>1, 15</td><td><em>Named — content pending</em></td></tr>
+    </table>
+  </div>
+
+
+  <!-- 5. FEATURES -->
+  <div class="section" id="features">
+    <div class="section-number">Section 5</div>
+    <h2 class="section-title">Pedagogical Architecture</h2>
+
+    <p>Four structural features are identified as essential to the course. They are named and described at concept level. Prompt specifications, rubrics, and implementation protocols are pending.</p>
+
+    <div class="feature-block">
+      <div class="feature-header">
+        <span class="feature-tag">Essential</span>
+        <span class="feature-name">The Plausibility Audit</span>
+      </div>
+      <div class="feature-body">
+        <p>Claude functions as adversarial assessor in the final two weeks. The student's grade depends in part on what the auditor cannot find — proving development rather than self-report. The audit prompt architecture must be specified before the course runs: too much structural scaffolding and the audit tests prompt design, not supervisory capacity; too little and results are inconsistent across cohorts.</p>
+        <p style="font-size:13px; color:var(--bb-5); margin:0;"><em>Pending: controlled prompt specification; rubric for what constitutes a passing audit; policy on what happens when the auditor finds nothing the student named.</em></p>
+      </div>
+    </div>
+
+    <div class="feature-block">
+      <div class="feature-header">
+        <span class="feature-tag">Essential</span>
+        <span class="feature-name">The Assessment Spine</span>
+      </div>
+      <div class="feature-body">
+        <p>Every deliverable requires the student to name, in writing, one judgment call that required their values, their domain knowledge, or their accountability that an AI could not have made on their behalf. Fifteen instances across the semester. Non-optional. A deliverable that cannot answer this question has not cleared the course's minimum threshold regardless of technical quality.</p>
+        <p style="font-size:13px; color:var(--bb-5); margin:0;"><em>Pending: instance mapping across all 15 deliverables; rubric for what constitutes a specific vs. generic declaration.</em></p>
+      </div>
+    </div>
+
+    <div class="feature-block">
+      <div class="feature-header">
+        <span class="feature-tag">Essential</span>
+        <span class="feature-name">Longitudinal Cases</span>
+      </div>
+      <div class="feature-body">
+        <p>Three cases run across multiple chapters — the biomedical engineering analysis, the supervisory analysis, and the personal case inventory — producing a through-line that connects every capacity to a single arc of professional development. Cases are named but not yet written.</p>
+        <p style="font-size:13px; color:var(--bb-5); margin:0;"><em>Pending: case content for all three longitudinal threads; worked examples per chapter; connection between case data and chapter deliverables.</em></p>
+      </div>
+    </div>
+
+    <div class="feature-block">
+      <div class="feature-header">
+        <span class="feature-tag">Essential</span>
+        <span class="feature-name">Framework/Application Structure</span>
+      </div>
+      <div class="feature-body">
+        <p>Every capacity is developed across two weeks — a framework week that peaks at Analyze and an application week that peaks at Create or Evaluate. No student goes more than one week without an Apply-or-above deliverable. This pacing constraint must hold across all ten capacity chapters.</p>
+        <p style="font-size:13px; color:var(--bb-5); margin:0;"><em>Pending: Bloom's distribution map confirming the pacing constraint holds across all chapters; verification that Act One (three orientation chapters) does not break the one-week Apply-or-above rule.</em></p>
+      </div>
+    </div>
+  </div>
+
+
+  <div style="font-size:13px; color:var(--bb-6); border-top:1px solid var(--bb-7); padding-top:20px; margin-top:40px;">
+    <em>Irreducibly Human: Conducting AI — Concept Brief v0.1 · [Date]</em><br>
+    Pre-TIC TOC. Thesis, reader profile, chapter map, and pedagogical architecture are documented. Chapter specifications, learning outcomes, worked examples, and assessment rubrics are pending before this document reaches TIC TOC status.
+  </div>
+
+</div><!-- /page-wrapper -->
+
+<footer>
+  Built with <a href="https://www.bearbrown.co" target="_blank" rel="noopener">bearbrown.co</a> ·
+  AI tools for educators, creators &amp; founders
+</footer>
+
+</body>
+</html>

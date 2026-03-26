@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Irreducibly Human: Embodied Teaching — graduate course syllabus</title>
+  <meta name="description" content="Graduate course syllabus for practitioners, teachers, and designers of learning environments in embodied domains — woodshop, surgical training, nursing simulation, physical therapy, music, dance, and more — who have been asked to integrate AI without a principled framework for what to hand off and what to protect. Builds a field-tested AI integration plan and a gap analysis naming what only the teacher's physical presence can accomplish.">
+  <meta name="keywords" content="embodied teaching, AI integration, protected core, embodied instruction, woodshop, surgical training, nursing simulation, physical therapy, music education, Irreducibly Human, Northeastern University, graduate seminar, Nik Bear Brown, course syllabus, capacity return, AI in education">
+
+  <style>
+    :root {
+      --bb-1: #1a0a00;
+      --bb-2: #8B3A0F;
+      --bb-3: #C0392B;
+      --bb-4: #E8A020;
+      --bb-5: #D4500A;
+      --bb-6: #B8860B;
+      --bb-7: #C8A96E;
+      --bb-8: #F0E6D0;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bb-8);
+      color: var(--bb-1);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    /* ── Header ── */
+    .doc-header {
+      background-color: var(--bb-2);
+      color: var(--bb-8);
+      padding: 52px 40px 44px;
+      border-bottom: 5px solid var(--bb-5);
+    }
+
+    .doc-header .series-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bb-7);
+      margin-bottom: 14px;
+    }
+
+    .doc-header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--bb-8);
+      margin-bottom: 10px;
+    }
+
+    .doc-header .subtitle {
+      font-size: 1.1rem;
+      color: var(--bb-7);
+      font-style: italic;
+    }
+
+    /* ── Version stamp ── */
+    .version-meta {
+      background-color: var(--bb-1);
+      color: var(--bb-7);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 8px 40px;
+    }
+
+    /* ── Main layout ── */
+    .doc-body {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 52px 40px 60px;
+    }
+
+    /* ── Opening case block ── */
+    .opening-case {
+      background-color: var(--bb-1);
+      color: var(--bb-8);
+      padding: 28px 32px;
+      border-radius: 4px;
+      margin-bottom: 36px;
+      font-size: 1.0rem;
+      line-height: 1.7;
+    }
+
+    .opening-case .case-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--bb-4);
+      margin-bottom: 12px;
+    }
+
+    .opening-case p {
+      margin-bottom: 1em;
+    }
+
+    .opening-case p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── Lead section ── */
+    .lead-section {
+      border-left: 4px solid var(--bb-4);
+      padding-left: 24px;
+      margin-bottom: 44px;
+    }
+
+    .lead-section p {
+      margin-bottom: 1.2em;
+      font-size: 1.05rem;
+    }
+
+    .lead-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── Section headings ── */
+    h2 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--bb-2);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-bottom: 2px solid var(--bb-7);
+      padding-bottom: 8px;
+      margin-top: 52px;
+      margin-bottom: 22px;
+    }
+
+    h3 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--bb-5);
+      margin-top: 36px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      margin-bottom: 1.1em;
+    }
+
+    /* ── Course info table ── */
+    .course-info {
+      background-color: #fff;
+      border: 1px solid var(--bb-7);
+      border-left: 5px solid var(--bb-2);
+      border-radius: 4px;
+      padding: 24px 28px;
+      margin-bottom: 36px;
+    }
+
+    .course-info table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.92rem;
+    }
+
+    .course-info td {
+      padding: 6px 12px 6px 0;
+      vertical-align: top;
+    }
+
+    .course-info td:first-child {
+      font-weight: 700;
+      color: var(--bb-2);
+      white-space: nowrap;
+      width: 140px;
+    }
+
+    /* ── Domain tags strip ── */
+    .domain-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 20px 0 32px;
+    }
+
+    .domain-tag {
+      background-color: #fff;
+      border: 1px solid var(--bb-7);
+      border-radius: 3px;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--bb-2);
+      padding: 4px 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── Outcomes list ── */
+    .outcomes-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .outcomes-list li {
+      padding: 10px 0 10px 28px;
+      position: relative;
+      border-bottom: 1px solid var(--bb-7);
+      font-size: 0.97rem;
+    }
+
+    .outcomes-list li:last-child {
+      border-bottom: none;
+    }
+
+    .outcomes-list li::before {
+      content: '→';
+      color: var(--bb-4);
+      font-weight: 700;
+      position: absolute;
+      left: 0;
+    }
+
+    /* ── Act headers ── */
+    .act-header {
+      background-color: var(--bb-2);
+      color: var(--bb-8);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 10px 18px;
+      border-radius: 3px;
+      margin-top: 44px;
+      margin-bottom: 24px;
+      display: inline-block;
+    }
+
+    /* ── Week cards ── */
+    .week-card {
+      background-color: #fff;
+      border: 1px solid var(--bb-7);
+      border-radius: 4px;
+      padding: 22px 26px;
+      margin-bottom: 18px;
+    }
+
+    .week-card .week-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bb-5);
+      margin-bottom: 4px;
+    }
+
+    .week-card h4 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--bb-1);
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .week-card p {
+      font-size: 0.93rem;
+      color: var(--bb-1);
+      margin-bottom: 10px;
+    }
+
+    .deliverable-tag {
+      display: inline-block;
+      background-color: var(--bb-8);
+      border: 1px solid var(--bb-7);
+      border-radius: 3px;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--bb-6);
+      padding: 3px 10px;
+      margin-top: 4px;
+      margin-right: 4px;
+    }
+
+    /* ── Callout blocks ── */
+    .callout {
+      background-color: #fff8ec;
+      border-left: 4px solid var(--bb-4);
+      padding: 16px 20px;
+      margin: 24px 0;
+      border-radius: 0 4px 4px 0;
+      font-size: 0.95rem;
+    }
+
+    .callout strong {
+      color: var(--bb-5);
+    }
+
+    .callout-alert {
+      background-color: #fff0ee;
+      border-left: 4px solid var(--bb-3);
+      padding: 16px 20px;
+      margin: 24px 0;
+      border-radius: 0 4px 4px 0;
+      font-size: 0.95rem;
+    }
+
+    .callout-alert strong {
+      color: var(--bb-3);
+    }
+
+    /* ── Assessment block ── */
+    .assessment-note {
+      background-color: var(--bb-1);
+      color: var(--bb-8);
+      padding: 24px 28px;
+      border-radius: 4px;
+      margin: 28px 0;
+      font-size: 0.94rem;
+      line-height: 1.65;
+    }
+
+    .assessment-note strong {
+      color: var(--bb-4);
+    }
+
+    /* ── Leave-with list ── */
+    .leave-with-list {
+      list-style: none;
+      padding: 0;
+      counter-reset: leave-counter;
+    }
+
+    .leave-with-list li {
+      counter-increment: leave-counter;
+      padding: 14px 0 14px 50px;
+      position: relative;
+      border-bottom: 1px solid var(--bb-7);
+      font-size: 0.97rem;
+      line-height: 1.6;
+    }
+
+    .leave-with-list li:last-child {
+      border-bottom: none;
+    }
+
+    .leave-with-list li::before {
+      content: counter(leave-counter);
+      position: absolute;
+      left: 0;
+      top: 14px;
+      background-color: var(--bb-4);
+      color: var(--bb-1);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── Course byline ── */
+    .course-byline {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.85rem;
+      color: var(--bb-6);
+      border-top: 1px solid var(--bb-7);
+      padding-top: 20px;
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .course-byline a {
+      color: var(--bb-5);
+    }
+
+    strong {
+      color: var(--bb-2);
+    }
+
+    em {
+      color: var(--bb-6);
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--bb-7);
+      margin: 40px 0;
+    }
+
+    @media (max-width: 600px) {
+      .doc-header {
+        padding: 36px 20px 30px;
+      }
+      .doc-body {
+        padding: 36px 20px 48px;
+      }
+      .version-meta {
+        padding: 8px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="doc-header">
+    <div class="series-label">Irreducibly Human Series · Domain Application Volume · Northeastern University · College of Engineering</div>
+    <h1>Embodied Teaching</h1>
+    <div class="subtitle">Irreducibly Human: What AI Can and Can't Do</div>
+  </header>
+
+  <div class="version-meta">Research Report | March 2026 | Ingested via Dev the Dev</div>
+
+  <main class="doc-body">
+
+    <!-- ── Opening ── -->
+    <div class="opening-case">
+      <div class="case-label">The wrong address</div>
+      <p>Every AI integration mandate issued to teachers in the last three years was written for the wrong teacher.</p>
+      <p>The mandates assume that teaching is content delivery — that the primary barrier to learning is the speed and personalization of information access, and that AI, which is superhuman at both, therefore improves teaching. That assumption holds for some domains. It fails completely for others. It fails for the woodshop teacher who hears the blade catch wrong before the student does. It fails for the surgical training instructor whose hand on a resident's wrist carries information no motion-tracking system has yet captured. It fails for the nursing simulation faculty member who understands that an AI-driven virtual patient can train clinical reasoning but cannot provide the emotional presence that determines whether a frightened patient trusts the person in front of them.</p>
+      <p>For these teachers, the integration discourse keeps arriving at the wrong address. This course is for the teachers at the right address.</p>
+    </div>
+
+    <div class="lead-section">
+      <p>Embodied instruction — teaching that requires a body, hands, presence, and the relational intelligence that develops through years of watching students move and make and fail and try again — is the most specific form of teaching intelligence that exists. It is also the form AI integration discourse most consistently ignores.</p>
+      <p>The problem is not that AI is useless in these domains. It is that nobody has specified, rigorously and domain by domain, exactly where its usefulness ends. That boundary — between what the machine handles and what requires the teacher's irreplaceable physical and relational presence — is the most important design decision in any embodied instruction context. It is also the decision most integration plans never make.</p>
+      <p>Without that boundary, two things happen. Either the machine is kept out entirely — wasted capacity, administrative overload intact — or it is brought in without a principled stop condition, and it gradually displaces the thing it was supposed to protect.</p>
+    </div>
+
+    <div class="callout">
+      <strong>The boundary is real. It is specific. And in each domain, it can be named with enough precision that an integration plan can be built around it</strong> — handing off what the machine handles well, protecting what it cannot reach. The course covers fifteen embodied domains, each with its own boundary and its own research record.
+    </div>
+
+    <!-- ── Domains covered ── -->
+    <div class="domain-strip">
+      <span class="domain-tag">Woodshop &amp; Trades</span>
+      <span class="domain-tag">Surgical Training</span>
+      <span class="domain-tag">Nursing Simulation</span>
+      <span class="domain-tag">Physical Therapy</span>
+      <span class="domain-tag">Music</span>
+      <span class="domain-tag">Dance</span>
+      <span class="domain-tag">Physical Education</span>
+      <span class="domain-tag">Culinary Arts</span>
+      <span class="domain-tag">Theater</span>
+      <span class="domain-tag">Lab Science</span>
+      <span class="domain-tag">Architecture Studio</span>
+      <span class="domain-tag">Early Childhood</span>
+      <span class="domain-tag">Special Education</span>
+    </div>
+
+    <!-- ── Course information ── -->
+    <h2>Course information</h2>
+    <div class="course-info">
+      <table>
+        <tr>
+          <td>Course title</td>
+          <td>Irreducibly Human: What AI Can and Can't Do — Embodied Teaching</td>
+        </tr>
+        <tr>
+          <td>Credit hours</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>Delivery</td>
+          <td>In-person | Lecture/Seminar (weekly) + TA-led Domain Lab (weekly)</td>
+        </tr>
+        <tr>
+          <td>Level</td>
+          <td>Graduate</td>
+        </tr>
+        <tr>
+          <td>Prerequisites</td>
+          <td>None — no prior Irreducibly Human series courses required. Substantial experience in at least one embodied domain required.</td>
+        </tr>
+        <tr>
+          <td>Instructor</td>
+          <td>Nik Bear Brown · <a href="mailto:ni.brown@neu.edu">ni.brown@neu.edu</a></td>
+        </tr>
+        <tr>
+          <td>Series</td>
+          <td>Part of the Irreducibly Human series at Northeastern University — College of Engineering. This is the domain-application volume. Companion courses (Botspeak, Conducting AI, Ethical Play) can be taken before or after; none is required.</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- ── Who this course is for ── -->
+    <h2>Who this course is for</h2>
+    <p>This course is for practitioners, teachers, and designers of learning environments who work in embodied domains and have been asked — by an administrator, a department, an institution — to integrate AI into what they do, without being given a principled framework for deciding what to hand off and what to protect.</p>
+
+    <h3>What this course assumes</h3>
+    <p>You have substantial experience in at least one embodied domain. You have used AI tools in some capacity. You do not yet have a framework for drawing the line.</p>
+
+    <h3>What this course does not assume</h3>
+    <p>Prior education coursework. Advanced AI fluency — the course builds the analytical framework, not the tool literacy. Prior Irreducibly Human series courses.</p>
+
+    <div class="callout">
+      <strong>A note for students with strong technical backgrounds:</strong> Evaluating what AI cannot do in an embodied domain is not a harder version of evaluating what it can do — it is a different cognitive operation, one that requires domain knowledge the tools do not have. Students who approach their embodied domain as a new analytical object, rather than an extension of their technical fluency, will get the most from this course.
+    </div>
+
+    <div class="callout-alert">
+      <strong>Not currently teaching or working in an embodied domain?</strong> Contact the instructor before the first week. Field access is required for the pilot application and peer review sessions. Students without a domain context will need to establish one before Week 6.
+    </div>
+
+    <!-- ── What you will leave with ── -->
+    <h2>What you will leave with</h2>
+    <ol class="leave-with-list">
+      <li>A complete, field-tested AI integration plan for your embodied domain — specifying the tools, the workflows, and the specific teaching time returned to embodied instruction.</li>
+      <li>A gap analysis connecting your integration decisions to practitioner field-test experience — tracing the specific points where structural analysis could not reach what only a body can do.</li>
+      <li>One sentence: the general design principle that names, with enough precision to be useful, what AI cannot do in your teaching that only your presence can accomplish. If it cannot be stated in one sentence, it is not yet a principle. The course ends when you can state it.</li>
+    </ol>
+
+    <!-- ── What this course builds ── -->
+    <h2>What this course builds</h2>
+    <p>By the end of this course, students can:</p>
+    <ul class="outcomes-list">
+      <li>Distinguish between AI's analytical competence in a teaching domain and the irreplaceable physical and relational intelligence of the teacher — using a specific embodied domain as the diagnostic case</li>
+      <li>Specify the <em>protected core</em> of their primary domain: the teaching capacity that develops only through physical practice, only through the teacher's embodied presence, and that no integration plan should attempt to replace</li>
+      <li>Construct an AI integration plan whose handoff functions are operationally specified — naming the tool, the workflow, and the specific capacity returned to embodied instruction</li>
+      <li>Document instances where AI-generated materials are analytically correct but pedagogically incoherent — and specify the domain expertise required to correct them</li>
+      <li>Submit an integration plan to an AI Integration Auditor, evaluate the structural analysis against practitioner field-test data, and name precisely where the audit found what it could find and missed what it could not</li>
+      <li>State the gap between AI-auditable integration architecture and irreplaceable embodied teaching as a general design principle — with evidence, not assertion</li>
+    </ul>
+
+    <!-- ── Assessment ── -->
+    <h2>How the course is assessed</h2>
+
+    <div class="assessment-note">
+      Grading is structured around a straightforward premise: <strong>AI tools are available and expected. What is being assessed is the domain reasoning the tools cannot perform.</strong>
+    </div>
+
+    <p>Every assignment requires an <strong>AI Use Disclosure</strong> — not as compliance, but as the course's central analytical act. Students document what they used, how they used it, what they changed, and — this field is not optional — <em>what the AI could not do</em>. A disclosure that cannot name one thing the AI could not do has not demonstrated that the student performed the irreducibly human analytical layer. That declaration is the spine of every graded submission.</p>
+
+    <p>The grade reflects depth of domain analysis, quality of gap reasoning, and evidence that the integration decisions and protected core judgments were made by the student — not delegated to a tool. Relative grading applies at the top of the scale. Absolute grading applies below the threshold, ensuring a floor for demonstrated competence.</p>
+
+    <!-- ── Structure ── -->
+    <h2>How the course is structured</h2>
+    <p>The course runs in three acts.</p>
+
+    <!-- ACT ONE -->
+    <div class="act-header">Act One — The Framework · Weeks 1–5</div>
+
+    <p><strong>Act One</strong> builds the analytical vocabulary from domain cases. Students learn to distinguish between administrative efficiency — doing the same teaching with less overhead — and genuine capacity return: recovering time and presence for the high-value embodied work only a human can do. The act closes with a midterm: a preliminary integration specification that names the teaching capacity being protected and the specific AI application being handed off. A specification that cannot name both has not yet designed an integration architecture.</p>
+
+    <div class="week-card">
+      <div class="week-label">Week 1</div>
+      <h4>The Tier 2 Problem</h4>
+      <p>The course opens before any framework vocabulary is introduced. Students describe their own domain to someone who has never been in their classroom — two minutes, no jargon. That description is collected and returned in Week 13 as the record of what the student could feel before they could name it. The Tier 2 distinction is then introduced: what AI handles in a teaching domain, and what the teacher's physical and relational presence must supply that the tool cannot reach.</p>
+      <span class="deliverable-tag">Domain description — 30 pts</span>
+      <span class="deliverable-tag">Domain Lab #1 — 25 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 2</div>
+      <h4>Legible Documentation</h4>
+      <p>The Boyle System — a real AI-assisted documentation framework deployed in lab science mentorship — is the first case. Students trace a four-stage consequence chain from documentation handoff to mentor meeting quality, learning to distinguish connections that are genuinely causal from connections that only follow plausibly. This is the analytical distinction the course applies all semester: administrative reduction is not the same as capacity return.</p>
+      <span class="deliverable-tag">Reading Response #2 — 30 pts</span>
+      <span class="deliverable-tag">Domain Lab #2 — 25 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 3</div>
+      <h4>What Lives in the Hands</h4>
+      <p>The woodshop domain is the required opening case for the protected core argument because its boundary is among the least contestable in the course: the knowledge that lives in the hands, the auditory and tactile feedback through a tool, the sound of a blade catching wrong. Students specify a protected core for a domain not their own — learning to distinguish "AI cannot do this" from "AI has not yet done this." The analytical gap between those two claims is where most integration plans fail.</p>
+      <span class="deliverable-tag">Domain Lab #3 — 25 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 4</div>
+      <h4>Kinesthetic Intelligence</h4>
+      <p>Movement analysis tools in PE can identify what a student's body is doing. They cannot develop what the student's body needs to develop. This week draws the distinction between AI applications that document or analyze embodied capacity and those that build it — and requires students to apply that distinction as a design constraint in their own domain. Cases include the teacher's ear in music and voice instruction, and kinesthetic cueing in dance.</p>
+      <span class="deliverable-tag">Reading Response #3 — 30 pts</span>
+      <span class="deliverable-tag">Domain Lab #4 — 25 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 5</div>
+      <h4>The Integration Map</h4>
+      <p>Act One closes with the midterm: a preliminary integration specification that names the specific teaching capacity being protected and the specific AI application being handed off. A specification that cannot name both has not yet designed an integration architecture. Before submitting, students analyze a designed overreach failure — a real case where AI was applied where it does not belong — so they have vocabulary to name the mistake most likely to appear in the first draft of their own plan.</p>
+      <span class="deliverable-tag">Midterm / Preliminary Integration Specification — 100 pts</span>
+      <span class="deliverable-tag">Reading Response #4 — 30 pts</span>
+    </div>
+
+    <!-- ACT TWO -->
+    <div class="act-header">Act Two — Build · Weeks 6–11</div>
+
+    <p><strong>Act Two</strong> is where the plan becomes real. Students design, implement, and field-test an AI integration plan for their own embodied domain. The plan must be specific enough that a practitioner could evaluate it in a single review session. The protected core is not described as a philosophical statement — it is operationally specified as a boundary. Students then take the plan into the field, collect practitioner feedback, and discover where design intent and the practitioner's experienced teaching reality diverge. That divergence is the data.</p>
+
+    <div class="week-card">
+      <div class="week-label">Week 6</div>
+      <h4>Integration Plan Lock</h4>
+      <p>Students produce a complete integration plan specific enough that an AI auditor could evaluate its architecture without being told where the boundary is. The protected core is not named or described as a philosophical position anywhere in the document — it must be identifiable from the workflow decisions alone. This is the standard that makes the Week 12 audit meaningful.</p>
+      <span class="deliverable-tag">Integration Plan Lock Checkpoint — 100 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 7</div>
+      <h4>The Documentation Layer</h4>
+      <p>The documentation layer of the integration plan is implemented as a working workflow. A live demonstration in class is designed to produce at least one AI-generated output that is analytically correct but pedagogically incoherent for the domain — and students are required to document an instance of this in their own implementation, specifying the incoherence and the domain judgment required to correct it. That documentation is direct evidence of the irreducibly human analytical layer.</p>
+      <span class="deliverable-tag">Domain Lab #5 — 25 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 8</div>
+      <h4>The Assessment Scaffold Layer</h4>
+      <p>The assessment scaffold layer is added to the implementation. Students conduct a structured self-audit — identifying where the implementation matches the specification, where it has diverged, and which single workflow carries the most capacity-return potential. The measure throughout is the same: does this handoff return time and presence to embodied instruction, or does it only reduce overhead?</p>
+      <span class="deliverable-tag">Domain Lab #6 — 25 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 9</div>
+      <h4>The Field Test</h4>
+      <p>The plan goes into the domain. Students conduct an informal field test with at least two practitioners, collecting structured feedback on whether the integration produces genuine capacity return or something else. Three revision changes maximum are permitted in response — prioritization is a graded skill. The Reading Response asks students to identify the moment a practitioner's response surprised them: what integration decision produced that moment, and what does it reveal about the gap between design intent and practitioner experience?</p>
+      <span class="deliverable-tag">Reading Response #5 — 30 pts</span>
+      <span class="deliverable-tag">Domain Lab #7 — 25 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 10</div>
+      <h4>Beta Integration Plan</h4>
+      <p>The beta integration plan incorporates field-test revisions and is prepared for peer review and AI audit. Students also produce a prediction document: where will the AI Integration Auditor correctly identify the protected core, and where will it fail? Which integration decision is most likely to mislead it? That prediction is returned in Week 12 for comparison with the actual audit results.</p>
+      <span class="deliverable-tag">Beta Integration Plan Checkpoint — 100 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 11</div>
+      <h4>Peer Domain Review</h4>
+      <p>Students function as both reviewer and designer receiving review. The feedback instrument is the handoff/protect distinction — applied specifically and with reference to integration decisions, not general impressions. The peer review data is then evaluated against the Week 10 prediction: where was the prediction accurate, and where did practitioner experience diverge from the expected audit result?</p>
+      <span class="deliverable-tag">Domain Lab #8 — 25 pts</span>
+    </div>
+
+    <!-- ACT THREE -->
+    <div class="act-header">Act Three — Audit and Analysis · Weeks 12–15</div>
+
+    <p><strong>Act Three</strong> closes the loop. Students submit their integration plan to an AI Integration Auditor — Claude, running a structured architectural analysis — and compare what the structural analysis finds against what practitioners reported. The gap between those two accounts is the course's central analytical object: the embodied variable the structural analysis could not reach. Naming it, tracing it to a specific integration decision, and stating it as a general design principle is the final deliverable.</p>
+
+    <div class="week-card">
+      <div class="week-label">Week 12</div>
+      <h4>The AI Integration Audit</h4>
+      <p>Students submit their integration plan to Claude, running a structured architectural audit. The session begins as a shared class exercise — the Boyle System documentation submitted live, results visible to everyone — so students see both the AI's structural competence and its limits before their own audits begin. The limits are specific: the AI finds what it can find from the architecture. It cannot find what requires a body. That gap is now data.</p>
+      <span class="deliverable-tag">Work feeds Final Submission</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 13</div>
+      <h4>The Gap Analysis</h4>
+      <p>Week 1 domain descriptions are returned. Students read their own pre-vocabulary words and ask: what can I name now that I could only feel then? What can I still only feel? The gap analysis is constructed from that question through to the AI audit findings — tracing specific integration decisions to specific divergences between structural analysis and practitioner field-test experience, and naming the embodied variable the audit could not reach.</p>
+      <span class="deliverable-tag">Work feeds Final Submission</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 14</div>
+      <h4>Deployed Cases</h4>
+      <p>Students apply the course's full analytical framework to two published AI integration deployments — reading as domain analysts, not users. One case is from a clinical or simulation domain; one is from the trades or CTE. For each: where did the integration reach the protected core? Was that the line the designers intended? Does the claimed capacity return match what practitioners actually reported?</p>
+      <span class="deliverable-tag">Domain Lab #9 — 25 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 15</div>
+      <h4>Through-Line and Synthesis</h4>
+      <p>The course closes on the terminal deliverable: one sentence stating the general design principle that distinguishes an AI integration plan that protects embodied teaching capacity from one that displaces it. Students write it before the final session. The session is the attempt to make it precise enough to be useful. The final submission collects the gap analysis, the judgment call, the integration revision proposal, the deployed cases analysis, the general principle, the Week 1 reflection, and the peer review response.</p>
+      <span class="deliverable-tag">Final Submission — 250 pts</span>
+    </div>
+
+    <hr>
+    <p><strong>Domain Lab participation</strong> (100 pts) is assessed continuously across all 15 weeks. The lowest-scoring Domain Lab Assignment is dropped — 8 of 9 count toward the final grade.</p>
+
+    <div class="course-byline">
+      Irreducibly Human: What AI Can and Can't Do — Embodied Teaching · Graduate seminar · College of Engineering · Northeastern University · 4 credit hours · Instructor: Nik Bear Brown · <a href="mailto:ni.brown@neu.edu">ni.brown@neu.edu</a>
+    </div>
+
+  </main>
+
+  <footer style="text-align:center; padding:20px; font-size:11px; color:#999; border-top:1px solid #e0e0e0; margin-top:40px;">
+    Built with <a href="https://www.bearbrown.co" target="_blank" rel="noopener" style="color:#999;">bearbrown.co</a> · AI tools for educators, creators &amp; founders
+  </footer>
+
+</body>
+</html>

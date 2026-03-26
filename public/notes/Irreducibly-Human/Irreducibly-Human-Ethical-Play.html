@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Irreducibly Human: Ethical Play — graduate course syllabus</title>
+  <meta name="description" content="Graduate course syllabus for engineers and technical practitioners at Northeastern University who work with systems that encode values and have never been asked to make someone else feel morally implicated by something they built. Students design, build, and audit a web-based game whose ethical framework is identifiable from the mechanics alone — culminating in a gap analysis naming what an AI Ethical Auditor cannot find because finding it requires a player.">
+  <meta name="keywords" content="Ethical Play, game design ethics, moral weight, ethical architecture, consequentialism, deontology, virtue ethics, Papers Please, Voodoo Economics, Irreducibly Human, Northeastern University, graduate engineering, Claude Code, AI ethics, Nik Bear Brown, course syllabus, implication design">
+
+  <style>
+    :root {
+      --bb-1: #1a0a00;
+      --bb-2: #8B3A0F;
+      --bb-3: #C0392B;
+      --bb-4: #E8A020;
+      --bb-5: #D4500A;
+      --bb-6: #B8860B;
+      --bb-7: #C8A96E;
+      --bb-8: #F0E6D0;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bb-8);
+      color: var(--bb-1);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    /* ── Header ── */
+    .doc-header {
+      background-color: var(--bb-2);
+      color: var(--bb-8);
+      padding: 52px 40px 44px;
+      border-bottom: 5px solid var(--bb-5);
+    }
+
+    .doc-header .series-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bb-7);
+      margin-bottom: 14px;
+    }
+
+    .doc-header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--bb-8);
+      margin-bottom: 10px;
+    }
+
+    .doc-header .subtitle {
+      font-size: 1.1rem;
+      color: var(--bb-7);
+      font-style: italic;
+    }
+
+    /* ── Version stamp ── */
+    .version-meta {
+      background-color: var(--bb-1);
+      color: var(--bb-7);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 8px 40px;
+    }
+
+    /* ── Main layout ── */
+    .doc-body {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 52px 40px 60px;
+    }
+
+    /* ── Opening case block ── */
+    .opening-case {
+      background-color: var(--bb-1);
+      color: var(--bb-8);
+      padding: 28px 32px;
+      border-radius: 4px;
+      margin-bottom: 36px;
+      font-size: 1.0rem;
+      line-height: 1.7;
+    }
+
+    .opening-case .case-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--bb-4);
+      margin-bottom: 12px;
+    }
+
+    .opening-case p {
+      margin-bottom: 1em;
+    }
+
+    .opening-case p:last-child {
+      margin-bottom: 0;
+    }
+
+    .opening-case .gap-statement {
+      font-size: 1.05rem;
+      color: var(--bb-4);
+      font-style: italic;
+      border-left: 3px solid var(--bb-4);
+      padding-left: 16px;
+      margin: 16px 0;
+    }
+
+    /* ── Lead section ── */
+    .lead-section {
+      border-left: 4px solid var(--bb-4);
+      padding-left: 24px;
+      margin-bottom: 44px;
+    }
+
+    .lead-section p {
+      margin-bottom: 1.2em;
+      font-size: 1.05rem;
+    }
+
+    .lead-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── Section headings ── */
+    h2 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--bb-2);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-bottom: 2px solid var(--bb-7);
+      padding-bottom: 8px;
+      margin-top: 52px;
+      margin-bottom: 22px;
+    }
+
+    h3 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--bb-5);
+      margin-top: 36px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      margin-bottom: 1.1em;
+    }
+
+    /* ── Course info table ── */
+    .course-info {
+      background-color: #fff;
+      border: 1px solid var(--bb-7);
+      border-left: 5px solid var(--bb-2);
+      border-radius: 4px;
+      padding: 24px 28px;
+      margin-bottom: 36px;
+    }
+
+    .course-info table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.92rem;
+    }
+
+    .course-info td {
+      padding: 6px 12px 6px 0;
+      vertical-align: top;
+    }
+
+    .course-info td:first-child {
+      font-weight: 700;
+      color: var(--bb-2);
+      white-space: nowrap;
+      width: 140px;
+    }
+
+    /* ── Framework grid ── */
+    .framework-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 20px 0 32px;
+    }
+
+    .framework-card {
+      background-color: #fff;
+      border: 1px solid var(--bb-7);
+      border-top: 3px solid var(--bb-5);
+      border-radius: 4px;
+      padding: 14px 16px;
+    }
+
+    .framework-card .fw-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--bb-5);
+      margin-bottom: 4px;
+    }
+
+    .framework-card .fw-mechanic {
+      font-size: 0.88rem;
+      color: var(--bb-6);
+      font-style: italic;
+    }
+
+    /* ── Build environment block ── */
+    .build-env {
+      background-color: #fff;
+      border: 1px solid var(--bb-7);
+      border-left: 5px solid var(--bb-6);
+      border-radius: 4px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+
+    .build-env .env-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+      margin-bottom: 8px;
+    }
+
+    .build-env p {
+      font-size: 0.93rem;
+      margin-bottom: 0.8em;
+    }
+
+    .build-env p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── Outcomes list ── */
+    .outcomes-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .outcomes-list li {
+      padding: 10px 0 10px 28px;
+      position: relative;
+      border-bottom: 1px solid var(--bb-7);
+      font-size: 0.97rem;
+    }
+
+    .outcomes-list li:last-child {
+      border-bottom: none;
+    }
+
+    .outcomes-list li::before {
+      content: '→';
+      color: var(--bb-4);
+      font-weight: 700;
+      position: absolute;
+      left: 0;
+    }
+
+    /* ── Act headers ── */
+    .act-header {
+      background-color: var(--bb-2);
+      color: var(--bb-8);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 10px 18px;
+      border-radius: 3px;
+      margin-top: 44px;
+      margin-bottom: 24px;
+      display: inline-block;
+    }
+
+    /* ── Week cards ── */
+    .week-card {
+      background-color: #fff;
+      border: 1px solid var(--bb-7);
+      border-radius: 4px;
+      padding: 22px 26px;
+      margin-bottom: 18px;
+    }
+
+    .week-card .week-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bb-5);
+      margin-bottom: 4px;
+    }
+
+    .week-card h4 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--bb-1);
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .week-card p {
+      font-size: 0.93rem;
+      color: var(--bb-1);
+      margin-bottom: 10px;
+    }
+
+    .deliverable-tag {
+      display: inline-block;
+      background-color: var(--bb-8);
+      border: 1px solid var(--bb-7);
+      border-radius: 3px;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--bb-6);
+      padding: 3px 10px;
+      margin-top: 4px;
+      margin-right: 4px;
+    }
+
+    /* ── Callout blocks ── */
+    .callout {
+      background-color: #fff8ec;
+      border-left: 4px solid var(--bb-4);
+      padding: 16px 20px;
+      margin: 24px 0;
+      border-radius: 0 4px 4px 0;
+      font-size: 0.95rem;
+    }
+
+    .callout strong {
+      color: var(--bb-5);
+    }
+
+    /* ── Assessment block ── */
+    .assessment-note {
+      background-color: var(--bb-1);
+      color: var(--bb-8);
+      padding: 24px 28px;
+      border-radius: 4px;
+      margin: 28px 0;
+      font-size: 0.94rem;
+      line-height: 1.65;
+    }
+
+    .assessment-note strong {
+      color: var(--bb-4);
+    }
+
+    /* ── Leave-with list ── */
+    .leave-with-list {
+      list-style: none;
+      padding: 0;
+      counter-reset: leave-counter;
+    }
+
+    .leave-with-list li {
+      counter-increment: leave-counter;
+      padding: 14px 0 14px 50px;
+      position: relative;
+      border-bottom: 1px solid var(--bb-7);
+      font-size: 0.97rem;
+      line-height: 1.6;
+    }
+
+    .leave-with-list li:last-child {
+      border-bottom: none;
+    }
+
+    .leave-with-list li::before {
+      content: counter(leave-counter);
+      position: absolute;
+      left: 0;
+      top: 14px;
+      background-color: var(--bb-4);
+      color: var(--bb-1);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── Course byline ── */
+    .course-byline {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.85rem;
+      color: var(--bb-6);
+      border-top: 1px solid var(--bb-7);
+      padding-top: 20px;
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .course-byline a {
+      color: var(--bb-5);
+    }
+
+    strong {
+      color: var(--bb-2);
+    }
+
+    em {
+      color: var(--bb-6);
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--bb-7);
+      margin: 40px 0;
+    }
+
+    @media (max-width: 600px) {
+      .framework-grid {
+        grid-template-columns: 1fr;
+      }
+      .doc-header {
+        padding: 36px 20px 30px;
+      }
+      .doc-body {
+        padding: 36px 20px 48px;
+      }
+      .version-meta {
+        padding: 8px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="doc-header">
+    <div class="series-label">Irreducibly Human Series · Synthesis Volume · Northeastern University · College of Engineering</div>
+    <h1>Ethical Play</h1>
+    <div class="subtitle">Irreducibly Human: What AI Can and Can't Do</div>
+  </header>
+
+  <div class="version-meta">Research Report | March 2026 | Ingested via Dev the Dev</div>
+
+  <main class="doc-body">
+
+    <!-- ── Opening ── -->
+    <div class="opening-case">
+      <div class="case-label">The audit gap</div>
+      <p>An AI given a game design document can identify which ethical framework is encoded in the mechanics, trace the consequence structure, and return a structural audit. It can do this reliably, quickly, and with precision.</p>
+      <div class="gap-statement">What it cannot do is feel implicated.</div>
+      <p>That gap — between auditable architecture and felt moral weight — is not a limitation that better models will close. It is the gap that defines what moral experience is. A game that labels its ethics in text has done the easy work. A game that makes a player feel the weight of a decision they would rather not have made — that is where design and philosophy converge, and it is the problem this course exists to solve.</p>
+      <p>Most courses that teach ethics teach description. You learn to identify a trolley problem. You argue about what the right answer is. You have never driven the trolley. This course teaches enactment: how to encode an ethical framework into a consequence structure that transfers responsibility to the agent making decisions, and how to tell the difference between a system that produces moral weight and one that merely comments on it.</p>
+      <p>Games are the medium for this work because games are where the difference is visible. A novel can describe complicity. <em>Papers Please</em> makes you feel it — when you stamp the visa, the weight lands on you, not on the character. The mechanic transfers the moral experience. That transfer is what this course teaches you to design, build, and evaluate.</p>
+    </div>
+
+    <!-- ── Course information ── -->
+    <h2>Course information</h2>
+    <div class="course-info">
+      <table>
+        <tr>
+          <td>Course title</td>
+          <td>Irreducibly Human: What AI Can and Can't Do — Ethical Play</td>
+        </tr>
+        <tr>
+          <td>Credit hours</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>Delivery</td>
+          <td>In-person | Lecture/Seminar (weekly) + TA-led Design Lab (weekly)</td>
+        </tr>
+        <tr>
+          <td>Level</td>
+          <td>Graduate</td>
+        </tr>
+        <tr>
+          <td>Prerequisites</td>
+          <td>At least one programming course at any level. No prior game design or philosophy coursework required.</td>
+        </tr>
+        <tr>
+          <td>Instructor</td>
+          <td>Nik Bear Brown · <a href="mailto:ni.brown@neu.edu">ni.brown@neu.edu</a></td>
+        </tr>
+        <tr>
+          <td>Series</td>
+          <td>Part of the Irreducibly Human series at Northeastern University — College of Engineering. Ethical Play is the synthesis volume. Botspeak, Conducting AI, and Causal Reasoning can be taken before or after; none is required.</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- ── Who this course is for ── -->
+    <h2>Who this course is for</h2>
+    <p>This course is for engineers and technical practitioners who work with systems that encode values — and who have never been asked to make someone else feel morally implicated by something they built.</p>
+
+    <h3>What this course assumes</h3>
+    <p>At least one programming course at any level. You can read code and modify it with guidance. You have opinions about AI ethics. You have never designed for felt moral weight.</p>
+
+    <h3>What this course does not assume</h3>
+    <p>Prior game design experience. Prior philosophy or ethics coursework. Advanced programming fluency — Claude Code handles implementation; your job is the ethical architecture. Claude Code is the build environment, and the first session teaches you to use it.</p>
+
+    <div class="callout">
+      <strong>A note for students with strong technical backgrounds:</strong> A system that works mechanically and fails ethically is the most common failure mode in this course. Students who approach ethical architecture as a new design problem — not an extension of their engineering fluency — will get the most from it.
+    </div>
+
+    <!-- ── Build environment ── -->
+    <h2>The build environment</h2>
+    <div class="build-env">
+      <div class="env-label">Web-based game format · Claude Code · No game engine required</div>
+      <p>The course builds on a tradition of open, explorable explanations — interactive pieces designed to make ideas playable and public. The web-based game format separates content from logic, which means non-technical students can build fully playable games by describing their ethical architecture to Claude Code in conversation. No game engine. No specialized hardware. A browser and a design document.</p>
+      <p>The anchor case for the entire course is <strong>Voodoo Economics</strong> — a web-based political satire simulation designed specifically for this course. The VE GDD is distributed in Week 1 and returned to throughout the semester as the structural model: an ethical argument encoded in design decisions, without the framework named anywhere in the document. Students spend the semester doing what VE does — building the demonstration, not the description.</p>
+    </div>
+
+    <!-- ── Five frameworks ── -->
+    <h2>The five ethical frameworks</h2>
+    <p>Each framework is taught as a design constraint, not intellectual history — introduced through a case in Voodoo Economics.</p>
+    <div class="framework-grid">
+      <div class="framework-card">
+        <div class="fw-name">Consequentialism</div>
+        <div class="fw-mechanic">VE causal chain display — four-node consequence structure, every outcome traceable to a decision</div>
+      </div>
+      <div class="framework-card">
+        <div class="fw-name">Deontology</div>
+        <div class="fw-mechanic">VE bribe escalation — the moment where punishment doesn't track the violation</div>
+      </div>
+      <div class="framework-card">
+        <div class="fw-name">Virtue Ethics</div>
+        <div class="fw-mechanic">VE outcome card — recording what the player did vs. encoding who the player is becoming</div>
+      </div>
+      <div class="framework-card">
+        <div class="fw-name">Contractarianism</div>
+        <div class="fw-mechanic">Rawlsian veil of ignorance as design constraint — build for the player who receives the worst outcome</div>
+      </div>
+      <div class="framework-card" style="grid-column: 1 / -1; border-top-color: var(--bb-2);">
+        <div class="fw-name" style="color: var(--bb-2);">Care Ethics</div>
+        <div class="fw-mechanic">Consequence structures where the morally significant units are relationships and people, not resources and rules</div>
+      </div>
+    </div>
+
+    <!-- ── What you will leave with ── -->
+    <h2>What you will leave with</h2>
+    <ol class="leave-with-list">
+      <li>A complete web-based game with a defensible ethical architecture — built using Claude Code, playable by anyone with a browser, with the chosen ethical framework identifiable from the mechanics alone by a reader who was never told which one was chosen.</li>
+      <li>A gap analysis connecting specific design decisions to human playtesting data — tracing the points where the AI Ethical Auditor found what it could find, and missed what required a player to feel it.</li>
+      <li>One sentence: the general design principle that names the gap between AI-auditable architecture and human-felt moral weight with enough precision to be useful to a designer who was not in this course.</li>
+    </ol>
+
+    <!-- ── What this course builds ── -->
+    <h2>What this course builds</h2>
+    <p>By the end of this course, students can:</p>
+    <ul class="outcomes-list">
+      <li>Distinguish between an AI's structural analysis of a designed ethical system and a human player's felt moral experience — using a specific game design document as the diagnostic case</li>
+      <li>Apply at least three ethical frameworks — consequentialism, deontology, and one of virtue ethics, contractarianism, or care ethics — as design constraints, not intellectual history</li>
+      <li>Translate an ethical framework into a consequence structure that transfers moral responsibility to the player, without naming the framework anywhere in the design document</li>
+      <li>Construct a game design document whose ethical architecture is identifiable by a reader who does not know which framework was chosen</li>
+      <li>Implement a web-based game prototype whose core mechanic encodes the chosen ethical framework in its consequence structure — using Claude Code as the build environment</li>
+      <li>Document instances where AI-generated implementation solutions are mechanically correct but ethically incoherent — specifying the incoherence and the design decision required to correct it</li>
+      <li>Submit a game to an AI Ethical Auditor, evaluate the structural analysis against human playtesting data, and name precisely where the audit found what it could find and missed what required a player to feel it</li>
+      <li>Articulate the gap between AI-auditable architecture and human-felt moral weight as a general design principle — with evidence, not assertion</li>
+    </ul>
+
+    <!-- ── Assessment ── -->
+    <h2>How the course is assessed</h2>
+
+    <div class="assessment-note">
+      Grading is structured around a premise the course makes explicit: <strong>AI tools are available and expected for every stage of this work. What is being assessed is the design layer those tools cannot perform.</strong>
+    </div>
+
+    <p>Every assignment requires an <strong>AI Use Disclosure</strong> — not as compliance, but as the course's primary assessment instrument. Students document what they used, how they used it, what they changed, and — this field is not optional — <em>what the AI could not do</em>. Specifically: at least one design decision that required their values, aesthetic judgment, or accountability for a player's felt experience. A disclosure that cannot name one such decision has not demonstrated that the student performed the irreducibly human design layer.</p>
+
+    <p>The grade reflects depth of ethical design reasoning, quality of gap analysis, and evidence that the design decisions and judgment calls were made by the student — not delegated to a tool. Relative grading applies at the top of the scale. Absolute grading applies below the threshold.</p>
+
+    <!-- ── Structure ── -->
+    <h2>How the course is structured</h2>
+    <p>The course runs in three acts, each targeting a different stage of the gap between structure and felt experience.</p>
+
+    <!-- ACT ONE -->
+    <div class="act-header">Act One — Philosophy as Design Vocabulary · Weeks 1–5</div>
+
+    <p><strong>Act One</strong> teaches five ethical frameworks as design constraints rather than intellectual history. Each framework is introduced through a case in Voodoo Economics. Students are not learning to argue about ethics. They are learning to recognize how ethical positions become mechanics — and which mechanics produce felt moral weight versus strategic calculation. Act One closes with the midterm: a preliminary moral architecture specification that names how the mechanic transfers responsibility to the player. A specification that cannot name this has not designed an ethical architecture.</p>
+
+    <div class="week-card">
+      <div class="week-label">Week 1</div>
+      <h4>The Audit Gap</h4>
+      <p>The course opens before any framework vocabulary is introduced. Students play the Trap Game and read the Voodoo Economics GDD, then write one paragraph about what they felt — no frameworks, no concepts, just the felt response. That paragraph is collected and returned in Week 13 as the record of what the student could feel before they could name it. Session B names the audit gap: what an AI Ethical Auditor finds in a design document, and what a human player experiences that the auditor cannot reach. The implication/smugness distinction is introduced as the course's primary evaluative tool.</p>
+      <span class="deliverable-tag">Felt Response Journal / Reading Response #1 — 30 pts</span>
+      <span class="deliverable-tag">Design Lab Assignment #1 — 25 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 2</div>
+      <h4>Consequentialism as Mechanic</h4>
+      <p>The VE causal chain display: a four-node consequence chain from a specific edict. Is each node caused by the one before it, or does it only follow plausibly? The difference between those two descriptions is consequentialist architecture versus the appearance of it. The Legible Causality standard — every consequence traceable to a decision — is introduced as both a design pillar and an ethical claim. Students construct a four-node consequence chain for a decision in their own project domain.</p>
+      <span class="deliverable-tag">Reading Response #2 — 30 pts</span>
+      <span class="deliverable-tag">Design Lab Assignment #2 — 25 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 3</div>
+      <h4>Deontology as Mechanic</h4>
+      <p>The VE bribe escalation: the moment where the punishment doesn't track the violation. Is this a resource cost or a moral failure? The definition is withheld until Session B — students spend Session A with the case before the structural explanation arrives. The design problem: what makes a mechanic produce felt violation rather than cost calculation? The specific decisions that cause the shift are the week's analytical object. Students design a rule-breaking mechanic for a domain-specific scenario where the consequence produces felt moral weight rather than strategic calculation.</p>
+      <span class="deliverable-tag">Design Lab Assignment #3 — 25 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 4</div>
+      <h4>Virtue Ethics and Contractarianism as Mechanic</h4>
+      <p>The VE outcome card for "Disappeared (Sovyetia only)." Who designed that outcome — the player optimizing for survival, or the designer considering who lives in the game world? Virtue ethics distinguishes a system that records what the player did from one that encodes who the player is becoming. Contractarianism asks the designer to build for the player who receives the worst outcome. The Rawlsian veil of ignorance as a design constraint — not a philosophical position but a tool for identifying whose experience the mechanic ignores.</p>
+      <span class="deliverable-tag">Reading Response #3 — 30 pts</span>
+      <span class="deliverable-tag">Design Lab Assignment #4 — 25 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 5</div>
+      <h4>Care Ethics and the Act One Gate</h4>
+      <p>Care ethics closes the framework sequence: consequence structures where the morally significant units are relationships and people, not resources and rules. The editorializing failure is introduced last — the exact design decision that tells the player what to feel rather than producing felt weight — because it is the mistake most likely to appear in every student's first draft. Act One closes with the midterm: a preliminary moral architecture specification naming the ethical framework, the primary mechanic that embodies it, the consequence structure that transfers responsibility, and one specific design decision predicted to produce implication in a human player.</p>
+      <span class="deliverable-tag">Midterm / Preliminary Moral Architecture Specification — 100 pts</span>
+      <span class="deliverable-tag">Reading Response #4 — 30 pts</span>
+    </div>
+
+    <!-- ACT TWO -->
+    <div class="act-header">Act Two — Build · Weeks 6–11</div>
+
+    <p><strong>Act Two</strong> is where the game gets built. The first session teaches students to use Claude Code to separate content from logic in the web-based game format. The Game Design Document is locked without the framework named anywhere in the document — the architecture must be identifiable from the mechanics alone. Then the build begins: core mechanic, consequence structure, playtestable alpha. An informal playtest surfaces the first data on whether the game produces implication or something else. The beta build is prepared for the AI Ethical Auditor.</p>
+
+    <div class="week-card">
+      <div class="week-label">Week 6</div>
+      <h4>Design Lock</h4>
+      <p>A redacted student GDD from a prior course is the opening case: class identifies the ethical framework from mechanics alone. Then: what would it take to make the framework unidentifiable from the GDD? That failure mode is the design problem for the week. Students produce a complete GDD encoding their ethical framework mechanically — without naming or describing the framework anywhere in the document. The VE GDD is the structural model: an ethical argument encoded in design decisions, not in declarations. The GDD Lock Checkpoint is the Act Two gate.</p>
+      <span class="deliverable-tag">GDD Lock Checkpoint — 100 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 7</div>
+      <h4>Build I: Core Mechanic</h4>
+      <p>The first build session teaches students to use Claude Code to separate content from logic in the web-based game format — describing the ethical architecture in conversation, not writing code from scratch. A live demonstration is designed to produce at least one mechanically correct but ethically incoherent output. Students implement the core mechanic as a functional prototype and document one instance where Claude Code generated a solution that worked mechanically but failed ethically — specifying the incoherence and the design decision required to correct it.</p>
+      <span class="deliverable-tag">Design Lab Assignment #5 — 25 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 8</div>
+      <h4>Build II: Consequence Structure</h4>
+      <p>The full consequence structure is implemented. Students bring their GDD and current build and identify the three largest gaps between them — this is not a failure audit, it is the data. The VE consequence engine is the reference standard: three to four pre-authored consequence paths per edict, each causally coherent. The single mechanic that carries the most ethical weight — where the player's decision most directly transfers moral responsibility — is named and defended.</p>
+      <span class="deliverable-tag">Design Lab Assignment #6 — 25 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 9</div>
+      <h4>Build III: Playtestable Alpha</h4>
+      <p>The game reaches playtestable state and an informal test is run — minimum two players, structured feedback on whether the game produces implication or something else. The VE player experience goals (PX-1 through PX-8) are the diagnostic frame: which goals did playtesters report, and which did they not? Three revision changes maximum are permitted in response — prioritization is the graded skill. The Reading Response asks students to identify the moment in playtesting when a player's expression changed: what design decision produced that moment?</p>
+      <span class="deliverable-tag">Reading Response #5 — 30 pts</span>
+      <span class="deliverable-tag">Design Lab Assignment #7 — 25 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 10</div>
+      <h4>Build IV: Beta</h4>
+      <p>The beta build is prepared for the AI Ethical Auditor. The Ethical Auditor prompt architecture is distributed and demonstrated with the VE GDD — class sees what the AI finds and what it misses. Students produce an Ethical Auditor preparation document and a prediction: where will the AI correctly identify the embedded framework, and where will it fail? That prediction is returned in Week 12 for comparison with actual audit results.</p>
+      <span class="deliverable-tag">Beta Build Checkpoint — 100 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 11</div>
+      <h4>Peer Playtesting</h4>
+      <p>The Trap Game is played by everyone using the formal feedback instrument — its failures are designed to be visible, and if students produce vague feedback on it, the instrument needs refinement before peer playtesting begins. Structured peer playtesting sessions follow: the implication/smugness feedback instrument applied to each student's game. Students distinguish between reports of felt experience and reports of structural observation in the feedback they receive — and evaluate the peer playtesting data against their Week 10 prediction.</p>
+      <span class="deliverable-tag">Design Lab Assignment #8 — 25 pts</span>
+    </div>
+
+    <!-- ACT THREE -->
+    <div class="act-header">Act Three — Audit and Analysis · Weeks 12–15</div>
+
+    <p><strong>Act Three</strong> closes the loop. The VE GDD is submitted to the Ethical Auditor as a shared class exercise first — students see what the structural analysis finds and what it misses before their own audits begin. The limits become visible in the same session: what the AI cannot find because finding it requires a player. The gap analysis traces specific design decisions to the divergence between structural analysis and human playtester experience.</p>
+
+    <div class="week-card">
+      <div class="week-label">Week 12</div>
+      <h4>The Ethical Auditor</h4>
+      <p>The VE GDD is submitted to the Ethical Auditor as a shared class exercise — live, visible to everyone. The AI's structural competence is demonstrated at scale. Its limits become visible in the same session: what it cannot find because finding it requires a player. Individual Ethical Auditor sessions follow. Students submit their beta build and preparation document, receive structural analysis, and compare it against both design intent and human playtesting data.</p>
+      <span class="deliverable-tag">Work feeds Final Submission</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 13</div>
+      <h4>The Gap Analysis</h4>
+      <p>Week 1 response journals are returned. Students read their own pre-vocabulary felt response and ask: what did I feel then that I can now name? What did I feel then that I still cannot name? The gap analysis is constructed from that question through to the AI audit findings — tracing specific design decisions to specific divergences between structural analysis and human playtester experience, and naming the human variable the audit could not reach.</p>
+      <span class="deliverable-tag">Work feeds Final Submission</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 14</div>
+      <h4>Published Games I</h4>
+      <p>Fifteen minutes of <em>Papers Please</em> played in class. At what moment did you feel implicated? Locate that moment in a specific mechanic. Was that the moment the designer intended? <em>Spec Ops: The Line</em> follows: does the structural subversion mechanic produce felt weight, or does it produce commentary about felt weight in a different medium? The evaluation is genuinely contested. Students apply the Ethical Auditor framework to <em>Papers Please</em> and compare the structural analysis against documented player experience from published criticism.</p>
+      <span class="deliverable-tag">Design Lab Assignment #9 — 25 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 15</div>
+      <h4>Published Games II and Synthesis</h4>
+      <p><em>Disco Elysium</em>: does it embody one of the five frameworks, a combination, or does it require a new category? "Requires a new category" is acceptable if the student can specify what the new category is and why none of the five frameworks capture it. The course closes with the terminal deliverable: one sentence that a designer could use to distinguish a system that produces moral weight from one that describes it. Students write it before the final session. The session is the attempt to make the sentence precise enough to be useful.</p>
+      <span class="deliverable-tag">Final Submission — 250 pts</span>
+    </div>
+
+    <hr>
+    <p><strong>Design Lab participation</strong> (100 pts) is assessed continuously across all 15 weeks. The lowest-scoring Design Lab Assignment is dropped — 8 of 9 count toward the final grade. Week 11's peer playtesting session is not replicable outside the lab — its data is the primary input to the gap analysis.</p>
+
+    <div class="course-byline">
+      Irreducibly Human: What AI Can and Can't Do — Ethical Play · Graduate seminar · College of Engineering · Northeastern University · 4 credit hours · No prior game design experience required · Instructor: Nik Bear Brown · <a href="mailto:ni.brown@neu.edu">ni.brown@neu.edu</a>
+    </div>
+
+  </main>
+
+  <footer style="text-align:center; padding:20px; font-size:11px; color:#999; border-top:1px solid #e0e0e0; margin-top:40px;">
+    Built with <a href="https://www.bearbrown.co" target="_blank" rel="noopener" style="color:#999;">bearbrown.co</a> · AI tools for educators, creators &amp; founders
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Botspeak: The Nine Pillars of AI Fluency — Irreducibly Human course syllabus</title>
+  <meta name="description" content="Graduate course syllabus for professionals at Northeastern University who use AI tools in their work and need a framework for evaluating what they are working with. Builds the complete Five Modes architecture and nine-pillar AI fluency framework — the series entry point for Irreducibly Human, with no technical prerequisites.">
+  <meta name="keywords" content="Botspeak, AI fluency, Nine Pillars, Five Modes, Irreducibly Human, Northeastern University, graduate engineering, AI literacy, pattern completion, tier taxonomy, human judgment in AI, course syllabus, Nik Bear Brown">
+
+  <style>
+    :root {
+      --bb-1: #1a0a00;
+      --bb-2: #8B3A0F;
+      --bb-3: #C0392B;
+      --bb-4: #E8A020;
+      --bb-5: #D4500A;
+      --bb-6: #B8860B;
+      --bb-7: #C8A96E;
+      --bb-8: #F0E6D0;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bb-8);
+      color: var(--bb-1);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    /* ── Header ── */
+    .doc-header {
+      background-color: var(--bb-2);
+      color: var(--bb-8);
+      padding: 52px 40px 44px;
+      border-bottom: 5px solid var(--bb-5);
+    }
+
+    .doc-header .series-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bb-7);
+      margin-bottom: 14px;
+    }
+
+    .doc-header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--bb-8);
+      margin-bottom: 10px;
+    }
+
+    .doc-header .subtitle {
+      font-size: 1.1rem;
+      color: var(--bb-7);
+      font-style: italic;
+    }
+
+    /* ── Version stamp ── */
+    .version-meta {
+      background-color: var(--bb-1);
+      color: var(--bb-7);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 8px 40px;
+    }
+
+    /* ── Main layout ── */
+    .doc-body {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 52px 40px 60px;
+    }
+
+    /* ── Lead section ── */
+    .lead-section {
+      border-left: 4px solid var(--bb-4);
+      padding-left: 24px;
+      margin-bottom: 44px;
+    }
+
+    .lead-section p {
+      margin-bottom: 1.2em;
+      font-size: 1.05rem;
+    }
+
+    .lead-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── Opening case block ── */
+    .opening-case {
+      background-color: var(--bb-1);
+      color: var(--bb-8);
+      padding: 28px 32px;
+      border-radius: 4px;
+      margin-bottom: 36px;
+      font-size: 1.0rem;
+      line-height: 1.7;
+    }
+
+    .opening-case .case-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--bb-4);
+      margin-bottom: 12px;
+    }
+
+    .opening-case p {
+      margin-bottom: 1em;
+    }
+
+    .opening-case p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── Section headings ── */
+    h2 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--bb-2);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-bottom: 2px solid var(--bb-7);
+      padding-bottom: 8px;
+      margin-top: 52px;
+      margin-bottom: 22px;
+    }
+
+    h3 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--bb-5);
+      margin-top: 36px;
+      margin-bottom: 12px;
+    }
+
+    h4 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--bb-1);
+      text-transform: none;
+      letter-spacing: 0;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 1.1em;
+    }
+
+    /* ── Course info table ── */
+    .course-info {
+      background-color: #fff;
+      border: 1px solid var(--bb-7);
+      border-left: 5px solid var(--bb-2);
+      border-radius: 4px;
+      padding: 24px 28px;
+      margin-bottom: 36px;
+    }
+
+    .course-info table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.92rem;
+    }
+
+    .course-info td {
+      padding: 6px 12px 6px 0;
+      vertical-align: top;
+    }
+
+    .course-info td:first-child {
+      font-weight: 700;
+      color: var(--bb-2);
+      white-space: nowrap;
+      width: 140px;
+    }
+
+    /* ── Outcomes list ── */
+    .outcomes-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .outcomes-list li {
+      padding: 10px 0 10px 28px;
+      position: relative;
+      border-bottom: 1px solid var(--bb-7);
+      font-size: 0.97rem;
+    }
+
+    .outcomes-list li:last-child {
+      border-bottom: none;
+    }
+
+    .outcomes-list li::before {
+      content: '→';
+      color: var(--bb-4);
+      font-weight: 700;
+      position: absolute;
+      left: 0;
+    }
+
+    /* ── Act headers ── */
+    .act-header {
+      background-color: var(--bb-2);
+      color: var(--bb-8);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 10px 18px;
+      border-radius: 3px;
+      margin-top: 44px;
+      margin-bottom: 24px;
+      display: inline-block;
+    }
+
+    /* ── Week cards ── */
+    .week-card {
+      background-color: #fff;
+      border: 1px solid var(--bb-7);
+      border-radius: 4px;
+      padding: 22px 26px;
+      margin-bottom: 18px;
+    }
+
+    .week-card .week-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bb-5);
+      margin-bottom: 4px;
+    }
+
+    .week-card p {
+      font-size: 0.93rem;
+      color: var(--bb-1);
+      margin-bottom: 10px;
+    }
+
+    .week-card p:last-of-type {
+      margin-bottom: 10px;
+    }
+
+    .week-card .case-inline {
+      font-style: italic;
+      color: var(--bb-6);
+      font-size: 0.9rem;
+      border-left: 3px solid var(--bb-7);
+      padding-left: 12px;
+      margin-bottom: 10px;
+    }
+
+    .deliverable-tag {
+      display: inline-block;
+      background-color: var(--bb-8);
+      border: 1px solid var(--bb-7);
+      border-radius: 3px;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--bb-6);
+      padding: 3px 10px;
+      margin-top: 4px;
+      margin-right: 4px;
+    }
+
+    /* ── Callout blocks ── */
+    .callout {
+      background-color: #fff8ec;
+      border-left: 4px solid var(--bb-4);
+      padding: 16px 20px;
+      margin: 24px 0;
+      border-radius: 0 4px 4px 0;
+      font-size: 0.95rem;
+    }
+
+    .callout strong {
+      color: var(--bb-5);
+    }
+
+    /* ── Alert callout ── */
+    .callout-alert {
+      background-color: #fff0ee;
+      border-left: 4px solid var(--bb-3);
+      padding: 16px 20px;
+      margin: 24px 0;
+      border-radius: 0 4px 4px 0;
+      font-size: 0.95rem;
+    }
+
+    .callout-alert strong {
+      color: var(--bb-3);
+    }
+
+    /* ── Assessment block ── */
+    .assessment-note {
+      background-color: var(--bb-1);
+      color: var(--bb-8);
+      padding: 24px 28px;
+      border-radius: 4px;
+      margin: 28px 0;
+      font-size: 0.94rem;
+      line-height: 1.65;
+    }
+
+    .assessment-note strong {
+      color: var(--bb-4);
+    }
+
+    /* ── Five modes grid ── */
+    .modes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 24px 0;
+    }
+
+    .mode-card {
+      background-color: #fff;
+      border: 1px solid var(--bb-7);
+      border-top: 3px solid var(--bb-5);
+      border-radius: 4px;
+      padding: 16px 18px;
+    }
+
+    .mode-card .mode-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bb-5);
+      margin-bottom: 6px;
+    }
+
+    .mode-card p {
+      font-size: 0.88rem;
+      color: var(--bb-1);
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+
+    /* ── What you leave with ── */
+    .leave-with-list {
+      list-style: none;
+      padding: 0;
+      counter-reset: leave-counter;
+    }
+
+    .leave-with-list li {
+      counter-increment: leave-counter;
+      padding: 14px 0 14px 50px;
+      position: relative;
+      border-bottom: 1px solid var(--bb-7);
+      font-size: 0.97rem;
+      line-height: 1.6;
+    }
+
+    .leave-with-list li:last-child {
+      border-bottom: none;
+    }
+
+    .leave-with-list li::before {
+      content: counter(leave-counter);
+      position: absolute;
+      left: 0;
+      top: 14px;
+      background-color: var(--bb-4);
+      color: var(--bb-1);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── Capstone tracks ── */
+    .tracks-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    .track-card {
+      background-color: #fff;
+      border: 1px solid var(--bb-7);
+      border-radius: 4px;
+      padding: 14px 16px;
+      font-size: 0.88rem;
+    }
+
+    .track-card .track-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--bb-2);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── Course byline ── */
+    .course-byline {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.85rem;
+      color: var(--bb-6);
+      border-top: 1px solid var(--bb-7);
+      padding-top: 20px;
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .course-byline a {
+      color: var(--bb-5);
+    }
+
+    strong {
+      color: var(--bb-2);
+    }
+
+    em {
+      color: var(--bb-6);
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--bb-7);
+      margin: 40px 0;
+    }
+
+    @media (max-width: 600px) {
+      .modes-grid,
+      .tracks-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .doc-header {
+        padding: 36px 20px 30px;
+      }
+
+      .doc-body {
+        padding: 36px 20px 48px;
+      }
+
+      .version-meta {
+        padding: 8px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="doc-header">
+    <div class="series-label">Irreducibly Human Series · Series Entry Point · Northeastern University · College of Engineering</div>
+    <h1>Botspeak: The Nine Pillars of AI Fluency</h1>
+    <div class="subtitle">Irreducibly Human: What AI Can and Can't Do</div>
+  </header>
+
+  <div class="version-meta">Research Report | March 2026 | Ingested via Dev the Dev</div>
+
+  <main class="doc-body">
+
+    <!-- ── Opening case ── -->
+    <div class="opening-case">
+      <div class="case-label">Opening case</div>
+      <p>A professional submits a report. It contains a citation to a study that does not exist. The client's researcher finds it. The professional had no framework for why it happened — and no framework means no defense, no correction, and no way to prevent it next time.</p>
+      <p>This is not a story about a broken tool. It is a story about the gap between AI literacy and AI fluency — and that gap is where professional liability lives.</p>
+    </div>
+
+    <!-- ── Intro ── -->
+    <div class="lead-section">
+      <p>Literacy is knowing which tools to use. Fluency is understanding the cognitive nature of the entity you are collaborating with: what it does at superhuman level, what it cannot do at all, and what remains irreducibly yours. The professional who submitted that report was literate. She could generate outputs, prompt, and iterate. What she could not do was evaluate what she was working with — because no one had ever given her a framework for it. She was using a very sophisticated autocomplete, and she thought she was using a reasoning partner.</p>
+      <p>That gap is what this course closes.</p>
+    </div>
+
+    <p>AI systems generate outputs through pattern completion, not knowledge retrieval. This is not a subtle distinction. It means that an AI's confidence of expression is structurally uncorrelated with the accuracy of its content. It means the tool has reliability zones — domains near the center of its training distribution where it is genuinely excellent, and edges where it produces fluent, authoritative, wrong outputs with no internal signal that anything has gone wrong. It means that every ambiguity in a prompt is a decision the AI makes without the human — and most professionals issuing prompts have never thought about what decisions they are delegating or whether those decisions are theirs to give.</p>
+
+    <div class="callout">
+      <strong>AI fluency</strong> is the capacity to work with this entity — confidently, productively, and safely — across every tool you will encounter, including ones that do not exist yet. It is not a set of prompting tips tied to a specific platform. It is a complete architecture for AI collaboration: five modes that govern every stage of the human-AI interaction, nine cognitive pillars that the framework develops, and a tier taxonomy that lets you locate any task in the space between "the machine handles this well" and "this decision is irreducibly yours."
+    </div>
+
+    <p>This course builds that architecture. It then requires you to do original research with it, under real conditions, and to name — specifically and honestly — the judgment calls that required your values, your domain knowledge, or your professional accountability that the AI could not have made on your behalf.</p>
+
+    <!-- ── Course information ── -->
+    <h2>Course information</h2>
+    <div class="course-info">
+      <table>
+        <tr>
+          <td>Course title</td>
+          <td>Irreducibly Human: What AI Can and Can't Do — Botspeak: The Nine Pillars of AI Fluency</td>
+        </tr>
+        <tr>
+          <td>Credit hours</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>Delivery</td>
+          <td>In-person | Lecture/Seminar (weekly) + TA-led Mode Lab (weekly)</td>
+        </tr>
+        <tr>
+          <td>Level</td>
+          <td>Graduate</td>
+        </tr>
+        <tr>
+          <td>Prerequisites</td>
+          <td>None — series entry point. Access to a laptop and at least one AI tool.</td>
+        </tr>
+        <tr>
+          <td>Instructor</td>
+          <td>Nik Bear Brown · <a href="mailto:ni.brown@neu.edu">ni.brown@neu.edu</a></td>
+        </tr>
+        <tr>
+          <td>Series</td>
+          <td>Part of the Irreducibly Human series at Northeastern University — College of Engineering. Botspeak is the series entry point. Companion courses: Conducting AI, Causal Reasoning, AImagineering.</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- ── Who this course is for ── -->
+    <h2>Who this course is for</h2>
+    <p>This course is for any graduate-level professional who uses or will use AI in their work — and who has never been given a framework for evaluating what they are working with.</p>
+
+    <h3>What this course assumes</h3>
+    <p>Access to a laptop and at least one AI tool. You have used an AI tool at least once. Nothing else is required. This is the only course in the series with no technical prerequisites — it is designed to be the entry point.</p>
+
+    <h3>What this course does not assume</h3>
+    <p>Prior coursework in AI, machine learning, computer science, or data science. No technical background. No philosophy or ethics background. No prior prompting experience.</p>
+
+    <div class="callout">
+      <strong>A note for students with strong technical AI backgrounds:</strong> Students who arrive most technically fluent sometimes find the early weeks the most disorienting. That disorientation is the course working as intended. Fluency is not a harder version of technical literacy — it is a different cognitive operation. Students who treat the Five Modes as prompting optimization will produce technically correct exercises and miss the course entirely. Students who approach the framework as genuinely new terrain — regardless of their technical background — will get the most from it.
+    </div>
+
+    <div class="callout-alert">
+      <strong>No AI tool access?</strong> Contact the instructor before the first week. Free options are available.
+    </div>
+
+    <!-- ── What you will leave with ── -->
+    <h2>What you will leave with</h2>
+    <ol class="leave-with-list">
+      <li>A complete AI fluency framework — the Five Modes, the tier taxonomy, the nine pillars — applied to real work in your own domain, with explicit reasoning you can defend in a job interview, a client meeting, or in front of the person who commissioned the work.</li>
+      <li>Original research demonstrating fluency under real conditions: a complete research project in AI fluency, with a full iteration log, a verification record, and the one section that cannot be produced by a tool — the honest, specific account of the judgment calls that required your values, your domain knowledge, or your professional accountability.</li>
+      <li>The capacity to answer, on demand, the question that separates professionals who use AI well from professionals who use it confidently and incorrectly: what, specifically, did the AI do in this work — and what, specifically, did you do that it could not?</li>
+    </ol>
+
+    <!-- ── What this course builds ── -->
+    <h2>What this course builds</h2>
+    <p>By the end of this course, students can:</p>
+    <ul class="outcomes-list">
+      <li>Explain how AI systems generate outputs through pattern completion rather than knowledge retrieval, and predict failure types from this mechanism</li>
+      <li>Apply proportional skepticism to AI outputs, calibrating verification depth to stakes, reliability zone, and reversibility</li>
+      <li>Locate any cognitive task on the seven-tier Irreducibly Human taxonomy — identifying what the AI can perform and what the human must supply</li>
+      <li>Write a complete five-component specification and predict its failure modes before any prompt is written</li>
+      <li>Produce a delegation map for a complex task, with explicit tier-location and boundary rationale for every component, addressing the performance paradox</li>
+      <li>Conduct adversarial AI conversation using at least two adversarial strategies, producing annotated transcripts that demonstrate intellectual ownership</li>
+      <li>Apply a tiered verification protocol to an AI output, returning a structured verdict with domain-specific findings by layer</li>
+      <li>Design a Diligence protocol for a deployed AI workflow, specifying monitoring cadence, drift indicators, escalation conditions, and shutdown criteria</li>
+      <li>Produce a trust calibration map for a multi-step AI-assisted workflow, identifying the highest-risk compounding step</li>
+      <li>Apply the PARU cycle diagnostic to an AI system — classifying its architecture, evaluating its Human Decision Node, and identifying what genuine oversight requires</li>
+      <li>Apply adversarial validation to an AI output, identifying failures that ordinary verification is not designed to find</li>
+      <li>Execute original research in AI fluency, demonstrating all five modes under real conditions and naming the judgment calls that required human values, domain knowledge, or accountability</li>
+    </ul>
+
+    <!-- ── Assessment ── -->
+    <h2>How the course is assessed</h2>
+
+    <div class="assessment-note">
+      Grading is structured around a single premise stated without apology: <strong>AI tools are available, capable, and expected on every assignment. What is being assessed is the layer those tools cannot perform.</strong>
+    </div>
+
+    <p>Every assignment requires an <strong>AI Use Disclosure</strong> — not as compliance, but as the course's primary assessment instrument. Students document what they used, how they used it, what they changed, and — this field is not optional — <em>what the AI could not do</em>. Specifically: at least one judgment call that required the student's values, domain knowledge, or professional accountability. A disclosure that cannot name one such judgment call has not demonstrated that the student performed the irreducibly human layer. That declaration is the assessment spine of every submission.</p>
+
+    <p>The <strong>Irreducibly Human section</strong> of the final capstone carries 50% of the final project grade. Not because the research is less important — because the honest, specific account of what required human judgment is exactly what the research is for.</p>
+
+    <p>Relative grading applies at the top of the scale, comparing students on depth of fluency reasoning and quality of domain judgment. Absolute grading applies below the threshold.</p>
+
+    <!-- ── Structure ── -->
+    <h2>How the course is structured</h2>
+    <p>The course runs in three acts, tracking the arc from literacy to fluency to original practice.</p>
+
+    <!-- ACT ONE -->
+    <div class="act-header">Act One — Establish · Weeks 1–3</div>
+
+    <p><strong>Act One</strong> builds the survival vocabulary: what AI systems actually are, how they fail, and why those failures are structural rather than incidental. Two high-stakes failure cases across two chapters establish the pattern before the framework is introduced. The tier taxonomy and the Five Modes are named at the end of Act One — after students have spent three weeks accumulating domain-specific evidence that the framework is necessary. Act One closes with the first Mode Exercise: mapping a real task from the student's own work onto the full framework.</p>
+
+    <div class="week-card">
+      <div class="week-label">Week 1</div>
+      <h4>What You're Actually Talking To</h4>
+      <p>The course opens with the fabricated citation — no definitions yet. The case is presented so students feel the failure before they have vocabulary to name it. Session B names the mechanism: pattern completion versus knowledge retrieval, and why confidence of expression is structurally uncorrelated with accuracy of content. Reliability zones — the center and the edge of the training distribution — are introduced as the first diagnostic tool.</p>
+      <span class="deliverable-tag">Reading Response #1 — 30 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 2</div>
+      <h4>The Confidence Trap</h4>
+      <p>A second high-stakes failure case in a different domain establishes that the Week 1 failure was structural, not incidental. Hallucination, confabulation, and automation bias are defined precisely — three distinct phenomena that the word "AI error" collapses into one. The proportional skepticism protocol is introduced: calibrating verification depth to stakes, reliability zone, and reversibility. The symmetric failure modes — over-trust and under-trust — are given equal weight.</p>
+      <span class="deliverable-tag">Reading Response #2 — 30 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 3</div>
+      <h4>The Map and the Language</h4>
+      <p>Move 37. AlphaGo, March 13, 2016. Fan Hui goes silent. "It's not a human move." The Irreducibly Human tier taxonomy is introduced through the most famous moment in the history of AI outperforming human experts — not to celebrate the machine, but to name what it reveals about cognitive architecture. The Five Modes are introduced as a pre/during/post temporal architecture. The literacy/fluency distinction is made explicit. Act One closes. The first Mode Exercise requires students to map a real task from their own domain onto the full framework — tier location, modes required, irreducibly human judgment named.</p>
+      <span class="deliverable-tag">Mode Exercise #1 — 25 pts</span>
+    </div>
+
+    <!-- ACT TWO -->
+    <div class="act-header">Act Two — Build · Weeks 4–8</div>
+
+    <p><strong>Act Two</strong> teaches one mode per week. Each mode is introduced through a failure case from a professional domain. Each week's Mode Exercise requires application, not recitation. Act Two closes with the midterm: a novel multi-mode case, no annotation, all five modes applied as practices — not recited, not described. Application only.</p>
+
+    <div class="week-card">
+      <div class="week-label">Week 4</div>
+      <h4>Specification</h4>
+      <p class="case-inline">Opening case: AI documentation of a slightly wrong API because specification ambiguities were resolved using training distribution patterns.</p>
+      <p>Every ambiguity in a specification is a decision the AI makes without the human. The five-component specification: intent, constraints, success criteria, exclusions, output format. The full prompt pattern toolkit. Specification for agentic contexts, where the stakes of unresolved ambiguity are highest. Students write a complete specification for a described case and name the failure mode each component prevents.</p>
+      <span class="deliverable-tag">Mode Exercise #2 — 25 pts</span>
+      <span class="deliverable-tag">Reading Response #3 — 30 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 5</div>
+      <h4>Delegation</h4>
+      <p class="case-inline">Opening case: A strategy consultant delegates all research synthesis to AI. The output is comprehensive. She misses the critical competitive dynamic she had the domain intuition to catch — but wasn't in the process to apply, because she had delegated herself out of it.</p>
+      <p>This is the performance paradox: better short-term outputs, long-term capability degradation. The four delegation questions. The cognitive offloading distinction — when it amplifies, when it atrophies. Students produce a delegation map with explicit tier-location and boundary rationale for every component.</p>
+      <span class="deliverable-tag">Mode Exercise #3 — 25 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 6</div>
+      <h4>Conversation</h4>
+      <p class="case-inline">Opening case: A policy researcher develops a polished, internally consistent argument over 45 minutes of AI conversation. The strongest counterargument in her field never appeared. She never asked. Her peer reviewer found it immediately.</p>
+      <p>The four adversarial strategies — steelman the opposition, edge case probe, assumption surface, devil's advocate role assignment — introduced as the antidote to sycophantic drift. <strong>This week's Mode Lab is mandatory and supervised</strong> — the adversarial conversation exercise cannot be performed by reading alone. Students produce annotated transcripts with before/after intellectual positions and the ownership test applied.</p>
+      <span class="deliverable-tag">Mode Exercise #4 — supervised workshop — 25 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 7</div>
+      <h4>Discernment</h4>
+      <p class="case-inline">Opening case: The pharmacist at the Human Decision Node — 14-medication patient, compromised renal function, AI interaction check that returned "no significant interactions." Three options: accept, reject, or discern.</p>
+      <p>This chapter teaches Option 3. The four verification layers — fact, reasoning, framing, omission — and why the omission layer is the one most professionals never reach. The tiered verification protocol: Tier 0 scan through Tier 3 adversarial. Calibration against stakes, reliability zone, and reversibility. This is the densest chapter in the course — Chapters 9 and 11 both build directly on it.</p>
+      <span class="deliverable-tag">Mode Exercise #5 — 25 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 8</div>
+      <h4>Diligence</h4>
+      <p class="case-inline">Opening case: The Amazon recruiting case — not why the system was biased, but why no one caught it for a year. The accountability chain was intact on paper and absent in practice.</p>
+      <p>Three forms of AI degradation: model drift, context drift, use case drift. Three ways accountability gets obscured: process laundering, tool diffusion, verification gap. The four-component Diligence protocol. Students design a complete Diligence protocol for a described deployment — monitoring cadence, drift indicators, escalation conditions, shutdown criteria. The Act Two gate follows: the midterm presents a novel multi-mode case with no scaffolding.</p>
+      <span class="deliverable-tag">Mode Exercise #6 — 25 pts</span>
+      <span class="deliverable-tag">Reading Response #4 — 30 pts</span>
+      <span class="deliverable-tag">Midterm — 100 pts</span>
+    </div>
+
+    <!-- ACT THREE -->
+    <div class="act-header">Act Three — Apply · Weeks 9–15</div>
+
+    <p><strong>Act Three</strong> stops giving clean single-mode cases. Trust calibration across compounding multi-step workflows. The PARU cycle and the Human Decision Node. Verification under adversarial conditions. Rapid prototyping as a research method, and the gap that defines it: AI can find a research gap efficiently; it has no basis for evaluating whether the gap is worth filling. The act closes with original research — a complete capstone demonstrating fluency under real conditions.</p>
+
+    <div class="week-card">
+      <div class="week-label">Week 9</div>
+      <h4>Trust Calibration</h4>
+      <p class="case-inline">Opening case: A financial model with four AI-assisted stages. A rounding convention in Stage 2 compounds through Stage 3 into a trend line wrong by 7% — above the committee's 5% decision threshold. No single step failed enough to trigger the verification protocol.</p>
+      <p>Error compounding: trust miscalibrations at earlier steps constrain the reliability ceiling of every step that follows. System-trust versus output-trust. Students produce a trust calibration map for a multi-step workflow — appropriate trust level, calibration rationale, and compounding risk for every stage.</p>
+      <span class="deliverable-tag">Mode Exercise #7 — 25 pts</span>
+      <span class="deliverable-tag">Reading Response #5 — 30 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 10</div>
+      <h4>Automation, Agency, and the Human Decision Node</h4>
+      <p>Move 37 revisited — not "how remarkable" but "how did it find it?" The PARU cycle as the answer: Perceive, Act, Reward, Update. Then immediately: Amazon's recruiting tool. Same surface behavior, structurally different architectures, fundamentally different oversight requirements. The Human Decision Node — the difference between genuine judgment and rubber-stamp approval. Students apply the PARU diagnostic to a described deployment and redesign the Human Decision Node with a specific proposal.</p>
+      <span class="deliverable-tag">Mode Exercise #8 — 25 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 11</div>
+      <h4>Verification Under Adversarial Conditions</h4>
+      <p class="case-inline">Opening case: A Phase II clinical trial succeeds. Phase III fails. The Phase II analysis was technically correct for its data. The patient population was systematically unrepresentative. No facts were hallucinated. The framing failure was invisible to ordinary verification.</p>
+      <p>Adversarial validation targets the three failure modes that ordinary review is not designed to find: distributional shift, framing failure, and assumption invisibility. Students apply all four adversarial moves to a described case and produce a formal report — what was probed, what was found, and whether it constitutes a structural failure.</p>
+      <span class="deliverable-tag">Mode Exercise #9 — 25 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 12</div>
+      <h4>Rapid Prototyping as a Research Method</h4>
+      <p class="case-inline">Opening case: A graduate student develops a beautifully structured research proposal over three weeks of AI-assisted work. Her advisor asks one question: "Why is this gap worth filling?" She cannot answer. The AI found the gap efficiently. It had no basis for evaluating whether the gap was worth pursuing.</p>
+      <p>Three rapid prototyping principles. AI-assisted literature synthesis — uses and limits. The iteration log as an accountability document. The Research Protocol Checkpoint is the go/no-go gate for the capstone.</p>
+      <span class="deliverable-tag">Research Protocol Checkpoint — 100 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 13</div>
+      <h4>Capstone: Original Research in AI Fluency — Work Session</h4>
+      <p>No new instruction. Execution. The instructor's role this week is to ask the questions the AI will not ask: "Why is this question worth answering?" "What would have to be true for this finding not to matter?" Four capstone tracks available — plus an Adaptation Track for students rebuilding a course framework for a non-engineering domain.</p>
+      <div class="tracks-grid">
+        <div class="track-card"><div class="track-name">AI Validation</div></div>
+        <div class="track-card"><div class="track-name">Bias Detection</div></div>
+        <div class="track-card"><div class="track-name">Explainability</div></div>
+        <div class="track-card"><div class="track-name">Trust Calibration</div></div>
+      </div>
+      <span class="deliverable-tag">Work in progress — feeds Final Submission</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 14</div>
+      <h4>Capstone: Peer Review Session</h4>
+      <p>Structured peer review using the Five Modes rubric — written feedback, not just spoken. Each student reviews one peer's project against all five modes, produces at least one specific finding per mode, and names one question the submitted materials cannot answer. Revision work follows.</p>
+      <span class="deliverable-tag">Peer Review Checkpoint — 100 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 15</div>
+      <h4>Capstone: Presentations and Final Submission</h4>
+      <p>The terminal deliverable: a complete original research project in AI fluency. Research question, methodology with Five Modes documentation, findings with verification record, full iteration log. And the section that carries half the grade — the Irreducibly Human accounting: three specific judgment calls that required human values, domain knowledge, or accountability; one judgment call that was tried-as-delegation and then reclaimed; and an honest assessment of the collaboration — where the AI was genuinely useful, where it produced confident-sounding noise, and what the student would do differently.</p>
+      <span class="deliverable-tag">Final Capstone Submission — 250 pts</span>
+    </div>
+
+    <!-- ── Participation note ── -->
+    <hr>
+    <p><strong>Mode Lab participation</strong> (100 pts) is assessed continuously across all 15 weeks. The lowest-scoring Mode Exercise is dropped — 8 of 9 count toward the final grade. Week 6's adversarial conversation workshop cannot be made up by reading alone — it is the one lab session with no equivalent substitute.</p>
+
+    <!-- ── Byline ── -->
+    <div class="course-byline">
+      Irreducibly Human: What AI Can and Can't Do — Botspeak: The Nine Pillars of AI Fluency · Graduate seminar · College of Engineering · Northeastern University · 4 credit hours · Series entry point — no technical prerequisites · Instructor: Nik Bear Brown · <a href="mailto:ni.brown@neu.edu">ni.brown@neu.edu</a>
+    </div>
+
+  </main>
+
+  <footer style="text-align:center; padding:20px; font-size:11px; color:#999; border-top:1px solid #e0e0e0; margin-top:40px;">
+    Built with <a href="https://www.bearbrown.co" target="_blank" rel="noopener" style="color:#999;">bearbrown.co</a> · AI tools for educators, creators &amp; founders
+  </footer>
+
+</body>
+</html>

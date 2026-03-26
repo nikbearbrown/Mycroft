@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Irreducibly Human: Conducting AI — The Five Supervisory Capacities course syllabus</title>
+  <meta name="description" content="Graduate course syllabus for engineers and AI-adjacent professionals at Northeastern University who can operate AI tools fluently but cannot yet explain rigorously why their outputs should be trusted. Develops the five supervisory capacities no algorithm possesses — plausibility auditing, problem formulation, tool orchestration, interpretive judgment, and executive integration — culminating in an adversarial Plausibility Audit of the student's own supervisory analysis.">
+  <meta name="keywords" content="Conducting AI, AI supervision, plausibility auditing, problem formulation, tool orchestration, interpretive judgment, executive integration, solve-verify asymmetry, Irreducibly Human, Northeastern University, graduate engineering, Botspeak, Nik Bear Brown, course syllabus, AI fluency">
+
+  <style>
+    :root {
+      --bb-1: #1a0a00;
+      --bb-2: #8B3A0F;
+      --bb-3: #C0392B;
+      --bb-4: #E8A020;
+      --bb-5: #D4500A;
+      --bb-6: #B8860B;
+      --bb-7: #C8A96E;
+      --bb-8: #F0E6D0;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bb-8);
+      color: var(--bb-1);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    /* ── Header ── */
+    .doc-header {
+      background-color: var(--bb-2);
+      color: var(--bb-8);
+      padding: 52px 40px 44px;
+      border-bottom: 5px solid var(--bb-5);
+    }
+
+    .doc-header .series-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bb-7);
+      margin-bottom: 14px;
+    }
+
+    .doc-header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--bb-8);
+      margin-bottom: 10px;
+    }
+
+    .doc-header .subtitle {
+      font-size: 1.1rem;
+      color: var(--bb-7);
+      font-style: italic;
+    }
+
+    /* ── Version stamp ── */
+    .version-meta {
+      background-color: var(--bb-1);
+      color: var(--bb-7);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 8px 40px;
+    }
+
+    /* ── Main layout ── */
+    .doc-body {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 52px 40px 60px;
+    }
+
+    /* ── Opening metaphor block ── */
+    .opening-case {
+      background-color: var(--bb-1);
+      color: var(--bb-8);
+      padding: 28px 32px;
+      border-radius: 4px;
+      margin-bottom: 36px;
+      font-size: 1.0rem;
+      line-height: 1.7;
+    }
+
+    .opening-case .case-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--bb-4);
+      margin-bottom: 12px;
+    }
+
+    .opening-case p {
+      margin-bottom: 1em;
+    }
+
+    .opening-case p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── Lead section ── */
+    .lead-section {
+      border-left: 4px solid var(--bb-4);
+      padding-left: 24px;
+      margin-bottom: 44px;
+    }
+
+    .lead-section p {
+      margin-bottom: 1.2em;
+      font-size: 1.05rem;
+    }
+
+    .lead-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── Section headings ── */
+    h2 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--bb-2);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-bottom: 2px solid var(--bb-7);
+      padding-bottom: 8px;
+      margin-top: 52px;
+      margin-bottom: 22px;
+    }
+
+    h3 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--bb-5);
+      margin-top: 36px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      margin-bottom: 1.1em;
+    }
+
+    /* ── Course info table ── */
+    .course-info {
+      background-color: #fff;
+      border: 1px solid var(--bb-7);
+      border-left: 5px solid var(--bb-2);
+      border-radius: 4px;
+      padding: 24px 28px;
+      margin-bottom: 36px;
+    }
+
+    .course-info table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.92rem;
+    }
+
+    .course-info td {
+      padding: 6px 12px 6px 0;
+      vertical-align: top;
+    }
+
+    .course-info td:first-child {
+      font-weight: 700;
+      color: var(--bb-2);
+      white-space: nowrap;
+      width: 140px;
+    }
+
+    /* ── Five capacities grid ── */
+    .capacities-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 24px 0;
+    }
+
+    .capacity-card {
+      background-color: #fff;
+      border: 1px solid var(--bb-7);
+      border-top: 3px solid var(--bb-5);
+      border-radius: 4px;
+      padding: 16px 18px;
+    }
+
+    .capacity-card.full-width {
+      grid-column: 1 / -1;
+      border-top-color: var(--bb-2);
+    }
+
+    .capacity-card .capacity-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bb-5);
+      margin-bottom: 6px;
+    }
+
+    .capacity-card.full-width .capacity-name {
+      color: var(--bb-2);
+    }
+
+    .capacity-card p {
+      font-size: 0.88rem;
+      color: var(--bb-1);
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+
+    /* ── Outcomes list ── */
+    .outcomes-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .outcomes-list li {
+      padding: 10px 0 10px 28px;
+      position: relative;
+      border-bottom: 1px solid var(--bb-7);
+      font-size: 0.97rem;
+    }
+
+    .outcomes-list li:last-child {
+      border-bottom: none;
+    }
+
+    .outcomes-list li::before {
+      content: '→';
+      color: var(--bb-4);
+      font-weight: 700;
+      position: absolute;
+      left: 0;
+    }
+
+    /* ── Act headers ── */
+    .act-header {
+      background-color: var(--bb-2);
+      color: var(--bb-8);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 10px 18px;
+      border-radius: 3px;
+      margin-top: 44px;
+      margin-bottom: 24px;
+      display: inline-block;
+    }
+
+    /* ── Week cards ── */
+    .week-card {
+      background-color: #fff;
+      border: 1px solid var(--bb-7);
+      border-radius: 4px;
+      padding: 22px 26px;
+      margin-bottom: 18px;
+    }
+
+    .week-card .week-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bb-5);
+      margin-bottom: 4px;
+    }
+
+    .week-card h4 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--bb-1);
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .week-card p {
+      font-size: 0.93rem;
+      color: var(--bb-1);
+      margin-bottom: 10px;
+    }
+
+    .deliverable-tag {
+      display: inline-block;
+      background-color: var(--bb-8);
+      border: 1px solid var(--bb-7);
+      border-radius: 3px;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--bb-6);
+      padding: 3px 10px;
+      margin-top: 4px;
+      margin-right: 4px;
+    }
+
+    /* ── Callout blocks ── */
+    .callout {
+      background-color: #fff8ec;
+      border-left: 4px solid var(--bb-4);
+      padding: 16px 20px;
+      margin: 24px 0;
+      border-radius: 0 4px 4px 0;
+      font-size: 0.95rem;
+    }
+
+    .callout strong {
+      color: var(--bb-5);
+    }
+
+    .callout-alert {
+      background-color: #fff0ee;
+      border-left: 4px solid var(--bb-3);
+      padding: 16px 20px;
+      margin: 24px 0;
+      border-radius: 0 4px 4px 0;
+      font-size: 0.95rem;
+    }
+
+    .callout-alert strong {
+      color: var(--bb-3);
+    }
+
+    /* ── Assessment block ── */
+    .assessment-note {
+      background-color: var(--bb-1);
+      color: var(--bb-8);
+      padding: 24px 28px;
+      border-radius: 4px;
+      margin: 28px 0;
+      font-size: 0.94rem;
+      line-height: 1.65;
+    }
+
+    .assessment-note strong {
+      color: var(--bb-4);
+    }
+
+    /* ── Leave-with list ── */
+    .leave-with-list {
+      list-style: none;
+      padding: 0;
+      counter-reset: leave-counter;
+    }
+
+    .leave-with-list li {
+      counter-increment: leave-counter;
+      padding: 14px 0 14px 50px;
+      position: relative;
+      border-bottom: 1px solid var(--bb-7);
+      font-size: 0.97rem;
+      line-height: 1.6;
+    }
+
+    .leave-with-list li:last-child {
+      border-bottom: none;
+    }
+
+    .leave-with-list li::before {
+      content: counter(leave-counter);
+      position: absolute;
+      left: 0;
+      top: 14px;
+      background-color: var(--bb-4);
+      color: var(--bb-1);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── Course byline ── */
+    .course-byline {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.85rem;
+      color: var(--bb-6);
+      border-top: 1px solid var(--bb-7);
+      padding-top: 20px;
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .course-byline a {
+      color: var(--bb-5);
+    }
+
+    strong {
+      color: var(--bb-2);
+    }
+
+    em {
+      color: var(--bb-6);
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--bb-7);
+      margin: 40px 0;
+    }
+
+    @media (max-width: 600px) {
+      .capacities-grid {
+        grid-template-columns: 1fr;
+      }
+      .capacity-card.full-width {
+        grid-column: 1;
+      }
+      .doc-header {
+        padding: 36px 20px 30px;
+      }
+      .doc-body {
+        padding: 36px 20px 48px;
+      }
+      .version-meta {
+        padding: 8px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="doc-header">
+    <div class="series-label">Irreducibly Human Series · Prerequisite: Botspeak · Northeastern University · College of Engineering</div>
+    <h1>Conducting AI: The Five Supervisory Capacities No Algorithm Possesses</h1>
+    <div class="subtitle">Irreducibly Human: What AI Can and Can't Do</div>
+  </header>
+
+  <div class="version-meta">Research Report | March 2026 | Ingested via Dev the Dev</div>
+
+  <main class="doc-body">
+
+    <!-- ── Opening metaphor ── -->
+    <div class="opening-case">
+      <div class="case-label">The conductor</div>
+      <p>A conductor does not play any instrument.</p>
+      <p>They hold the whole performance in mind while each section plays its part. They hear the wrong note before the score confirms it. They decide which piece is worth performing and how it should be interpreted. The performance collapses without them even though they produce no sound themselves.</p>
+      <p>This is what graduate-level AI supervision looks like — and it is the role that every AI integration program currently fails to develop.</p>
+    </div>
+
+    <div class="lead-section">
+      <p>Graduate engineers learn to use AI tools. They learn to prompt, to delegate, to verify outputs. They become, by any reasonable measure, competent. And then they encounter a situation where something feels wrong before they can prove it, where the problem they have been handed is the wrong problem, where the tool they are using is producing a result that is accurate, efficient, and pointed in the wrong direction — and they have no framework for what to do. They have learned to play their instrument. Nobody taught them to conduct.</p>
+    </div>
+
+    <p>The structural argument this course is built on is not philosophical. It is mathematical. AI systems solve faster than any human. That gap will not close — it will widen. What will not change is the solve-verify asymmetry: AI optimizes for the common and the likely. It cannot verify whether its output is grounded in the specific domain reality at hand, cannot reframe a poorly formulated problem, cannot interpret what an accurate output means in a specific human context, and cannot integrate multiple legitimate but conflicting perspectives into a recommendation that someone is accountable for. These are not limitations that better models will eventually close. They are structural features of what statistical pattern matching is.</p>
+
+    <div class="callout">
+      <strong>As AI capability scales, the human supervisory role does not diminish. It becomes more consequential.</strong> The conductor's five capacities — plausibility auditing, problem formulation, tool orchestration, interpretive judgment, executive integration — are not soft skills. They are the decisive professional differentiator in AI-assisted knowledge work, and they are now assessable under adversarial conditions. This course builds them and proves it.
+    </div>
+
+    <!-- ── The five capacities ── -->
+    <div class="capacities-grid">
+      <div class="capacity-card">
+        <div class="capacity-name">1 · Plausibility Auditing</div>
+        <p>The judgment that happens before verification — determining whether consulting a source is necessary and what to look for when you do.</p>
+      </div>
+      <div class="capacity-card">
+        <div class="capacity-name">2 · Problem Formulation</div>
+        <p>Reframing toward the salient and important before AI engagement — not after.</p>
+      </div>
+      <div class="capacity-card">
+        <div class="capacity-name">3 · Tool Orchestration</div>
+        <p>Selecting and sequencing tools for what the procedure requires at this step, with every handoff and trust decision explicit.</p>
+      </div>
+      <div class="capacity-card">
+        <div class="capacity-name">4 · Interpretive Judgment</div>
+        <p>Supplying moral and cognitive legitimacy to an AI output — the two types AI does not achieve.</p>
+      </div>
+      <div class="capacity-card full-width">
+        <div class="capacity-name">5 · Executive Integration</div>
+        <p>Not sequencing four capacities but holding all four simultaneously toward a unified goal — recognizing when one raises a concern that requires another to re-engage.</p>
+      </div>
+    </div>
+
+    <!-- ── Course information ── -->
+    <h2>Course information</h2>
+    <div class="course-info">
+      <table>
+        <tr>
+          <td>Course title</td>
+          <td>Irreducibly Human: What AI Can and Can't Do — Conducting AI: The Five Supervisory Capacities No Algorithm Possesses</td>
+        </tr>
+        <tr>
+          <td>Credit hours</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>Delivery</td>
+          <td>In-person | Lecture/Seminar (weekly) + TA-led Supervision Lab (weekly)</td>
+        </tr>
+        <tr>
+          <td>Level</td>
+          <td>Graduate</td>
+        </tr>
+        <tr>
+          <td>Prerequisite</td>
+          <td>Botspeak or equivalent AI fluency foundation</td>
+        </tr>
+        <tr>
+          <td>Instructor</td>
+          <td>Nik Bear Brown · <a href="mailto:ni.brown@neu.edu">ni.brown@neu.edu</a></td>
+        </tr>
+        <tr>
+          <td>Series</td>
+          <td>Part of the Irreducibly Human series at Northeastern University — College of Engineering. Companion courses: Causal Reasoning, AImagineering, Ethical Play. Any can be taken after Botspeak.</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- ── Who this course is for ── -->
+    <h2>Who this course is for</h2>
+    <p>This course is for engineers and AI-adjacent professionals who can operate AI tools fluently but cannot yet explain — rigorously, to a skeptic — why their outputs should be trusted.</p>
+
+    <h3>What this course assumes</h3>
+    <p>AI tool competence at Botspeak level. You understand the difference between pattern completion and knowledge retrieval. You have used AI tools at specification-and-delegation level. You have encountered the failure mode this course is designed to address: a plausible, confident, consequentially wrong AI output that you did not catch before it mattered.</p>
+
+    <h3>What this course does not assume</h3>
+    <p>Advanced AI systems knowledge. Prior coursework in metacognition or cognitive science. Experience managing AI-assisted teams — though students in that context will find the framework directly applicable.</p>
+
+    <div class="callout">
+      <strong>A note for students with strong technical AI backgrounds:</strong> The gap this course addresses is not a technical gap. Evaluating whether an AI output should be trusted is not a harder version of generating it — it is a different cognitive operation, one that requires domain knowledge and situated judgment that no tool possesses. Students who approach the five capacities as genuinely new terrain will get the most from this course.
+    </div>
+
+    <!-- ── What you will leave with ── -->
+    <h2>What you will leave with</h2>
+    <ol class="leave-with-list">
+      <li>A complete supervisory analysis of a real AI-assisted professional problem in your own domain — six sections, five capacities demonstrated, every judgment call documented and defended.</li>
+      <li>Adversarial audit results: your supervisory analysis submitted to Claude functioning as a Plausibility Auditor — attempting to find what you missed — with your evaluation of every finding and your Gap Account naming the failure mode the auditor could not detect, and why detecting it required human supervisory capacity no prompt can supply.</li>
+      <li>A personal account of what has changed: three specific judgment calls you now make that you would have delegated, deferred, or missed at the start of the semester. Named. Specific. The course's closing document.</li>
+    </ol>
+
+    <!-- ── What this course builds ── -->
+    <h2>What this course builds</h2>
+    <p>By the end of this course, students can:</p>
+    <ul class="outcomes-list">
+      <li>Define the solve-verify asymmetry and explain why it deepens rather than closes as AI capability scales</li>
+      <li>Perform a plausibility audit on an AI output before any verification check — naming the domain-grounded mechanism and what it surfaced</li>
+      <li>Formulate a problem independently before AI engagement, produce genuinely distinct reframings, and defend a selection against a constraint set</li>
+      <li>Design a multi-tool workflow with every handoff, verification step, and trust decision explicitly documented — and identify which tool to use to audit another's output</li>
+      <li>Produce an interpretive judgment that supplies moral and cognitive legitimacy to an AI output, naming the AI's contribution and the professional's contribution separately and explicitly</li>
+      <li>Hold all five capacities simultaneously toward a unified recommendation — recognizing when one raises a concern that requires another to re-engage</li>
+      <li>Submit a supervisory analysis to an adversarial AI auditor, evaluate each finding, and name the gap the auditor could not find because finding it required a human</li>
+    </ul>
+
+    <!-- ── Assessment ── -->
+    <h2>How the course is assessed</h2>
+
+    <div class="assessment-note">
+      Every deliverable requires the <strong>Assessment Spine</strong>: a written statement naming at least one judgment call that required the student's values, domain knowledge, or accountability — that an AI could not have made on their behalf. Not optional. Not a reflection prompt. <strong>The course's proof-of-concept, repeated across every submission.</strong>
+    </div>
+
+    <p>The terminal assessment is the <strong>Plausibility Audit</strong> — a novel adversarial architecture in which Claude functions as the Plausibility Auditor, applying the five-capacity framework to the student's supervisory analysis and looking for undocumented handoffs, defaulted formulations, absent legitimacy accounts, and integration gaps. The student evaluates each finding (genuine failure or false positive) and produces a <strong>Gap Account</strong> naming what the auditor could not detect. The student whose revised analysis has no genuine findings has demonstrated all five capacities under adversarial conditions.</p>
+
+    <p>Relative grading applies at the top of the scale, comparing students on supervisory depth and specificity of judgment call identification. Absolute grading applies below the threshold.</p>
+
+    <!-- ── Structure ── -->
+    <h2>How the course is structured</h2>
+    <p>The course runs in three acts, organized around the conductor metaphor as a learning arc.</p>
+
+    <!-- ACT ONE -->
+    <div class="act-header">Act One — The Conductorless Orchestra · Weeks 1–3</div>
+
+    <p><strong>Act One</strong> opens with five cases — no framework, no vocabulary. An engineer, a physician, a lawyer, a financial analyst, a logistics manager — each using AI tools competently, each producing an output that is plausible, confident, and consequentially wrong, each a failure the tools did not cause and the human did not catch. After the fifth case, a single question: what was missing in every one of these situations? The answer — the conductor — is earned rather than given. Act One builds the three-level diagnostic and ends with the five capacities named but not yet developed, and the student's personal AI usage inventory — a self-assessment returned in Week 15 to document what has changed.</p>
+
+    <div class="week-card">
+      <div class="week-label">Week 1</div>
+      <h4>The Conductorless Orchestra</h4>
+      <p>Five cases, no framework. An engineer, a physician, a lawyer, a financial analyst, a logistics manager — each using AI tools competently, each a failure the tools did not cause and the human did not catch. After the fifth case, one question. The conductor metaphor earns its place rather than being declared. The Gardnerian Gap follows: Gardner catalogued the instruments human minds can play; nobody named the metacognitive capacity to direct them toward a unified purpose. In the age of AI, every instrument has been augmented. The conductor has not. Students produce a personal case inventory from their own practice — the self-assessment returned in Week 15 to document what has changed.</p>
+      <span class="deliverable-tag">Reading Response #1 — 30 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 2</div>
+      <h4>The Solve-Verify Asymmetry</h4>
+      <p>The structural argument the course rests on: AI solves faster than any human, and verification remains irreducibly human — not because AI is limited but because verification requires exactly the capacities AI cannot structurally supply. This chapter removes the comfort that better models will close the gap. It also removes the threat: the human who verifies in a high-velocity AI workflow is doing the consequential work, not the diminished work. The asymmetry deepens as AI capability scales. This is the course's thesis, stated and defended before any capacity is introduced.</p>
+      <span class="deliverable-tag">Reading Response #2 — 30 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 3</div>
+      <h4>Three Levels of AI Usage</h4>
+      <p>The diagnostic chapter. Copy editor (Level I), research assistant (Level II), supercollaborator (Level III) — three qualitatively distinct levels with three qualitatively distinct supervisory demands. A professional operating at Level III with Level I supervisory habits has a specific and diagnosable gap. Students produce a personal AI usage inventory classifying their current practice by level and identifying the supervisory gap at each stage. This document is the starting point for the Week 15 reflection.</p>
+      <span class="deliverable-tag">Supervision Lab Exercise #1 — 25 pts</span>
+    </div>
+
+    <!-- ACT TWO -->
+    <div class="act-header">Act Two — The Five Capacities · Weeks 4–13</div>
+
+    <p><strong>Act Two</strong> develops one capacity per two-week sequence — a framework week followed by an application week. Each capacity is introduced through a case that makes its absence felt before its structure is named. Act Two closes with the supervisory analysis: a complete six-section document that carries through the adversarial audit.</p>
+
+    <div class="week-card">
+      <div class="week-label">Weeks 4–5</div>
+      <h4>Capacity 1: Plausibility Auditing</h4>
+      <p>The ARC puzzle: GPT-4 scores at the 90th percentile on medical licensing exams and cannot solve a puzzle a five-year-old can. Statistical likelihood across a training corpus is not the same as a grounded model of how the world works. Plausibility auditing is defined precisely through what it is not — not verification, not fact-checking, not error detection. It is the judgment that happens before any of these. Two cognitive mechanisms: domain-grounded pattern recognition and anomaly detection against a mental model of the domain. Application week opens with the assessment instrument before any instruction — five AI outputs, audit first.</p>
+      <span class="deliverable-tag">Reading Response #3 — 30 pts</span>
+      <span class="deliverable-tag">Supervision Lab Exercise #2 — 25 pts</span>
+      <span class="deliverable-tag">Supervision Lab Exercise #3 — 25 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Weeks 6–7</div>
+      <h4>Capacity 2: Problem Formulation</h4>
+      <p>The Semmelweis case: the formulation that saves lives was not the computationally tractable one. AI optimizes for the common and likely. Humans must reframe toward the salient and important. The co-evolutionary model — problem and solution develop together through reflective practice — explains why handing problem definition to an AI system is not a delegation but an abdication. Primary generators: the conceptual anchors that shape how a practitioner first approaches a problem, often without their awareness. Application week requires three genuinely distinct reframings — not variations on a theme — evaluated against a constraint set, one defended.</p>
+      <span class="deliverable-tag">Reading Response #4 — 30 pts</span>
+      <span class="deliverable-tag">Supervision Lab Exercise #4 — 25 pts</span>
+      <span class="deliverable-tag">Supervision Lab Exercise #5 — 25 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Weeks 8–9</div>
+      <h4>Capacity 3: Tool Orchestration</h4>
+      <p>A surgeon selects instruments based on what the procedure requires at this step — not on what is already in their hand. The AI capability stack mapped: language generation, structured extraction, retrieval-augmented generation, multi-step reasoning, agentic execution. Verifiability-first engineering as a design principle: verification is a first-class objective, not an afterthought. Application week opens with a flawed workflow presented before any instruction. Every handoff documented, every trust decision made explicit. The sequencing principle: use one tool to audit another's output, selecting audit tools with different failure modes so they catch each other's blind spots.</p>
+      <span class="deliverable-tag">Reading Response #5 — 30 pts</span>
+      <span class="deliverable-tag">Supervision Lab Exercise #6 — 25 pts</span>
+      <span class="deliverable-tag">Supervision Lab Exercise #7 — 25 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Weeks 10–11</div>
+      <h4>Capacity 4: Interpretive Judgment</h4>
+      <p>The same chord in two contexts — a nursery rhyme and a funeral march. Identical notes. The conductor is the source of the difference. The three legitimacy types: pragmatic (does it work efficiently), moral (is it aligned with human values), cognitive (is it transparent and trustworthy). AI achieves pragmatic legitimacy readily. Humans must supply the other two. Application week requires producing Memo B — the same AI analysis rewritten to name what the AI produced, supply the moral and cognitive legitimacy account, and write the recommendation the professional would sign their name to.</p>
+      <span class="deliverable-tag">Supervision Lab Exercise #8 — 25 pts</span>
+      <span class="deliverable-tag">Supervision Lab Exercise #9 — 25 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Weeks 12–13</div>
+      <h4>Capacity 5: Executive Integration</h4>
+      <p>A quarterback who can throw, read defenses, manage the clock, and lead a huddle — but who has never done all four simultaneously in a fourth-quarter drive. Executive integration is not sequencing the four prior capacities. It is holding all four simultaneously toward a unified goal — recognizing when one raises a concern that requires another to re-engage. The weave: head (problem formulation), hand (tool orchestration), heart (interpretive judgment), spirit (plausibility auditing). The urban planning case: four AI tools, four technically correct outputs, no integration, a wrong performance. Application week opens with the assignment specification. No case. No warm-up. The supervisory analysis — six sections, 2,500 to 4,000 words — is the Act Two deliverable that carries into the adversarial audit.</p>
+      <span class="deliverable-tag">Supervisory Analysis First Submission — 100 pts</span>
+    </div>
+
+    <!-- ACT THREE -->
+    <div class="act-header">Act Three — The Full Performance · Weeks 14–15</div>
+
+    <p><strong>Act Three</strong> is the dress rehearsal and the performance itself. Peer critique applies the five-capacity framework as a structured evaluation instrument — not general feedback. The Plausibility Audit follows. The student who has addressed all three common failure modes before submission will find the auditor looking for something more specific — which is precisely where the final learning happens.</p>
+
+    <div class="week-card">
+      <div class="week-label">Week 14</div>
+      <h4>The Dress Rehearsal</h4>
+      <p>Peer critique applies the five-capacity framework as a structured evaluation instrument — specific evidence required for every finding. The student evaluates the peer critique (which findings are valid, which are misreadings) and produces a revised analysis with documented reasoning for each change accepted or rejected. Before submitting to the Plausibility Auditor, the student predicts the three most likely audit findings. That prediction is graded against the auditor's actual findings. The student who has addressed all three common failure modes before submission will find the auditor looking for something more specific — which is precisely where the Week 15 learning happens.</p>
+      <span class="deliverable-tag">Peer Critique and Revised Analysis — 100 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 15</div>
+      <h4>The Plausibility Audit</h4>
+      <p>The chapter opens with the audit submission — the student submits before reading any content. Claude functions as Plausibility Auditor, applying the five-capacity framework adversarially: looking for undocumented problem formulation handoffs, orchestration steps without verification, interpretive judgment that diagnoses legitimacy gaps without filling them, and integration sections that sequence rather than integrate. The student evaluates each finding — genuine failure or false positive — with reasoning. Then the Gap Account: a written account of at least one failure mode the auditor could not detect, with a specific explanation of why detecting it required human supervisory judgment that no prompt can supply. The course closes with the Week 1 personal case inventory returned: three specific judgment calls the student now makes that they would have delegated, deferred, or missed. Named. Specific.</p>
+      <span class="deliverable-tag">Final Submission — Plausibility Audit, Gap Account, and Closing Reflection — 250 pts</span>
+    </div>
+
+    <hr>
+    <p><strong>Supervision Lab participation</strong> (100 pts) is assessed continuously across all 15 weeks. The lowest-scoring Lab Exercise is dropped — 8 of 9 count toward the final grade.</p>
+
+    <div class="course-byline">
+      Irreducibly Human: What AI Can and Can't Do — Conducting AI · Graduate seminar · College of Engineering · Northeastern University · 4 credit hours · Prerequisite: Botspeak or equivalent · Instructor: Nik Bear Brown · <a href="mailto:ni.brown@neu.edu">ni.brown@neu.edu</a>
+    </div>
+
+  </main>
+
+  <footer style="text-align:center; padding:20px; font-size:11px; color:#999; border-top:1px solid #e0e0e0; margin-top:40px;">
+    Built with <a href="https://www.bearbrown.co" target="_blank" rel="noopener" style="color:#999;">bearbrown.co</a> · AI tools for educators, creators &amp; founders
+  </footer>
+
+</body>
+</html>

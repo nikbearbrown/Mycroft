@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The AI Sherpa: A practitioner's guide for experiential learning</title>
+  <meta name="description" content="Practitioner handbook for co-op coordinators, study abroad advisors, clinical placement directors, and corporate early career program managers who want consequential real-world experiences to actually develop student judgment. Builds a complete three-phase AI Sherpa infrastructure — pre-flight check, living journal companion, and post-experience refiguration — that scales individualized developmental support to 200 students without sacrificing the human advising relationship.">
+  <meta name="keywords" content="AI Sherpa, experiential learning, co-op coordinator, study abroad advisor, clinical placement, apprenticeship, MVAL protocol, Ricoeur, refiguration, living journal, developmental taxonomy, pre-flight check, practical wisdom, Nik Bear Brown, Northeastern University, workforce development">
+
+  <style>
+    :root {
+      --bb-1: #1a0a00;
+      --bb-2: #8B3A0F;
+      --bb-3: #C0392B;
+      --bb-4: #E8A020;
+      --bb-5: #D4500A;
+      --bb-6: #B8860B;
+      --bb-7: #C8A96E;
+      --bb-8: #F0E6D0;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bb-8);
+      color: var(--bb-1);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    /* ── Header ── */
+    .doc-header {
+      background-color: var(--bb-2);
+      color: var(--bb-8);
+      padding: 52px 40px 44px;
+      border-bottom: 5px solid var(--bb-5);
+    }
+
+    .doc-header .series-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bb-7);
+      margin-bottom: 14px;
+    }
+
+    .doc-header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--bb-8);
+      margin-bottom: 10px;
+    }
+
+    .doc-header .subtitle {
+      font-size: 1.1rem;
+      color: var(--bb-7);
+      font-style: italic;
+    }
+
+    /* ── Version stamp ── */
+    .version-meta {
+      background-color: var(--bb-1);
+      color: var(--bb-7);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 8px 40px;
+    }
+
+    /* ── Main layout ── */
+    .doc-body {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 52px 40px 60px;
+    }
+
+    /* ── Opening case block ── */
+    .opening-case {
+      background-color: var(--bb-1);
+      color: var(--bb-8);
+      padding: 28px 32px;
+      border-radius: 4px;
+      margin-bottom: 36px;
+      font-size: 1.0rem;
+      line-height: 1.7;
+    }
+
+    .opening-case .case-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--bb-4);
+      margin-bottom: 12px;
+    }
+
+    .opening-case p {
+      margin-bottom: 1em;
+    }
+
+    .opening-case p:last-child {
+      margin-bottom: 0;
+    }
+
+    .opening-case .verdict {
+      color: var(--bb-4);
+      font-style: italic;
+      font-size: 1.05rem;
+      border-left: 3px solid var(--bb-4);
+      padding-left: 16px;
+      margin: 14px 0;
+    }
+
+    /* ── Lead section ── */
+    .lead-section {
+      border-left: 4px solid var(--bb-4);
+      padding-left: 24px;
+      margin-bottom: 44px;
+    }
+
+    .lead-section p {
+      margin-bottom: 1.2em;
+      font-size: 1.05rem;
+    }
+
+    .lead-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── Section headings ── */
+    h2 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--bb-2);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-bottom: 2px solid var(--bb-7);
+      padding-bottom: 8px;
+      margin-top: 52px;
+      margin-bottom: 22px;
+    }
+
+    h3 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--bb-5);
+      margin-top: 36px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      margin-bottom: 1.1em;
+    }
+
+    /* ── Three phases strip ── */
+    .phases-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+      margin: 28px 0;
+    }
+
+    .phase-card {
+      background-color: #fff;
+      border: 1px solid var(--bb-7);
+      border-top: 4px solid var(--bb-2);
+      border-radius: 4px;
+      padding: 18px 16px;
+      text-align: center;
+    }
+
+    .phase-card .phase-num {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+      margin-bottom: 6px;
+    }
+
+    .phase-card .phase-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--bb-2);
+      margin-bottom: 8px;
+    }
+
+    .phase-card p {
+      font-size: 0.85rem;
+      color: var(--bb-1);
+      margin-bottom: 0;
+      line-height: 1.5;
+      text-align: left;
+    }
+
+    /* ── Audience block ── */
+    .audience-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 16px 0 28px;
+    }
+
+    .audience-tag {
+      background-color: #fff;
+      border: 1px solid var(--bb-7);
+      border-radius: 3px;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--bb-2);
+      padding: 4px 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Outcomes list ── */
+    .outcomes-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .outcomes-list li {
+      padding: 10px 0 10px 28px;
+      position: relative;
+      border-bottom: 1px solid var(--bb-7);
+      font-size: 0.97rem;
+    }
+
+    .outcomes-list li:last-child {
+      border-bottom: none;
+    }
+
+    .outcomes-list li::before {
+      content: '→';
+      color: var(--bb-4);
+      font-weight: 700;
+      position: absolute;
+      left: 0;
+    }
+
+    /* ── Act headers ── */
+    .act-header {
+      background-color: var(--bb-2);
+      color: var(--bb-8);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 10px 18px;
+      border-radius: 3px;
+      margin-top: 44px;
+      margin-bottom: 24px;
+      display: inline-block;
+    }
+
+    /* ── Chapter cards ── */
+    .chapter-card {
+      background-color: #fff;
+      border: 1px solid var(--bb-7);
+      border-radius: 4px;
+      padding: 22px 26px;
+      margin-bottom: 18px;
+    }
+
+    .chapter-card .chapter-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bb-5);
+      margin-bottom: 4px;
+    }
+
+    .chapter-card h4 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--bb-1);
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .chapter-card p {
+      font-size: 0.93rem;
+      color: var(--bb-1);
+      margin-bottom: 0;
+    }
+
+    /* ── Field guide cards — distinct treatment ── */
+    .field-guide-card {
+      background-color: var(--bb-1);
+      color: var(--bb-8);
+      border-radius: 4px;
+      padding: 20px 24px;
+      margin-bottom: 14px;
+    }
+
+    .field-guide-card .fg-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bb-7);
+      margin-bottom: 4px;
+    }
+
+    .field-guide-card h4 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: var(--bb-4);
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .field-guide-card p {
+      font-size: 0.88rem;
+      color: var(--bb-8);
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+
+    /* ── MVAL protocol block ── */
+    .mval-block {
+      background-color: #fff;
+      border: 1px solid var(--bb-7);
+      border-left: 5px solid var(--bb-4);
+      border-radius: 4px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+
+    .mval-block .mval-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+      margin-bottom: 12px;
+    }
+
+    .mval-row {
+      display: flex;
+      gap: 12px;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--bb-8);
+      font-size: 0.9rem;
+    }
+
+    .mval-row:last-child {
+      border-bottom: none;
+    }
+
+    .mval-row .mval-key {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 700;
+      color: var(--bb-5);
+      min-width: 130px;
+    }
+
+    .mval-row .mval-val {
+      color: var(--bb-1);
+    }
+
+    /* ── Callout blocks ── */
+    .callout {
+      background-color: #fff8ec;
+      border-left: 4px solid var(--bb-4);
+      padding: 16px 20px;
+      margin: 24px 0;
+      border-radius: 0 4px 4px 0;
+      font-size: 0.95rem;
+    }
+
+    .callout strong {
+      color: var(--bb-5);
+    }
+
+    /* ── Argument block ── */
+    .argument-block {
+      background-color: var(--bb-1);
+      color: var(--bb-8);
+      padding: 24px 28px;
+      border-radius: 4px;
+      margin: 28px 0;
+      font-size: 0.94rem;
+      line-height: 1.7;
+    }
+
+    .argument-block strong {
+      color: var(--bb-4);
+    }
+
+    /* ── Leave-with list ── */
+    .leave-with-list {
+      list-style: none;
+      padding: 0;
+      counter-reset: leave-counter;
+    }
+
+    .leave-with-list li {
+      counter-increment: leave-counter;
+      padding: 14px 0 14px 50px;
+      position: relative;
+      border-bottom: 1px solid var(--bb-7);
+      font-size: 0.97rem;
+      line-height: 1.6;
+    }
+
+    .leave-with-list li:last-child {
+      border-bottom: none;
+    }
+
+    .leave-with-list li::before {
+      content: counter(leave-counter);
+      position: absolute;
+      left: 0;
+      top: 14px;
+      background-color: var(--bb-4);
+      color: var(--bb-1);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── Course byline ── */
+    .course-byline {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.85rem;
+      color: var(--bb-6);
+      border-top: 1px solid var(--bb-7);
+      padding-top: 20px;
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .course-byline a {
+      color: var(--bb-5);
+    }
+
+    strong {
+      color: var(--bb-2);
+    }
+
+    em {
+      color: var(--bb-6);
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--bb-7);
+      margin: 40px 0;
+    }
+
+    @media (max-width: 640px) {
+      .phases-grid {
+        grid-template-columns: 1fr;
+      }
+      .doc-header {
+        padding: 36px 20px 30px;
+      }
+      .doc-body {
+        padding: 36px 20px 48px;
+      }
+      .version-meta {
+        padding: 8px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="doc-header">
+    <div class="series-label">Practitioner Handbook · Co-op · Study Abroad · Clinical Placement · Apprenticeship · Corporate Early Career</div>
+    <h1>The AI Sherpa</h1>
+    <div class="subtitle">A practitioner's guide for experiential learning</div>
+  </header>
+
+  <div class="version-meta">Research Report | March 2026 | Ingested via Dev the Dev</div>
+
+  <main class="doc-body">
+
+    <!-- ── Opening case ── -->
+    <div class="opening-case">
+      <div class="case-label">The design failure</div>
+      <p>A student completes a six-month co-op at a Boston financial services firm. Well-evaluated. Offered a return position. Her co-op coordinator asks what she learned. She says: "I got really good at Excel modeling."</p>
+      <p>Three years later she is struggling with exactly the judgment problems — organizational navigation, advocacy for her own analysis, responding to being wrong in public — that the co-op had six months to develop. It did not.</p>
+      <div class="verdict">This is not a student failure. It is a design failure.</div>
+    </div>
+
+    <!-- ── Lead ── -->
+    <div class="lead-section">
+      <p>Experiential learning is the most powerful developmental tool in higher education. It is also the most consistently under-realized. Students complete six-month placements, semester abroad programs, clinical rotations, and trades apprenticeships and return with highlight reels rather than developed judgment — not because the experiences lacked developmental potential, but because nobody built the infrastructure to convert that potential into practical wisdom.</p>
+      <p>The infrastructure gap has a structural cause: a single co-op coordinator cannot carry 200 students' developmental arcs simultaneously. AI closes that gap. But only if it is the right kind of AI, deployed in the right relationship. Every tool being marketed to experiential learning programs right now was designed for a classroom. A student in a co-op does not need a teacher. They need a Sherpa.</p>
+    </div>
+
+    <div class="callout">
+      <strong>A Sherpa does not lead the climb.</strong> They carry the infrastructure — the equipment, the provisions, the knowledge of the terrain — so that the climber can focus on the ascent. They ask questions; they do not provide answers. They recognize when conditions are dangerous and escalate to the human guide. The developmental work — the judgment, the reflection, the refiguration — belongs entirely to the student.
+    </div>
+
+    <!-- ── Three phases ── -->
+    <h2>The three phases</h2>
+    <div class="phases-grid">
+      <div class="phase-card">
+        <div class="phase-num">Phase 1</div>
+        <div class="phase-name">The Pre-Flight Check</div>
+        <p>Before the experience begins. Developmental taxonomy, experience map, and the focused question the student carries in — the question that makes them pay attention to the right things when they get there.</p>
+      </div>
+      <div class="phase-card">
+        <div class="phase-num">Phase 2</div>
+        <div class="phase-name">The Sherpa During</div>
+        <p>Throughout the experience. A living journal structured by the MVAL protocol. An AI companion that reads the journal, recognizes developmental patterns, and asks the questions that move the student from description to reflection — without ever providing the answers.</p>
+      </div>
+      <div class="phase-card">
+        <div class="phase-num">Phase 3</div>
+        <div class="phase-name">The Post-Experience Post-Mortem</div>
+        <p>After the experience ends. Ricoeur's refiguration phase: not a summary of what happened, but a coherent narrative of what changed and why — a story the student can tell and build from.</p>
+      </div>
+    </div>
+
+    <!-- ── Who this book is for ── -->
+    <h2>Who this book is for</h2>
+    <p>This book is for experiential learning professionals who already know that some students extract enormous developmental value from placements while others complete the same experience and learn almost nothing — and who have always suspected the difference is not about the student.</p>
+
+    <div class="audience-strip">
+      <span class="audience-tag">Co-op Coordinators</span>
+      <span class="audience-tag">Study Abroad Advisors</span>
+      <span class="audience-tag">Clinical Placement Directors</span>
+      <span class="audience-tag">Apprenticeship Program Managers</span>
+      <span class="audience-tag">Corporate Early Career Leads</span>
+      <span class="audience-tag">Workforce Development Coordinators</span>
+    </div>
+
+    <h3>What this book assumes</h3>
+    <p>You know Kolb's four-stage cycle. You have reflection frameworks and debrief protocols. You know your institution's placement infrastructure and constraints. You have encountered the Excel modeling student — by different name, in different domain — and recognized the design failure underneath her answer.</p>
+
+    <h3>What this book does not assume</h3>
+    <p>Any familiarity with AI systems. Any technical background. The book treats AI tools as infrastructure — the same way you treat a learning management system. The Sherpa is configured in conversation; no code, no platform expertise required.</p>
+
+    <h3>What this book actively dismantles</h3>
+    <p>The assumption that the same experience works for every student who wants it. The assumption that AI gives every student the same generic response. The assumption that the advisor role shrinks when AI takes on the scaffolding. It does not shrink. It becomes more powerful — freed from the repetitive scaffolding work the Sherpa carries, the advisor can focus entirely on the interpretive and strategic conversations only a human who knows the student can have.</p>
+
+    <!-- ── What you will leave with ── -->
+    <h2>What you will leave with</h2>
+    <ol class="leave-with-list">
+      <li>A complete Sherpa infrastructure deployable in your program — developmental taxonomy, experience map, living journal structure, MVAL protocol, Sherpa configuration for before and during, refiguration protocol for after.</li>
+      <li>A redesigned advising practice: the advisor conversation that opens not with "what did you learn?" but with "the Sherpa flagged three recurring patterns — the one I want to talk about is this one." The conversation that is possible only when the scaffolding has already happened.</li>
+      <li>A field guide written for your specific deployment context — co-op, study abroad, clinical placement, trades apprenticeship, or corporate early career program — with domain-specific failure modes, stakeholder conflicts, and an implementation checklist that gets the system running.</li>
+    </ol>
+
+    <!-- ── The MVAL protocol ── -->
+    <h2>The MVAL protocol</h2>
+    <div class="mval-block">
+      <div class="mval-label">Structuring reflection for practical wisdom</div>
+      <div class="mval-row"><span class="mval-key">What happened</span><span class="mval-val">The specific event, interaction, or moment — not a summary of the week</span></div>
+      <div class="mval-row"><span class="mval-key">Why it mattered</span><span class="mval-val">The developmental significance — what was at stake, what capacity was being tested</span></div>
+      <div class="mval-row"><span class="mval-key">How you responded</span><span class="mval-val">Your actual response, not the response you wished you had made</span></div>
+      <div class="mval-row"><span class="mval-key">Environment</span><span class="mval-val">The organizational dynamics at play — not the room, the power structure, the culture</span></div>
+      <div class="mval-row"><span class="mval-key">Results</span><span class="mval-val">What followed — including what you did not expect</span></div>
+      <div class="mval-row"><span class="mval-key">Questions</span><span class="mval-val">What you are still thinking about — the unresolved judgment the experience produced</span></div>
+    </div>
+
+    <!-- ── The argument ── -->
+    <h2>The argument, stated directly</h2>
+    <div class="argument-block">
+      AI deployed in experiential learning contexts is categorically different from AI deployed in classroom contexts. It is a Sherpa, not a teacher. <strong>Every design principle imported from AI-in-education literature into experiential learning programs produces the wrong tool for the wrong relationship</strong> — and the cost is not inefficiency but the active undermining of the developmental process that makes consequential experience educative in the first place.<br><br>
+      When the Sherpa relationship is correctly understood and correctly designed, the developmental potential of experiential learning — practical wisdom, narrative identity, judgment under real stakes — can be realized at scale for the first time. Not because AI replaces the human advisor. Because AI carries the reflection infrastructure that no single human advisor could carry for 200 students simultaneously, <strong>freeing the advisor to do the irreducibly human work</strong>: the strategic conversation, the developmental challenge, the relationship that makes refiguration possible.
+    </div>
+
+    <!-- ── How the book is structured ── -->
+    <h2>How the book is structured</h2>
+    <p>The book runs in three acts plus a set of fully self-contained field guides — one for each deployment context.</p>
+
+    <!-- ACT ONE -->
+    <div class="act-header">Act One — The Problem · Chapters 1–2</div>
+
+    <p><strong>Act One</strong> establishes the design failure and gives the diagnostic framework. Theory earns its place through recognition, not instruction.</p>
+
+    <div class="chapter-card">
+      <div class="chapter-label">Chapter 1</div>
+      <h4>The Gap: Why Having an Experience Is Not the Same as Learning from One</h4>
+      <p>The Boston co-op student. Six months, well-evaluated, Excel skills instead of judgment. The 200-student structural constraint that no single advisor has ever been able to solve alone. And the central diagnostic: classroom AI tools arrive at the wrong address when deployed in experiential learning contexts, because the relationship they are built for is teaching, and the relationship experiential learning requires is something categorically different.</p>
+    </div>
+
+    <div class="chapter-card">
+      <div class="chapter-label">Chapter 2</div>
+      <h4>The Framework: Ricoeur, Kolb, and the Three Movements of Experiential Learning</h4>
+      <p>The nursing student who said "I just knew what to do" after a code and could not articulate the knowing that saved the patient. Prefiguration, configuration, refiguration — named through her story before the terms appear. Kolb's four-stage cycle mapped against where most program infrastructure actually breaks down. The Act One transition condition stated explicitly: before turning to Chapter 3, the practitioner holds three commitments — the developmental gap is a design failure, AI's role is a Sherpa relationship, and they are willing to challenge a student's placement preference on developmental grounds.</p>
+    </div>
+
+    <!-- ACT TWO -->
+    <div class="act-header">Act Two — The Infrastructure · Chapters 3–10</div>
+
+    <p><strong>Act Two</strong> builds the complete Sherpa system piece by piece — from developmental taxonomy through the Sherpa During deployment.</p>
+
+    <div class="chapter-card">
+      <div class="chapter-label">Chapter 3</div>
+      <h4>The Taxonomy: Profiling What a Student Needs to Develop</h4>
+      <p>Two students, same major, same GPA, same expressed interest. An interest inventory produces identical recommendations. The developmental taxonomy produces a profile that reveals they are not the same. The seven-tier taxonomy applied to a specific student — naming current strengths and the capacity gaps that no standard assessment surfaces. This chapter's final exercise produces a working developmental profile. Chapter 4 opens by using one.</p>
+    </div>
+
+    <div class="chapter-card">
+      <div class="chapter-label">Chapter 4</div>
+      <h4>The Experience Map: Matching Developmental Need to Placement Type</h4>
+      <p>The London case: a US student whose developmental profile indicates London but who wants Boston. The advisor has the experience map. Does the advisor have the language? The experience map translates a developmental profile into a specific placement recommendation with reasoning the student can understand and the advisor can defend — including the argument for a placement the student would not have chosen for themselves.</p>
+    </div>
+
+    <div class="chapter-card">
+      <div class="chapter-label">Chapter 5</div>
+      <h4>Pre-Experience Preparation: The Question to Carry In</h4>
+      <p>Two students, same London employer, different preparation. One leaves with a checklist. One leaves with a question. Six months later, different journals. The pre-experience preparation protocol that translates the developmental profile into one or two focused developmental questions — and configures the Sherpa before the experience begins. The distinction between orientation and developmental preparation, and why conflating them is one of the most common design failures in experiential programs.</p>
+    </div>
+
+    <div class="chapter-card">
+      <div class="chapter-label">Chapter 6</div>
+      <h4>The Living Journal: What It Is and Why Visual Matters</h4>
+      <p>A study abroad student's text journal versus the photograph she took in the Makola market — and the analytical precision the image held that the text did not produce until she was asked about it. The living journal as a fundamentally different document from current portfolio or reflection formats. The developmental function of visual documentation — not decorative but primary, especially in embodied domains.</p>
+    </div>
+
+    <div class="chapter-card">
+      <div class="chapter-label">Chapter 7</div>
+      <h4>The MVAL Protocol: Structuring Reflection for Practical Wisdom</h4>
+      <p>Same client meeting, two journal entries. The unstructured entry produces a note to self. The MVAL entry produces the question the student will still be thinking about next week. How to teach the protocol to students in a way that produces internalization rather than mechanical compliance. The corporate analyst whose "environment" field consistently describes the room rather than the organizational dynamics: that is the diagnostic the MVAL makes visible.</p>
+    </div>
+
+    <div class="chapter-card">
+      <div class="chapter-label">Chapter 8</div>
+      <h4>Failure as First-Class Artifact: Documenting What Went Wrong</h4>
+      <p>A senior co-op student with two journals — the official one (the highlight reel) and the personal notebook (the developmental record). He kept two because the official one was not safe for the honest material. That is not a student failure. That is a program design failure. Failure documentation is not the medicine you take when things go wrong. It is the practice that determines whether consequential experience produces wisdom.</p>
+    </div>
+
+    <div class="chapter-card">
+      <div class="chapter-label">Chapter 9</div>
+      <h4>The Sherpa Before: Profile, Map, and Focused Attention</h4>
+      <p>The practitioner who configured the same generic Sherpa for 200 students and found it producing the same three prompts for everyone — and the specific configuration that changes that. The Sherpa Before translates the developmental profile and experience map into Sherpa parameters before the experience begins: what patterns to watch for, when to escalate to the human advisor. The minimum viable deployment note: the two-page entry point for practitioners who need to get something running before they finish the book.</p>
+    </div>
+
+    <div class="chapter-card">
+      <div class="chapter-label">Chapter 10</div>
+      <h4>The Sherpa During: Companion, Not Coach</h4>
+      <p>Same journal entry, two Sherpa responses. Response A gives advice. Response B asks "What did you start to say?" One produces strategy. One produces the judgment the student withheld. The London student's Week 3 entry — the team meeting where she went invisible — and the Sherpa's one-sentence response. Week 3 Entry 8, written two days later, is a different kind of document. The three core Sherpa prompts, the pattern recognition that deploys them, and the escalation threshold that brings the human advisor back in.</p>
+    </div>
+
+    <!-- ACT THREE -->
+    <div class="act-header">Act Three — The Synthesis · Chapters 11–13</div>
+
+    <p><strong>Act Three</strong> addresses the hardest moments: the refiguration protocol, the boundary that makes development possible, and the redesigned advising conversation the full infrastructure makes possible.</p>
+
+    <div class="chapter-card">
+      <div class="chapter-label">Chapter 11</div>
+      <h4>The Sherpa After: Refiguration and the Capstone Narrative</h4>
+      <p>Ricoeur's third phase, designed rather than hoped for. How do you design the conditions that make refiguration happen reliably, rather than waiting to see if it happens on its own? The post-experience Sherpa sequence that guides a student from raw journal material to a coherent narrative of what changed. The capstone criteria: specific journal evidence, self-revision, forward projection, unresolved questions. The difference between a capstone that integrates and one that summarizes.</p>
+    </div>
+
+    <div class="chapter-card">
+      <div class="chapter-label">Chapter 12</div>
+      <h4>What the Sherpa Cannot Do: The Boundary That Makes Development Possible</h4>
+      <p>The clinical rotation student whose entries became shorter and more question-shaped until she was writing to get an answer rather than to do analysis. "The Sherpa keeps asking me questions instead of helping me." Her frustration is honest. Her misunderstanding is architectural. The boundary between guidance and doing is not a limitation of the tool — it is the condition that makes the developmental process work. Five dependency patterns, the diagnostic for each, and the redesign that converts a Sherpa producing dependency into one producing development.</p>
+    </div>
+
+    <div class="chapter-card">
+      <div class="chapter-label">Chapter 13</div>
+      <h4>The Advisor Shift: From Gap-Filling to Strategy</h4>
+      <p>The same co-op coordinator with the same student across two cycles. First cycle: "what happened, what did you learn." Second cycle with the Sherpa: "the Sherpa flagged three recurring patterns. The one I want to talk about is this one. Tell me what you think it means for where you go next." The advisor role, freed from scaffolding work the Sherpa now carries, becomes more powerful — not smaller. The redesigned advising conversation protocol and caseload management system for a Sherpa-supported context.</p>
+    </div>
+
+    <!-- FIELD GUIDES -->
+    <div class="act-header">Part Five — The Field Guides · Chapters 14–18</div>
+
+    <p><strong>Each field guide is fully self-contained.</strong> Enter at your chapter. A Construct Quick Reference provides the operational definitions you need to begin immediately. No need to read the preceding chapters first.</p>
+
+    <div class="field-guide-card">
+      <div class="fg-label">Chapter 14</div>
+      <h4>The Co-op Coordinator's Field Guide</h4>
+      <p>Full system deployment for six-month university co-op placements — multi-cycle developmental arcs, employer partner relationships, the Northeastern model as the flagship case. Domain-specific failure modes: employer-visibility suppression of failure documentation; multi-cycle profile drift when each advisor starts from scratch; the return-offer trap where a strong performance review conceals a developmental plateau. Explicit stakeholder conflict: employer evaluation interest versus student journal privacy — designed and resolved.</p>
+    </div>
+
+    <div class="field-guide-card">
+      <div class="fg-label">Chapter 15</div>
+      <h4>The Study Abroad Advisor's Field Guide</h4>
+      <p>Full system deployment for international placements — with specific configuration for cross-cultural disorientation as a developmental resource, not a logistical problem, and re-entry as a designed protocol rather than an afterthought. Domain-specific failure modes: disorientation managed rather than developed; the tourist journal rich with observation and empty of perspective-taking; re-entry without integration — refiguration abandoned at the airport.</p>
+    </div>
+
+    <div class="field-guide-card">
+      <div class="fg-label">Chapter 16</div>
+      <h4>The Clinical Placement Director's Field Guide</h4>
+      <p>Full system deployment in the highest-stakes experiential learning context — with specific design for failure documentation under liability constraints, clinical error processing, and professional identity formation under evaluation pressure. Nursing, medicine, allied health, social work, law. The specific challenge: clinical errors are simultaneously the most important developmental artifacts and the most likely to be suppressed or documented defensively. Mandatory reporting boundary language reviewed for institutional compliance before publication.</p>
+    </div>
+
+    <div class="field-guide-card">
+      <div class="fg-label">Chapter 17</div>
+      <h4>The Workforce Development Coordinator's Field Guide</h4>
+      <p>Full system deployment in trades and apprenticeship contexts — with specific adaptations for embodied skill development, the master-apprentice relationship, and the living journal as a visual document of physical learning. The text-only journal is inadequate here — the visual dimension is the primary documentation mode, not an enhancement. The trades apprenticeship is the oldest Sherpa relationship in human history; this chapter builds the infrastructure that relationship has always deserved.</p>
+    </div>
+
+    <div class="field-guide-card">
+      <div class="fg-label">Chapter 18</div>
+      <h4>The Corporate Early Career Program Manager's Field Guide</h4>
+      <p>Full system deployment for rotational programs and first assignments — with specific adaptations for organizational culture navigation, the student-to-professional transition, and the dual-use refiguration document. The specific challenge: organizational culture navigation is the primary developmental variable and the thing most likely to be documented around rather than through. The tension between employee developmental ownership and program talent development data — named honestly, not resolved by document design.</p>
+    </div>
+
+    <hr>
+
+    <div class="course-byline">
+      The AI Sherpa: A Practitioner's Guide for Experiential Learning · Practitioner handbook · Author: Nik Bear Brown · <a href="mailto:ni.brown@neu.edu">ni.brown@neu.edu</a>
+    </div>
+
+  </main>
+
+  <footer style="text-align:center; padding:20px; font-size:11px; color:#999; border-top:1px solid #e0e0e0; margin-top:40px;">
+    Built with <a href="https://www.bearbrown.co" target="_blank" rel="noopener" style="color:#999;">bearbrown.co</a> · AI tools for educators, creators &amp; founders
+  </footer>
+
+</body>
+</html>

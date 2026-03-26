@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Botspeak: the nine pillars of AI fluency — course syllabus</title>
+  <meta name="description" content="Graduate course syllabus for Irreducibly Human: Botspeak at Northeastern University College of Engineering. The series entry point — builds the complete Five Modes architecture (Specification, Delegation, Conversation, Discernment, Diligence), the tier taxonomy, and the original research capstone demonstrating AI fluency under real conditions.">
+  <meta name="keywords" content="Botspeak, syllabus, AI fluency, Five Modes, tier taxonomy, Irreducibly Human, Northeastern University, graduate engineering, Nik Bear Brown, specification, delegation, conversation, discernment, diligence, nine pillars, plausibility auditing, trust calibration, Human Decision Node, PARU cycle">
+
+  <style>
+    :root {
+      --bb-1: #1a0a00;
+      --bb-2: #8B3A0F;
+      --bb-3: #C0392B;
+      --bb-4: #E8A020;
+      --bb-5: #D4500A;
+      --bb-6: #B8860B;
+      --bb-7: #C8A96E;
+      --bb-8: #F0E6D0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background-color: var(--bb-8);
+      color: var(--bb-1);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    .page-wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 32px 64px;
+    }
+
+    /* ── COVER ── */
+    .cover {
+      border-bottom: 3px solid var(--bb-2);
+      padding-bottom: 32px;
+      margin-bottom: 40px;
+    }
+
+    .cover-series {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+      margin-bottom: 8px;
+    }
+
+    .cover h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--bb-2);
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+
+    .cover h2 {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--bb-5);
+      margin-bottom: 18px;
+    }
+
+    .cover-meta { font-size: 13px; color: var(--bb-6); }
+
+    .version-meta {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 11px;
+      color: var(--bb-6);
+      border: 1px solid var(--bb-7);
+      border-radius: 3px;
+      padding: 4px 10px;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: white;
+      border-left: 4px solid var(--bb-2);
+      padding: 24px 28px;
+      margin-bottom: 48px;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .toc h3 {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+      margin-bottom: 14px;
+    }
+
+    .toc ol { padding-left: 20px; }
+    .toc li { margin-bottom: 4px; font-size: 14px; }
+    .toc a { color: var(--bb-2); text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+
+    /* ── SECTIONS ── */
+    .section { margin-bottom: 56px; }
+
+    .section-number {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+      margin-bottom: 4px;
+    }
+
+    h2.section-title {
+      font-size: 22px;
+      color: var(--bb-2);
+      border-bottom: 1px solid var(--bb-7);
+      padding-bottom: 8px;
+      margin-bottom: 24px;
+    }
+
+    h3 { font-size: 16px; color: var(--bb-5); margin: 28px 0 10px; }
+
+    h4 {
+      font-size: 14px;
+      color: var(--bb-2);
+      font-style: italic;
+      font-weight: 600;
+      margin: 18px 0 8px;
+    }
+
+    p { margin-bottom: 14px; }
+    ul { padding-left: 20px; margin-bottom: 14px; }
+    ul li { margin-bottom: 6px; font-size: 15px; }
+    a { color: var(--bb-5); }
+    strong { color: var(--bb-1); }
+
+    /* ── TABLES ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin: 16px 0 24px;
+    }
+
+    th {
+      background: var(--bb-2);
+      color: var(--bb-8);
+      padding: 10px 14px;
+      text-align: left;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+    }
+
+    td {
+      padding: 9px 14px;
+      border-bottom: 1px solid var(--bb-7);
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td { background: rgba(200,169,110,0.12); }
+
+    /* ── CALLOUTS ── */
+    .callout {
+      padding: 16px 20px;
+      border-radius: 4px;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+    .callout-warn { background: rgba(192,57,43,0.08); border-left: 4px solid var(--bb-3); }
+    .callout-note { background: rgba(232,160,32,0.10); border-left: 4px solid var(--bb-4); }
+    .callout-info { background: white; border-left: 4px solid var(--bb-7); }
+    .callout strong { color: var(--bb-2); }
+
+    /* ── WELCOME ── */
+    .welcome-letter {
+      background: white;
+      border-left: 4px solid var(--bb-4);
+      padding: 28px 32px;
+      border-radius: 0 4px 4px 0;
+      font-style: italic;
+    }
+
+    .welcome-letter em { font-style: normal; font-weight: 600; color: var(--bb-2); }
+
+    .welcome-letter .signature {
+      font-style: normal;
+      margin-top: 20px;
+      font-size: 14px;
+      color: var(--bb-6);
+    }
+
+    /* ── OUTCOMES LIST ── */
+    ol.outcomes-list {
+      list-style: none;
+      padding: 0;
+      counter-reset: outcome-counter;
+    }
+
+    .outcomes-list li {
+      counter-increment: outcome-counter;
+      padding: 12px 14px 12px 36px;
+      border-bottom: 1px solid var(--bb-7);
+      font-size: 14px;
+      position: relative;
+    }
+
+    .outcomes-list li::before {
+      content: counter(outcome-counter);
+      position: absolute;
+      left: 12px;
+      top: 13px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--bb-4);
+      background: var(--bb-2);
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── GRADE BANDS ── */
+    .grade-band {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin: 12px 0;
+    }
+
+    .band-card {
+      flex: 1;
+      min-width: 180px;
+      background: white;
+      border: 1px solid var(--bb-7);
+      border-radius: 4px;
+      padding: 14px 16px;
+    }
+
+    .band-card .band-label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+      margin-bottom: 8px;
+    }
+
+    /* ── AI DISCLOSURE ── */
+    pre {
+      background: var(--bb-1);
+      color: var(--bb-8);
+      padding: 18px 20px;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      overflow-x: auto;
+      margin: 16px 0;
+    }
+
+    /* ── ACT HEADERS ── */
+    .act-header {
+      background: var(--bb-1);
+      color: var(--bb-8);
+      padding: 20px 24px;
+      border-radius: 4px;
+      margin: 40px 0 24px;
+    }
+
+    .act-header .act-label {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--bb-7);
+      margin-bottom: 4px;
+    }
+
+    .act-header h3 { font-size: 18px; color: var(--bb-4); margin: 0 0 6px; }
+    .act-header p { font-size: 13px; color: var(--bb-7); margin: 0; font-style: italic; }
+
+    /* ── WEEK BLOCKS ── */
+    .week-block {
+      border: 1px solid var(--bb-7);
+      border-radius: 4px;
+      margin-bottom: 28px;
+      overflow: hidden;
+    }
+
+    .week-header {
+      background: var(--bb-2);
+      color: var(--bb-8);
+      padding: 12px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .week-header .week-label {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.75;
+    }
+
+    .week-header .week-title { font-size: 16px; font-weight: 700; }
+    .week-header .week-chapter { font-size: 12px; opacity: 0.8; font-style: italic; }
+
+    .week-body { padding: 18px 20px; }
+
+    .week-goal {
+      font-size: 13px;
+      color: var(--bb-5);
+      font-style: italic;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--bb-7);
+    }
+
+    .session-row {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .session-label {
+      min-width: 90px;
+      font-weight: 600;
+      color: var(--bb-2);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding-top: 2px;
+    }
+
+    .deliverable-block {
+      background: rgba(139,58,15,0.06);
+      border: 1px solid var(--bb-7);
+      border-radius: 3px;
+      padding: 12px 16px;
+      margin-top: 12px;
+      font-size: 13px;
+    }
+
+    .deliverable-block .deliverable-label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bb-5);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    /* ── MAJOR DELIVERABLES ── */
+    .major-deliverable {
+      background: var(--bb-1);
+      color: var(--bb-8);
+      border-radius: 4px;
+      padding: 22px 26px;
+      margin: 24px 0;
+    }
+
+    .major-deliverable h4 {
+      color: var(--bb-4);
+      font-size: 15px;
+      font-style: normal;
+      margin-bottom: 10px;
+    }
+
+    .major-deliverable p, .major-deliverable ul li {
+      font-size: 14px;
+      color: var(--bb-7);
+    }
+
+    .major-deliverable ul { padding-left: 18px; }
+
+    /* ── MIDTERM BLOCK ── */
+    .midterm-block {
+      background: var(--bb-1);
+      color: var(--bb-8);
+      border-radius: 4px;
+      padding: 22px 26px;
+      margin: 32px 0;
+    }
+
+    .midterm-block h4 {
+      color: var(--bb-4);
+      font-size: 15px;
+      font-style: normal;
+      margin-bottom: 10px;
+    }
+
+    .midterm-block p, .midterm-block ul li {
+      font-size: 14px;
+      color: var(--bb-7);
+    }
+
+    .midterm-block ul { padding-left: 18px; }
+
+    /* ── CAPSTONE TRACKS ── */
+    .tracks-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 14px 0;
+    }
+
+    .track-card {
+      background: white;
+      border: 1px solid var(--bb-7);
+      border-top: 3px solid var(--bb-5);
+      border-radius: 0 0 4px 4px;
+      padding: 14px;
+    }
+
+    .track-card .track-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--bb-2);
+      margin-bottom: 6px;
+    }
+
+    .track-card p { font-size: 13px; margin: 0; }
+
+    .schedule-table td:first-child {
+      font-weight: 600;
+      white-space: nowrap;
+      color: var(--bb-2);
+    }
+
+    @media (max-width: 600px) {
+      .page-wrapper { padding: 24px 16px 48px; }
+      .week-header { flex-direction: column; }
+      .grade-band, .tracks-grid { flex-direction: column; grid-template-columns: 1fr; }
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 11px;
+      color: #999;
+      border-top: 1px solid #e0e0e0;
+      margin-top: 40px;
+    }
+
+    footer a { color: #999; }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-series">Irreducibly Human Series · Series Entry Point · Northeastern University · College of Engineering</div>
+    <h1>Botspeak: the nine pillars of AI fluency</h1>
+    <h2>What AI can and can't do — the complete framework for AI collaboration</h2>
+    <div class="cover-meta">
+      Course [XXXX 5XXX] &nbsp;·&nbsp; 4 Credit Hours &nbsp;·&nbsp; Fall [Year] &nbsp;·&nbsp; In-person<br>
+      Instructor: Nik Bear Brown &nbsp;·&nbsp; <a href="mailto:ni.brown@neu.edu">ni.brown@neu.edu</a>
+    </div>
+    <div class="version-meta">Version 1.0 &nbsp;·&nbsp; [Distribution Date] &nbsp;·&nbsp; Reviewed by Dev the Dev</div>
+  </div>
+
+  <!-- TOC -->
+  <div class="toc">
+    <h3>Contents</h3>
+    <ol>
+      <li><a href="#welcome">Welcome</a></li>
+      <li><a href="#series">The Irreducibly Human Series</a></li>
+      <li><a href="#info">Course Information</a></li>
+      <li><a href="#outcomes">Learning Outcomes</a></li>
+      <li><a href="#materials">Required Materials</a></li>
+      <li><a href="#assessment">Assessment and Grading</a></li>
+      <li><a href="#schedule">Course Schedule</a></li>
+      <li><a href="#policies">Course Policies</a></li>
+    </ol>
+  </div>
+
+
+  <!-- 1. WELCOME -->
+  <div class="section" id="welcome">
+    <div class="section-number">Section 1</div>
+    <h2 class="section-title">Welcome</h2>
+
+    <div class="welcome-letter">
+      <p>I've spent years watching capable professionals use AI tools confidently and badly — not because they weren't intelligent, but because no one had ever given them a framework for understanding what they were actually working with. They could generate outputs. They couldn't evaluate them. They could prompt. They couldn't specify. They could iterate. They couldn't tell when they'd stopped thinking and started deferring.</p>
+
+      <p>The failure mode I've seen most consistently isn't a broken tool. It's a competent professional who has handed a decision to a machine without knowing it — and produced work that looks polished, sounds authoritative, and is wrong in ways neither they nor the machine can see.</p>
+
+      <p>That gap is what this course closes.</p>
+
+      <p>AI fluency is not knowing which tools to use. It is understanding the cognitive nature of the entity you are collaborating with — what it does at superhuman level, what it cannot do at all, and what remains irreducibly yours. The gap between those two engineers in Chapter 1 — the one who sees the problem and the one who cannot — is not a gap in technical skill. It is a gap in fluency. One of them understands what they are working with. The other is using a very sophisticated autocomplete.</p>
+
+      <p>This course gives you the framework. The Five Modes — Specification, Delegation, Conversation, Discernment, Diligence — are not prompting tips. They are a complete architecture for AI collaboration that works across every tool you will encounter, including ones that don't exist yet. The Nine Pillars are the cognitive capacities the framework develops. The tier taxonomy is the map.</p>
+
+      <p>The course is demanding in a specific way. It will not ask you to memorize tool features or reproduce prompting templates. It will ask you to make judgment calls, defend them, and — most importantly — name the judgment that was yours and could not have been the machine's. That is harder than a technical course. It is more durable.</p>
+
+      <p>What you will leave with: a complete AI fluency framework applied to real work in your own domain, in writing, with explicit reasoning you can defend anywhere — including in front of the person who commissioned the work.</p>
+
+      <p>Here is what to do before we meet: read Chapter 1 of <em>Irreducibly Human: Botspeak</em>. Come to Session A with the fabricated citation case in your head. You don't need to know why it happened yet. You just need to feel how a professional with no framework for AI failure looks exactly like one who has been competent and unlucky.</p>
+
+      <div class="signature">— Nik Bear Brown | ni.brown@neu.edu</div>
+    </div>
+  </div>
+
+
+  <!-- 2. SERIES -->
+  <div class="section" id="series">
+    <div class="section-number">Section 2</div>
+    <h2 class="section-title">The Irreducibly Human Series</h2>
+
+    <p>We are in the early years of the most powerful cognitive tools ever built. AI systems are superhuman at pattern recognition, fact retrieval, arithmetic, and syntactic correctness. They are genuinely poor at formulating the right question, auditing their own outputs for plausibility, reasoning causally about what they are measuring, and knowing when not to proceed.</p>
+
+    <p>The Irreducibly Human series develops exactly those capacities — the forms of reasoning that AI tools require humans to supply, and that your competitors who only learned to use the tools will not have.</p>
+
+    <p>This course — <strong>Botspeak</strong> — is the series entry point. It builds the complete architecture for AI collaboration across all five modes and nine pillars, teaches you to locate any cognitive task on the tier taxonomy, and develops the supervisory and metacognitive practices that make AI collaboration a professional strength rather than a professional liability.</p>
+
+    <p>The companion courses go deeper on specific layers. <em>Conducting AI</em> builds the full Tier 4 supervisory toolkit — problem formulation, plausibility auditing, interpretive judgment, and override decision-making — for engineers who deploy AI systems. <em>Causal Reasoning</em> builds Tier 5: the ability to construct a defensible model of what causes what in your domain, and to know what that model can and cannot support. The three courses can be taken in any order; each is self-contained while pointing toward the others.</p>
+  </div>
+
+
+  <!-- 3. COURSE INFO -->
+  <div class="section" id="info">
+    <div class="section-number">Section 3</div>
+    <h2 class="section-title">Course Information</h2>
+
+    <h3>Course Identifiers</h3>
+    <table>
+      <tr><th>Field</th><th>Value</th></tr>
+      <tr><td>Course Title</td><td>Irreducibly Human: What AI Can and Can't Do — Botspeak: The Nine Pillars of AI Fluency</td></tr>
+      <tr><td>Course Number</td><td>[XXXX 5XXX — assigned at CourseLeaf submission]</td></tr>
+      <tr><td>Credit Hours</td><td>4</td></tr>
+      <tr><td>Term</td><td>Fall [Year]</td></tr>
+      <tr><td>Mode of Delivery</td><td>In-person</td></tr>
+      <tr><td>Components</td><td>Lecture/Seminar (1× weekly) + TA-led Mode Lab (1× weekly in-class lab)</td></tr>
+      <tr><td>Department</td><td>College of Engineering</td></tr>
+    </table>
+
+    <h3>Meeting Information</h3>
+    <p>Lecture/Seminar: [TBD] &nbsp;·&nbsp; Location: [Building, Room]<br>
+    Mode Lab (TA-led): [TBD] &nbsp;·&nbsp; Location: [Building, Room]</p>
+
+    <div class="callout callout-warn">
+      <strong>The Mode Lab is a required course component, not an optional recitation.</strong> It is where concepts become skills. Chapter 6's adversarial conversation exercise cannot be performed by reading alone — it requires supervised practice with annotated transcripts and peer feedback. Missing the lab is not equivalent to missing a lecture — it is missing the part of the course where learning consolidates.
+    </div>
+
+    <h3>Instructor</h3>
+    <table>
+      <tr><th>Field</th><th>Value</th></tr>
+      <tr><td>Name</td><td>Nik Bear Brown</td></tr>
+      <tr><td>Email</td><td><a href="mailto:ni.brown@neu.edu">ni.brown@neu.edu</a></td></tr>
+      <tr><td>Response time</td><td>Within 48 hours on weekdays. Put URGENT in subject line for time-sensitive questions.</td></tr>
+      <tr><td>Office / Zoom</td><td>[TBD]</td></tr>
+      <tr><td>Student hours</td><td>[Days, times, location] — <a href="#">booking link TBD</a></td></tr>
+      <tr><td>Preferred contact</td><td>Email for logistics. Student hours for anything that takes more than two sentences to answer well.</td></tr>
+    </table>
+
+    <p>I hold student hours for you — not only for students with emergencies. Come because you want to think through your capstone research question before committing to it, because a Mode Lab exercise surfaced something you want to unpack, because you want to understand where this field is going, or simply because you want to know what fluent AI collaboration looks like in professional practice. The most productive conversations I have with students happen outside scheduled sessions.</p>
+
+    <h3>Teaching Assistant</h3>
+    <table>
+      <tr><th>Field</th><th>Value</th></tr>
+      <tr><td>Name</td><td>TBA</td></tr>
+      <tr><td>Email</td><td>TBA</td></tr>
+      <tr><td>Mode Lab hours</td><td>TBA</td></tr>
+    </table>
+
+    <p>The TA runs the weekly Mode Lab — designing exercises, facilitating adversarial conversation sessions, running peer critique, and returning written feedback on lab submissions. For questions about the Five Modes in practice, prompt pattern application, and weekly exercise work, the TA is your first resource. Tool and platform questions go to the TA first; if unresolved, the TA will forward to the professor.</p>
+
+    <h3>Prerequisites</h3>
+
+    <div class="callout callout-info">
+      <strong>Official prerequisites:</strong> Graduate standing in Engineering or related field (exact CourseLeaf string TBD)
+    </div>
+
+    <h4>What this course assumes you know</h4>
+    <p>You have access to a laptop and at least one AI tool (Claude, ChatGPT, Gemini, or equivalent). You have used an AI tool at least once. Nothing else is required.</p>
+
+    <h4>What this course does not assume</h4>
+    <p>Prior coursework in AI, machine learning, computer science, or data science. No technical background in AI systems. No philosophy or ethics background. No prior prompting experience. This course is designed to be accessible to any graduate-level professional who uses or will use AI in their work.</p>
+
+    <h4>A note for students with strong technical AI backgrounds</h4>
+    <p>Students who arrive most technically fluent in AI systems sometimes find the early weeks the most disorienting. That disorientation is the course working as intended. Fluency is not a harder version of technical literacy — it is a different cognitive operation. Students who treat the Five Modes as prompting optimization will produce technically correct exercises and miss the course. Students who approach the framework as genuinely new terrain — regardless of their technical background — will get the most from it.</p>
+
+    <p>If you do not have access to an AI tool, contact the instructor before the first week — options are available at no cost.</p>
+  </div>
+
+
+  <!-- 4. LEARNING OUTCOMES -->
+  <div class="section" id="outcomes">
+    <div class="section-number">Section 4</div>
+    <h2 class="section-title">Learning Outcomes</h2>
+
+    <p>By the end of this course, students will be able to:</p>
+
+    <ol class="outcomes-list">
+      <li>Explain how AI systems generate outputs through pattern completion rather than knowledge retrieval, and predict failure types from this mechanism</li>
+      <li>Apply proportional skepticism to AI outputs, calibrating verification depth to stakes, reliability zone, and reversibility</li>
+      <li>Locate any cognitive task on the seven-tier Irreducibly Human taxonomy, identifying what the AI can perform and what the human must supply</li>
+      <li>Write a complete five-component specification — intent, constraints, success criteria, exclusions, output format — and predict its failure modes before any prompt is written</li>
+      <li>Produce a delegation map for a complex task with explicit tier-location and boundary rationale for each component</li>
+      <li>Conduct adversarial AI conversation using at least two adversarial strategies, producing annotated transcripts that demonstrate intellectual ownership</li>
+      <li>Apply a tiered verification protocol to an AI output, returning a structured verdict with domain-specific findings by verification layer</li>
+      <li>Design a Diligence protocol for a deployed AI workflow, specifying monitoring cadence, drift indicators, escalation conditions, and shutdown criteria</li>
+      <li>Produce a trust calibration map for a multi-step AI-assisted workflow, identifying the highest-risk compounding step</li>
+      <li>Apply the PARU cycle diagnostic to classify an AI system, identify missing elements, and evaluate the Human Decision Node design</li>
+      <li>Apply adversarial validation to an AI output, identifying distributional shift, framing failure, or assumption invisibility not detectable by ordinary review</li>
+      <li>Use AI-assisted rapid prototyping to develop a defensible research question with documented iteration log and explicit identification of irreducibly human judgment calls</li>
+      <li>Execute original research in AI fluency, demonstrating the Five Modes under real conditions and naming, specifically and honestly, the judgment calls that required human values, domain knowledge, or accountability</li>
+    </ol>
+  </div>
+
+
+  <!-- 5. MATERIALS -->
+  <div class="section" id="materials">
+    <div class="section-number">Section 5</div>
+    <h2 class="section-title">Required Materials</h2>
+
+    <h3>Textbook</h3>
+    <table>
+      <tr><th>Field</th><th>Value</th></tr>
+      <tr><td>Title</td><td><em>Irreducibly Human: What AI Can and Can't Do — Botspeak: The Nine Pillars of AI Fluency</em></td></tr>
+      <tr><td>Author</td><td>Nik Bear Brown</td></tr>
+      <tr><td>Publisher</td><td>Bear Brown &amp; Company / Kindle Direct Publishing, 2026</td></tr>
+      <tr><td>Availability</td><td>[Amazon Kindle / print link — TBD at publication]</td></tr>
+      <tr><td>Cost</td><td>[TBD]</td></tr>
+      <tr><td>Edition</td><td>First edition. No prior edition exists.</td></tr>
+    </table>
+
+    <h3>Supplementary Readings</h3>
+    <p>Distributed via Canvas throughout the semester at no cost. Required supplementary readings are marked <strong>[Required]</strong> in the weekly schedule; optional readings are marked <strong>[Recommended]</strong> and are genuinely optional.</p>
+
+    <h3>Required Technology</h3>
+
+    <h4>AI tools (all free — no purchase required)</h4>
+    <ul>
+      <li>Claude — <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a></li>
+      <li>ChatGPT — <a href="https://chatgpt.com" target="_blank" rel="noopener">chatgpt.com</a></li>
+      <li>Gemini — <a href="https://gemini.google.com" target="_blank" rel="noopener">gemini.google.com</a></li>
+    </ul>
+    <p>Students may use any combination. Appendices A, B, and C of the textbook provide tool-specific guidance. You are not required to use all three — you are required to understand that the framework applies across all of them.</p>
+
+    <h4>Documentation tools (free, browser-based)</h4>
+    <ul>
+      <li>Google Docs or equivalent — for iteration logs, specification documents, and capstone deliverables</li>
+    </ul>
+
+    <h4>Course platforms</h4>
+    <ul>
+      <li><strong>Canvas</strong> — all assignment submission and feedback</li>
+      <li><strong>GitHub:</strong> <a href="https://github.com/nikbearbrown" target="_blank" rel="noopener">github.com/nikbearbrown</a> — all lectures, assignments, and project materials</li>
+      <li><strong>YouTube:</strong> <a href="https://www.youtube.com/user/nikbearbrown" target="_blank" rel="noopener">youtube.com/user/nikbearbrown</a> — all lectures posted as 5–15 minute bite-sized lessons throughout the semester</li>
+    </ul>
+  </div>
+
+
+  <!-- 6. ASSESSMENT -->
+  <div class="section" id="assessment">
+    <div class="section-number">Section 6</div>
+    <h2 class="section-title">Assessment and Grading</h2>
+
+    <h3>Point Summary</h3>
+    <table>
+      <tr><th>Assessment</th><th>Points</th><th>Quality/Portfolio</th></tr>
+      <tr><td>Reading Responses (5 × 30 pts)</td><td>150</td><td>✓ 20 pts each</td></tr>
+      <tr><td>Weekly Mode Exercises (8 × 25 pts, drop lowest of 9)</td><td>200</td><td>✓ 20 pts each</td></tr>
+      <tr><td>Mode Lab Participation</td><td>100</td><td>✓ 20 pts component</td></tr>
+      <tr><td>Midterm</td><td>100</td><td>—</td></tr>
+      <tr><td>Final Project — Research Protocol Checkpoint</td><td>100</td><td>✓ 20 pts</td></tr>
+      <tr><td>Final Project — Peer Review Checkpoint</td><td>100</td><td>✓ 20 pts</td></tr>
+      <tr><td>Final Project — Final Capstone Submission</td><td>250</td><td>✓ 20 pts</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>1000</strong></td><td></td></tr>
+    </table>
+
+    <h3>AI-Based Grading Approach</h3>
+
+    <div class="grade-band">
+      <div class="band-card">
+        <div class="band-label">800+ points — relative scale</div>
+        <table style="margin:0;">
+          <tr><td>Top 25%</td><td><strong>A</strong></td></tr>
+          <tr><td>Next 25%</td><td><strong>A–</strong></td></tr>
+          <tr><td>Next 25%</td><td><strong>B+</strong></td></tr>
+          <tr><td>Final 25%</td><td><strong>B</strong></td></tr>
+        </table>
+      </div>
+      <div class="band-card">
+        <div class="band-label">Below 800 — absolute scale</div>
+        <table style="margin:0;">
+          <tr><td>780–799</td><td><strong>C+</strong></td></tr>
+          <tr><td>730–779</td><td><strong>C</strong></td></tr>
+          <tr><td>700–729</td><td><strong>C–</strong></td></tr>
+          <tr><td>600–699</td><td><strong>D</strong></td></tr>
+          <tr><td>Below 600</td><td><strong>F</strong></td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="callout callout-note">
+      Students below 800 points cannot earn a grade higher than B–, even if the relative curve would otherwise place them higher. The instructor reserves the right to make minor adjustments for fairness.
+    </div>
+
+    <h3>Quality/Portfolio Score (20 points — on all qualifying assignments)</h3>
+    <p>Every assignment carrying the Quality/Portfolio component is evaluated on a relative 20-point scale comparing your work to peers, emphasizing depth of AI fluency reasoning, quality of domain judgment, and evidence that the irreducibly human judgment calls were made by you — not delegated to a tool.</p>
+    <table>
+      <tr><th>Percentile Band</th><th>Score</th></tr>
+      <tr><td>Bottom 25%</td><td>5 pts</td></tr>
+      <tr><td>26–50th percentile</td><td>10 pts</td></tr>
+      <tr><td>51–75th percentile</td><td>15 pts</td></tr>
+      <tr><td>Top 25%</td><td>20 pts</td></tr>
+    </table>
+
+    <h3>AI Use in Assignments</h3>
+    <p>You are encouraged to use generative AI tools on every assignment. Citation is required. Undisclosed AI use is an academic integrity violation. Disclosed AI use is not.</p>
+    <p>Every submission must include an AI Use Disclosure block:</p>
+
+    <pre>AI USE DISCLOSURE
+Tool(s) used:
+Portions assisted:
+How used:
+What I changed:
+What the AI could not do: [name at least one judgment call that required
+your values, domain knowledge, or accountability — this field is not optional]</pre>
+
+    <div class="callout callout-warn">
+      The last field is the <strong>Irreducibly Human declaration</strong>. A disclosure that cannot name one thing the AI could not do has not demonstrated that the student performed the irreducibly human reasoning layer. This is not a formality. It is the assessment.
+    </div>
+
+    <h3>Drop Policy</h3>
+    <p>The lowest-scoring Mode Exercise is dropped. Eight of nine exercises count toward the final grade. This absorbs one week where the concept didn't click. It does not absorb a pattern of non-engagement.</p>
+  </div>
+
+
+  <!-- 7. SCHEDULE -->
+  <div class="section" id="schedule">
+    <div class="section-number">Section 7</div>
+    <h2 class="section-title">Course Schedule</h2>
+
+    <p>The schedule maps each week to a chapter in <em>Irreducibly Human: Botspeak</em>. Read the assigned chapter before Session A. Come to Session A with the case in your head. Come to Session B ready to use the concept. Come to the Mode Lab ready to apply it.</p>
+
+    <p><strong>Reading time per chapter:</strong> approximately 45–75 minutes &nbsp;·&nbsp; ⚑ = graded deliverable due &nbsp;·&nbsp; ★ = transition week</p>
+
+
+    <!-- ACT ONE -->
+    <div class="act-header">
+      <div class="act-label">Act One · Weeks 1–3 · Chapters 1–3</div>
+      <h3>Establish</h3>
+      <p>The survival vocabulary — and why it is necessary but not sufficient</p>
+    </div>
+
+    <!-- Week 1 -->
+    <div class="week-block">
+      <div class="week-header">
+        <span class="week-label">Week 1</span>
+        <span class="week-title">What You're Actually Talking To</span>
+        <span class="week-chapter">Chapter 1</span>
+      </div>
+      <div class="week-body">
+        <div class="week-goal">By the end of this week: Explain the difference between pattern completion and knowledge retrieval — using an AI output from your own professional domain as the example.</div>
+        <div class="session-row"><span class="session-label">Session A</span><span>The fabricated citation. A professional submits a report with an AI-generated citation to a study that does not exist. The client's researcher finds it. The professional has no framework for why it happened. No definitions yet.</span></div>
+        <div class="session-row"><span class="session-label">Session B</span><span>Pattern prediction vs. knowledge retrieval. Why confidence of expression is structurally uncorrelated with accuracy of content. Training distribution and reliability zones — center vs. edge.</span></div>
+        <div class="session-row"><span class="session-label">Mode Lab</span><span>Reliability zone mapping — given five AI outputs, classify each by reliability zone and justify the distinction. (Ungraded — prepares for Exercise #1.)</span></div>
+        <div class="deliverable-block">
+          <div class="deliverable-label">⚑ Reading Response #1 (30 pts)</div>
+          Describe an AI output you have used or encountered in your professional or academic domain. Identify the claim in that output you would be least willing to use without verification. What reliability zone does it occupy — and what would you need to check? Due before Session A, Week 2.
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 2 -->
+    <div class="week-block">
+      <div class="week-header">
+        <span class="week-label">Week 2</span>
+        <span class="week-title">The Confidence Trap</span>
+        <span class="week-chapter">Chapter 2</span>
+      </div>
+      <div class="week-body">
+        <div class="week-goal">By the end of this week: Apply the proportional skepticism protocol to AI outputs at three different stakes levels — using cases from your own domain.</div>
+        <div class="session-row"><span class="session-label">Session A</span><span>A second high-stakes failure case in a different domain. Two cases across two chapters establishes the pattern as structural, not incidental. Hallucination, confabulation, and automation bias — precise definitions that distinguish the three.</span></div>
+        <div class="session-row"><span class="session-label">Session B</span><span>Why confidence is a style learned from training data, not an accuracy signal. Proportional skepticism — stakes × reliability zone × reversibility. Symmetric failure modes: over-trust and under-trust.</span></div>
+        <div class="session-row"><span class="session-label">Mode Lab</span><span>Proportional skepticism exercise — three scenarios at different stakes levels, apply the protocol to each. (Ungraded — prepares for Exercise #1.)</span></div>
+        <div class="deliverable-block">
+          <div class="deliverable-label">⚑ Reading Response #2 (30 pts)</div>
+          Return to the output from RR1. Apply the full proportional skepticism protocol: state the stakes level, the reliability zone, the reversibility of the use case, and the verification depth the protocol recommends. Then state whether you followed that protocol when you originally used the output. Due before Session A, Week 3.
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 3 -->
+    <div class="week-block">
+      <div class="week-header">
+        <span class="week-label">Week 3 ★</span>
+        <span class="week-title">The Map and the Language</span>
+        <span class="week-chapter">Chapter 3</span>
+      </div>
+      <div class="week-body">
+        <div class="week-goal">By the end of this week: Map a current AI collaboration task onto the full Irreducibly Human framework — locating it on the tier taxonomy, identifying the relevant modes, and naming the irreducibly human judgment it requires.</div>
+        <div class="session-row"><span class="session-label">Session A</span><span>Move 37 — AlphaGo, March 13, 2016. Fan Hui goes silent. "It's not a human move." A different cognitive architecture searches different territory. The Irreducibly Human tier taxonomy introduced.</span></div>
+        <div class="session-row"><span class="session-label">Session B</span><span>The Five Modes as a pre/during/post temporal architecture. The literacy/fluency distinction. "Botspeak" named as a language, not a toolset. The explicit bridge to Part II: you are about to stop studying Botspeak and start speaking it.</span></div>
+        <div class="session-row"><span class="session-label">Mode Lab</span><span>Mode Exercise #1 — Map a current AI collaboration task onto the full framework: tier location, modes required, irreducibly human judgment named.</span></div>
+        <div class="deliverable-block">
+          <div class="deliverable-label">⚑ Mode Exercise #1 (25 pts)</div>
+          Choose a real AI collaboration task from your work or study. Map it fully: (1) locate it on the tier taxonomy with justification; (2) identify which of the Five Modes the task requires and which are currently absent from your practice; (3) name the specific irreducibly human judgment the task requires that AI cannot make on your behalf. Due before Mode Lab, Week 4.
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ACT TWO -->
+    <div class="act-header">
+      <div class="act-label">Act Two · Weeks 4–8 · Chapters 4–8</div>
+      <h3>Build</h3>
+      <p>One mode per chapter. Where fluency begins. You enter Act Two able to name the framework. You leave able to use all five modes — and to coordinate them on a multi-mode case without scaffolding.</p>
+    </div>
+
+    <!-- Week 4 -->
+    <div class="week-block">
+      <div class="week-header">
+        <span class="week-label">Week 4 ★⚑</span>
+        <span class="week-title">Specification</span>
+        <span class="week-chapter">Chapter 4</span>
+      </div>
+      <div class="week-body">
+        <div class="week-goal">By the end of this week: Write a complete five-component specification for a described task and predict its failure modes before any prompt is written.</div>
+        <div class="session-row"><span class="session-label">Session A</span><span>API documentation failure — AI documents a slightly different API than was built because ambiguities in the specification were resolved using training distribution patterns. Every ambiguity in a specification is a decision the AI makes without the human.</span></div>
+        <div class="session-row"><span class="session-label">Session B</span><span>The five-component specification framework: intent, constraints, success criteria, exclusions, output format. The full prompt pattern toolkit — Recipe, Persona, Template, Audience Persona, Semantic Filter, Fact Check List, Constraint. Specification for agentic contexts.</span></div>
+        <div class="session-row"><span class="session-label">Mode Lab</span><span>Mode Exercise #2 — five-component specification exercise.</span></div>
+        <div class="deliverable-block">
+          <div class="deliverable-label">⚑ Mode Exercise #2 (25 pts)</div>
+          Write a complete five-component specification for the structural engineering load analysis case. For each component: state it explicitly and name the failure mode its absence would produce. Select and apply at least two prompt patterns. Audit the final specification for autonomous decision risk. Due before Mode Lab, Week 5.
+        </div>
+        <div class="deliverable-block">
+          <div class="deliverable-label">⚑ Reading Response #3 (30 pts)</div>
+          What is the most important specification decision for your capstone project domain? Write a one-paragraph intent statement for a task in your domain. Then identify the single constraint whose absence would most likely produce a wrong-but-plausible output. Due before Session A, Week 5.
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 5 -->
+    <div class="week-block">
+      <div class="week-header">
+        <span class="week-label">Week 5</span>
+        <span class="week-title">Delegation</span>
+        <span class="week-chapter">Chapter 5</span>
+      </div>
+      <div class="week-body">
+        <div class="week-goal">By the end of this week: Produce a delegation map for a complex task — with explicit tier-location and boundary rationale for every component — that addresses the performance paradox.</div>
+        <div class="session-row"><span class="session-label">Session A</span><span>Strategy consultant delegates all research synthesis to AI. The output is comprehensive. She misses the critical competitive dynamic she had the domain intuition to catch — but didn't, because she wasn't in the process.</span></div>
+        <div class="session-row"><span class="session-label">Session B</span><span>The four delegation questions: tier location, stakes/reversibility, context only the human has, capability being preserved. The performance paradox — better short-term outputs, long-term capability degradation. Cognitive offloading: when it amplifies, when it atrophies.</span></div>
+        <div class="session-row"><span class="session-label">Mode Lab</span><span>Mode Exercise #3 — delegation map for the civil engineering project management case.</span></div>
+        <div class="deliverable-block">
+          <div class="deliverable-label">⚑ Mode Exercise #3 (25 pts)</div>
+          Produce a delegation map for the civil engineering project management risk assessment case. For each task component: state the tier location, the delegation decision (delegate / human-in-the-loop / do not delegate), and the explicit boundary rationale. Identify where the performance paradox risk is highest and propose a mitigation. Due before Mode Lab, Week 6.
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 6 -->
+    <div class="week-block">
+      <div class="week-header">
+        <span class="week-label">Week 6</span>
+        <span class="week-title">Conversation</span>
+        <span class="week-chapter">Chapter 6</span>
+      </div>
+      <div class="week-body">
+        <div class="week-goal">By the end of this week: Conduct an adversarial AI conversation using at least two adversarial strategies — with annotated transcript showing before and after intellectual positions.</div>
+        <div class="session-row"><span class="session-label">Session A</span><span>Policy researcher develops a polished, internally consistent argument over 45 minutes of AI conversation. The strongest counterargument in her field never appeared. She never asked. The peer reviewer found it immediately. <em>Ch. 6 reading note: read through "Sycophantic Drift" before Session A. Read "The Four Adversarial Strategies" after.</em></span></div>
+        <div class="session-row"><span class="session-label">Session B</span><span>Four adversarial strategies: steelman the opposition, edge case probe, assumption surface, devil's advocate role assignment. The Flipped Interaction Pattern. Closure criteria. The ownership test.</span></div>
+        <div class="session-row"><span class="session-label">Mode Lab</span><span>Mode Exercise #4 — supervised adversarial conversation workshop. Annotated transcript required.</span></div>
+        <div class="callout callout-warn" style="margin-top:12px;">
+          <strong>⚠ Mandatory supervised Mode Lab session this week.</strong> Reading alone is insufficient. The adversarial conversation exercise must be performed in supervised practice with peer feedback. A course that delivers Chapter 6 as reading-only will produce students who can describe Conversation mode but cannot use it.
+        </div>
+        <div class="deliverable-block">
+          <div class="deliverable-label">⚑ Mode Exercise #4 (25 pts)</div>
+          Conduct an adversarial conversation with an AI tool on a topic in your domain. Apply at least two adversarial strategies. Submit: (1) annotated transcript with strategy labels; (2) before/after comparison of intellectual position; (3) ownership test applied to the final output; (4) one paragraph on what the adversarial conversation found that a standard conversation would have missed. Due before Mode Lab, Week 7.
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 7 -->
+    <div class="week-block">
+      <div class="week-header">
+        <span class="week-label">Week 7</span>
+        <span class="week-title">Discernment</span>
+        <span class="week-chapter">Chapter 7</span>
+      </div>
+      <div class="week-body">
+        <div class="week-goal">By the end of this week: Apply a tiered verification protocol to an AI output — returning a structured verdict with domain-specific findings by verification layer.</div>
+        <div class="session-row"><span class="session-label">Session A</span><span>The pharmacist at the Human Decision Node — 14-medication patient, compromised renal function, AI interaction check that returned "no significant interactions." Three options: accept, reject, or discern. This chapter teaches Option 3. Human-in-the-loop vs. human-on-the-loop verification architectures.</span></div>
+        <div class="session-row"><span class="session-label">Session B</span><span>The four verification layers: fact, reasoning, framing, omission. Tiered verification protocol: Tier 0 (scan) through Tier 3 (adversarial). Calibration variables: stakes × reliability zone × reversibility. Source triangulation as a practiced skill.</span></div>
+        <div class="session-row"><span class="session-label">Mode Lab</span><span>Mode Exercise #5 — four-layer verification on the environmental engineering contamination risk case.</span></div>
+        <div class="callout callout-note" style="margin-top:12px;">
+          <strong>⚠ Densest chapter in the course.</strong> Full week recommended. Chapters 9 and 11 both build directly on this chapter's foundation.
+        </div>
+        <div class="deliverable-block">
+          <div class="deliverable-label">⚑ Mode Exercise #5 (25 pts)</div>
+          Apply the tiered verification protocol to the environmental engineering contamination risk AI output. For each of the four verification layers: state what you checked, how you checked it, and what you found. Return a structured verdict: trust / modify / reject, with explicit reasoning and any domain-specific findings. Due before Mode Lab, Week 8.
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 8 -->
+    <div class="week-block">
+      <div class="week-header">
+        <span class="week-label">Week 8 ★⚑</span>
+        <span class="week-title">Diligence</span>
+        <span class="week-chapter">Chapter 8</span>
+      </div>
+      <div class="week-body">
+        <div class="week-goal">By the end of this week: Design a Diligence protocol for a described AI deployment — specifying monitoring cadence, drift indicators, escalation conditions, and shutdown criteria.</div>
+        <div class="session-row"><span class="session-label">Session A</span><span>The Amazon recruiting case — not why the system was biased, but why no one caught it for a year. The accountability chain was intact on paper and absent in practice. Intellectual ownership as a professional obligation. Three forms of AI degradation: model drift, context drift, use case drift.</span></div>
+        <div class="session-row"><span class="session-label">Session B</span><span>Three ways accountability gets obscured: process laundering, tool diffusion, verification gap. The four-component Diligence protocol. The LLM memory trap.</span></div>
+        <div class="session-row"><span class="session-label">Mode Lab</span><span>Mode Exercise #6 — Diligence protocol for the structural health monitoring case.</span></div>
+        <div class="deliverable-block">
+          <div class="deliverable-label">⚑ Mode Exercise #6 (25 pts)</div>
+          Design a complete Diligence protocol for the structural health monitoring sensor upgrade case. Required: monitoring cadence with rationale; at least three drift indicators with detection method; escalation conditions; shutdown criteria; analysis of where in the Amazon case the Diligence protocol failed and which component would have caught it. Due before Mode Lab, Week 9.
+        </div>
+        <div class="deliverable-block">
+          <div class="deliverable-label">⚑ Reading Response #4 (30 pts)</div>
+          Describe one AI-assisted workflow in your domain — existing, planned, or hypothetical — where Diligence has not been designed in. Name the specific drift type most likely to occur and what you would need to detect it. Due before Session A, Week 9.
+        </div>
+      </div>
+    </div>
+
+    <!-- Midterm -->
+    <div class="midterm-block">
+      <h4>⚠ Midterm (Week 8/9 — flex) · 100 pts</h4>
+      <p>Multi-mode case analysis. A novel AI collaboration scenario is provided with no annotation about which modes apply. Demonstrate all five modes as practices: write the specification this situation required; identify the delegation decisions and their rationale; name the adversarial conversation move most needed; apply the verification tier appropriate to the stakes; design the one Diligence component most critical for this deployment.</p>
+      <p style="margin-top:8px;"><strong style="color:var(--bb-4);">No mode recitation. No framework description. Application only. This is the Act Two → Act Three gate.</strong></p>
+    </div>
+
+
+    <!-- ACT THREE -->
+    <div class="act-header">
+      <div class="act-label">Act Three · Weeks 9–15 · Chapters 9–13</div>
+      <h3>Apply</h3>
+      <p>The Five Modes under harder conditions. You enter Act Three with all five modes practiced. You leave with original research demonstrating fluency under real conditions. Act Three stops giving you clean single-mode cases — it gives you multi-step workflows, adversarial failures, and a research project where the AI will do whatever you tell it and you are responsible for everything it produces.</p>
+    </div>
+
+    <!-- Week 9 -->
+    <div class="week-block">
+      <div class="week-header">
+        <span class="week-label">Week 9</span>
+        <span class="week-title">Trust Calibration</span>
+        <span class="week-chapter">Chapter 9</span>
+      </div>
+      <div class="week-body">
+        <div class="week-goal">By the end of this week: Produce a trust calibration map for a multi-step AI-assisted workflow — identifying the highest-risk compounding step and the trust level appropriate to each stage.</div>
+        <div class="session-row"><span class="session-label">Session A</span><span>Financial model with four AI-assisted stages. A rounding convention in Stage 2 compounds through Stage 3 into a trend line wrong by 7% — above the committee's 5% decision threshold. No single step failed enough to trigger the verification protocol. System-trust vs. output-trust.</span></div>
+        <div class="session-row"><span class="session-label">Session B</span><span>Error compounding — how trust miscalibrations at earlier steps constrain the reliability ceiling of later steps. The trust cascade. Symmetric failure modes at the system level.</span></div>
+        <div class="session-row"><span class="session-label">Mode Lab</span><span>Mode Exercise #7 — trust calibration map for the environmental impact assessment case.</span></div>
+        <div class="deliverable-block">
+          <div class="deliverable-label">⚑ Mode Exercise #7 (25 pts)</div>
+          Produce a trust calibration map for the six-step environmental impact assessment workflow. For each step: state the appropriate trust level, the calibration rationale, and the compounding risk if miscalibrated. Identify the highest-risk step and explain why miscalibration there propagates furthest. Due before Mode Lab, Week 10.
+        </div>
+        <div class="deliverable-block">
+          <div class="deliverable-label">⚑ Reading Response #5 (30 pts)</div>
+          Describe a multi-step AI-assisted workflow in your domain. Identify the step where a miscalibration would compound most severely — and describe what the failure would look like downstream before anyone caught it. Due before Session A, Week 10.
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 10 -->
+    <div class="week-block">
+      <div class="week-header">
+        <span class="week-label">Week 10</span>
+        <span class="week-title">Automation, Agency, and the Human Decision Node</span>
+        <span class="week-chapter">Chapter 10</span>
+      </div>
+      <div class="week-body">
+        <div class="week-goal">By the end of this week: Apply the three diagnostic questions to a described AI system — classifying its architecture, evaluating its Human Decision Node, and identifying what genuine oversight requires.</div>
+        <div class="session-row"><span class="session-label">Session A</span><span>Move 37 revisited — not "how remarkable" but "how did it find it?" The PARU cycle as the answer. Then immediately: Amazon's recruiting tool. Same surface behavior, structurally different architectures, fundamentally different oversight requirements.</span></div>
+        <div class="session-row"><span class="session-label">Session B</span><span>The PARU cycle: Perceive, Act, Reward, Update. The reward signal problem. The epistemic invisible constraint. The Human Decision Node — genuine judgment vs. rubber-stamp approval. Five domain examples. The three diagnostic questions.</span></div>
+        <div class="session-row"><span class="session-label">Mode Lab</span><span>Mode Exercise #8 — PARU diagnostic and node redesign for the infrastructure maintenance scheduling case.</span></div>
+        <div class="deliverable-block">
+          <div class="deliverable-label">⚑ Mode Exercise #8 (25 pts)</div>
+          Apply the three diagnostic questions to the infrastructure maintenance scheduling AI system: (1) Is the PARU cycle complete? (2) Is the reward signal measuring what we actually care about? (3) Is the Human Decision Node designed for genuine judgment? Then: analyze the Amazon recruiting case using the PARU cycle and redesign the Human Decision Node with a specific proposal. Due before Mode Lab, Week 11.
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 11 -->
+    <div class="week-block">
+      <div class="week-header">
+        <span class="week-label">Week 11</span>
+        <span class="week-title">Verification Under Adversarial Conditions</span>
+        <span class="week-chapter">Chapter 11</span>
+      </div>
+      <div class="week-body">
+        <div class="week-goal">By the end of this week: Apply adversarial validation to an AI output — identifying at least one failure that ordinary verification is not designed to find.</div>
+        <div class="session-row"><span class="session-label">Session A</span><span>Phase II clinical trial succeeds; Phase III fails. The Phase II analysis was technically correct for its data. The patient population was systematically unrepresentative. No facts were hallucinated. The framing failure was invisible to ordinary verification. The three failure modes adversarial validation targets.</span></div>
+        <div class="session-row"><span class="session-label">Session B</span><span>The four adversarial moves: assumption surface, distributional probe, framing challenge, counterfactual stress test. Plausibility auditing directed where domain knowledge says it matters most. Professional accountability for adversarial verification in high-stakes contexts.</span></div>
+        <div class="session-row"><span class="session-label">Mode Lab</span><span>Mode Exercise #9 — adversarial validation on the urban planning intersection safety case.</span></div>
+        <div class="deliverable-block">
+          <div class="deliverable-label">⚑ Mode Exercise #9 (25 pts)</div>
+          Apply the full adversarial validation protocol to the urban planning intersection safety AI output. Apply all four adversarial moves. Produce a formal report: for each move, state what you probed, what you found, and whether it constitutes a distributional shift, framing failure, or assumption invisibility problem. Return a structured verdict with explicit reasoning. Due before Mode Lab, Week 12.
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 12 -->
+    <div class="week-block">
+      <div class="week-header">
+        <span class="week-label">Week 12 ★⚑</span>
+        <span class="week-title">Rapid Prototyping as a Research Method</span>
+        <span class="week-chapter">Chapter 12</span>
+      </div>
+      <div class="week-body">
+        <div class="week-goal">By the end of this week: Use AI-assisted rapid prototyping to develop a defensible research question — with documented iteration log and explicit identification of the judgment calls that required your values, domain knowledge, or accountability.</div>
+        <div class="session-row"><span class="session-label">Session A</span><span>Graduate student develops a beautifully structured research proposal over three weeks of AI-assisted work. Her advisor asks one question: "Why is this gap worth filling?" She cannot answer. The AI found the gap efficiently. It had no basis for evaluating whether the gap was worth filling.</span></div>
+        <div class="session-row"><span class="session-label">Session B</span><span>The gap vs. worth-pursuing distinction. Three rapid prototyping principles. AI-assisted literature synthesis — uses and limits. The iteration log as an accountability document. The four capstone tracks. Go/no-go gate for research protocols.</span></div>
+        <div class="session-row"><span class="session-label">Mode Lab</span><span>Research protocol development session. TA provides written feedback.</span></div>
+
+        <div class="major-deliverable">
+          <h4>⚑ Final Project — Research Protocol Checkpoint (100 pts)</h4>
+          <p>Your capstone research protocol. Required: (1) research question stated precisely; (2) gap identification with explicit worth-pursuing justification — why answering this question would advance understanding in your domain; (3) iteration log documenting at least three rounds of AI-assisted development with your judgment calls annotated; (4) capstone track selected with rationale; (5) one paragraph identifying the single most important irreducibly human judgment in the research design that AI could not have made. Go/no-go reviewed before Week 13. Due end of Week 12.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 13 -->
+    <div class="week-block">
+      <div class="week-header">
+        <span class="week-label">Week 13</span>
+        <span class="week-title">Capstone: Original Research in AI Fluency — Work Session</span>
+        <span class="week-chapter">Chapter 13</span>
+      </div>
+      <div class="week-body">
+        <div class="week-goal" style="font-style:normal; color:var(--bb-2);">What this chapter is: not instruction — execution. The demonstration.</div>
+        <div class="session-row"><span class="session-label">Session A</span><span>In-class research work session. Instructor role: ask the questions the AI won't ask. ("Why is this question worth answering?" "What would have to be true for this finding to not matter?")</span></div>
+        <div class="session-row"><span class="session-label">Session B</span><span>Research work continues. Peer consultation pairs.</span></div>
+        <div class="session-row"><span class="session-label">Mode Lab</span><span>Open consultation — TA available for iteration log review and specification feedback.</span></div>
+
+        <p style="font-size:13px; color:var(--bb-6); margin-top:12px;"><em>No reading assigned this week. Research work in progress.</em></p>
+
+        <div class="ch-sub-label" style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--bb-6); font-weight:700; margin:16px 0 10px; border-bottom:1px solid var(--bb-7); padding-bottom:4px;">Capstone tracks (confirmed at protocol checkpoint)</div>
+        <div class="tracks-grid">
+          <div class="track-card">
+            <div class="track-name">AI Validation</div>
+            <p>Original empirical investigation of an AI system's reliability in a specific domain context</p>
+          </div>
+          <div class="track-card">
+            <div class="track-name">Bias Detection</div>
+            <p>Original investigation of systematic bias in AI outputs for a domain-relevant application</p>
+          </div>
+          <div class="track-card">
+            <div class="track-name">Explainability</div>
+            <p>Original investigation of how AI systems communicate (or fail to communicate) the basis for their recommendations</p>
+          </div>
+          <div class="track-card">
+            <div class="track-name">Trust Calibration</div>
+            <p>Original empirical investigation of how professionals should calibrate trust in AI outputs in a specific domain</p>
+          </div>
+        </div>
+        <div class="callout callout-info" style="margin-top:8px;">
+          <strong>Adaptation Track (optional):</strong> Rebuild one book chapter's framework for a specified non-engineering domain, with explicit load-bearing vs. swappable analysis.
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 14 -->
+    <div class="week-block">
+      <div class="week-header">
+        <span class="week-label">Week 14 ★⚑</span>
+        <span class="week-title">Capstone: Peer Review Session</span>
+        <span class="week-chapter">Chapter 13 continued</span>
+      </div>
+      <div class="week-body">
+        <div class="week-goal">By the end of this week: Review a peer's capstone project against the Five Modes rubric — and receive written feedback on your own work.</div>
+        <div class="session-row"><span class="session-label">Session A</span><span>Structured peer review — each student reviews one peer's project using the Five Modes rubric. Feedback is written and submitted, not just spoken.</span></div>
+        <div class="session-row"><span class="session-label">Session B</span><span>Revision work session based on peer feedback.</span></div>
+        <div class="session-row"><span class="session-label">Mode Lab</span><span>Open session — instructor and TA available for final questions. No new material.</span></div>
+
+        <div class="major-deliverable">
+          <h4>⚑ Final Project — Peer Review Checkpoint (100 pts)</h4>
+          <p>Written peer review of one classmate's capstone project. Required: Five Modes rubric applied; at least one specific finding per mode; one overall recommendation; one question the reviewer cannot answer from the submitted materials alone. Due end of Week 14.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 15 -->
+    <div class="week-block">
+      <div class="week-header">
+        <span class="week-label">Week 15 ★⚑</span>
+        <span class="week-title">Capstone: Presentations and Final Submission</span>
+        <span class="week-chapter">Chapter 13 continued</span>
+      </div>
+      <div class="week-body">
+        <div class="week-goal">By the end of this week: Present a complete original research project demonstrating AI fluency — with the Irreducibly Human section completed honestly and specifically.</div>
+        <div class="session-row"><span class="session-label">Session A</span><span>Final presentations (8–10 minutes each) or written submission with recorded walkthrough.</span></div>
+        <div class="session-row"><span class="session-label">Session B</span><span>Final presentations continued.</span></div>
+        <div class="session-row"><span class="session-label">Mode Lab</span><span>Open session — no new material.</span></div>
+
+        <div class="major-deliverable">
+          <h4>⚑ Final Project — Final Capstone Submission (250 pts)</h4>
+          <p>Complete original research project in AI fluency. Required sections:</p>
+          <ul>
+            <li><strong>Research question and specification</strong> — precise statement, gap identification, worth-pursuing justification</li>
+            <li><strong>Methodology</strong> — Five Modes applied to the research process, with documentation</li>
+            <li><strong>Findings</strong> — original empirical or analytical results with verification record</li>
+            <li><strong>Iteration log</strong> — full documentation of AI-assisted development with judgment calls annotated</li>
+            <li><strong>The Irreducibly Human section (required; weighted at 50% of the total grade):</strong>
+              <ul>
+                <li>Three specific judgment calls from the research that required your values, domain knowledge, or accountability — stated specifically, with reasoning, and with consequence named</li>
+                <li>One judgment call that was tried-as-delegation and then reclaimed — what happened when you delegated it, what you found when you reclaimed it</li>
+                <li>An honest assessment of the collaboration quality — where the AI was genuinely useful, where it produced confident-sounding noise, and what you would do differently</li>
+              </ul>
+            </li>
+            <li><strong>Peer review response</strong> — written response to the Week 14 peer review, submitted with the final project</li>
+          </ul>
+          <p style="margin-top:10px; color:var(--bb-4);">Due end of Week 15.</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- SCHEDULE AT A GLANCE -->
+    <h3>Schedule at a Glance</h3>
+    <table class="schedule-table">
+      <tr><th>Week</th><th>Chapter</th><th>Act</th><th>Major Deliverable</th><th>Points</th></tr>
+      <tr><td>1</td><td>Ch. 1 — What You're Actually Talking To</td><td>One</td><td>Reading Response #1</td><td>30</td></tr>
+      <tr><td>2</td><td>Ch. 2 — The Confidence Trap</td><td>One</td><td>Reading Response #2</td><td>30</td></tr>
+      <tr><td>3</td><td>Ch. 3 — The Map and the Language</td><td>One</td><td>Mode Exercise #1</td><td>25</td></tr>
+      <tr><td>4</td><td>Ch. 4 — Specification</td><td>Two</td><td>Mode Exercise #2 + RR #3</td><td>25 + 30</td></tr>
+      <tr><td>5</td><td>Ch. 5 — Delegation</td><td>Two</td><td>Mode Exercise #3</td><td>25</td></tr>
+      <tr><td>6</td><td>Ch. 6 — Conversation</td><td>Two</td><td>Mode Exercise #4 (workshop)</td><td>25</td></tr>
+      <tr><td>7</td><td>Ch. 7 — Discernment</td><td>Two</td><td>Mode Exercise #5</td><td>25</td></tr>
+      <tr><td>8</td><td>Ch. 8 — Diligence</td><td>Two</td><td>Mode Exercise #6 + RR #4</td><td>25 + 30</td></tr>
+      <tr><td>—</td><td>Midterm / Flex</td><td>Act Two gate</td><td>Multi-mode case analysis</td><td>100</td></tr>
+      <tr><td>9</td><td>Ch. 9 — Trust Calibration</td><td>Three</td><td>Mode Exercise #7 + RR #5</td><td>25 + 30</td></tr>
+      <tr><td>10</td><td>Ch. 10 — Automation, Agency, Human Decision Node</td><td>Three</td><td>Mode Exercise #8</td><td>25</td></tr>
+      <tr><td>11</td><td>Ch. 11 — Verification Under Adversarial Conditions</td><td>Three</td><td>Mode Exercise #9</td><td>25</td></tr>
+      <tr><td>12</td><td>Ch. 12 — Rapid Prototyping as Research</td><td>Three</td><td>Research Protocol Checkpoint</td><td>100</td></tr>
+      <tr><td>13</td><td>Ch. 13 — Capstone work session</td><td>Three</td><td>Draft + in-class consultation</td><td>—</td></tr>
+      <tr><td>14</td><td>Ch. 13 — Peer review session</td><td>Three</td><td>Peer Review Checkpoint</td><td>100</td></tr>
+      <tr><td>15</td><td>Ch. 13 — Presentations + final submission</td><td>Three</td><td>Final Capstone Submission</td><td>250</td></tr>
+    </table>
+    <p style="font-size:13px; color:var(--bb-6);">Mode Lab participation (100 pts) assessed continuously across all 15 weeks. Lowest Mode Exercise dropped — 8 of 9 count toward final grade.</p>
+  </div>
+
+
+  <!-- 8. POLICIES -->
+  <div class="section" id="policies">
+    <div class="section-number">Section 8</div>
+    <h2 class="section-title">Course Policies</h2>
+
+    <h3>Attendance and Participation</h3>
+    <p>This course has three weekly contact points: two lecture/seminar sessions and one TA-led Mode Lab. Each serves a different function. Missing any of them is not equivalent to missing the same thing twice.</p>
+    <p>Per College of Engineering MGEN policy, students are allowed a maximum of 2 absences per course. 3 or more absences result in an F. More than 3 unexcused Mode Lab absences will result in a failing participation grade regardless of Quality/Portfolio score. Chapter 6's adversarial conversation workshop cannot be made up by reading alone.</p>
+    <p>Students who do not attend during the first week risk being dropped from the course. Please inform me of any anticipated absence before class.</p>
+    <p>Participation means engagement — applying modes, critiquing AI outputs, running adversarial conversations, revising specifications, and connecting today's concept to your domain. Physical presence without engagement does not count as participation.</p>
+
+    <h3>Late Work</h3>
+    <ul>
+      <li>Assignments due by 11:59 PM on the due date</li>
+      <li>5% deduction per day, rounded up</li>
+      <li>No credit after solutions are posted (posted the Monday after the due date)</li>
+      <li>Extensions via email before the deadline with a specific proposed new due date</li>
+      <li>Work submitted late without prior communication will not be graded</li>
+      <li>The midterm cannot be made up without prior arrangements</li>
+      <li>Exceptions for long-term illness or family emergencies must be approved by the professor — reach out early</li>
+    </ul>
+    <div class="callout callout-note">
+      Mode Exercises feed the following week's lab. A late submission that arrives after the lab has missed the feedback loop it was designed to produce.
+    </div>
+
+    <h3>Academic Integrity</h3>
+    <p>What you submit is supposed to represent your judgment calls, your adversarial moves, your argument for why this verification finding matters in your domain, your honest account of what the AI could not do. Submitting borrowed reasoning is not just an integrity violation — it is practicing the appearance of AI fluency rather than developing it.</p>
+    <p>Violations include: submitting AI-generated work without citation, using another student's specification, delegation map, verification record, or capstone section without attribution, submitting work substantially similar to a peer's submission. All violations will be reported to OSCCR. No exceptions.</p>
+    <p><strong>Collaboration policy:</strong> You are encouraged to discuss concepts, cases, and reasoning strategies. You may not share specifications, delegation maps, verification records, iteration logs, or any section of the capstone deliverable. Work you submit with your name on it must reflect your own reasoning in your own words. If you collaborated on ideas, list your collaborators clearly.</p>
+    <p>If you are unsure whether something crosses a line — ask. I would rather answer that question than navigate a violation.</p>
+
+    <h3>Generative AI Policy</h3>
+    <p>You are encouraged to use generative AI tools in this course. This is not a reluctant permission — it is the entire point of the course.</p>
+    <p>Use Claude to generate your first-pass specification. Use ChatGPT to draft your delegation map. Then ask: What decision did it make that I hadn't made yet? What constraint did it omit that I know, from my own domain, is load-bearing? What did it get confidently wrong in a way I would only see because I know this field? That gap — the space between what the tool produced and what you know — is the irreducibly human part. Finding it, naming it, and correcting it is not a side exercise in this course. It is the primary assessment.</p>
+    <p>Every submission requires the AI Use Disclosure block specified in Section 6. Undisclosed AI use is an academic integrity violation. The TA or instructor may ask you to walk through and explain any part of your submitted work.</p>
+    <div class="callout callout-info">
+      <strong>Instructor disclosure:</strong> I use generative AI tools in developing this course — for drafting case study scenarios, generating first-pass specifications and delegation maps that I then evaluate and revise, and editing course materials. I document my own AI use in the same format I am asking of you.
+    </div>
+
+    <h3>Incomplete Grades</h3>
+    <p>An incomplete grade may be reported when a student has failed to complete a major course component. Missing work must be submitted within 30 days of the term's end or the agreed-upon due date, or it receives no credit. Contact the instructor before the final week if circumstances warrant discussion.</p>
+  </div>
+
+
+  <div style="font-size:13px; color:var(--bb-6); border-top:1px solid var(--bb-7); padding-top:20px; margin-top:40px;">
+    <em>Irreducibly Human: What AI Can and Can't Do — Botspeak: The Nine Pillars of AI Fluency</em><br>
+    Syllabus v1.0 · Nik Bear Brown · Northeastern University · Fall [Year]<br><br>
+    This syllabus reflects course information as of the distribution date. Learning outcomes, assessment architecture, and policies are stable. If meeting times, room assignments, or textbook availability change, updates will be posted to Canvas and communicated by email with at least one week's notice.
+  </div>
+
+</div><!-- /page-wrapper -->
+
+<footer>
+  Built with <a href="https://www.bearbrown.co" target="_blank" rel="noopener">bearbrown.co</a> ·
+  AI tools for educators, creators &amp; founders
+</footer>
+
+</body>
+</html>

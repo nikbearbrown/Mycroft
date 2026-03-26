@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Computational Skepticism for AI — INFO 7375 course syllabus</title>
+  <meta name="description" content="Graduate course syllabus for engineers and applied practitioners at Northeastern University who need the validation layer that AI systems cannot perform on themselves. Builds computational frameworks for systematic AI doubt: bias detection, explainability critique, adversarial testing, causal validation, and the metacognitive infrastructure to know when an AI output is wrong before recomputing it.">
+  <meta name="keywords" content="computational skepticism, AI validation, bias detection, explainability, adversarial ML, causal reasoning, Irreducibly Human, Northeastern University, graduate engineering, Nik Bear Brown, INFO 7375, SHAP, LIME, reinforcement learning reliability, AI trust">
+
+  <style>
+    :root {
+      --bb-1: #1a0a00;
+      --bb-2: #8B3A0F;
+      --bb-3: #C0392B;
+      --bb-4: #E8A020;
+      --bb-5: #D4500A;
+      --bb-6: #B8860B;
+      --bb-7: #C8A96E;
+      --bb-8: #F0E6D0;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bb-8);
+      color: var(--bb-1);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    /* ── Header ── */
+    .doc-header {
+      background-color: var(--bb-2);
+      color: var(--bb-8);
+      padding: 52px 40px 44px;
+      border-bottom: 5px solid var(--bb-5);
+    }
+
+    .doc-header .series-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bb-7);
+      margin-bottom: 14px;
+    }
+
+    .doc-header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--bb-8);
+      margin-bottom: 10px;
+    }
+
+    .doc-header .subtitle {
+      font-size: 1.1rem;
+      color: var(--bb-7);
+      font-style: italic;
+    }
+
+    /* ── Version stamp ── */
+    .version-meta {
+      background-color: var(--bb-1);
+      color: var(--bb-7);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 8px 40px;
+    }
+
+    /* ── Main layout ── */
+    .doc-body {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 52px 40px 60px;
+    }
+
+    /* ── Lead section ── */
+    .lead-section {
+      border-left: 4px solid var(--bb-4);
+      padding-left: 24px;
+      margin-bottom: 44px;
+    }
+
+    .lead-section p {
+      margin-bottom: 1.2em;
+      font-size: 1.05rem;
+    }
+
+    .lead-section p:last-child { margin-bottom: 0; }
+
+    /* ── Opening case block ── */
+    .opening-case {
+      background-color: var(--bb-1);
+      color: var(--bb-8);
+      padding: 28px 32px;
+      border-radius: 4px;
+      margin-bottom: 36px;
+      font-size: 1.0rem;
+      line-height: 1.7;
+    }
+
+    .opening-case .case-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--bb-4);
+      margin-bottom: 12px;
+    }
+
+    .opening-case p { margin-bottom: 1em; }
+    .opening-case p:last-child { margin-bottom: 0; }
+
+    /* ── Section headings ── */
+    h2 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--bb-2);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-bottom: 2px solid var(--bb-7);
+      padding-bottom: 8px;
+      margin-top: 52px;
+      margin-bottom: 22px;
+    }
+
+    h3 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--bb-5);
+      margin-top: 36px;
+      margin-bottom: 12px;
+    }
+
+    p { margin-bottom: 1.1em; }
+
+    /* ── Course info table ── */
+    .course-info {
+      background-color: #fff;
+      border: 1px solid var(--bb-7);
+      border-left: 5px solid var(--bb-2);
+      border-radius: 4px;
+      padding: 24px 28px;
+      margin-bottom: 36px;
+    }
+
+    .course-info table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.92rem;
+    }
+
+    .course-info td {
+      padding: 6px 12px 6px 0;
+      vertical-align: top;
+    }
+
+    .course-info td:first-child {
+      font-weight: 700;
+      color: var(--bb-2);
+      white-space: nowrap;
+      width: 140px;
+    }
+
+    /* ── Outcomes list ── */
+    .outcomes-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .outcomes-list li {
+      padding: 10px 0 10px 28px;
+      position: relative;
+      border-bottom: 1px solid var(--bb-7);
+      font-size: 0.97rem;
+    }
+
+    .outcomes-list li:last-child { border-bottom: none; }
+
+    .outcomes-list li::before {
+      content: '→';
+      color: var(--bb-4);
+      font-weight: 700;
+      position: absolute;
+      left: 0;
+    }
+
+    /* ── Act headers ── */
+    .act-header {
+      background-color: var(--bb-2);
+      color: var(--bb-8);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 10px 18px;
+      border-radius: 3px;
+      margin-top: 44px;
+      margin-bottom: 24px;
+      display: inline-block;
+    }
+
+    /* ── Week cards ── */
+    .week-card {
+      background-color: #fff;
+      border: 1px solid var(--bb-7);
+      border-radius: 4px;
+      padding: 22px 26px;
+      margin-bottom: 18px;
+    }
+
+    .week-card .week-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bb-5);
+      margin-bottom: 4px;
+    }
+
+    .week-card h4 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--bb-1);
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .week-card p {
+      font-size: 0.93rem;
+      color: var(--bb-1);
+      margin-bottom: 10px;
+    }
+
+    .week-card .case-inline {
+      font-style: italic;
+      color: var(--bb-6);
+      font-size: 0.9rem;
+      border-left: 3px solid var(--bb-7);
+      padding-left: 12px;
+      margin-bottom: 10px;
+    }
+
+    .deliverable-tag {
+      display: inline-block;
+      background-color: var(--bb-8);
+      border: 1px solid var(--bb-7);
+      border-radius: 3px;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--bb-6);
+      padding: 3px 10px;
+      margin-top: 4px;
+      margin-right: 4px;
+    }
+
+    /* ── Callout blocks ── */
+    .callout {
+      background-color: #fff8ec;
+      border-left: 4px solid var(--bb-4);
+      padding: 16px 20px;
+      margin: 24px 0;
+      border-radius: 0 4px 4px 0;
+      font-size: 0.95rem;
+    }
+
+    .callout strong { color: var(--bb-5); }
+
+    .callout-alert {
+      background-color: #fff0ee;
+      border-left: 4px solid var(--bb-3);
+      padding: 16px 20px;
+      margin: 24px 0;
+      border-radius: 0 4px 4px 0;
+      font-size: 0.95rem;
+    }
+
+    .callout-alert strong { color: var(--bb-3); }
+
+    /* ── Assessment block ── */
+    .assessment-note {
+      background-color: var(--bb-1);
+      color: var(--bb-8);
+      padding: 24px 28px;
+      border-radius: 4px;
+      margin: 28px 0;
+      font-size: 0.94rem;
+      line-height: 1.65;
+    }
+
+    .assessment-note strong { color: var(--bb-4); }
+
+    /* ── What you leave with ── */
+    .leave-with-list {
+      list-style: none;
+      padding: 0;
+      counter-reset: leave-counter;
+    }
+
+    .leave-with-list li {
+      counter-increment: leave-counter;
+      padding: 14px 0 14px 50px;
+      position: relative;
+      border-bottom: 1px solid var(--bb-7);
+      font-size: 0.97rem;
+      line-height: 1.6;
+    }
+
+    .leave-with-list li:last-child { border-bottom: none; }
+
+    .leave-with-list li::before {
+      content: counter(leave-counter);
+      position: absolute;
+      left: 0;
+      top: 14px;
+      background-color: var(--bb-4);
+      color: var(--bb-1);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── Course byline ── */
+    .course-byline {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.85rem;
+      color: var(--bb-6);
+      border-top: 1px solid var(--bb-7);
+      padding-top: 20px;
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .course-byline a { color: var(--bb-5); }
+
+    strong { color: var(--bb-2); }
+    em { color: var(--bb-6); }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--bb-7);
+      margin: 40px 0;
+    }
+
+    @media (max-width: 600px) {
+      .doc-header { padding: 36px 20px 30px; }
+      .doc-body { padding: 36px 20px 48px; }
+      .version-meta { padding: 8px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="doc-header">
+    <div class="series-label">Irreducibly Human Series · INFO 7375 · Northeastern University · College of Engineering</div>
+    <h1>Computational Skepticism for AI</h1>
+    <div class="subtitle">Irreducibly Human: What AI Can and Can't Do</div>
+  </header>
+
+  <div class="version-meta">Course Syllabus | Summer [Year] | v3.0 | Rebuilt from audit</div>
+
+  <main class="doc-body">
+
+    <!-- ── Opening case ── -->
+    <div class="opening-case">
+      <div class="case-label">Opening case</div>
+      <p>A deployed fraud detection model flags 0.3% of transactions as suspicious. Performance metrics look clean: 94% accuracy, low false positive rate. The compliance team is satisfied. A junior analyst asks one question: "What's the false negative rate in the highest-stakes quartile?" No one had run that number. The answer was 61%. The model was systematically missing the most expensive fraud because those cases lived at the edge of the training distribution — and the metrics being monitored were never designed to see them.</p>
+      <p>The tool did not fail. The validation framework did. No one had built a systematic process for asking what the model was getting wrong, where, and why — before it mattered.</p>
+      <p>That process is what this course builds.</p>
+    </div>
+
+    <!-- ── Intro ── -->
+    <div class="lead-section">
+      <p>AI fluency — what Botspeak builds — is the framework for understanding what you are working with. Computational skepticism is what you do with that understanding when the stakes are real. The Discernment and Diligence modes introduced in Botspeak required a validation vocabulary this course provides in full: how bias enters and compounds, how explainability tools can produce technically accurate outputs that are practically misleading, how adversarial conditions reveal failure modes that routine verification is not designed to find, and how causal structure — the layer AI systems cannot reason about reliably — determines whether the right question is even being asked.</p>
+      <p>The opening case above was not a story about a bad model. It was a story about a missing tier of intelligence. The professionals who deployed that system were technically literate. What they lacked was the metacognitive and supervisory infrastructure to ask what the model could not catch about itself. Tier 4, in the taxonomy you learned in Botspeak: the intelligence that oversees all the others. Tier 1 without Tier 4 is a very efficient way to be confidently wrong at scale. This course is the Tier 4 curriculum.</p>
+    </div>
+
+    <!-- ── Course information ── -->
+    <h2>Course information</h2>
+    <div class="course-info">
+      <table>
+        <tr>
+          <td>Course</td>
+          <td>INFO 7375 — Computational Skepticism for AI</td>
+        </tr>
+        <tr>
+          <td>Credit hours</td>
+          <td>[X] — confirm with registrar</td>
+        </tr>
+        <tr>
+          <td>Delivery</td>
+          <td>In-person, Boston campus | Lecture/Seminar (weekly) + TA-led Validation Lab (weekly)</td>
+        </tr>
+        <tr>
+          <td>Level</td>
+          <td>Graduate</td>
+        </tr>
+        <tr>
+          <td>Prerequisites</td>
+          <td><strong>Botspeak: The Nine Pillars of AI Fluency</strong> (or equivalent AI fluency course, instructor approval required). Strong programming background. Comfort reading and writing Python.</td>
+        </tr>
+        <tr>
+          <td>Instructor</td>
+          <td>Nik Bear Brown · <a href="mailto:ni.brown@neu.edu">ni.brown@neu.edu</a> · Response within 48 hours on weekdays</td>
+        </tr>
+        <tr>
+          <td>Office</td>
+          <td>505A Dana Hall · Student hours by Zoom appointment</td>
+        </tr>
+        <tr>
+          <td>Email note</td>
+          <td>Use ni.brown@neu.edu only. Do not use brown.ni@husky.neu.edu — that address is not monitored.</td>
+        </tr>
+        <tr>
+          <td>Course site</td>
+          <td>Canvas · GitHub repository linked on Canvas</td>
+        </tr>
+        <tr>
+          <td>Series</td>
+          <td>Part of the Irreducibly Human series at Northeastern University — College of Engineering. Companion courses: Botspeak (prerequisite), Causal Reasoning, Conducting AI, AImagineering.</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- ── Who this course is for ── -->
+    <h2>Who this course is for</h2>
+    <p>This course is for graduate engineers and applied technical practitioners who use AI systems in their work and need the validation infrastructure to know when those systems are failing — before the failure is visible in production metrics.</p>
+
+    <h3>What this course assumes</h3>
+    <p>Completion of Botspeak or equivalent: you have the Five Modes framework, the tier taxonomy, and the AI Use Disclosure practice. You know the difference between Tier 1 delegation and Tier 4 supervisory judgment. This course operates in Tier 4 and Tier 5 from Week 1 — that vocabulary is not reintroduced. You also arrive with a strong programming background and comfort reading and writing Python. You have built or deployed a model. You have been asked whether it was fair, reliable, or trustworthy — and you did not have a systematic answer.</p>
+
+    <h3>What this course does not assume</h3>
+    <p>Prior knowledge of explainability tools, adversarial ML, or formal causal inference. No philosophy background. The philosophical foundations introduced each week are not decorative — they are the fastest path to the failure mode the week is addressing — but no prior philosophy coursework is expected.</p>
+
+    <div class="callout">
+      <strong>A note on the Botspeak prerequisite:</strong> Students who take this course without Botspeak's fluency framework sometimes treat it as a technical skills course — a set of validation tools to add to a toolkit. That framing will produce technically correct exercises and miss the course entirely. The course is building Tier 4 metacognitive infrastructure: the capacity to know what to look for, and why, before any tool is run. Students who arrive without that conceptual architecture spend the first four weeks reconstructing it from scratch. Take Botspeak first.
+    </div>
+
+    <div class="callout-alert">
+      <strong>No Botspeak? Contact the instructor before the first week.</strong> Equivalent AI fluency background may satisfy the prerequisite with instructor approval. The conversation is easier before the semester starts than after Week 3.
+    </div>
+
+    <!-- ── What you will leave with ── -->
+    <h2>What you will leave with</h2>
+    <ol class="leave-with-list">
+      <li>A complete AI validation pipeline applied to a real system in your own domain — bias audit, explainability critique, adversarial stress test, and a structured account of the model's failure modes that performance metrics alone would not surface.</li>
+      <li>The capacity to answer the question that separates practitioners who validate AI well from practitioners who validate it confidently and incorrectly: "What is this model getting wrong, where, and why — and what domain knowledge do I hold that the model cannot supply about its own limitations?" That question requires Tier 4 intelligence. This course builds the infrastructure to answer it rigorously.</li>
+      <li>Original research demonstrating computational skepticism under real conditions: a full iteration log, a verification record at every stage, and the honest, specific account of the identification decisions that required your values, your domain expertise, or your professional accountability — the section no tool can write on your behalf.</li>
+    </ol>
+
+    <!-- ── What this course builds ── -->
+    <h2>What this course builds</h2>
+    <p>By the end of this course, students can:</p>
+    <ul class="outcomes-list">
+      <li><strong>Evaluate</strong> AI model outputs for systematic failure modes using computational validation frameworks, distinguishing technical errors from structural misalignment between model design and deployment context</li>
+      <li><strong>Diagnose</strong> dataset and model bias by applying quantitative fairness metrics and tracing bias from data collection through model output — identifying the intervention point with the highest leverage</li>
+      <li><strong>Critique</strong> explainability outputs — SHAP values, LIME explanations, counterfactual explanations — by identifying the gap between what the explanation shows and what domain knowledge requires</li>
+      <li><strong>Construct</strong> causal arguments about AI system behavior using Pearl's three-rung ladder, distinguishing what correlates (Rung 1) from what would change under intervention (Rung 2) and what would have happened counterfactually (Rung 3)</li>
+      <li><strong>Apply</strong> adversarial attack and defense techniques to demonstrate model fragility under distribution shift, documenting the conditions under which apparent performance does not generalize</li>
+      <li><strong>Design</strong> a Diligence protocol for a deployed AI system — monitoring cadence, drift indicators, escalation conditions, shutdown criteria — extending the Botspeak Diligence mode into technical implementation</li>
+      <li><strong>Develop</strong> a research-quality AI validation pipeline for a real system, with explicit documentation of what the pipeline can and cannot catch, and a qualified conclusion in two registers: technical and decision-maker-facing</li>
+      <li><strong>Communicate</strong> model uncertainty and failure mode findings to both technical and non-technical audiences using data visualization and structured argumentation, without overstating or understating confidence</li>
+    </ul>
+
+    <!-- ── Assessment ── -->
+    <h2>How the course is assessed</h2>
+
+    <div class="assessment-note">
+      Grading is structured around a single premise stated without apology: <strong>AI tools are available, capable, and expected on every assignment. What is being assessed is the validation layer those tools cannot perform on themselves.</strong>
+    </div>
+
+    <p>Every assignment requires an <strong>AI Use Disclosure</strong> — not as compliance, but as the course's primary assessment instrument. You document what you used, how you used it, what you changed, and — this field is not optional — <em>what the AI could not do</em>. Specifically: at least one judgment call that required your domain knowledge, your values, or your professional accountability. A disclosure that cannot name one such judgment call has not demonstrated that you performed the irreducibly human layer.</p>
+
+    <p>The <strong>Irreducibly Human section</strong> of the final research project carries 50% of the final project grade. Not because the technical work is less important — because the honest, specific account of what required human judgment is exactly what the validation research is for. An AI system can be validated technically and still deployed badly. The judgment of when, whether, and how to trust a validated system is Tier 4 work. That is what the final project is assessing.</p>
+
+    <p><strong>Relative grading</strong> applies at the top of the scale, comparing students on depth of validation reasoning and quality of domain judgment. Absolute grading applies below the threshold, ensuring a floor for demonstrated competence. Because everyone in the course has access to the same tools, the quality of your judgment relative to your peers is meaningful signal — the same signal that peer reviewers, hiring committees, and client organizations use when they evaluate technical work professionally.</p>
+
+    <!-- ── Structure ── -->
+    <h2>How the course is structured</h2>
+    <p>The course runs in three acts, tracking the arc from foundational doubt through technical validation infrastructure to original research demonstrating the full pipeline under real conditions.</p>
+
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!-- ACT ONE -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <div class="act-header">Act One — Establish · Weeks 1–3</div>
+
+    <p><strong>Act One</strong> opens before any definitions are introduced. Students see two complete validation failures across three weeks — one in the opening case, one in Week 2 — before the philosophical and computational vocabulary to name those failures is provided. By the end of Act One, students can locate any validation problem in the Tier 4/Tier 5 space of the Irreducibly Human taxonomy, identify the failure mode type, and name the domain knowledge required to address it. The act closes with the first Validation Lab: a real dataset, a deployed model, and no instructions beyond: "Tell me what's wrong with it, and how you know."</p>
+
+    <div class="week-card">
+      <div class="week-label">Week 1</div>
+      <h4>Why AI Systems Fail: Systematic Doubt as a Computational Practice</h4>
+      <p class="case-inline">The fraud detection case from the opening — before any framework is named.</p>
+      <p>The course opens in the middle of a failure. Students are given the system's performance metrics, its deployment context, and the compliance team's sign-off — and asked what they would have done differently. The Tier 4 / Tier 5 gap is introduced through this case: the validation question that required metacognitive supervisory intelligence (Tier 4) and causal reasoning (Tier 5) that the system's operators did not have. Philosophical foundations: Descartes on systematic doubt; Popper on falsifiability; what it means to build a computational practice around structured skepticism rather than ad-hoc review.</p>
+      <p>The Nine Pillars of Botspeak are not reintroduced — they are assumed. What this week adds: the distinction between AI fluency (knowing how to work with a tool) and AI validation (knowing how to test whether a tool should be trusted, and under what conditions).</p>
+      <span class="deliverable-tag">Reading Response #1 — 30 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 2</div>
+      <h4>The Confidence Trap: Logic, Probability, and Uncertainty in AI</h4>
+      <p class="case-inline">A second high-stakes failure in a different domain — a medical triage model with 91% accuracy that performed at 47% accuracy in the patient subpopulation it was most often deployed to assess. No facts were wrong. The framing was wrong.</p>
+      <p>A second case from a different domain establishes that Week 1's failure was structural, not incidental. Boolean logic to probabilistic reasoning. Frequentist vs. Bayesian frameworks for AI confidence. Hume's Problem of Induction and what it means for models that have never encountered the tail of their distribution. The proportional skepticism protocol introduced in Botspeak's Discernment mode is extended into a formal verification calibration: stakes, reliability zone, reversibility. The symmetric failure modes — over-trust and under-trust — receive equal weight.</p>
+      <span class="deliverable-tag">Reading Response #2 — 30 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 3</div>
+      <h4>Cognitive Bias, Model Bias, and the Human-AI Feedback Loop</h4>
+      <p>Before building technical validation tools, students need to understand where bias enters the human-AI system — not just the model. Implicit and cognitive biases. Dataset bias, label bias, structural bias. Postmodern perspectives on truth and representation. How models inherit and amplify human assumptions — and why the engineer who designed the labeling schema is the person most likely to miss the bias it introduced. The first Validation Lab follows: a real dataset, a provided model, and one question — what's wrong with it? The lab is graded on specificity of finding and quality of reasoning, not on whether students find every flaw.</p>
+      <span class="deliverable-tag">Validation Lab #1 — 50 pts</span>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!-- ACT TWO -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <div class="act-header">Act Two — Build · Weeks 4–10</div>
+
+    <p><strong>Act Two</strong> constructs the validation toolkit one component at a time, each week through a domain case the students recognize. Each case is chosen because the failure mode is not visible in the standard evaluation metrics. The philosophical foundation each week is not background reading — it is the fastest path to the failure mode. Act Two closes with the midterm presentation: students present current research project status, their most surprising finding so far, and the one thing they still cannot explain. That last question is not optional.</p>
+
+    <div class="week-card">
+      <div class="week-label">Week 4</div>
+      <h4>Data Validation: Is Your Dataset Actually What You Think It Is?</h4>
+      <p class="case-inline">An autonomous vehicle dataset with 98% coverage — but systematic underrepresentation of nighttime, wet-surface, and pedestrian-at-intersection scenarios. The model passed every benchmark. The benchmark was designed from the same distribution as the training data.</p>
+      <p>Exploratory data analysis as skepticism rather than description. The seven hidden assumptions that live in every dataset and are never stated in the documentation. Plato's Allegory of the Cave as a framework: the dataset is not the world, it is the shadow the world casts under specific collection conditions. Strategic Delegation and Critical Evaluation from Botspeak's pillar framework extended: when do you trust what the data says, and when do you interrogate how it was collected?</p>
+      <span class="deliverable-tag">Assignment #1 — EDA Skepticism Report — 50 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 5</div>
+      <h4>Explainability and Interpretability: Does the Explanation Explain — or Does It Reassure?</h4>
+      <p class="case-inline">A loan approval model with SHAP explanations that correctly identified "credit history" as the top feature. A subsequent audit found the model was using credit history as a proxy for zip code. The SHAP values were technically accurate. They were practically misleading about the source of the disparity.</p>
+      <p>SHAP, LIME, counterfactual explanations — introduced not as solutions but as tools with specific reliability zones and specific failure modes. Wittgenstein's language games: an explanation that uses the right words is not the same as an explanation that illuminates the right thing. The gap between what the explanation shows and what domain knowledge requires is this week's analytical question. Students implement and critique SHAP and LIME on a provided model — the deliverable is a written critique, not a technical report.</p>
+      <span class="deliverable-tag">Assignment #2 — Explainability Critique — 50 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 6</div>
+      <h4>Bias Detection and Mitigation: What Counts as Fair — and Who Decides?</h4>
+      <p class="case-inline">A recidivism prediction model that satisfied two different quantitative fairness criteria simultaneously — and violated a third. The disagreement was not a technical error. It was a values conflict embedded in the choice of metric.</p>
+      <p>Quantitative fairness metrics — demographic parity, equalized odds, calibration — and the mathematical proof that they cannot all be satisfied simultaneously when base rates differ across groups. Debiasing techniques and their limits. The postmodern critique: "fair" is not a property of a model, it is a claim about values, and technical debiasing does not resolve the underlying values question. Botspeak's Ethical Reasoning pillar extended into formal technical implementation. Students apply bias detection tools to a real dataset and evaluate at least two competing fairness definitions — the deliverable requires a recommendation and a defense of the values choice embedded in it.</p>
+      <span class="deliverable-tag">Assignment #3 — Bias Detection and Mitigation Analysis — 50 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 7</div>
+      <h4>Adversarial Attacks and Model Fragility: What Does "Understanding" Mean If a Perturbation Breaks It?</h4>
+      <p class="case-inline">An image classifier that achieves 99% accuracy on standard benchmarks and misclassifies a stop sign as a speed limit sign when three small stickers are applied — perturbations invisible to human vision at normal driving speed.</p>
+      <p>Adversarial examples are not exotic edge cases — they are evidence about what the model has actually learned. The philosophical question: if a model can be fooled by a perturbation a human would not notice, what exactly is the model doing? Nietzsche and adversarial behavior: the will to find the weakness in any system is also the will to make the system robust. Adversarial attacks as a validation methodology, not just a threat. Defense mechanisms and adversarial training — with explicit documentation of what each defense protects against and what it does not. <strong>This week's Validation Lab is mandatory and supervised</strong> — adversarial attack design requires direct feedback that asynchronous work cannot substitute.</p>
+      <span class="deliverable-tag">Assignment #4 — Adversarial Attack and Defense — supervised lab — 50 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 8</div>
+      <h4>Probabilistic Reasoning and Uncertainty: Is the Model's Confidence Meaningful?</h4>
+      <p class="case-inline">A clinical decision support tool that returned "high confidence" predictions for cases that fell outside its training distribution. The confidence score was a property of the model architecture, not an evidence-based estimate. The clinicians using it did not know this. The documentation did not say it.</p>
+      <p>Hume's problem of induction as a precise technical claim: a model trained on past data has no mathematical basis for confidence about future data that differs structurally from that past. Bayesian vs. frequentist probability — two philosophical frameworks that produce different answers to "what does 87% confidence mean here?" Calibration curves, conformal prediction, and the tools for turning model outputs into honest uncertainty estimates. Students apply probability distributions to a provided model's confidence outputs and identify the cases where confidence is structurally miscalibrated.</p>
+      <span class="deliverable-tag">Assignment #5 — Uncertainty Calibration Audit — 50 pts</span>
+      <span class="deliverable-tag">Reading Response #3 — 30 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 9</div>
+      <h4>Reinforcement Learning and AI Reliability: Did the Agent Learn What You Intended?</h4>
+      <p class="case-inline">An RL agent trained to maximize a proxy reward that successfully maximized the proxy and failed entirely at the underlying objective — not because of a technical error, but because the reward function was specified by humans who did not model their own assumptions carefully enough.</p>
+      <p>Free will vs. determinism in RL: do AI agents "choose" — and why does that question matter for how you validate them? Reward functions as moral structures: the reward is a formal statement of values, and reward hacking is what happens when the formal statement diverges from the intended values. Utilitarian reasoning in RL and its failure modes. Safety, alignment, and emergent behavior as validation targets, not just design concerns. Students implement an RL model on a constrained problem and analyze how reward design shaped behavior — the deliverable requires identifying at least one emergent behavior not intended by the reward function.</p>
+      <span class="deliverable-tag">Assignment #6 — Reward Design and Behavior Analysis — 50 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 10</div>
+      <h4>Midterm: Research Project Presentations</h4>
+      <p>No new instruction. All students present current research project status to the class: the AI system under validation, findings to date, the most surprising failure mode discovered, and — this is not optional — the one thing they still cannot explain. TAs and peers provide structured feedback using the validation framework. The midterm is graded on specificity of findings, quality of causal and counterfactual reasoning applied, and honesty about what the validation has not yet resolved. A clean story with no open questions is not a stronger presentation. It is a less credible one.</p>
+      <span class="deliverable-tag">Midterm Research Presentation — 100 pts</span>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!-- ACT THREE -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <div class="act-header">Act Three — Apply · Weeks 11–15</div>
+
+    <p><strong>Act Three</strong> stops giving well-formed problems with clean failure modes. The cases recombine earlier concepts rather than introducing new structural ones — which is harder in the way that matters. Human-AI collaboration and trust calibration across multi-step workflows. Data visualization as an epistemic act, not a communication act. The philosophical limits of what AI can do — and the precise technical reasons those limits exist. The act closes with original research: a complete validation pipeline, a full iteration log, and the irreducibly human accounting that carries half the final project grade.</p>
+
+    <div class="week-card">
+      <div class="week-label">Week 11</div>
+      <h4>Human-AI Collaboration and Trust Calibration: When Should You Override the Tool?</h4>
+      <p class="case-inline">A drug discovery pipeline with five AI-assisted stages. An invalid assumption in Stage 2 — the model assumed structural similarity implied functional similarity — compounded through Stages 3 and 4 into a candidate molecule that passed computational screening and failed wet-lab synthesis for a reason the Stage 2 model had no representation of.</p>
+      <p>The Botspeak Trust Calibration mode returns here in full technical implementation. Error compounding across multi-step AI workflows. System-trust vs. output-trust. The Diligence protocol from Botspeak extended into a formal monitoring specification: cadence, drift indicators, escalation conditions, shutdown criteria. Students produce a trust calibration map for their research project — appropriate trust level, calibration rationale, and compounding risk analysis for every stage of the validation pipeline they have built.</p>
+      <span class="deliverable-tag">Assignment #7 — Trust Calibration Map — 50 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 12</div>
+      <h4>Data Visualization for AI Transparency: Does the Dashboard Clarify — or Comfort?</h4>
+      <p class="case-inline">Two dashboards built from the same model evaluation data. One was used by the deployment team to approve production release. The other was built after the deployment failure, for the post-mortem. The same numbers. Completely different conclusions available from each layout.</p>
+      <p>McLuhan's "the medium is the message" applied to model evaluation dashboards: the visualization is not neutral, it is an argument. How dashboard design shapes what questions get asked and what questions become invisible. Deceptive visualization practices — not just misleading charts, but visualization architectures that foreground reassuring metrics and background concerning ones. Building transparency-first visualization pipelines. Students design a dashboard communicating their research project's validation findings accurately — including uncertainty — then deliberately redesign it to be misleading using the same data. The reflection on what the redesign reveals about the original is the graded deliverable.</p>
+      <span class="deliverable-tag">Assignment #8 — Transparency Dashboard with Redesign Reflection — 50 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 13</div>
+      <h4>AI Ethics, Governance, and Accountability: Who Is Responsible When the Validation Fails?</h4>
+      <p class="case-inline">Amazon's recruiting tool case — not the familiar version about why it was biased, but the version about why no one caught it for a year. The accountability chain was intact on paper and absent in practice. The people responsible for validation had no shared definition of what "validated" meant.</p>
+      <p>Kant's categorical imperative applied to validation: if no one's validation process would survive generalization, no one's validation process is a standard. Utilitarian ethics and the governance gap between "we tested it" and "we tested it against the right failure modes." Existential risk frameworks and AI alignment — Bostrom not as science fiction but as a precise statement of what happens when optimization continues past the point where human oversight is meaningful. Algorithmic accountability and the Diligence protocol as governance infrastructure. Industry perspective: company or research group presentation on trust implementation challenges in production.</p>
+      <span class="deliverable-tag">Assignment #9 — Ethics and Governance Case Analysis — 50 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 14</div>
+      <h4>The Philosophical Limits of AI: What the Machine Cannot Know — and Why the Answer Is Mathematical</h4>
+      <p>The Socratic method as a validation strategy: the question that exposes the limit is more valuable than the answer that obscures it. Meaning, understanding, and intentionality — the Turing Test and the Chinese Room not as philosophical curiosities but as precise statements about what kind of claims are supportable about AI cognition. The limits of data as a representation of the world: what is structurally absent from any training distribution, and why that absence cannot be fixed by more data. The Pearl causal ladder — Rung 1 (observation), Rung 2 (intervention), Rung 3 (counterfactual) — as the precise technical statement of where current AI systems are strong, weak, and absent. Final project workshop: peer feedback on complete drafts before submission.</p>
+      <span class="deliverable-tag">No new assignment — dedicated to final project completion and peer feedback</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 15</div>
+      <h4>Final Research Presentations and Submission</h4>
+      <p>The terminal deliverable: a complete original research project demonstrating computational skepticism under real conditions. Research question and system context. The full validation pipeline — bias audit, explainability critique, adversarial stress test, uncertainty calibration, trust calibration map — with explicit documentation of what each component can and cannot catch. Full iteration log. Qualified conclusion in two registers: technical, for a statistician, and plain-language, for the decision-maker who will act on it.</p>
+      <p>And the section that carries half the project grade: the <strong>Irreducibly Human accounting</strong>. Three specific judgment calls that required your values, domain knowledge, or professional accountability. One judgment call that you attempted to delegate to a tool and then reclaimed — with an honest account of why. An assessment of what the AI did well in this project, where it produced confident-sounding noise, and what you would do differently. That section cannot be produced by a tool. It is the evidence that you were present for the work.</p>
+      <span class="deliverable-tag">Final Research Presentation — 100 pts</span>
+      <span class="deliverable-tag">Final Project Submission — 250 pts</span>
+    </div>
+
+    <!-- ── Policies ── -->
+    <hr>
+
+    <h2>Course policies</h2>
+
+    <h3>Attendance</h3>
+    <p>This course is in-person. Attendance is tracked and counts as 100 points toward your final grade — TAs record attendance each session. Zoom attendance does not count. If you need to miss a session, contact me before class when possible. If something ongoing is affecting your ability to attend, reach out early. That conversation is easier in Week 2 than in Week 10.</p>
+
+    <h3>Late and missed work</h3>
+    <p>Assignments are due by 11:59 PM on the due date listed on Canvas. A 5% deduction applies for each day late. Assignments submitted after solutions are posted receive no credit. One extension per semester will be granted by email request, with a specific proposed new due date, before the original deadline. For sustained difficulties, contact me directly. Exams and the midterm presentation cannot be made up after the fact — if you anticipate a conflict, contact me before the date.</p>
+
+    <h3>Academic integrity</h3>
+    <p>Academic integrity in this course means the validation thinking, analysis, and judgment in your submissions represents your own intellectual contribution — even when AI tools assisted in its production. Submitting AI-generated analysis you cannot explain and did not supervise is an integrity violation. Why this matters for this specific field: AI validation requires that someone be accountable for the claim that a system was properly tested. If you cannot explain your validation pipeline, you cannot be accountable for it. The professional stakes of that gap are not hypothetical.</p>
+    <p>If you are unsure whether something crosses a line, ask before submitting. All integrity concerns are subject to Northeastern University policy: <a href="http://www.northeastern.edu/osccr/academicintegrity/">northeastern.edu/osccr/academicintegrity</a></p>
+
+    <h3>Collaboration</h3>
+    <p>Discuss strategies freely. All submitted work must represent your own analysis in your own words, coded in your own style. Directly copied code or text from any source — including other students, GitHub, or AI-generated output — must be cited. List all collaborators and describe each contribution. Individuals must be able to explain every aspect of group-produced work. Violations receive a zero on the affected assignment; multiple violations are referred to OSCCR.</p>
+
+    <!-- ── Resources ── -->
+    <hr>
+
+    <h2>Campus resources and support</h2>
+
+    <p>Your wellbeing matters more to me than your grade. If you are facing something — illness, financial hardship, family crisis, mental health difficulty, or anything else — reach out before it becomes an emergency. I will work with you to find a path through the semester.</p>
+
+    <p><strong>Counseling and Psychological Services (CAPS):</strong> <a href="https://www.northeastern.edu/uhcs/counseling-psychological-services/">northeastern.edu/uhcs/counseling-psychological-services</a> · 617-373-2772 (24-hour crisis line)</p>
+
+    <p><strong>Disability Resource Center:</strong> Connect early — accommodations take time to arrange. <a href="https://www.northeastern.edu/drc/">northeastern.edu/drc</a> · Once I receive your accommodation letter, I will implement it fully. Temporary barriers (injury, illness) do not require a formal letter — contact me directly.</p>
+
+    <p><strong>Writing Center:</strong> 412 Holmes Hall and 136 Snell Library. All disciplines, all levels. <a href="http://www.northeastern.edu/writingcenter/">northeastern.edu/writingcenter</a></p>
+
+    <!-- ── University policies ── -->
+    <hr>
+
+    <h2>University required policies</h2>
+
+    <p><em>The following policies are required by Northeastern University and apply to all courses. Questions about any of them are welcome.</em></p>
+
+    <p><strong>Academic Integrity:</strong> <a href="http://www.northeastern.edu/osccr/academicintegrity/">northeastern.edu/osccr/academicintegrity</a></p>
+    <p><strong>Disability Accommodations (ADA):</strong> <a href="https://www.northeastern.edu/drc/">northeastern.edu/drc</a></p>
+    <p><strong>Title IX / Sexual Harassment:</strong> As a faculty member I am a responsible employee — I am required to report disclosures of sexual misconduct to the Title IX Coordinator. Confidential resources: CAPS and the University Ombudsperson. <a href="https://www.northeastern.edu/titleix/">northeastern.edu/titleix</a></p>
+    <p><strong>FERPA / Student Records:</strong> Course materials and student work are for enrolled students only and may not be shared externally without consent.</p>
+    <p><strong>Recording Policy:</strong> Recording of class sessions requires explicit prior consent from the instructor and students captured. Requests should be made at the start of the semester.</p>
+    <p><strong>Inclement Weather / Cancellations:</strong> <a href="https://www.northeastern.edu/emergency/">northeastern.edu/emergency</a> · Canvas notifications sent as early as possible.</p>
+    <p><strong>Grade Appeals:</strong> Course-level disputes addressed first with the instructor; unresolved disputes escalated through the department per university academic policy.</p>
+    <p><strong>Withdrawal and Incomplete Grades:</strong> <a href="https://registrar.northeastern.edu/">registrar.northeastern.edu</a></p>
+    <p><strong>Technical Support:</strong> <a href="https://its.northeastern.edu/">its.northeastern.edu</a></p>
+
+    <!-- ── Byline ── -->
+    <div class="course-byline">
+      Irreducibly Human: What AI Can and Can't Do — Computational Skepticism for AI · INFO 7375 · Graduate seminar · College of Engineering · Northeastern University · Prerequisite: Botspeak: The Nine Pillars of AI Fluency · Instructor: Nik Bear Brown · <a href="mailto:ni.brown@neu.edu">ni.brown@neu.edu</a>
+    </div>
+
+  </main>
+
+  <footer style="text-align:center; padding:20px; font-size:11px; color:#999; border-top:1px solid #e0e0e0; margin-top:40px;">
+    Built with <a href="https://www.bearbrown.co" target="_blank" rel="noopener" style="color:#999;">bearbrown.co</a> · AI tools for educators, creators &amp; founders
+  </footer>
+
+</body>
+</html>

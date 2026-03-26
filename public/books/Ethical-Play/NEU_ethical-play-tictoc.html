@@ -1,0 +1,1800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ethical Play: full table of contents and chapter specifications</title>
+  <meta name="description" content="Complete chapter specifications for Irreducibly Human: Ethical Play — Course 3 of the graduate engineering series. Covers the full 15-week arc from ethical framework analysis through game design build to Ethical Auditor gap analysis, with learning outcomes, VE spiral thread, sequencing logic, and open design questions.">
+  <meta name="keywords" content="Ethical Play, table of contents, chapter specifications, Irreducibly Human, graduate engineering, game design, ethical frameworks, Ethical Auditor, gap analysis, Voodoo Economics, moral architecture, Nik Bear Brown, consequentialism, deontology, virtue ethics, care ethics">
+
+  <style>
+    :root {
+      --bb-1: #1a0a00;
+      --bb-2: #8B3A0F;
+      --bb-3: #C0392B;
+      --bb-4: #E8A020;
+      --bb-5: #D4500A;
+      --bb-6: #B8860B;
+      --bb-7: #C8A96E;
+      --bb-8: #F0E6D0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background-color: var(--bb-8);
+      color: var(--bb-1);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    .page-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 48px 32px 64px;
+    }
+
+    /* ── COVER ── */
+    .cover {
+      border-bottom: 3px solid var(--bb-2);
+      padding-bottom: 32px;
+      margin-bottom: 40px;
+    }
+
+    .cover-series {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+      margin-bottom: 8px;
+    }
+
+    .cover h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--bb-2);
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+
+    .cover h2 {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--bb-5);
+      margin-bottom: 18px;
+    }
+
+    .cover-meta { font-size: 13px; color: var(--bb-6); }
+
+    .version-meta {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 11px;
+      color: var(--bb-6);
+      border: 1px solid var(--bb-7);
+      border-radius: 3px;
+      padding: 4px 10px;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: white;
+      border-left: 4px solid var(--bb-2);
+      padding: 24px 28px;
+      margin-bottom: 48px;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .toc h3 {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+      margin-bottom: 14px;
+    }
+
+    .toc ol { padding-left: 20px; }
+    .toc li { margin-bottom: 4px; font-size: 14px; }
+    .toc a { color: var(--bb-2); text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+
+    /* ── SECTIONS ── */
+    .section { margin-bottom: 56px; }
+
+    .section-number {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+      margin-bottom: 4px;
+    }
+
+    h2.section-title {
+      font-size: 22px;
+      color: var(--bb-2);
+      border-bottom: 1px solid var(--bb-7);
+      padding-bottom: 8px;
+      margin-bottom: 24px;
+    }
+
+    h3 { font-size: 16px; color: var(--bb-5); margin: 28px 0 10px; }
+
+    h4 {
+      font-size: 14px;
+      color: var(--bb-2);
+      font-style: italic;
+      font-weight: 600;
+      margin: 18px 0 8px;
+    }
+
+    p { margin-bottom: 14px; }
+    ul { padding-left: 20px; margin-bottom: 14px; }
+    ul li { margin-bottom: 6px; font-size: 15px; }
+    a { color: var(--bb-5); }
+    strong { color: var(--bb-1); }
+
+    /* ── TABLES ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin: 16px 0 24px;
+    }
+
+    th {
+      background: var(--bb-2);
+      color: var(--bb-8);
+      padding: 10px 14px;
+      text-align: left;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+    }
+
+    td {
+      padding: 9px 14px;
+      border-bottom: 1px solid var(--bb-7);
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td { background: rgba(200, 169, 110, 0.12); }
+
+    /* ── CALLOUTS ── */
+    .callout {
+      padding: 16px 20px;
+      border-radius: 4px;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+    .callout-warn {
+      background: rgba(192, 57, 43, 0.08);
+      border-left: 4px solid var(--bb-3);
+    }
+
+    .callout-note {
+      background: rgba(232, 160, 32, 0.10);
+      border-left: 4px solid var(--bb-4);
+    }
+
+    .callout-info {
+      background: white;
+      border-left: 4px solid var(--bb-7);
+    }
+
+    .callout-critical {
+      background: rgba(192, 57, 43, 0.14);
+      border-left: 4px solid var(--bb-3);
+      border-top: 2px solid var(--bb-3);
+    }
+
+    .callout strong { color: var(--bb-2); }
+    .callout-critical strong { color: var(--bb-3); }
+
+    /* ── THESIS BLOCK ── */
+    .thesis-block {
+      background: var(--bb-1);
+      color: var(--bb-8);
+      padding: 28px 32px;
+      border-radius: 4px;
+      margin-bottom: 28px;
+    }
+
+    .thesis-block .thesis-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bb-7);
+      margin-bottom: 10px;
+    }
+
+    .thesis-block .thesis-sentence {
+      font-size: 17px;
+      color: var(--bb-4);
+      font-style: italic;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .thesis-block p { font-size: 14px; color: var(--bb-7); margin-bottom: 10px; }
+
+    .thesis-block .success-condition {
+      font-size: 14px;
+      color: var(--bb-8);
+      border-top: 1px solid rgba(200,169,110,0.3);
+      padding-top: 14px;
+      margin-top: 14px;
+      font-style: italic;
+    }
+
+    /* ── SPINE BLOCK ── */
+    .spine-block {
+      background: var(--bb-2);
+      color: var(--bb-8);
+      padding: 22px 26px;
+      border-radius: 4px;
+      margin: 20px 0;
+    }
+
+    .spine-block .spine-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bb-7);
+      margin-bottom: 10px;
+    }
+
+    .spine-block .spine-question {
+      font-size: 16px;
+      color: var(--bb-4);
+      font-style: italic;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .spine-block p { font-size: 13px; color: rgba(240,230,208,0.8); margin: 0; }
+
+    /* ── ACT HEADERS ── */
+    .act-header {
+      background: var(--bb-2);
+      color: var(--bb-8);
+      padding: 18px 22px;
+      border-radius: 4px 4px 0 0;
+      margin-top: 40px;
+    }
+
+    .act-header .act-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bb-7);
+      margin-bottom: 4px;
+    }
+
+    .act-header h3 { font-size: 17px; color: var(--bb-8); margin: 0 0 4px; }
+    .act-header p { font-size: 13px; color: rgba(240,230,208,0.75); margin: 0; font-style: italic; }
+
+    /* ── CHAPTER BLOCKS ── */
+    .chapter-block {
+      border: 1px solid var(--bb-7);
+      border-top: none;
+      border-radius: 0 0 4px 4px;
+      margin-bottom: 40px;
+      overflow: hidden;
+    }
+
+    .chapter-header {
+      background: rgba(139, 58, 15, 0.08);
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--bb-7);
+    }
+
+    .chapter-header .ch-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .chapter-header .ch-num {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+    }
+
+    .chapter-header .ch-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--bb-2);
+    }
+
+    .chapter-header .ch-act {
+      font-size: 12px;
+      color: var(--bb-5);
+    }
+
+    .chapter-header .ch-sub {
+      font-size: 13px;
+      color: var(--bb-5);
+      font-style: italic;
+      margin-top: 4px;
+    }
+
+    .chapter-body { padding: 20px 22px; }
+
+    .do-statement {
+      background: white;
+      border-left: 3px solid var(--bb-4);
+      padding: 12px 16px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-style: italic;
+    }
+
+    .do-statement strong {
+      font-style: normal;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* ── VE THREAD ── */
+    .ve-thread {
+      background: rgba(184,134,11,0.10);
+      border: 1px solid var(--bb-6);
+      border-radius: 3px;
+      padding: 12px 16px;
+      margin-bottom: 16px;
+    }
+
+    .ve-thread .ve-label {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .ve-thread p { font-size: 13px; margin: 0; }
+
+    /* ── OPENING STRATEGY ── */
+    .opening-strategy {
+      background: rgba(212,80,10,0.06);
+      border-left: 3px solid var(--bb-5);
+      padding: 12px 16px;
+      margin-bottom: 16px;
+    }
+
+    .opening-strategy .os-label {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bb-5);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .opening-strategy p { font-size: 13px; margin: 0; }
+
+    /* ── SUB-SECTIONS ── */
+    .ch-sub-label {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+      font-weight: 700;
+      margin: 18px 0 8px;
+      border-bottom: 1px solid var(--bb-7);
+      padding-bottom: 4px;
+    }
+
+    /* ── LO TABLE ── */
+    .lo-table { margin: 10px 0 16px; }
+
+    .lo-table th:nth-child(1) { width: 80px; }
+    .lo-table th:nth-child(2) { width: 110px; }
+    .lo-table th:nth-child(4) { width: 90px; text-align: center; }
+    .lo-table td:nth-child(4) { text-align: center; }
+
+    .bloom-tag {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+      background: rgba(184,134,11,0.12);
+      border: 1px solid var(--bb-7);
+      border-radius: 2px;
+      padding: 1px 5px;
+      white-space: nowrap;
+    }
+
+    .bloom-create { background: rgba(139,58,15,0.12); color: var(--bb-2); border-color: var(--bb-2); }
+    .bloom-evaluate { background: rgba(212,80,10,0.10); color: var(--bb-5); border-color: var(--bb-5); }
+    .bloom-analyze { background: rgba(184,134,11,0.12); color: var(--bb-6); border-color: var(--bb-6); }
+    .bloom-apply { background: rgba(200,169,110,0.20); color: var(--bb-1); border-color: var(--bb-7); }
+    .bloom-understand { background: rgba(240,230,208,0.60); color: var(--bb-6); border-color: var(--bb-7); }
+
+    /* ── BRIDGE ── */
+    .bridge-block {
+      background: var(--bb-1);
+      color: var(--bb-7);
+      padding: 12px 16px;
+      border-radius: 3px;
+      font-size: 13px;
+      font-style: italic;
+      margin-top: 16px;
+    }
+
+    .bridge-block strong {
+      color: var(--bb-4);
+      font-style: normal;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* ── BLOOM DISTRIBUTION ── */
+    .bloom-dist-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--bb-7);
+      font-size: 14px;
+    }
+
+    .bloom-dist-label {
+      min-width: 100px;
+      font-weight: 600;
+      color: var(--bb-2);
+    }
+
+    .bloom-bar-wrap {
+      flex: 1;
+      background: rgba(200,169,110,0.2);
+      border-radius: 2px;
+      height: 14px;
+      overflow: hidden;
+    }
+
+    .bloom-bar {
+      height: 100%;
+      background: var(--bb-2);
+      border-radius: 2px;
+    }
+
+    .bloom-dist-count {
+      min-width: 40px;
+      text-align: right;
+      color: var(--bb-6);
+      font-size: 13px;
+    }
+
+    /* ── SEQUENCING ── */
+    .sequencing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 16px 0;
+    }
+
+    .seq-card {
+      background: white;
+      border: 1px solid var(--bb-7);
+      border-top: 3px solid var(--bb-2);
+      border-radius: 0 0 4px 4px;
+      padding: 14px;
+    }
+
+    .seq-card .sc-label {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+      margin-bottom: 6px;
+    }
+
+    .seq-card h4 { margin: 0 0 8px; font-style: normal; font-size: 14px; color: var(--bb-2); }
+    .seq-card p { font-size: 13px; margin: 0; }
+
+    /* ── RUNNING EXAMPLES ── */
+    .example-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 16px 0;
+    }
+
+    .example-card {
+      border: 1px solid var(--bb-7);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .example-card .ec-header {
+      padding: 10px 14px;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .example-card.ve .ec-header { background: var(--bb-6); color: var(--bb-8); }
+    .example-card.trap .ec-header { background: var(--bb-3); color: white; }
+
+    .example-card .ec-body { padding: 14px; font-size: 13px; }
+
+    /* ── OQ BLOCK ── */
+    .oq-block {
+      border: 1px solid var(--bb-7);
+      border-radius: 4px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .oq-header {
+      display: flex;
+      gap: 12px;
+      align-items: baseline;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--bb-7);
+      background: rgba(200,169,110,0.10);
+    }
+
+    .oq-id {
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      color: var(--bb-2);
+      white-space: nowrap;
+    }
+
+    .oq-priority {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 1px 6px;
+      border-radius: 2px;
+      font-weight: 700;
+    }
+
+    .oq-priority.critical { background: var(--bb-3); color: white; }
+    .oq-priority.high { background: var(--bb-4); color: var(--bb-1); }
+    .oq-priority.medium { background: var(--bb-7); color: var(--bb-1); }
+
+    .oq-title { font-size: 14px; font-weight: 600; }
+
+    .oq-body { padding: 10px 14px; font-size: 13px; }
+
+    /* ── MISC ── */
+    .transition-tests {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 16px 0;
+    }
+
+    .tt-card {
+      background: white;
+      border: 1px solid var(--bb-7);
+      border-left: 4px solid var(--bb-5);
+      padding: 14px;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .tt-card .tt-label {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bb-5);
+      margin-bottom: 6px;
+    }
+
+    .tt-card p { font-size: 13px; margin: 0; }
+
+    @media (max-width: 640px) {
+      .page-wrapper { padding: 24px 16px 48px; }
+      .chapter-header .ch-row { flex-direction: column; }
+      .sequencing-grid, .example-pair, .transition-tests { grid-template-columns: 1fr; }
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 11px;
+      color: #999;
+      border-top: 1px solid #e0e0e0;
+      margin-top: 40px;
+    }
+
+    footer a { color: #999; }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-series">Irreducibly Human Series · Course 3 of 3 · TIC TOC</div>
+    <h1>Ethical Play: full table of contents and chapter specifications</h1>
+    <h2>What AI can and can't do — designing moral weight into game systems</h2>
+    <div class="cover-meta">
+      Bear Brown &amp; Company / Kindle Direct Publishing, 2026 &nbsp;·&nbsp; 15-week semester
+    </div>
+    <div class="version-meta">Version 0.1 &nbsp;·&nbsp; March 2026 &nbsp;·&nbsp; Reviewed by Dev the Dev</div>
+  </div>
+
+  <!-- TOC -->
+  <div class="toc">
+    <h3>Contents</h3>
+    <ol>
+      <li><a href="#concept">Book Concept and Thesis</a></li>
+      <li><a href="#learner">Learner Profile</a></li>
+      <li><a href="#spine">Recurring Assessment Spine</a></li>
+      <li><a href="#sequencing">Sequencing Logic and Running Examples</a></li>
+      <li><a href="#bloom">Bloom's Distribution</a></li>
+      <li><a href="#chapters">Chapter-by-Chapter Specifications</a></li>
+      <li><a href="#oq">Open Design Questions</a></li>
+    </ol>
+  </div>
+
+
+  <!-- 1. CONCEPT -->
+  <div class="section" id="concept">
+    <div class="section-number">Section 1</div>
+    <h2 class="section-title">Book Concept and Thesis</h2>
+
+    <div class="thesis-block">
+      <div class="thesis-label">One-sentence concept</div>
+      <div class="thesis-sentence">This book teaches engineering graduate students to design game systems that encode ethical frameworks as mechanical consequence structures — systems precise enough for an AI to audit and human enough to make players feel morally implicated — by building directly toward the gap between what an algorithm can evaluate and what a human must feel.</div>
+      <p><strong style="color:var(--bb-4);">Central thesis:</strong> Moral weight in designed systems is not produced by describing ethical stakes. It is produced by encoding ethical frameworks into consequence structures that transfer responsibility to the agent making decisions. An AI can evaluate the architecture. Only a human can feel the weight. The gap between those two statements is what this book teaches you to build.</p>
+      <div class="success-condition"><strong style="color:var(--bb-4);">Success condition:</strong> The student can construct, build, and defend a game system whose ethical architecture is legible to an AI auditor and whose moral weight lands on a human player — and can identify the precise location where those two descriptions diverge.</div>
+    </div>
+
+    <div class="callout callout-warn">
+      <strong>Biggest unresolved structural question:</strong> Whether the Ethical Auditor assessment is a pedagogical mechanism or a pedagogical thesis. If both, the course risks teaching students to optimize for AI legibility rather than human moral weight — the editorializing failure in reverse.
+    </div>
+
+    <table>
+      <tr><th>Field</th><th>Value</th></tr>
+      <tr><td>Series position</td><td>Course 3 of 3 · Irreducibly Human: What AI Can and Can't Do</td></tr>
+      <tr><td>Deployment context</td><td>15-week graduate course</td></tr>
+    </table>
+  </div>
+
+
+  <!-- 2. LEARNER -->
+  <div class="section" id="learner">
+    <div class="section-number">Section 2</div>
+    <h2 class="section-title">Learner Profile</h2>
+
+    <p>A graduate engineering student who can describe the trolley problem and has never driven the trolley. Has taken one programming course. Has opinions about AI ethics. Has never been asked to make someone else feel morally implicated by something they built.</p>
+  </div>
+
+
+  <!-- 3. SPINE -->
+  <div class="section" id="spine">
+    <div class="section-number">Section 3</div>
+    <h2 class="section-title">Recurring Assessment Spine</h2>
+
+    <p>Present in every deliverable, every chapter. Not a single-chapter outcome.</p>
+
+    <div class="spine-block">
+      <div class="spine-label">The recurring question — required in every deliverable</div>
+      <div class="spine-question">"Name one judgment call in this work that required your values, your domain knowledge, or your accountability — that an AI could not have made on your behalf."</div>
+      <p>This is not a reflection prompt. It is the primary evidence that the student operated above Tier 1. If a student cannot answer it with specificity, the deliverable has not cleared the course's minimum threshold regardless of technical quality.</p>
+    </div>
+  </div>
+
+
+  <!-- 4. SEQUENCING -->
+  <div class="section" id="sequencing">
+    <div class="section-number">Section 4</div>
+    <h2 class="section-title">Sequencing Logic and Running Examples</h2>
+
+    <div class="sequencing-grid">
+      <div class="seq-card">
+        <div class="sc-label">Primary model</div>
+        <h4>Concrete to abstract</h4>
+        <p>The trap game and VE arrive in Week 1. Students encounter a designed failure before they have vocabulary to name it. Frameworks arrive as language for something already felt. The analysis comes after the experience — never before.</p>
+      </div>
+      <div class="seq-card">
+        <div class="sc-label">Secondary model</div>
+        <h4>Spiral curriculum (Bruner)</h4>
+        <p>Both games are spiral objects introduced in Week 1 and returned to after every framework chapter. Each return must escalate — new analytical layer only possible because prior layers are in place. A return that only adds vocabulary is a repetition, not a spiral.</p>
+      </div>
+    </div>
+
+    <h3>Week 1 response journal — required infrastructure</h3>
+    <p>Students submit one paragraph of felt response to both games before the first framework chapter. No vocabulary. Felt experience only. This document is returned to students in Week 13. It is the only record of the pre-vocabulary response that makes the gap analysis meaningful.</p>
+
+    <div class="callout callout-critical">
+      <strong>⚑ Infrastructure flag:</strong> The Week 1 response journal is load-bearing. If the course management system does not support timed document return, the primary sequencing model has a structural hole.
+    </div>
+
+    <h3>Transition tests</h3>
+    <div class="transition-tests">
+      <div class="tt-card">
+        <div class="tt-label">Act One → Act Two · Week 5</div>
+        <p>Student can name how a specific mechanic transfers responsibility to the player — not in general terms, but with reference to a located design decision.</p>
+      </div>
+      <div class="tt-card">
+        <div class="tt-label">Act Two → Act Three · Week 11</div>
+        <p>Student has a playtestable beta build and documented human playtesting data. The Ethical Auditor session without this data has only one side of the gap.</p>
+      </div>
+    </div>
+
+    <div class="callout callout-warn">
+      <strong>⚑ Policy flag:</strong> Instructor policy on failed Week 5 transition tests must be stated before the course runs. Option 1: revise until passing — no build begins on incomplete architecture. Option 2: proceed with flagged specification — gap tracked through Week 13. This is a design decision, not an administrative one.
+    </div>
+
+    <div class="callout callout-warn">
+      <strong>⚑ Highest breakdown risk — Week 3:</strong> Deontology's felt correlate — the experience of a moral violation versus a resource cost — is the hardest to access from the Week 1 game experience. The VE bribe escalation mechanic is the required opening case. The chapter opens with the moment where the punishment doesn't track the violation.
+    </div>
+
+    <h3>The two running examples</h3>
+
+    <div class="example-pair">
+      <div class="example-card ve">
+        <div class="ec-header">Voodoo Economics (VE) — aspirational architecture</div>
+        <div class="ec-body">
+          <p>A pre-production GDD (v0.7) encoding consequentialist, deontological, and contractarian architecture across a mobile political satire simulation. Students receive the GDD in Week 1 and return to it after each framework chapter.</p>
+          <p>The spiral object is not the game — it is the design document. Students analyze architecture without felt play, mirroring exactly what the AI Ethical Auditor does. The gap between GDD analysis and felt play is the course's argument made structural.</p>
+          <div class="callout callout-warn" style="margin-top:10px;">
+            <strong>⚑ Flag:</strong> VE is v0.7 pre-production. No playable artifact exists at course delivery. The limitation is usable — the class encounters the same epistemic constraint as the AI — but the limitation must be named explicitly in Week 1, not discovered.
+          </div>
+        </div>
+      </div>
+      <div class="example-card trap">
+        <div class="ec-header">The trap game — diagnostic failure</div>
+        <div class="ec-body">
+          <p>A purpose-built game designed to fail in four specific ways simultaneously: (1) the editorializing failure — the game tells the player what to feel; (2) moral weight landing on the character, not the player; (3) framework described in text but absent from mechanics; (4) implication promised, smugness delivered.</p>
+          <p>The AI Ethical Auditor should pass this game — finding the framework and calling the architecture coherent. Human playtesters should report smugness. That result is the course's thesis demonstrated in a controlled case before students build their own.</p>
+          <div class="callout callout-critical" style="margin-top:10px;">
+            <strong>⚑ Critical flag:</strong> The trap game does not yet exist. It must be built before the course runs. Without it, Week 1 has one game instead of two and the primary sequencing model has no designed failure to start from. This is a prerequisite, not a nice-to-have.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 5. BLOOM'S -->
+  <div class="section" id="bloom">
+    <div class="section-number">Section 5</div>
+    <h2 class="section-title">Bloom's Distribution</h2>
+
+    <div style="border:1px solid var(--bb-7); border-radius:4px; overflow:hidden; margin-bottom:16px;">
+      <div class="bloom-dist-row" style="background:rgba(200,169,110,0.12);">
+        <span class="bloom-dist-label">Remember</span>
+        <div class="bloom-bar-wrap"><div class="bloom-bar" style="width:0%;"></div></div>
+        <span class="bloom-dist-count">0 &nbsp;(0%)</span>
+      </div>
+      <div class="bloom-dist-row">
+        <span class="bloom-dist-label">Understand</span>
+        <div class="bloom-bar-wrap"><div class="bloom-bar" style="width:2%; background:var(--bb-7);"></div></div>
+        <span class="bloom-dist-count">1 &nbsp;(2%)</span>
+      </div>
+      <div class="bloom-dist-row" style="background:rgba(200,169,110,0.12);">
+        <span class="bloom-dist-label">Apply</span>
+        <div class="bloom-bar-wrap"><div class="bloom-bar" style="width:19%;"></div></div>
+        <span class="bloom-dist-count">9 &nbsp;(19%)</span>
+      </div>
+      <div class="bloom-dist-row">
+        <span class="bloom-dist-label">Analyze</span>
+        <div class="bloom-bar-wrap"><div class="bloom-bar" style="width:34%;"></div></div>
+        <span class="bloom-dist-count">16 &nbsp;(34%)</span>
+      </div>
+      <div class="bloom-dist-row" style="background:rgba(200,169,110,0.12);">
+        <span class="bloom-dist-label">Evaluate</span>
+        <div class="bloom-bar-wrap"><div class="bloom-bar" style="width:28%;"></div></div>
+        <span class="bloom-dist-count">13 &nbsp;(28%)</span>
+      </div>
+      <div class="bloom-dist-row">
+        <span class="bloom-dist-label">Create</span>
+        <div class="bloom-bar-wrap"><div class="bloom-bar" style="width:17%;"></div></div>
+        <span class="bloom-dist-count">8 &nbsp;(17%)</span>
+      </div>
+    </div>
+
+    <div class="callout callout-note">
+      Zero comprehension chapters. 98% of outcomes at Apply or above. <strong>One UNDERSTAND-level outcome only</strong> (LO-1.3 — acceptable as a grounding move; flag if it bleeds into Week 2). Distribution is correct for a graduate design capability course.
+    </div>
+  </div>
+
+
+  <!-- 6. CHAPTERS -->
+  <div class="section" id="chapters">
+    <div class="section-number">Section 6</div>
+    <h2 class="section-title">Chapter-by-Chapter Specifications</h2>
+
+
+    <!-- ═══ ACT ONE ═══ -->
+    <div class="act-header">
+      <div class="act-label">Act One · Weeks 1–5 · Chapters 1–5</div>
+      <h3>Philosophy as Design Vocabulary</h3>
+      <p>Five ethical frameworks taught as game design constraints, not intellectual history. Each paired with a consequence architecture implication. Two spiral objects introduced in Week 1 and returned to after every chapter. Frameworks are precision instruments for something already felt.</p>
+    </div>
+
+    <!-- CH 1 -->
+    <div class="chapter-block">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 1</span>
+          <span class="ch-title">The Audit Gap</span>
+          <span class="ch-act">Act One · Week 1</span>
+        </div>
+        <div class="ch-sub">The student learns to distinguish what an AI can evaluate in a designed ethical system from what a human player must feel — and acquires the evaluative vocabulary the rest of the course depends on.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="ve-thread">
+          <div class="ve-label">VE / Trap Game Thread</div>
+          <p>VE GDD and trap game distributed. Week 1 response journal submitted before end of class — one paragraph, felt response only, no vocabulary. First pass diagnostic question posed: what ethical framework is embedded in VE? No answer expected. The question runs all semester.</p>
+        </div>
+
+        <div class="opening-strategy">
+          <div class="os-label">Opening Strategy</div>
+          <p>Open with both games played/read in sequence. No framework vocabulary introduced. Ask only: what did you feel, and what was different between the two? Collect the response journals before the lecture begins.</p>
+        </div>
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr>
+            <td>LO-1.1</td>
+            <td><span class="bloom-tag bloom-analyze">Analyze</span></td>
+            <td>Distinguish between an AI's structural analysis of a designed system and a human player's felt moral experience, using the VE GDD as the diagnostic case. Student produces a written distinction with one specific AI claim and one human experience claim the AI cannot make.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-1.2</td>
+            <td><span class="bloom-tag bloom-apply">Apply</span></td>
+            <td>Apply the implication/smugness distinction to a provided game example, specifying which design decisions produce implication and which produce smugness.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-1.3</td>
+            <td><span class="bloom-tag bloom-understand">Understand</span></td>
+            <td>Explain why encoding an ethical framework in a mechanic differs from describing one in a text — using one example of each.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-1.4</td>
+            <td><span class="bloom-tag bloom-analyze">Analyze</span></td>
+            <td>Identify one design decision in the VE GDD that might embody an ethical framework and one that might only illustrate one — with reasoning for the distinction.</td>
+            <td>Yes</td>
+          </tr>
+        </table>
+
+        <div class="callout callout-critical">
+          <strong>⚑ Critical — prerequisite:</strong> The trap game must exist and be playable in Week 1. If it does not exist, this chapter loses its designed concrete experience and the primary sequencing model is compromised.
+        </div>
+
+        <div class="callout callout-info">
+          <strong>⚑ Note:</strong> LO-1.3 is the only UNDERSTAND-level outcome in the course. Acceptable as a grounding move. Flag if it bleeds into Week 2.
+        </div>
+
+        <div class="bridge-block">
+          <strong>Bridge to Ch. 2</strong>
+          "This chapter raises the question: what is it that the AI can evaluate but cannot feel? The next chapter provides the first precision instrument for answering it."
+        </div>
+      </div>
+    </div>
+
+
+    <!-- CH 2 -->
+    <div class="chapter-block" style="border-top:1px solid var(--bb-7);">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 2</span>
+          <span class="ch-title">Consequentialism as Mechanic</span>
+          <span class="ch-act">Act One · Week 2</span>
+        </div>
+        <div class="ch-sub">The student learns to translate a consequentialist ethical position into a game's consequence structure — and to evaluate whether that structure produces legible causality or plausible-sounding noise.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="ve-thread">
+          <div class="ve-label">VE Thread — First Structured Spiral Return</div>
+          <p>Return to VE GDD. Identify the consequentialist architecture. Which specific mechanics encode it? Which claim to encode it but don't? Students compare this analysis with their Week 1 felt response.</p>
+        </div>
+
+        <div class="opening-strategy">
+          <div class="os-label">Opening Strategy</div>
+          <p>Open with the VE causal chain display: a 4-node consequence chain from a specific edict. Ask: is each node caused by the one before it, or does it follow plausibly? The difference is the chapter.</p>
+        </div>
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr>
+            <td>LO-2.1</td>
+            <td><span class="bloom-tag bloom-apply">Apply</span></td>
+            <td>Translate a consequentialist ethical position into a faction meter and traceable consequence structure for a domain-specific scenario, specifying what counts as an outcome and who bears the cost.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-2.2</td>
+            <td><span class="bloom-tag bloom-create">Create</span></td>
+            <td>Construct a 4-node consequence chain for one policy decision in the student's chosen project domain, meeting the Legible Causality standard: each node causally connected, each connection statable in one sentence.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-2.3</td>
+            <td><span class="bloom-tag bloom-analyze">Analyze</span></td>
+            <td>Identify the consequentialist architecture in the VE GDD by locating specific mechanics that embody it — and identify at least one mechanic that claims consequentialist logic but operates differently.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-2.4</td>
+            <td><span class="bloom-tag bloom-evaluate">Evaluate</span></td>
+            <td>Evaluate a provided consequence chain against the Legible Causality pillar, specifying where causal logic holds and where it produces plausible-sounding outcomes without genuine causal connection.</td>
+            <td>Yes</td>
+          </tr>
+        </table>
+
+        <div class="callout callout-info">
+          <strong>⚑ Note:</strong> LO-2.2 is the first CREATE-level outcome in the course. The 4-node chain is small enough for Week 2 and complex enough to require genuine causal reasoning. It is the first test of whether students can operate above Tier 1.
+        </div>
+
+        <div class="bridge-block">
+          <strong>Bridge to Ch. 3</strong>
+          "A consequence chain can be structurally present but causally shallow. The next chapter asks: what happens when the player breaks a rule?"
+        </div>
+      </div>
+    </div>
+
+
+    <!-- CH 3 -->
+    <div class="chapter-block" style="border-top:1px solid var(--bb-7);">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 3</span>
+          <span class="ch-title">Deontology as Mechanic</span>
+          <span class="ch-act">Act One · Week 3</span>
+        </div>
+        <div class="ch-sub">The student learns to design a rule-breaking mechanic that produces the felt experience of a moral violation — not a resource cost — and to evaluate whether a given mechanic achieves that distinction.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="ve-thread">
+          <div class="ve-label">VE Thread — Second Spiral Return</div>
+          <p>Return to VE GDD. Focus: the bribe escalation mechanic. Is it deontological or consequentialist? The answer is genuinely ambiguous. That is the point. Students now have two frameworks as lenses and can see the ambiguity they couldn't name in Week 1.</p>
+        </div>
+
+        <div class="opening-strategy">
+          <div class="os-label">Opening Strategy</div>
+          <p>Open with the VE bribe escalation specifically: the moment where negotiating upward increases cost but the felt violation may not track the cost increase. Ask: was that moment a fine or a moral failure? The framework arrives as the answer.</p>
+        </div>
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr>
+            <td>LO-3.1</td>
+            <td><span class="bloom-tag bloom-analyze">Analyze</span></td>
+            <td>Distinguish a mechanical fine from a mechanical moral failure at the design level, identifying the specific structural features that produce each — using the VE bribe escalation mechanic as the test case.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-3.2</td>
+            <td><span class="bloom-tag bloom-create">Create</span></td>
+            <td>Design a rule-breaking mechanic for a domain-specific scenario in which the cost of violation produces felt moral weight rather than strategic calculation — specifying the design decisions that create that distinction.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-3.3</td>
+            <td><span class="bloom-tag bloom-evaluate">Evaluate</span></td>
+            <td>Assess the VE bribe escalation mechanic: does it function as deontological architecture, consequentialist architecture, or both simultaneously — and does dual encoding strengthen or undermine the moral weight? Requires a defended position.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-3.4</td>
+            <td><span class="bloom-tag bloom-analyze">Analyze</span></td>
+            <td>Identify the point in a rule-breaking mechanic's design where the player's experience shifts from moral reasoning to cost-benefit calculation, and specify the design decision that causes the shift.</td>
+            <td>Yes</td>
+          </tr>
+        </table>
+
+        <div class="callout callout-critical">
+          <strong>⚑ Highest breakdown risk chapter:</strong> Deontology's felt correlate is hardest to access from the Week 1 experience. The VE bribe escalation opening is the mitigation — but it must be written and tested before the course runs, not composed the week before.
+        </div>
+
+        <div class="callout callout-warn">
+          <strong>⚑ Assessment flag — LO-3.4:</strong> The hardest outcome in Act One to assess reliably in writing. Consider pairing with a short in-class demonstration: student presents mechanic, class identifies the shift point.
+        </div>
+
+        <div class="bridge-block">
+          <strong>Bridge to Ch. 4</strong>
+          "The bribe escalation ambiguity raises the question of dual-encoded mechanics. The next chapter introduces frameworks organized around time rather than moment."
+        </div>
+      </div>
+    </div>
+
+
+    <!-- CH 4 -->
+    <div class="chapter-block" style="border-top:1px solid var(--bb-7);">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 4</span>
+          <span class="ch-title">Virtue Ethics and Contractarianism as Mechanic</span>
+          <span class="ch-act">Act One · Week 4</span>
+        </div>
+        <div class="ch-sub">The student learns to design for character development across time and for the player who receives the worst outcome of a designed system — and evaluates whether VE's architecture reflects either position.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="ve-thread">
+          <div class="ve-label">VE Thread — Third Spiral Return</div>
+          <p>Return to VE GDD. Focus: the Popularity score and the six outcome paths. Does the system design for the citizen who gets the worst outcome? Which mechanics encode virtue development and which record behavioral history only?</p>
+        </div>
+
+        <div class="opening-strategy">
+          <div class="os-label">Opening Strategy</div>
+          <p>Open with the VE outcome card for 'Disappeared (Sovyetia only).' Ask: who designed this outcome — the player optimizing for survival, or the designer considering who lives in the game world? The chapter is the answer.</p>
+        </div>
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr>
+            <td>LO-4.1</td>
+            <td><span class="bloom-tag bloom-create">Create</span></td>
+            <td>Design a reward structure that tracks character development over time for a domain-specific scenario — specifying the difference between a system that records what the player did and one that encodes who the player is becoming.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-4.2</td>
+            <td><span class="bloom-tag bloom-apply">Apply</span></td>
+            <td>Apply the Rawlsian veil of ignorance as a design constraint to a provided game system, specifying the worst-case player outcome and the design decisions required to minimize it without eliminating the game's moral architecture.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-4.3</td>
+            <td><span class="bloom-tag bloom-evaluate">Evaluate</span></td>
+            <td>Evaluate the VE six-outcome structure against the contractarian standard: does the system design for the citizen who bears the cost of every edict, or for the player's strategic optimization? Name the specific design feature that answers the question.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-4.4</td>
+            <td><span class="bloom-tag bloom-analyze">Analyze</span></td>
+            <td>Distinguish a game mechanic that encodes virtue development from one that records behavioral history, using examples from the VE GDD and one other game of the student's choice.</td>
+            <td>Yes</td>
+          </tr>
+        </table>
+
+        <div class="bridge-block">
+          <strong>Bridge to Ch. 5</strong>
+          "Both virtue ethics and contractarianism require reasoning about agents positioned in the system over time. Care ethics — the final framework — requires reasoning about the specific other rather than the category."
+        </div>
+      </div>
+    </div>
+
+
+    <!-- CH 5 -->
+    <div class="chapter-block" style="border-top:1px solid var(--bb-7);">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 5 — Bridge Chapter</span>
+          <span class="ch-title">Care Ethics as Design Constraint</span>
+          <span class="ch-act">Act One · Week 5</span>
+        </div>
+        <div class="ch-sub">The student learns to design consequence structures where the morally significant units are relationships and people rather than resources and rules — and produces the preliminary moral architecture specification that will govern their build.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="ve-thread">
+          <div class="ve-label">VE Thread — Final Act One Spiral Pass</div>
+          <p>Students now have five frameworks as lenses. Full first-pass VE framework identification submitted as a written diagnostic. This document is returned for comparison with the AI audit findings in Week 12 and the gap analysis in Week 13.</p>
+        </div>
+
+        <div class="opening-strategy">
+          <div class="os-label">Opening Strategy</div>
+          <p>Open with a designed editorializing failure — not from VE, but from the trap game. By Week 5, students have vocabulary to name exactly what went wrong. The editorializing failure is the last concept before the build begins because it is the mistake most likely to appear in the first draft of every student's game.</p>
+        </div>
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr>
+            <td>LO-5.1</td>
+            <td><span class="bloom-tag bloom-analyze">Analyze</span></td>
+            <td>Identify the editorializing failure — a design that tells the player what to feel rather than producing felt moral weight — in a provided game example, specifying the exact design decision that causes it.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-5.2</td>
+            <td><span class="bloom-tag bloom-create">Create</span></td>
+            <td>Design a relationship damage mechanic for a domain-specific scenario that makes loss legible to the player without emotional language — specifying how the mechanic communicates damage without moral commentary.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-5.3</td>
+            <td><span class="bloom-tag bloom-evaluate">Evaluate</span></td>
+            <td>Select one ethical framework for the semester project and defend the selection against three criteria: domain fit, capacity to produce implication rather than smugness, and AI-auditor legibility.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-5.4</td>
+            <td><span class="bloom-tag bloom-create">Create</span></td>
+            <td>Produce a preliminary moral architecture specification: the ethical framework, the primary mechanic that embodies it, the consequence structure that transfers responsibility to the player, and one specific design decision predicted to produce implication in a human player.</td>
+            <td>Yes</td>
+          </tr>
+        </table>
+
+        <div class="callout callout-critical">
+          <strong>⚑ Load-bearing deliverable — LO-5.4:</strong> This is the gate to Act Two. A student whose specification cannot name how the mechanic transfers responsibility to the player has not yet designed an ethical architecture. Students who cannot produce LO-5.4 to specification do not begin the Week 6 build. Instructor policy on what happens next must be confirmed before the course runs.
+        </div>
+
+        <div class="bridge-block">
+          <strong>Bridge to Act Two</strong>
+          "The preliminary moral architecture specification closes Act One. Act Two opens with the GDD as an ethical argument — not a description of a game, but a claim about how the world works, encoded in mechanics."
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ═══ ACT TWO ═══ -->
+    <div class="act-header">
+      <div class="act-label">Act Two · Weeks 6–11 · Chapters 6–11</div>
+      <h3>Build</h3>
+      <p>Students use Zelda (GDD tool) and Claude Code to build a web-based game encoding their chosen ethical dilemma in their chosen domain. The ethical framework is not disclosed in the GDD. The mechanic must embody the framework — not describe it.</p>
+    </div>
+
+    <!-- CH 6 -->
+    <div class="chapter-block">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 6</span>
+          <span class="ch-title">Design Lock</span>
+          <span class="ch-act">Act Two · Week 6</span>
+        </div>
+        <div class="ch-sub">The student produces a complete GDD that encodes an ethical framework in its consequence structure without naming the framework anywhere in the document.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="ve-thread">
+          <div class="ve-label">VE Thread</div>
+          <p>VE GDD as structural model. Students are now writing a document of this type — an ethical argument encoded in design decisions. The question shifts from 'what framework is in VE?' to 'can I build a document that does what VE does?'</p>
+        </div>
+
+        <div class="opening-strategy">
+          <div class="os-label">Opening Strategy</div>
+          <p>Distribute a redacted version of a student GDD from a prior course (or a purpose-written example). Class identifies the ethical framework from the mechanics alone. Then: what would it take to make the framework unidentifiable from the GDD? That failure mode is the design problem for the week.</p>
+        </div>
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr>
+            <td>LO-6.1</td>
+            <td><span class="bloom-tag bloom-create">Create</span></td>
+            <td>Produce a GDD that encodes the chosen ethical framework mechanically without naming or describing the framework anywhere in the document. The framework must be identifiable from the GDD by a reader who does not know which was chosen.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-6.2</td>
+            <td><span class="bloom-tag bloom-evaluate">Evaluate</span></td>
+            <td>Evaluate the preliminary moral architecture specification from Week 5 against the completed GDD, identifying divergence between intended architecture and designed mechanics — and specifying what revision closed each gap.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-6.3</td>
+            <td><span class="bloom-tag bloom-analyze">Analyze</span></td>
+            <td>Identify the player experience goal the GDD's consequence structure is designed to achieve, stating it as the specific type of implication the player should feel — and the specific type of smugness the design actively avoids.</td>
+            <td>Yes</td>
+          </tr>
+        </table>
+
+        <div class="bridge-block">
+          <strong>Bridge to Ch. 7</strong>
+          "The GDD is the argument. The build tests whether the argument holds when implemented. Week 7 is the first moment a student discovers whether what they designed is what they built."
+        </div>
+      </div>
+    </div>
+
+
+    <!-- CH 7 -->
+    <div class="chapter-block" style="border-top:1px solid var(--bb-7);">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 7</span>
+          <span class="ch-title">Build I</span>
+          <span class="ch-act">Act Two · Week 7</span>
+        </div>
+        <div class="ch-sub">The student implements the core mechanic and begins tracking the design decisions that the AI tool cannot make.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="ve-thread">
+          <div class="ve-label">VE Thread</div>
+          <p>VE as reference architecture. When students encounter a tool-generated solution that works mechanically but fails ethically, VE's Legible Causality pillar is the diagnostic standard: is each consequence caused by the decision, or does it only follow plausibly?</p>
+        </div>
+
+        <div class="opening-strategy">
+          <div class="os-label">Opening Strategy</div>
+          <p>Open with a live demonstration: submit a VE-style mechanic specification to Claude Code, accept the output, run it, and ask the class: is this ethical architecture or a description of one? The demonstration should be designed to produce at least one ethically incoherent output.</p>
+        </div>
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr>
+            <td>LO-7.1</td>
+            <td><span class="bloom-tag bloom-create">Create</span></td>
+            <td>Implement the core mechanic of the semester project as a functional web-based prototype, with the consequence structure operable by a player.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-7.2</td>
+            <td><span class="bloom-tag bloom-analyze">Analyze</span></td>
+            <td>Document one instance where Claude Code generated a mechanically correct solution that was ethically incoherent — specifying the incoherence and the design decision required to correct it.</td>
+            <td>Yes</td>
+          </tr>
+        </table>
+
+        <div class="callout callout-warn">
+          <strong>⚑ Evidence flag — LO-7.2:</strong> This outcome operationalizes the series premise. It requires the student to notice a Tier 1 success that is a Tier 3/4 failure. Consider requiring a code diff or build artifact as evidence — this outcome is too important to be completable by invention.
+        </div>
+
+        <div class="bridge-block">
+          <strong>Bridge to Ch. 8</strong>
+          "The core mechanic exists. Week 8 is where the architecture reveals itself — where the student discovers what the game actually does versus what they designed."
+        </div>
+      </div>
+    </div>
+
+
+    <!-- CH 8 -->
+    <div class="chapter-block" style="border-top:1px solid var(--bb-7);">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 8</span>
+          <span class="ch-title">Build II</span>
+          <span class="ch-act">Act Two · Week 8</span>
+        </div>
+        <div class="ch-sub">The student implements the full consequence structure and confronts the gap between what they designed and what the game actually does.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="ve-thread">
+          <div class="ve-label">VE Thread</div>
+          <p>VE's consequence engine as reference: three to four pre-authored consequence paths per edict, each causally coherent. Does the student's consequence structure meet the same standard? Self-audit against the VE design pillars.</p>
+        </div>
+
+        <div class="opening-strategy">
+          <div class="os-label">Opening Strategy</div>
+          <p>Open with the self-audit as a structured exercise: students bring their GDD and their current build and identify the three largest gaps between them. The gaps are not failures — they are the data.</p>
+        </div>
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr>
+            <td>LO-8.1</td>
+            <td><span class="bloom-tag bloom-create">Create</span></td>
+            <td>Implement the full consequence structure of the semester project, including the mechanic encoding the ethical framework, the player choice architecture, and the cost structure. Playtestable build required.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-8.2</td>
+            <td><span class="bloom-tag bloom-evaluate">Evaluate</span></td>
+            <td>Conduct a self-audit of the implemented consequence structure against the GDD specification, identifying where implementation matches intended architecture and where it has diverged.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-8.3</td>
+            <td><span class="bloom-tag bloom-analyze">Analyze</span></td>
+            <td>Identify the single mechanic in the current build that carries the most ethical weight — where the player's decision most directly transfers moral responsibility — and specify why it carries more weight than adjacent mechanics.</td>
+            <td>Yes</td>
+          </tr>
+        </table>
+
+        <div class="bridge-block">
+          <strong>Bridge to Ch. 9</strong>
+          "The build has a consequence structure. It has not been seen by a human player. Week 9 is the first moment someone other than the designer encounters the ethical architecture."
+        </div>
+      </div>
+    </div>
+
+
+    <!-- CH 9 -->
+    <div class="chapter-block" style="border-top:1px solid var(--bb-7);">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 9</span>
+          <span class="ch-title">Build III — Playtestable Alpha</span>
+          <span class="ch-act">Act Two · Week 9</span>
+        </div>
+        <div class="ch-sub">The student reaches a playtestable alpha and runs the first informal test of whether the game produces implication or something else.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="ve-thread">
+          <div class="ve-label">VE Thread</div>
+          <p>VE's player experience goals (PX-1 through PX-8) as diagnostic frame. Students ask of their own game: which PX goals did my playtesters report experiencing? Which did they not? The VE PX goals are the vocabulary for this analysis.</p>
+        </div>
+
+        <div class="opening-strategy">
+          <div class="os-label">Opening Strategy</div>
+          <p>Open with a structured debrief: one student presents their playtest data, class applies the implication/smugness distinction to the reports. The exercise models what Week 11 (peer playtesting) will require at scale.</p>
+        </div>
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr>
+            <td>LO-9.1</td>
+            <td><span class="bloom-tag bloom-apply">Apply</span></td>
+            <td>Conduct an informal playtest with at least two players outside the course, collecting specific feedback on whether the game produced implication or smugness — using the evaluative distinction as a structured feedback instrument.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-9.2</td>
+            <td><span class="bloom-tag bloom-evaluate">Evaluate</span></td>
+            <td>Assess the informal playtest data against the design intent in the GDD, identifying the largest gap between intended player experience and reported player experience — located in a specific design decision.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-9.3</td>
+            <td><span class="bloom-tag bloom-create">Create</span></td>
+            <td>Produce a build revision specification naming at most three design changes, each defended against the primary player experience goal. Three changes maximum is an acceptance criterion — prioritization is the skill.</td>
+            <td>Yes</td>
+          </tr>
+        </table>
+
+        <div class="bridge-block">
+          <strong>Bridge to Ch. 10</strong>
+          "The informal playtest data identifies the gap. The beta build in Week 10 attempts to close the most important gap before the formal peer playtesting and Ethical Auditor sessions."
+        </div>
+      </div>
+    </div>
+
+
+    <!-- CH 10 -->
+    <div class="chapter-block" style="border-top:1px solid var(--bb-7);">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 10</span>
+          <span class="ch-title">Build IV — Beta</span>
+          <span class="ch-act">Act Two · Week 10</span>
+        </div>
+        <div class="ch-sub">The student submits a beta build for peer review and produces the Ethical Auditor preparation document.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="ve-thread">
+          <div class="ve-label">VE Thread</div>
+          <p>VE GDD as the model for the Ethical Auditor preparation document. The preparation document is a document of the same type as the VE GDD — an architectural description that encodes ethical position without naming it.</p>
+        </div>
+
+        <div class="opening-strategy">
+          <div class="os-label">Opening Strategy</div>
+          <p>Distribute the Ethical Auditor prompt architecture. Walk through one example audit using the VE GDD as the input. Ask: what did the AI find? What did it miss? What would you have to change in the GDD to make it miss more?</p>
+        </div>
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr>
+            <td>LO-10.1</td>
+            <td><span class="bloom-tag bloom-create">Create</span></td>
+            <td>Produce a beta build incorporating revisions from Week 9 playtesting, meeting minimum specification: ethical framework operable by a player, consequence structure transfers responsibility, game completable in a single session.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-10.2</td>
+            <td><span class="bloom-tag bloom-create">Create</span></td>
+            <td>Produce an Ethical Auditor preparation document: an architectural description enabling AI evaluation of the consequence structure — without revealing the ethical framework label anywhere in the document.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-10.3</td>
+            <td><span class="bloom-tag bloom-evaluate">Evaluate</span></td>
+            <td>Predict, with specific reasoning, where the Ethical Auditor will correctly identify the embedded framework and where it will fail — and name the design decision most likely to mislead the AI.</td>
+            <td>Yes</td>
+          </tr>
+        </table>
+
+        <div class="callout callout-warn">
+          <strong>⚑ Collection flag — LO-10.3:</strong> The prediction document is returned for comparison with actual audit results in Week 12. If it is not collected and stored, the comparison cannot happen.
+        </div>
+
+        <div class="bridge-block">
+          <strong>Bridge to Ch. 11</strong>
+          "The beta build exists. The Ethical Auditor preparation document is complete. Week 11 is the last moment before the AI and human evaluations converge."
+        </div>
+      </div>
+    </div>
+
+
+    <!-- CH 11 -->
+    <div class="chapter-block" style="border-top:1px solid var(--bb-7);">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 11</span>
+          <span class="ch-title">Peer Playtesting</span>
+          <span class="ch-act">Act Two · Week 11</span>
+        </div>
+        <div class="ch-sub">The student functions as both a playtester for another student's game and a designer receiving playtester data — and learns to distinguish felt experience data from structural observation data.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="ve-thread">
+          <div class="ve-label">VE / Trap Game Thread — Calibration Exercise</div>
+          <p>Before playtesting each other's games, students apply the feedback instrument to the trap game. This establishes a shared standard for what specific feedback looks like — and gives students one more encounter with the designed failure before they assess each other. If students produce vague feedback on the trap game, the instrument needs refinement before peer playtesting begins.</p>
+        </div>
+
+        <div class="opening-strategy">
+          <div class="os-label">Opening Strategy</div>
+          <p>The trap game is played first by everyone. Feedback collected using the same instrument students will use on each other's games. The trap game's feedback should be easy to produce — the failures are designed to be visible.</p>
+        </div>
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr>
+            <td>LO-11.1</td>
+            <td><span class="bloom-tag bloom-apply">Apply</span></td>
+            <td>Apply the implication/smugness evaluative distinction as a structured feedback instrument while playtesting another student's game, producing specific, located feedback about design decisions rather than general impressions.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-11.2</td>
+            <td><span class="bloom-tag bloom-analyze">Analyze</span></td>
+            <td>Distinguish, in the feedback received on your own game, between reports of felt experience and reports of structural observation — and identify which type is more useful for the Week 13 gap analysis.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-11.3</td>
+            <td><span class="bloom-tag bloom-evaluate">Evaluate</span></td>
+            <td>Evaluate the peer playtesting data against the prediction from LO-10.3, identifying where the prediction was accurate and where human player experience diverged from the expected audit result.</td>
+            <td>Yes</td>
+          </tr>
+        </table>
+
+        <div class="callout callout-critical">
+          <strong>⚑ Transition gate — Act Two → Act Three:</strong> Students without a playtestable beta build and human playtesting data cannot meaningfully complete the Week 12 Ethical Auditor session. The gap analysis will have only one side.
+        </div>
+
+        <div class="bridge-block">
+          <strong>Bridge to Act Three</strong>
+          "The human playtesting data is complete. The Ethical Auditor session in Week 12 provides the AI evaluation. Week 13 is where the two are compared."
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ═══ ACT THREE ═══ -->
+    <div class="act-header">
+      <div class="act-label">Act Three · Weeks 12–15 · Chapters 12–15</div>
+      <h3>Audit and Analysis</h3>
+      <p>The Ethical Auditor session, the gap analysis, and the published games analysis. The course's thesis made visible as a classroom event: where does the machine's structural analysis diverge from human felt experience, and why?</p>
+    </div>
+
+    <!-- CH 12 -->
+    <div class="chapter-block">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 12</span>
+          <span class="ch-title">The Ethical Auditor</span>
+          <span class="ch-act">Act Three · Week 12</span>
+        </div>
+        <div class="ch-sub">The student submits the game to the AI Ethical Auditor and evaluates the audit report against both design intent and human playtesting data.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="ve-thread">
+          <div class="ve-label">VE Thread — Shared Class Exercise</div>
+          <p>VE GDD submitted to the Ethical Auditor as a shared class exercise before individual submissions begin. Class sees the AI audit of the aspirational architecture — what it finds, what it misses, where it is confident and wrong. This calibrates expectations before students submit their own work.</p>
+        </div>
+
+        <div class="opening-strategy">
+          <div class="os-label">Opening Strategy</div>
+          <p>Run the VE Ethical Auditor session in class, live. The audit is visible to everyone. Class discusses the results before individual sessions begin. This is the moment the AI's Tier 1 competence is demonstrated at scale — and its Tier 3/4 limits become visible.</p>
+        </div>
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr>
+            <td>LO-12.1</td>
+            <td><span class="bloom-tag bloom-apply">Apply</span></td>
+            <td>Submit the beta build and Ethical Auditor preparation document to Claude acting as Ethical Auditor, receiving a structural analysis of the embedded framework and an evaluation of where moral weight lands — on the player or the character.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-12.2</td>
+            <td><span class="bloom-tag bloom-evaluate">Evaluate</span></td>
+            <td>Evaluate the AI audit report against GDD design intent, identifying where the structural analysis is correct, where it is correct but misses the human experience dimension, and where it is wrong. All three categories must be present.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-12.3</td>
+            <td><span class="bloom-tag bloom-analyze">Analyze</span></td>
+            <td>Compare the AI audit findings with the Week 5 first-pass VE diagnostic, identifying whether analytical ability improved across the semester — and specifying what changed in the student's approach.</td>
+            <td>Yes</td>
+          </tr>
+        </table>
+
+        <div class="bridge-block">
+          <strong>Bridge to Ch. 13</strong>
+          "The AI audit is complete. The human playtesting data is in hand. Week 13 is where the two are compared — the course's central question made answerable."
+        </div>
+      </div>
+    </div>
+
+
+    <!-- CH 13 -->
+    <div class="chapter-block" style="border-top:1px solid var(--bb-7);">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 13</span>
+          <span class="ch-title">The Gap Analysis</span>
+          <span class="ch-act">Act Three · Week 13</span>
+        </div>
+        <div class="ch-sub">The student constructs the gap analysis — tracing specific design decisions to specific divergences between AI audit findings and human playtester experience — and produces the course's central deliverable.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="ve-thread">
+          <div class="ve-label">VE Thread + Week 1 Journal Return</div>
+          <p>Week 1 response journals returned to students. The gap analysis begins with the felt response from Week 1 — before vocabulary — and ends with the AI audit findings from Week 12. The arc: felt it without naming it → named it with five frameworks → built it → the AI evaluated the structure → now name the gap between the structure and the feeling.</p>
+        </div>
+
+        <div class="opening-strategy">
+          <div class="os-label">Opening Strategy</div>
+          <p>Distribute the Week 1 response journals at the start of class. Students read their own words from fifteen weeks ago. Ask: what did you feel then that you can now name? What did you feel then that you still cannot name — and is that gap the answer to the course's question?</p>
+        </div>
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr>
+            <td>LO-13.1</td>
+            <td><span class="bloom-tag bloom-create">Create</span></td>
+            <td>Construct a gap analysis tracing at least three specific design decisions to specific divergences between AI audit findings and human playtester experience — naming the human variable the structural analysis could not reach. Three decisions, three divergences, one named human variable per divergence.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-13.2</td>
+            <td><span class="bloom-tag bloom-evaluate">Evaluate</span></td>
+            <td>Identify the one judgment call in the semester project that required values, domain knowledge, or accountability that an AI could not have made — with specific reference to the design decision, the alternative the AI would have generated, and why that alternative would have failed the player experience goal.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-13.3</td>
+            <td><span class="bloom-tag bloom-create">Create</span></td>
+            <td>Propose one design revision that would close the largest gap between architectural legibility and felt moral weight — specifying the design decision and the predicted change in player experience. The prediction must be falsifiable.</td>
+            <td>Yes</td>
+          </tr>
+        </table>
+
+        <div class="callout callout-warn">
+          <strong>⚑ Assessment spine made explicit — LO-13.2:</strong> This is the moment the recurring deliverable question — "name one judgment call an AI could not have made" — is answered about the entire semester's work, not just a single deliverable.
+        </div>
+
+        <div class="callout callout-critical">
+          <strong>⚑ Journal return infrastructure:</strong> The Week 1 response journal must be physically or digitally returned to students in this session. If it has not been stored and cannot be returned, the gap analysis loses its most important data point.
+        </div>
+
+        <div class="bridge-block">
+          <strong>Bridge to Ch. 14–15</strong>
+          "The gap analysis closes the student's own work. Weeks 14 and 15 apply the same analytical framework to published games — asking whether the gap exists in systems other designers built, and whether it could have been closed."
+        </div>
+      </div>
+    </div>
+
+
+    <!-- CH 14 -->
+    <div class="chapter-block" style="border-top:1px solid var(--bb-7);">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 14</span>
+          <span class="ch-title">Published Games I — Reading as a Designer</span>
+          <span class="ch-act">Act Three · Week 14</span>
+        </div>
+        <div class="ch-sub">The student applies the course's full analytical framework to <em>Papers Please</em> and <em>Spec Ops: The Line</em>, reading as a designer rather than a player.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="ve-thread">
+          <div class="ve-label">VE Thread</div>
+          <p>Students now apply to published games the same analysis they applied to their own builds. Papers Please and Spec Ops enter as the external calibration — games built by professionals with full production resources, evaluated against the same standards.</p>
+        </div>
+
+        <div class="opening-strategy">
+          <div class="os-label">Opening Strategy</div>
+          <p>Play 15 minutes of Papers Please in class. Ask: at what moment did you feel implicated? Locate that moment in a specific mechanic. Then ask: was that the moment the designer intended? How would you know?</p>
+        </div>
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr>
+            <td>LO-14.1</td>
+            <td><span class="bloom-tag bloom-analyze">Analyze</span></td>
+            <td>Identify the ethical framework embedded in <em>Papers Please</em>'s consequence structure from mechanical evidence alone — specifying the mechanics that encode it and the design decisions that make it operable rather than described.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-14.2</td>
+            <td><span class="bloom-tag bloom-evaluate">Evaluate</span></td>
+            <td>Evaluate whether <em>Spec Ops: The Line</em> achieves player implication or produces a different moral response — specifically whether the structural subversion mechanic produces felt weight or produces commentary about felt weight in another medium. Position required, defended with specific design decisions.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-14.3</td>
+            <td><span class="bloom-tag bloom-apply">Apply</span></td>
+            <td>Apply the Ethical Auditor framework to <em>Papers Please</em>, producing a structural audit report in the format used in Week 12 — and compare the result against documented player experience data from published criticism and player reports.</td>
+            <td>Yes</td>
+          </tr>
+        </table>
+
+        <div class="callout callout-warn">
+          <strong>⚑ Content gap — OQ-L1-A:</strong> A fourth published game is needed that attempted player implication and produced smugness instead. The trap game fills this role for original design work. A published example of the same failure would strengthen the Week 14–15 analysis. Selection pending.
+        </div>
+
+        <div class="bridge-block">
+          <strong>Bridge to Ch. 15</strong>
+          "Two games analyzed. One succeeded at implication (<em>Papers Please</em>). The evaluation of <em>Spec Ops</em> is genuinely contested — bring the contested reading into class. Week 15 completes the published games analysis and asks for the general principle."
+        </div>
+      </div>
+    </div>
+
+
+    <!-- CH 15 -->
+    <div class="chapter-block" style="border-top:1px solid var(--bb-7);">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 15</span>
+          <span class="ch-title">Published Games II + Synthesis</span>
+          <span class="ch-act">Act Three · Week 15</span>
+        </div>
+        <div class="ch-sub">The student completes the published games analysis and articulates the course's central claim as a general design principle — with evidence from the semester's own work and the published cases.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="ve-thread">
+          <div class="ve-label">VE Thread — Optional Final Encounter</div>
+          <p>If a playable version of VE exists by Week 15, students play it for the first time and compare their felt response to their semester-long architectural analysis of the GDD. The gap between analyzing a system and experiencing it is the course's final argument demonstrated in real time.</p>
+        </div>
+
+        <div class="opening-strategy">
+          <div class="os-label">Opening Strategy</div>
+          <p>Open with the question the course has been building toward: if you had to write one sentence that a designer could use to distinguish a system that produces moral weight from one that describes it — what would that sentence be? Students write it before the lecture. The lecture is the attempt to make the sentence precise enough to be useful.</p>
+        </div>
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr>
+            <td>LO-15.1</td>
+            <td><span class="bloom-tag bloom-analyze">Analyze</span></td>
+            <td>Identify the moral architecture of <em>Disco Elysium</em> — specifying whether it embodies one of the five frameworks studied, a combination, or requires a new category — defending the classification with reference to specific design decisions. 'Requires a new category' is acceptable if the student can specify what the new category is and why none of the five frameworks capture it.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-15.2</td>
+            <td><span class="bloom-tag bloom-create">Create</span></td>
+            <td>Produce a comparative analysis of two published games' moral architectures — specifying which design decisions produce moral weight and which produce description of moral weight — and connect the comparison to the student's own gap analysis from Week 13.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>LO-15.3</td>
+            <td><span class="bloom-tag bloom-evaluate">Evaluate</span></td>
+            <td>Articulate the gap between AI-auditable architecture and human-felt moral weight as a general design principle — with specific evidence from the Ethical Auditor session (Week 12), the gap analysis (Week 13), and one published game. The principle must be stated in one sentence. If it cannot be stated in one sentence, it is not yet a principle.</td>
+            <td>Yes</td>
+          </tr>
+        </table>
+
+        <div class="callout callout-note">
+          <strong>Terminal outcome standard — LO-15.3:</strong> The standard for passing is a sentence that could appear in the preface of the book, with evidence. "AI can't feel things" fails. A sentence that names the specific design variable that creates the gap — with evidence from the student's own build and a published game — passes.
+        </div>
+
+        <div class="bridge-block">
+          <strong>No next chapter.</strong> The principle the student articulates in LO-15.3 is the sentence they carry out of the course. It should be the sentence they could not have written in Week 1 — and if it is, the course worked.
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /chapters -->
+
+
+  <!-- 7. OPEN QUESTIONS -->
+  <div class="section" id="oq">
+    <div class="section-number">Section 7</div>
+    <h2 class="section-title">Open Design Questions</h2>
+
+    <p>The items below are design decisions that must be resolved before the course runs. They are not administrative questions.</p>
+
+    <div class="oq-block">
+      <div class="oq-header">
+        <span class="oq-id">OQ-L2-A</span>
+        <span class="oq-priority critical">Critical</span>
+        <span class="oq-title">Trap game must be built before course runs</span>
+      </div>
+      <div class="oq-body">The primary sequencing model (concrete to abstract) depends on a designed failure case in Week 1. VE is aspirational architecture only. Without the trap game, Week 1 has one game and the sequencing model is compromised. This is a prerequisite, not a nice-to-have.</div>
+    </div>
+
+    <div class="oq-block">
+      <div class="oq-header">
+        <span class="oq-id">OQ-L1-A</span>
+        <span class="oq-priority high">High</span>
+        <span class="oq-title">Week 14–15 fourth published game — selection pending</span>
+      </div>
+      <div class="oq-body">A published game that attempted player implication and produced smugness instead. The trap game fills this role for original design work but a published example would strengthen the Week 14–15 analysis. Selection pending.</div>
+    </div>
+
+    <div class="oq-block">
+      <div class="oq-header">
+        <span class="oq-id">OQ-L1-B</span>
+        <span class="oq-priority high">High</span>
+        <span class="oq-title">Operational definition of implication vs. smugness</span>
+      </div>
+      <div class="oq-body">The distinction does evaluative work from Week 1 onward but has no formal operational definition. Students applying it impressionistically will produce inconsistent peer feedback in Week 11. Definition needed by Week 3.</div>
+    </div>
+
+    <div class="oq-block">
+      <div class="oq-header">
+        <span class="oq-id">OQ-L1-C</span>
+        <span class="oq-priority high">High</span>
+        <span class="oq-title">Evidence requirement for LO-7.2</span>
+      </div>
+      <div class="oq-body">The AI-incoherence identification outcome is gameable by a student who writes a convincing description of an incoherence they didn't actually encounter. Consider requiring a code diff or build artifact as evidence.</div>
+    </div>
+
+    <div class="oq-block">
+      <div class="oq-header">
+        <span class="oq-id">OQ-L2-B</span>
+        <span class="oq-priority high">High</span>
+        <span class="oq-title">Week 1 response journal infrastructure</span>
+      </div>
+      <div class="oq-body">The journal must be collected, stored, and returned in Week 13. The course management system must support timed document return. If not, the gap analysis loses its most important data point.</div>
+    </div>
+
+    <div class="oq-block">
+      <div class="oq-header">
+        <span class="oq-id">OQ-L2-C</span>
+        <span class="oq-priority high">High</span>
+        <span class="oq-title">Instructor policy on failed Week 5 transition tests</span>
+      </div>
+      <div class="oq-body">Option 1: revise until passing — no build begins on incomplete architecture. Option 2: proceed with flagged specification — gap tracked through Week 13. Must be stated before the course runs. This is a design decision, not an administrative one.</div>
+    </div>
+
+    <div class="oq-block">
+      <div class="oq-header">
+        <span class="oq-id">OQ-General</span>
+        <span class="oq-priority medium">Medium</span>
+        <span class="oq-title">Ethical Auditor prompt architecture</span>
+      </div>
+      <div class="oq-body">How much structural scaffolding does Claude receive before auditing? Too much = the audit tests prompt design, not game design. Too little = inconsistent results across cohorts. Requires a controlled prompt specification before Week 12.</div>
+    </div>
+  </div>
+
+
+  <div style="font-size:13px; color:var(--bb-6); border-top:1px solid var(--bb-7); padding-top:20px; margin-top:40px;">
+    <em>Irreducibly Human: Ethical Play — TIC TOC v0.1 · March 2026</em><br>
+    Sections completed: Book Concept, Learning Outcomes, Sequencing Logic. Sections pending: Book Type, Audience, Three-Act Arc, Prerequisite Map, Chapter Architecture, Production. Open questions log is the highest-priority action item before the course runs.
+  </div>
+
+</div><!-- /page-wrapper -->
+
+<footer>
+  Built with <a href="https://www.bearbrown.co" target="_blank" rel="noopener">bearbrown.co</a> ·
+  AI tools for educators, creators &amp; founders
+</footer>
+
+</body>
+</html>

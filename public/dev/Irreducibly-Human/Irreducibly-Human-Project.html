@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Irreducibly Human: What AI Can and Can't Do — Project documentation</title>
+  <meta name="description" content="Master reference document for the Irreducibly Human curriculum series. Covers the seven-tier intelligence taxonomy, complete course inventory, production pipeline, and open action items as of March 2026.">
+  <meta name="keywords" content="Irreducibly Human, AI education, human intelligence taxonomy, causal reasoning, Nik Bear Brown, AI fluency, Tier 4 intelligence, metacognitive supervisory intelligence, curriculum design, graduate engineering course">
+
+  <style>
+    :root {
+      --bb-1: #1a0a00;
+      --bb-2: #8B3A0F;
+      --bb-3: #C0392B;
+      --bb-4: #E8A020;
+      --bb-5: #D4500A;
+      --bb-6: #B8860B;
+      --bb-7: #C8A96E;
+      --bb-8: #F0E6D0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      background: var(--bb-8);
+      color: var(--bb-1);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .doc-header {
+      background: var(--bb-1);
+      color: var(--bb-8);
+      padding: 48px 40px 36px;
+      border-bottom: 4px solid var(--bb-4);
+    }
+    .doc-header .series-label {
+      font-family: 'Courier New', monospace;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--bb-7);
+      margin-bottom: 12px;
+    }
+    .doc-header h1 {
+      font-size: 2.2rem;
+      font-weight: normal;
+      line-height: 1.25;
+      color: var(--bb-8);
+      max-width: 820px;
+    }
+    .doc-header h1 em { color: var(--bb-4); font-style: italic; }
+    .doc-header .subtitle {
+      margin-top: 16px;
+      color: var(--bb-7);
+      font-size: 0.95rem;
+      max-width: 680px;
+    }
+    .version-meta {
+      display: inline-block;
+      margin-top: 24px;
+      font-family: 'Courier New', monospace;
+      font-size: 11px;
+      color: var(--bb-7);
+      border: 1px solid var(--bb-2);
+      padding: 6px 14px;
+      letter-spacing: 0.5px;
+    }
+
+    .doc-body {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      min-height: 100vh;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .doc-nav {
+      background: var(--bb-1);
+      padding: 32px 0;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+    .doc-nav .nav-label {
+      font-family: 'Courier New', monospace;
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--bb-6);
+      padding: 18px 20px 6px;
+      display: block;
+    }
+    .doc-nav a {
+      display: block;
+      padding: 6px 20px;
+      color: var(--bb-7);
+      text-decoration: none;
+      font-size: 13px;
+      line-height: 1.4;
+      border-left: 2px solid transparent;
+      transition: all 0.15s;
+    }
+    .doc-nav a:hover {
+      color: var(--bb-4);
+      border-left-color: var(--bb-4);
+      background: rgba(232,160,32,0.06);
+    }
+
+    .doc-main {
+      padding: 48px 56px 64px;
+      max-width: 900px;
+    }
+
+    .doc-section { margin-bottom: 64px; }
+
+    .section-anchor {
+      display: block;
+      position: relative;
+      top: -80px;
+      visibility: hidden;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      border-bottom: 2px solid var(--bb-2);
+      padding-bottom: 12px;
+      margin-bottom: 28px;
+    }
+    .section-number {
+      font-family: 'Courier New', monospace;
+      font-size: 11px;
+      color: var(--bb-6);
+      letter-spacing: 2px;
+      min-width: 32px;
+    }
+    .section-header h2 {
+      font-size: 1.5rem;
+      font-weight: normal;
+      color: var(--bb-2);
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      color: var(--bb-2);
+      font-weight: normal;
+      margin: 32px 0 12px;
+      padding-left: 12px;
+      border-left: 3px solid var(--bb-4);
+    }
+
+    h4 {
+      font-size: 0.9rem;
+      font-family: 'Courier New', monospace;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--bb-5);
+      margin: 24px 0 8px;
+    }
+
+    p { margin-bottom: 16px; max-width: 700px; }
+
+    .thesis-block {
+      background: var(--bb-1);
+      color: var(--bb-8);
+      padding: 28px 32px;
+      margin: 24px 0 32px;
+      border-left: 4px solid var(--bb-4);
+    }
+    .thesis-block .thesis-label {
+      font-family: 'Courier New', monospace;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--bb-7);
+      margin-bottom: 10px;
+    }
+    .thesis-block p {
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: var(--bb-8);
+      font-style: italic;
+      max-width: 100%;
+    }
+
+    .callout {
+      border: 1px solid var(--bb-7);
+      border-left: 4px solid var(--bb-2);
+      padding: 18px 22px;
+      margin: 20px 0;
+      font-size: 0.9rem;
+      background: rgba(139,58,15,0.08);
+    }
+    .callout.highlight {
+      border-left-color: var(--bb-4);
+      background: rgba(232,160,32,0.08);
+    }
+    .callout strong { color: var(--bb-2); }
+
+    .table-wrap { overflow-x: auto; margin: 20px 0 28px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    thead tr { background: var(--bb-2); color: var(--bb-8); }
+    thead th {
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: normal;
+      font-family: 'Courier New', monospace;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    tbody tr { border-bottom: 1px solid var(--bb-7); }
+    tbody tr:nth-child(even) { background: rgba(200,169,110,0.12); }
+    tbody td { padding: 10px 14px; vertical-align: top; }
+    tbody td:first-child { font-weight: bold; color: var(--bb-2); white-space: nowrap; }
+
+    .badge {
+      display: inline-block;
+      font-family: 'Courier New', monospace;
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 2px;
+    }
+    .badge-done    { background: rgba(139,58,15,0.15); color: var(--bb-2); border: 1px solid var(--bb-2); }
+    .badge-active  { background: rgba(232,160,32,0.2);  color: var(--bb-6); border: 1px solid var(--bb-6); }
+    .badge-pending { background: rgba(192,57,43,0.12);  color: var(--bb-3); border: 1px solid var(--bb-3); }
+    .badge-urgent  { background: var(--bb-3); color: var(--bb-8); }
+
+    .tier-grid { display: grid; gap: 12px; margin: 20px 0; }
+    .tier-card { border: 1px solid var(--bb-7); padding: 16px 20px; }
+    .tier-card .tier-num {
+      font-family: 'Courier New', monospace;
+      font-size: 10px;
+      color: var(--bb-6);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .tier-card h4 { margin: 0 0 6px; font-size: 0.9rem; color: var(--bb-1); }
+    .tier-card .tier-desc { font-size: 13px; color: var(--bb-1); margin-bottom: 8px; }
+    .tier-card .tier-ai { font-size: 12px; font-family: 'Courier New', monospace; }
+    .tier-card .course-marker { font-size: 11px; color: var(--bb-6); margin-top: 6px; font-style: italic; }
+    .tier-card.superhuman  { border-left: 4px solid var(--bb-3); }
+    .tier-card.catching-up { border-left: 4px solid var(--bb-5); }
+    .tier-card.simulates   { border-left: 4px solid var(--bb-4); }
+    .tier-card.poor        { border-left: 4px solid var(--bb-2); }
+    .tier-card.absent      { border-left: 4px solid var(--bb-1); }
+
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+      margin: 20px 0;
+    }
+    .tool-card { background: var(--bb-1); color: var(--bb-8); padding: 16px 18px; }
+    .tool-card .tool-name {
+      font-family: 'Courier New', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--bb-4);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+    .tool-card .tool-desc { font-size: 13px; line-height: 1.5; color: var(--bb-7); }
+
+    /* TO DO */
+    .todo-group { margin-bottom: 32px; }
+    .todo-item {
+      display: grid;
+      grid-template-columns: 20px 80px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(200,169,110,0.3);
+      font-size: 14px;
+    }
+    .todo-check {
+      width: 16px;
+      height: 16px;
+      border: 1px solid var(--bb-6);
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+    .todo-priority {
+      font-family: 'Courier New', monospace;
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+    .todo-priority.critical { color: var(--bb-3); }
+    .todo-priority.urgent   { color: var(--bb-5); }
+    .todo-priority.high     { color: var(--bb-6); }
+    .todo-priority.normal   { color: var(--bb-7); }
+
+    .series-tagline {
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: var(--bb-1);
+      padding: 24px 28px;
+      background: rgba(200,169,110,0.2);
+      border-top: 2px solid var(--bb-4);
+      border-bottom: 2px solid var(--bb-4);
+      margin: 24px 0;
+      font-style: italic;
+    }
+
+    .plain-list { margin: 12px 0 20px 20px; font-size: 14px; line-height: 2; }
+
+    .style-note {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(200,169,110,0.3);
+      font-size: 14px;
+      font-family: 'Courier New', monospace;
+      color: var(--bb-1);
+    }
+    .style-note::before { content: '→ '; color: var(--bb-5); }
+
+    .rule { border: none; border-top: 1px solid var(--bb-7); margin: 32px 0; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 11px;
+      color: #999;
+      border-top: 1px solid #e0e0e0;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .doc-body { grid-template-columns: 1fr; }
+      .doc-nav { display: none; }
+      .doc-main { padding: 32px 24px; }
+      .todo-item { grid-template-columns: 20px 1fr; }
+      .todo-priority { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="doc-header">
+  <div class="series-label">Project Documentation · Master Reference</div>
+  <h1>Irreducibly Human: <em>What AI Can and Can't Do</em></h1>
+  <p class="subtitle">Complete project reference — series architecture, course inventory, production pipeline, and open action items. Internal working document for orientation and handoff.</p>
+  <div class="version-meta">Version 1.0 &nbsp;|&nbsp; March 2026 &nbsp;|&nbsp; Reviewed by Dev the Dev</div>
+</div>
+
+<div class="doc-body">
+
+  <nav class="doc-nav" aria-label="Document navigation">
+    <span class="nav-label">Overview</span>
+    <a href="#thesis">Thesis</a>
+    <a href="#one-sentence">One-sentence version</a>
+
+    <span class="nav-label">Architecture</span>
+    <a href="#taxonomy">The seven tiers</a>
+    <a href="#series">Core series</a>
+    <a href="#companions">Companion books</a>
+    <a href="#tier-map">Tier coverage map</a>
+
+    <span class="nav-label">Status</span>
+    <a href="#book-status">Book inventory</a>
+    <a href="#tictoc-status">Tic TOC status</a>
+
+    <span class="nav-label">Infrastructure</span>
+    <a href="#pipeline">Production pipeline</a>
+    <a href="#deployed">Deployed work</a>
+
+    <span class="nav-label">Action</span>
+    <a href="#todo">To do</a>
+    <a href="#session">New session setup</a>
+    <a href="#style">Style notes</a>
+  </nav>
+
+  <main class="doc-main">
+
+    <!-- 01 THESIS -->
+    <section class="doc-section">
+      <span class="section-anchor" id="thesis"></span>
+      <div class="section-header">
+        <span class="section-number">01</span>
+        <h2>Thesis and framing</h2>
+      </div>
+
+      <div class="thesis-block">
+        <div class="thesis-label">Core argument</div>
+        <p>Machines are superhuman at pattern recognition, fact retrieval, and syntactic correctness. Everything else is irreducibly human. Here is the curriculum for everything else.</p>
+      </div>
+
+      <p>The series addresses an educational failure that predates AI and is now impossible to ignore: curricula that optimized for fact retrieval, arithmetic speed, and syntactic correctness — the exact capacities where machines are now superhuman. The arrival of AI did not create this failure. It exposed it.</p>
+
+      <p>The curriculum was built for a world in which arithmetic speed and fact retrieval were genuinely valuable human capacities. That world is gone. The mistake was not malicious. Institutional inertia is not stupidity — it is the normal lag between a changed environment and a changed response. Schools change slowly because they were built to transmit what is known, not to respond to what is new. That feature is now a bug.</p>
+
+      <div class="callout highlight">
+        <strong>The forklift argument:</strong> The intelligent response to a forklift is not to practice lifting heavier objects. It is to learn to operate the machine, understand what it can and cannot lift, and — most crucially — develop the judgment to know what needs lifting in the first place. The series does not teach students to compete with AI. It teaches them to supply the reasoning AI tools require humans to provide — reasoning no tool can supply on their behalf.
+      </div>
+
+      <hr class="rule">
+
+      <span class="section-anchor" id="one-sentence"></span>
+      <h3>The one-sentence version</h3>
+      <div class="series-tagline">
+        A curriculum series, production pipeline, and measurement infrastructure for the cognitive capacities the AI era most urgently requires humans to develop — demonstrated by the method used to build it.
+      </div>
+
+      <p>The series is called <strong>Irreducibly Human: What AI Can and Can't Do</strong>. Previously titled "The Human Half: What AI Can't Do." The rename reflects a sharpening of the thesis: the series is not only about limitation, it is about the specific human capacities that AI augments rather than replaces — and how to develop them deliberately.</p>
+    </section>
+
+    <!-- 02 TAXONOMY -->
+    <section class="doc-section">
+      <span class="section-anchor" id="taxonomy"></span>
+      <div class="section-header">
+        <span class="section-number">02</span>
+        <h2>The seven-tier taxonomy</h2>
+      </div>
+
+      <p>The taxonomy organizes human intelligence into seven tiers by what machines can and cannot do. This is not an academic classification — it is a triage. Where machines are strongest, training humans to compete directly is malpractice. Where machines are weakest (Tiers 4, 5, 7), education needs to rebuild from scratch.</p>
+
+      <p>The taxonomy extends Howard Gardner's multiple intelligences framework, which was built before machines became capable and did not need to ask which intelligences technology endangered. Gardner's framework is a framework of individuals. These tiers add the supervisory layer (Tier 4), the causal layer (Tier 5), and the collective layer (Tier 6) — none of which any individual-focused framework can account for.</p>
+
+      <div class="tier-grid">
+
+        <div class="tier-card superhuman">
+          <div class="tier-num">Tier 1</div>
+          <h4>Pattern &amp; Association</h4>
+          <p class="tier-desc">Linguistic intelligence, logical-mathematical reasoning, musical pattern recognition, spatial reasoning, naturalistic categorization, encyclopedic recall and associative lookup.</p>
+          <div class="tier-ai">AI capability: <strong style="color:var(--bb-3)">Superhuman.</strong> Teach humans to use these tools, not replicate them.</div>
+          <div class="course-marker">Course: AI Literacy, Fluency, and Trust (Book 1)</div>
+        </div>
+
+        <div class="tier-card catching-up">
+          <div class="tier-num">Tier 2</div>
+          <h4>Embodied &amp; Sensorimotor</h4>
+          <p class="tier-desc">Bodily-kinesthetic intelligence (proprioception, physical skill, tool use), spatial-causal prediction of physical consequences, ecological intelligence. The knowledge that lives in the hands, the auditory and tactile feedback through a tool.</p>
+          <div class="tier-ai">AI capability: <strong style="color:var(--bb-5)">Weak / emerging.</strong> Humans hold the general case. Robotics improving in narrow domains.</div>
+          <div class="course-marker">Not a course — addressed via Teacher's Guide companion (Companion 1). Nobody stopped teaching woodshop because a language model can describe joinery.</div>
+        </div>
+
+        <div class="tier-card simulates">
+          <div class="tier-num">Tier 3</div>
+          <h4>Social &amp; Personal</h4>
+          <p class="tier-desc">Interpersonal intelligence (reading others, social navigation), intrapersonal intelligence, emotional regulation, cultural intelligence, pedagogical intelligence, moral and ethical reasoning under genuine stakes.</p>
+          <div class="tier-ai">AI capability: <strong style="color:var(--bb-4)">Simulates — does not feel.</strong> No stakes, no skin in the game. The danger is not that the output is wrong. The danger is that the capacity atrophies in the person who stops exercising it.</div>
+          <div class="course-marker">Courses: Ethical Play (Book 4) + AImagineering (Book 3)</div>
+        </div>
+
+        <div class="tier-card poor">
+          <div class="tier-num">Tier 4</div>
+          <h4>Metacognitive &amp; Supervisory</h4>
+          <p class="tier-desc">Plausibility auditing (knowing an answer is wrong before recomputing), problem formulation (deciding what is worth solving), tool orchestration (knowing which tool to use, when, and whether to trust it), interpretive judgment (what does this result mean in this context), executive integration. Gardner never named these. This is the gap.</p>
+          <div class="tier-ai">AI capability: <strong style="color:var(--bb-2)">Poor.</strong> The intelligences that oversee all the others. Tier 1 without Tier 4 is a very efficient way to be confidently wrong at scale.</div>
+          <div class="course-marker">Courses: Conducting AI (Book 5) + AImagineering (Book 3)</div>
+        </div>
+
+        <div class="tier-card absent">
+          <div class="tier-num">Tier 5</div>
+          <h4>Causal &amp; Counterfactual</h4>
+          <p class="tier-desc">Interventional reasoning (Pearl Rung 2 — if I do X, what happens?), counterfactual reasoning (Pearl Rung 3 — what would have happened?), causal model formulation (constructing the causal graph itself). Current AI is superhuman at Rung 1 (observation) and nearly absent at Rungs 2 and 3.</p>
+          <div class="tier-ai">AI capability: <strong style="color:var(--bb-1)">Absent for formulation; weak for intervention; very weak for counterfactual.</strong></div>
+          <div class="course-marker">Course: Causal Reasoning (Book 2)</div>
+        </div>
+
+        <div class="tier-card absent">
+          <div class="tier-num">Tier 6</div>
+          <h4>Collective &amp; Distributed</h4>
+          <p class="tier-desc">Collective intelligence (groups solving what no individual could — science, markets, democracy), Ubuntu intelligence ("I am because we are"), collaborative synthesis (teams whose output exceeds summed individual ability). Not a property of any individual — emergent from systems of people in relationship. LLMs are a lossy compression of collective human intelligence: they reflect the record, not the practice that generated it.</p>
+          <div class="tier-ai">AI capability: <strong style="color:var(--bb-1)">Absent by definition.</strong> The algorithm has access to the literature. It is absent from the practice that generates new knowledge by definition.</div>
+          <div class="course-marker">Course: The Collective (Book 6)</div>
+        </div>
+
+        <div class="tier-card absent">
+          <div class="tier-num">Tier 7</div>
+          <h4>Existential &amp; Wisdom</h4>
+          <p class="tier-desc">Existential intelligence (grappling with meaning, mortality, cosmos), phronesis — Aristotelian practical wisdom (knowing when and how to apply what you know, and when not to; requires stakes and the possibility of loss), narrative identity (making a coherent self from lived experience over time).</p>
+          <div class="tier-ai">AI capability: <strong style="color:var(--bb-1)">Absent.</strong> Requires being alive, mortal, and situated in time. An algorithm has no stakes. It cannot commit because it cannot lose.</div>
+          <div class="course-marker">Not a standalone course — the horizon the series points toward. Addressed via AI Sherpa (Companion 2) and the AImagineering Commit stage.</div>
+        </div>
+
+      </div>
+
+      <div class="callout">
+        <strong>The Gardner trap:</strong> Gardner named multiple intelligences and cracked something open. Forty years later there is still no validated assessment for intrapersonal intelligence. The framework became vocabulary. It never became a curriculum. The Irreducibly Human series is explicitly Stage 1 (Name it) of a three-stage sequence: Name → Teach → Measure. Stages 2 and 3 require the measurement infrastructure currently in development in collaboration with the Center for Curriculum Redesign.
+      </div>
+    </section>
+
+    <!-- 03 SERIES -->
+    <section class="doc-section">
+      <span class="section-anchor" id="series"></span>
+      <div class="section-header">
+        <span class="section-number">03</span>
+        <h2>Core series — six books</h2>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>#</th><th>Full title</th><th>Tagline</th><th>Tier(s)</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Book 1</td>
+              <td>AI Literacy, Fluency, and Trust</td>
+              <td>The entry point. How to operate the cognitive forklift without being replaced by it.</td>
+              <td>Tier 1</td>
+            </tr>
+            <tr>
+              <td>Book 2</td>
+              <td>Causal Reasoning</td>
+              <td>The identification layer. What causes what, and why no algorithm can answer that for you.</td>
+              <td>Tier 5</td>
+            </tr>
+            <tr>
+              <td>Book 3</td>
+              <td>AImagineering</td>
+              <td>Post-AI design thinking. One week on ideation. The rest on the judgment that makes it matter.</td>
+              <td>Tiers 3, 4, 7 partial</td>
+            </tr>
+            <tr>
+              <td>Book 4</td>
+              <td>Ethical Play</td>
+              <td>Build a game that makes a player feel moral weight. Survive the AI audit. Prove the ethics are in the mechanics.</td>
+              <td>Tier 3 deeply</td>
+            </tr>
+            <tr>
+              <td>Book 5</td>
+              <td>Conducting AI</td>
+              <td>The five supervisory capacities no algorithm possesses. Hear the wrong note. Choose the piece. Direct the sections.</td>
+              <td>Tier 4 fully</td>
+            </tr>
+            <tr>
+              <td>Book 6</td>
+              <td>The Collective</td>
+              <td>Intelligence that cannot be possessed. Only accomplished. Together.</td>
+              <td>Tier 6</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <span class="section-anchor" id="companions"></span>
+      <h3>Companion books</h3>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>#</th><th>Title</th><th>Reader and focus</th><th>Tier addressed</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Companion 1</td>
+              <td>A Teacher's Guide to AI for Embodied Learning</td>
+              <td>15 domain chapters: lab science, woodshop, PE, studio art, music, dance, nursing simulation, surgical training, architecture, culinary, theater, physical therapy, early childhood, special education, trades. Each self-contained. Each answering: where does AI help the teacher, and where must the teacher protect what only the body can learn.</td>
+              <td>Tier 2 — via the teacher, not the student</td>
+            </tr>
+            <tr>
+              <td>Companion 2</td>
+              <td>The AI Sherpa: A Practitioner's Guide for Experiential Learning</td>
+              <td>Co-op coordinators, clinical placement directors, study abroad advisors, anyone who sends students into the world to learn. Experience maps, living journals, the Sherpa before/during/after. Phronesis cannot be taught in a classroom but it can be scaffolded in the field.</td>
+              <td>Tier 7 — via experience; the horizon the series points toward</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <span class="section-anchor" id="tier-map"></span>
+      <h3>Tier coverage map</h3>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Tier</th><th>Name</th><th>AI capability</th><th>Coverage</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Tier 1</td><td>Pattern &amp; Association</td><td>Superhuman</td><td>Book 1: AI Literacy, Fluency, and Trust</td></tr>
+            <tr><td>Tier 2</td><td>Embodied &amp; Sensorimotor</td><td>Weak / emerging</td><td>Companion 1: Teacher's Guide — not a standalone course</td></tr>
+            <tr><td>Tier 3</td><td>Social &amp; Personal</td><td>Simulates, doesn't feel</td><td>Book 4: Ethical Play + Book 3: AImagineering</td></tr>
+            <tr><td>Tier 4</td><td>Metacognitive &amp; Supervisory</td><td>Poor</td><td>Book 5: Conducting AI + Book 3: AImagineering</td></tr>
+            <tr><td>Tier 5</td><td>Causal &amp; Counterfactual</td><td>Weak to absent</td><td>Book 2: Causal Reasoning</td></tr>
+            <tr><td>Tier 6</td><td>Collective &amp; Distributed</td><td>Absent by definition</td><td>Book 6: The Collective</td></tr>
+            <tr><td>Tier 7</td><td>Existential &amp; Wisdom</td><td>Absent — no stakes</td><td>Companion 2: AI Sherpa + AImagineering Commit stage</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 04 STATUS -->
+    <section class="doc-section">
+      <span class="section-anchor" id="book-status"></span>
+      <div class="section-header">
+        <span class="section-number">04</span>
+        <h2>Book inventory and status</h2>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Book</th><th>Status</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Book 1 — AI Literacy, Fluency, and Trust</td>
+              <td><span class="badge badge-done">Exists</span></td>
+              <td>Full syllabus complete. Tic TOC prompt written.</td>
+            </tr>
+            <tr>
+              <td>Book 2 — Causal Reasoning</td>
+              <td><span class="badge badge-active">Near complete</span></td>
+              <td>Syllabus complete and submitted. Book approximately 2 weeks to completion. Syllabus serves as the Tic TOC outline.</td>
+            </tr>
+            <tr>
+              <td>Book 3 — AImagineering</td>
+              <td><span class="badge badge-active">Architecture done</span></td>
+              <td>Architecture complete. Needs Tic TOC run (~2 hours). Prompt not yet run.</td>
+            </tr>
+            <tr>
+              <td>Book 4 — Ethical Play</td>
+              <td><span class="badge badge-active">Architecture done</span></td>
+              <td>Architecture complete. Tic TOC prompt written. Full syllabus produced.</td>
+            </tr>
+            <tr>
+              <td>Book 5 — Conducting AI</td>
+              <td><span class="badge badge-active">Prompt ready</span></td>
+              <td>Tic TOC prompt written. Not yet run.</td>
+            </tr>
+            <tr>
+              <td>Book 6 — The Collective</td>
+              <td><span class="badge badge-pending">Partial</span></td>
+              <td>Research base complete. Tic TOC prompt not yet written. Most novel course in the series — no comparable course exists elsewhere.</td>
+            </tr>
+            <tr>
+              <td>Companion 1 — Teacher's Guide</td>
+              <td><span class="badge badge-active">Prompt ready</span></td>
+              <td>Tic TOC prompt written. Full syllabus produced.</td>
+            </tr>
+            <tr>
+              <td>Companion 2 — AI Sherpa</td>
+              <td><span class="badge badge-active">TOC complete</span></td>
+              <td>Full 18-chapter TOC compiled. 15 open questions in register. Two are blocking: Chapter 16 legal review (OQ-006) and Chapter 18 dual-use document policy (OQ-007).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <span class="section-anchor" id="tictoc-status"></span>
+      <h3>Tic TOC prompt status</h3>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Book</th><th>Prompt status</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Book 1 — AI Literacy, Fluency, and Trust</td><td><span class="badge badge-done">Written</span></td></tr>
+            <tr><td>Book 2 — Causal Reasoning</td><td><span class="badge badge-done">Written</span> — syllabus is the outline</td></tr>
+            <tr><td>Book 3 — AImagineering</td><td><span class="badge badge-pending">Not yet run</span> — needs ~2 hours</td></tr>
+            <tr><td>Book 4 — Ethical Play</td><td><span class="badge badge-done">Written</span></td></tr>
+            <tr><td>Book 5 — Conducting AI</td><td><span class="badge badge-done">Written</span></td></tr>
+            <tr><td>Book 6 — The Collective</td><td><span class="badge badge-pending">Not yet written</span> — <span class="badge badge-urgent">Urgent</span></td></tr>
+            <tr><td>Companion 1 — Teacher's Guide</td><td><span class="badge badge-done">Written</span></td></tr>
+            <tr><td>Companion 2 — AI Sherpa</td><td><span class="badge badge-done">Written</span> — TOC compiled</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 05 PIPELINE -->
+    <section class="doc-section">
+      <span class="section-anchor" id="pipeline"></span>
+      <div class="section-header">
+        <span class="section-number">05</span>
+        <h2>Production pipeline</h2>
+      </div>
+
+      <p>A complete infrastructure exists for producing and validating technical content. The series is, deliberately, demonstrated by the method used to build it.</p>
+
+      <div class="tool-grid">
+        <div class="tool-card">
+          <div class="tool-name">Bookie the Bookmaker</div>
+          <div class="tool-desc">Chapter drafting. Primary production engine for book content.</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-name">Tic TOC</div>
+          <div class="tool-desc">Textbook architecture consultant. Full command library for publication-ready tables of contents. Generates complete chapter-by-chapter documentation with learning outcomes, prerequisite maps, and sequencing logic.</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-name">Popper</div>
+          <div class="tool-desc">Assertion verification. Scans thousands of claims, flags suspect ones for expert review. Named after Karl Popper.</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-name">Figure Architect</div>
+          <div class="tool-desc">Identifies high-assertion zones, generates figures and labels to reduce assertion density and improve legibility.</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-name">Zelda</div>
+          <div class="tool-desc">Game design document consultant. Adapted for the Ethical Play course's GDD production workflow.</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-name">CAZE</div>
+          <div class="tool-desc">Custom case study generator for any domain. Generates instructor version with full analysis. Used across all six courses.</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-name">CRITIQ</div>
+          <div class="tool-desc">Peer review and paper development protocol. Used in capstone and research-track assessment.</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-name">SOCRIT</div>
+          <div class="tool-desc">Socratic prompt evaluation using the Paul-Elder framework. Used to evaluate discussion quality.</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-name">Subby</div>
+          <div class="tool-desc">Substack writing assistant. Supports the Theorist.ai publishing pipeline.</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-name">DevProof</div>
+          <div class="tool-desc">Developer portfolio verification. Measures intent and decision patterns, not just syntax.</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-name">Medhavy</div>
+          <div class="tool-desc">Adaptive learning platform with multi-armed bandit pedagogy engine (Thompson Sampling). Five learning modes. White-label architecture.</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-name">The Boyle System</div>
+          <div class="tool-desc">AI-assisted documentary infrastructure for scientific reproducibility. MVAL protocol. Piloted across 150+ Humanitarians AI Fellows. Mentor meeting gap-review time: 60% → 20%.</div>
+        </div>
+      </div>
+
+      <span class="section-anchor" id="deployed"></span>
+      <h3>Deployed work</h3>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Work</th><th>Status</th><th>Impact data</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cancer Biology and Therapeutics</td>
+              <td><span class="badge badge-done">Deployed</span></td>
+              <td>38-chapter textbook written in approximately 1 month. In production in an NIH program. Positive cohort feedback.</td>
+            </tr>
+            <tr>
+              <td>The Boyle System</td>
+              <td><span class="badge badge-done">Piloted</span></td>
+              <td>Mentor meeting gap-review time: 60% → 20%. 150+ Humanitarians AI Fellows.</td>
+            </tr>
+            <tr>
+              <td>Humanitarians AI (501(c)(3))</td>
+              <td><span class="badge badge-done">Active</span></td>
+              <td>150+ Fellows. Applied AI research in humanitarian contexts.</td>
+            </tr>
+            <tr>
+              <td>Causal Reasoning (Book 2)</td>
+              <td><span class="badge badge-active">Submitted</span></td>
+              <td>Syllabus submitted for course approval. Course 1 in the series proposal.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 06 TO DO -->
+    <section class="doc-section">
+      <span class="section-anchor" id="todo"></span>
+      <div class="section-header">
+        <span class="section-number">06</span>
+        <h2>To do</h2>
+      </div>
+
+      <div class="todo-group">
+        <h4>Immediate — before March 31</h4>
+
+        <div class="todo-item">
+          <div class="todo-check"></div>
+          <span class="todo-priority urgent">Urgent</span>
+          <div>Send the short course-proposal email. Attach Course 1 syllabus (Causal Reasoning). Describe Course 2 (AImagineering) in 2 sentences. Do not over-explain.</div>
+        </div>
+        <div class="todo-item">
+          <div class="todo-check"></div>
+          <span class="todo-priority urgent">Urgent</span>
+          <div>Run AImagineering (Book 3) through Tic TOC. Approximately 2 hours. Unblocks Course 2 syllabus submission and the March 31 deadline.</div>
+        </div>
+        <div class="todo-item">
+          <div class="todo-check"></div>
+          <span class="todo-priority high">High</span>
+          <div>Submit Course 2 (AImagineering) syllabus for course approval.</div>
+        </div>
+        <div class="todo-item">
+          <div class="todo-check"></div>
+          <span class="todo-priority high">High</span>
+          <div>Write the 2-page series vision document. One document serves the institutional conversation, the Microsoft conversation, and the Fadel collaboration framing simultaneously.</div>
+        </div>
+        <div class="todo-item">
+          <div class="todo-check"></div>
+          <span class="todo-priority high">High</span>
+          <div>Disclose tool use to the ISTE contact before submitting to EdSurge or EL Magazine. The disclosure needs to happen before submission, not after.</div>
+        </div>
+      </div>
+
+      <div class="todo-group">
+        <h4>Book production</h4>
+
+        <div class="todo-item">
+          <div class="todo-check"></div>
+          <span class="todo-priority high">High</span>
+          <div>Write the Tic TOC prompt for The Collective (Book 6). Research base is complete. Most novel course in the series — no comparable course exists elsewhere.</div>
+        </div>
+        <div class="todo-item">
+          <div class="todo-check"></div>
+          <span class="todo-priority normal">Normal</span>
+          <div>Run Conducting AI (Book 5) through Tic TOC. Prompt is written.</div>
+        </div>
+        <div class="todo-item">
+          <div class="todo-check"></div>
+          <span class="todo-priority normal">Normal</span>
+          <div>Write The Economist follow-up piece. The exchange — accusation, defense, partial concession, deeper reading — has been identified as strong public Substack material. Has not been written.</div>
+        </div>
+        <div class="todo-item">
+          <div class="todo-check"></div>
+          <span class="todo-priority normal">Normal</span>
+          <div>Document the production status of the Voodoo Economics game. A complete GDD exists. Its relationship to the Ethical Play course is clear. The game's own production status has not been discussed.</div>
+        </div>
+        <div class="todo-item">
+          <div class="todo-check"></div>
+          <span class="todo-priority normal">Normal</span>
+          <div>Explore and document the hedge fund theory. Mentioned as developed for a hedge fund and potentially applicable to education. Not explored in any recorded conversation.</div>
+        </div>
+      </div>
+
+      <div class="todo-group">
+        <h4>AI Sherpa — blocking items</h4>
+
+        <div class="todo-item">
+          <div class="todo-check"></div>
+          <span class="todo-priority critical">Critical</span>
+          <div><strong>OQ-006:</strong> Initiate legal review for Chapter 16 mandatory reporting language. Clinical domain chapter. Liability risk. Template cannot ship before review. Long lead time — start now.</div>
+        </div>
+        <div class="todo-item">
+          <div class="todo-check"></div>
+          <span class="todo-priority critical">Critical</span>
+          <div><strong>OQ-007:</strong> Design the employee consent and ownership framework for Chapter 18 dual-use refiguration document. The tension between employee developmental ownership and program talent-development data must be resolved before production.</div>
+        </div>
+        <div class="todo-item">
+          <div class="todo-check"></div>
+          <span class="todo-priority urgent">Urgent</span>
+          <div><strong>OQ-012:</strong> Create character continuity sheets for Characters B–E. These characters appear across multiple chapters and contributors. Required before first contributor assignment. Lead author task — not delegable.</div>
+        </div>
+        <div class="todo-item">
+          <div class="todo-check"></div>
+          <span class="todo-priority urgent">Urgent</span>
+          <div><strong>OQ-013:</strong> Write the "Getting Started" minimum viable deployment note for Chapter 9. Two pages. Required for the publisher proposal.</div>
+        </div>
+        <div class="todo-item">
+          <div class="todo-check"></div>
+          <span class="todo-priority normal">Normal</span>
+          <div><strong>OQ-010:</strong> Platform-agnostic language audit. Named AI products in the main text tie shelf life to vendor. Audit before final manuscript submission.</div>
+        </div>
+        <div class="todo-item">
+          <div class="todo-check"></div>
+          <span class="todo-priority normal">Normal</span>
+          <div><strong>OQ-015:</strong> Negotiate rapid edition cycle rights before contract signing. AI capability claims will age quickly. Rapid cycle rights protect accuracy over time.</div>
+        </div>
+      </div>
+
+      <div class="todo-group">
+        <h4>Institutional and structural</h4>
+
+        <div class="todo-item">
+          <div class="todo-check"></div>
+          <span class="todo-priority high">High</span>
+          <div>Formalize the conversation with the experiential learning office. They initiated contact about an AI Sherpa. The conversation has not been formalized.</div>
+        </div>
+        <div class="todo-item">
+          <div class="todo-check"></div>
+          <span class="todo-priority normal">Normal</span>
+          <div>Document what is being built for the Center for Curriculum Redesign collaboration specifically. Named as a collaborator; specifics not recorded. Stages 2 and 3 (Teach → Measure) depend on this.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 NEW SESSION -->
+    <section class="doc-section">
+      <span class="section-anchor" id="session"></span>
+      <div class="section-header">
+        <span class="section-number">07</span>
+        <h2>New session setup</h2>
+      </div>
+
+      <h3>Documents to paste into a new session</h3>
+      <ul class="plain-list">
+        <li>This document</li>
+        <li>The seven-tier taxonomy (full table version from "Knowing Enough to Distrust the Machine")</li>
+        <li>Course 1 syllabus (Causal Reasoning — complete)</li>
+        <li>AImagineering architecture document (context prompt for new Claude session)</li>
+        <li>The Medhavy white-label architecture document</li>
+        <li>The Boyle System technical documentation</li>
+      </ul>
+
+      <h3>Most likely immediate tasks</h3>
+      <ul class="plain-list">
+        <li>Draft the short course-proposal email (attach Course 1 syllabus, two sentences on Course 2)</li>
+        <li>Run AImagineering through Tic TOC</li>
+        <li>Write the 2-page series vision document</li>
+        <li>Write the Tic TOC prompt for The Collective (Book 6)</li>
+      </ul>
+    </section>
+
+    <!-- 08 STYLE NOTES -->
+    <section class="doc-section">
+      <span class="section-anchor" id="style"></span>
+      <div class="section-header">
+        <span class="section-number">08</span>
+        <h2>Style notes</h2>
+      </div>
+
+      <div class="style-note">Prefers pushback over validation.</div>
+      <div class="style-note">Works fast and builds functional things — prioritize drafts over frameworks.</div>
+      <div class="style-note">"I build shit" — the person who makes other people's ideas tangible.</div>
+      <div class="style-note">When Nik says "notes to me" — do not critique as finished writing.</div>
+      <div class="style-note">The audience for course proposals is skeptical engineering faculty.</div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  Built with <a href="https://www.bearbrown.co" target="_blank" rel="noopener" style="color:#999;">bearbrown.co</a> ·
+  AI tools for educators, creators &amp; founders
+</footer>
+
+</body>
+</html>

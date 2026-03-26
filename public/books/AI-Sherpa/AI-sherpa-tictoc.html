@@ -1,0 +1,1645 @@
+
+The file name output for the final TOC should start with Irreducibly-Human-
+
+The file name output for the final TOC should start with Irreducibly-Human-  /intake silent
+
+
+google deep research prompt for case studies
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The AI Sherpa: full table of contents and chapter specifications</title>
+  <meta name="description" content="Complete chapter specifications for The AI Sherpa: A Practitioner's Guide for Experiential Learning. Covers the full 18-chapter arc — from the design failure diagnosis through the three-part Sherpa infrastructure (taxonomy, living journal, AI Sherpa deployment) to five domain field guides for co-op, study abroad, clinical, trades, and corporate early career programs.">
+  <meta name="keywords" content="AI Sherpa, practitioner handbook, experiential learning, living journal, MVAL protocol, co-op, study abroad, clinical placement, apprenticeship, corporate early career, Kolb, Ricoeur, developmental profile, experience map, refiguration, practical wisdom, reflection infrastructure">
+
+  <style>
+    :root {
+      --bb-1: #1a0a00;
+      --bb-2: #8B3A0F;
+      --bb-3: #C0392B;
+      --bb-4: #E8A020;
+      --bb-5: #D4500A;
+      --bb-6: #B8860B;
+      --bb-7: #C8A96E;
+      --bb-8: #F0E6D0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background-color: var(--bb-8);
+      color: var(--bb-1);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    .page-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 48px 32px 64px;
+    }
+
+    /* ── COVER ── */
+    .cover {
+      border-bottom: 3px solid var(--bb-2);
+      padding-bottom: 32px;
+      margin-bottom: 40px;
+    }
+
+    .cover-series {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+      margin-bottom: 8px;
+    }
+
+    .cover h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--bb-2);
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+
+    .cover h2 {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--bb-5);
+      margin-bottom: 18px;
+    }
+
+    .cover-meta { font-size: 13px; color: var(--bb-6); }
+
+    .version-meta {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 11px;
+      color: var(--bb-6);
+      border: 1px solid var(--bb-7);
+      border-radius: 3px;
+      padding: 4px 10px;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: white;
+      border-left: 4px solid var(--bb-2);
+      padding: 24px 28px;
+      margin-bottom: 48px;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .toc h3 {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+      margin-bottom: 14px;
+    }
+
+    .toc-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 32px;
+    }
+
+    .toc ol { padding-left: 20px; }
+    .toc li { margin-bottom: 4px; font-size: 14px; }
+    .toc a { color: var(--bb-2); text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+
+    /* ── SECTIONS ── */
+    .section { margin-bottom: 56px; }
+
+    .section-number {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+      margin-bottom: 4px;
+    }
+
+    h2.section-title {
+      font-size: 22px;
+      color: var(--bb-2);
+      border-bottom: 1px solid var(--bb-7);
+      padding-bottom: 8px;
+      margin-bottom: 24px;
+    }
+
+    h3 { font-size: 16px; color: var(--bb-5); margin: 28px 0 10px; }
+
+    h4 {
+      font-size: 14px;
+      color: var(--bb-2);
+      font-style: italic;
+      font-weight: 600;
+      margin: 18px 0 8px;
+    }
+
+    p { margin-bottom: 14px; }
+    ul { padding-left: 20px; margin-bottom: 14px; }
+    ul li { margin-bottom: 6px; font-size: 15px; }
+    a { color: var(--bb-5); }
+    strong { color: var(--bb-1); }
+
+    /* ── TABLES ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin: 16px 0 24px;
+    }
+
+    th {
+      background: var(--bb-2);
+      color: var(--bb-8);
+      padding: 10px 14px;
+      text-align: left;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+    }
+
+    td {
+      padding: 9px 14px;
+      border-bottom: 1px solid var(--bb-7);
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td { background: rgba(200,169,110,0.12); }
+
+    /* ── CALLOUTS ── */
+    .callout {
+      padding: 16px 20px;
+      border-radius: 4px;
+      margin: 14px 0;
+      font-size: 14px;
+    }
+
+    .callout-warn { background: rgba(192,57,43,0.08); border-left: 4px solid var(--bb-3); }
+    .callout-note { background: rgba(232,160,32,0.10); border-left: 4px solid var(--bb-4); }
+    .callout-info { background: white; border-left: 4px solid var(--bb-7); }
+    .callout-critical { background: rgba(192,57,43,0.14); border-left: 4px solid var(--bb-3); border-top: 2px solid var(--bb-3); }
+
+    .callout strong { color: var(--bb-2); }
+    .callout-critical strong { color: var(--bb-3); }
+
+    /* ── THESIS BLOCK ── */
+    .thesis-block {
+      background: var(--bb-1);
+      color: var(--bb-8);
+      padding: 28px 32px;
+      border-radius: 4px;
+      margin-bottom: 28px;
+    }
+
+    .thesis-block .thesis-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bb-7);
+      margin-bottom: 10px;
+    }
+
+    .thesis-block .thesis-sentence {
+      font-size: 16px;
+      color: var(--bb-4);
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .thesis-block p { font-size: 14px; color: var(--bb-7); margin-bottom: 10px; }
+    .thesis-block p:last-child { margin-bottom: 0; }
+
+    /* ── PEBBLE BLOCK ── */
+    .pebble-block {
+      background: rgba(200,169,110,0.15);
+      border: 1px solid var(--bb-7);
+      border-left: 4px solid var(--bb-4);
+      border-radius: 0 4px 4px 0;
+      padding: 20px 24px;
+      margin-bottom: 20px;
+      font-style: italic;
+      font-size: 14px;
+    }
+
+    .pebble-block .pebble-label {
+      font-style: normal;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+      margin-bottom: 8px;
+    }
+
+    /* ── PART HEADERS ── */
+    .part-header {
+      background: var(--bb-2);
+      color: var(--bb-8);
+      padding: 18px 22px;
+      border-radius: 4px 4px 0 0;
+      margin-top: 40px;
+    }
+
+    .part-header .part-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bb-7);
+      margin-bottom: 4px;
+    }
+
+    .part-header h3 { font-size: 17px; color: var(--bb-8); margin: 0 0 4px; }
+    .part-header p { font-size: 13px; color: rgba(240,230,208,0.75); margin: 0; font-style: italic; }
+
+    /* ── CHAPTER BLOCKS ── */
+    .chapter-block {
+      border: 1px solid var(--bb-7);
+      border-top: none;
+      border-radius: 0 0 4px 4px;
+      margin-bottom: 32px;
+      overflow: hidden;
+    }
+
+    .chapter-header {
+      background: rgba(139,58,15,0.08);
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--bb-7);
+    }
+
+    .chapter-header .ch-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .chapter-header .ch-num {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+    }
+
+    .chapter-header .ch-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--bb-2);
+    }
+
+    .chapter-header .ch-tag {
+      font-size: 12px;
+      color: var(--bb-5);
+    }
+
+    .chapter-header .ch-sub {
+      font-size: 13px;
+      color: var(--bb-5);
+      font-style: italic;
+      margin-top: 4px;
+    }
+
+    .chapter-body { padding: 20px 22px; }
+
+    /* ── LO TABLE ── */
+    .lo-table th:nth-child(1) { width: 70px; }
+    .lo-table th:nth-child(2) { width: 100px; }
+    .lo-table th:nth-child(4) { width: 90px; text-align: center; }
+    .lo-table td:nth-child(4) { text-align: center; }
+
+    .bloom-tag {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+      background: rgba(184,134,11,0.12);
+      border: 1px solid var(--bb-7);
+      border-radius: 2px;
+      padding: 1px 5px;
+      white-space: nowrap;
+    }
+
+    .bloom-create { background: rgba(139,58,15,0.12); color: var(--bb-2); border-color: var(--bb-2); }
+    .bloom-evaluate { background: rgba(212,80,10,0.10); color: var(--bb-5); border-color: var(--bb-5); }
+    .bloom-analyze { background: rgba(184,134,11,0.12); color: var(--bb-6); border-color: var(--bb-6); }
+    .bloom-apply { background: rgba(200,169,110,0.20); color: var(--bb-1); border-color: var(--bb-7); }
+    .bloom-understand { background: rgba(240,230,208,0.60); color: var(--bb-6); border-color: var(--bb-7); }
+
+    /* ── META FIELDS ── */
+    .ch-sub-label {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+      font-weight: 700;
+      margin: 18px 0 8px;
+      border-bottom: 1px solid var(--bb-7);
+      padding-bottom: 4px;
+    }
+
+    .opening-case {
+      background: rgba(212,80,10,0.06);
+      border-left: 3px solid var(--bb-5);
+      padding: 12px 16px;
+      margin-bottom: 14px;
+      font-size: 13px;
+    }
+
+    .opening-case .oc-label {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bb-5);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .opening-case p { font-size: 13px; margin: 0; }
+
+    .worked-example {
+      background: rgba(200,169,110,0.15);
+      border: 1px solid var(--bb-7);
+      border-radius: 3px;
+      padding: 12px 16px;
+      font-size: 13px;
+      margin: 10px 0;
+    }
+
+    .worked-example .we-label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bb-5);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .bridge-block {
+      background: var(--bb-1);
+      color: var(--bb-7);
+      padding: 11px 15px;
+      border-radius: 3px;
+      font-size: 13px;
+      font-style: italic;
+      margin-top: 14px;
+    }
+
+    .bridge-block strong {
+      color: var(--bb-4);
+      font-style: normal;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .flag-inline {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 1px 6px;
+      border-radius: 2px;
+      font-weight: 700;
+      margin-left: 6px;
+    }
+
+    .flag-author { background: var(--bb-4); color: var(--bb-1); }
+    .flag-spiral { background: var(--bb-2); color: var(--bb-8); }
+    .flag-thesis { background: var(--bb-3); color: white; }
+    .flag-domain { background: var(--bb-7); color: var(--bb-1); }
+
+    /* ── ARC TRANSITION CARDS ── */
+    .transition-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 16px 0;
+    }
+
+    .tt-card {
+      background: white;
+      border: 1px solid var(--bb-7);
+      border-left: 4px solid var(--bb-5);
+      padding: 14px;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .tt-card .tt-label {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bb-5);
+      margin-bottom: 6px;
+    }
+
+    .tt-card p { font-size: 13px; margin: 0; }
+
+    /* ── OQ BLOCK ── */
+    .oq-block {
+      border: 1px solid var(--bb-7);
+      border-radius: 4px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    .oq-header {
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+      padding: 9px 14px;
+      border-bottom: 1px solid var(--bb-7);
+      background: rgba(200,169,110,0.10);
+      flex-wrap: wrap;
+    }
+
+    .oq-id { font-size: 11px; font-weight: 700; color: var(--bb-2); white-space: nowrap; letter-spacing: 0.06em; }
+
+    .oq-priority {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 1px 6px;
+      border-radius: 2px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .oq-priority.critical { background: var(--bb-3); color: white; }
+    .oq-priority.urgent { background: var(--bb-4); color: var(--bb-1); }
+    .oq-priority.open { background: var(--bb-7); color: var(--bb-1); }
+    .oq-priority.resolved { background: rgba(200,169,110,0.3); color: var(--bb-6); }
+
+    .oq-title { font-size: 14px; font-weight: 600; }
+    .oq-body { padding: 9px 14px; font-size: 13px; }
+
+    /* ── FIELD GUIDE STRUCTURE ── */
+    .fieldguide-structure {
+      background: white;
+      border: 1px solid var(--bb-7);
+      border-radius: 4px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+
+    .fieldguide-structure .fg-label {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bb-6);
+      margin-bottom: 10px;
+    }
+
+    .fieldguide-structure ul { margin: 0; }
+    .fieldguide-structure ul li { font-size: 13px; margin-bottom: 4px; }
+
+    @media (max-width: 640px) {
+      .page-wrapper { padding: 24px 16px 48px; }
+      .toc-cols { grid-template-columns: 1fr; }
+      .chapter-header .ch-row { flex-direction: column; }
+      .transition-grid { grid-template-columns: 1fr; }
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 11px;
+      color: #999;
+      border-top: 1px solid #e0e0e0;
+      margin-top: 40px;
+    }
+
+    footer a { color: #999; }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-series">Practitioner Handbook · TIC TOC · Bear Brown &amp; Company</div>
+    <h1>The AI Sherpa: full table of contents and chapter specifications</h1>
+    <h2>A practitioner's guide for experiential learning</h2>
+    <div class="cover-meta">
+      Bear Brown &amp; Company / Kindle Direct Publishing, 2026 &nbsp;·&nbsp; 18 chapters across 5 parts
+    </div>
+    <div class="version-meta">Version 1.0 &nbsp;·&nbsp; 2026-03-21 &nbsp;·&nbsp; Reviewed by Dev the Dev</div>
+  </div>
+
+  <!-- TOC -->
+  <div class="toc">
+    <h3>Contents</h3>
+    <div class="toc-cols">
+      <ol>
+        <li><a href="#concept">Book Concept and Thesis</a></li>
+        <li><a href="#learner">Learner Profile</a></li>
+        <li><a href="#arc">Three-Act Learning Arc</a></li>
+        <li><a href="#chapters">Chapter-by-Chapter Specifications</a>
+          <ol style="padding-left:14px; margin-top:4px;">
+            <li style="margin-bottom:2px;"><a href="#part1">Part One — Foundations</a></li>
+            <li style="margin-bottom:2px;"><a href="#part2">Part Two — The Experience Map</a></li>
+            <li style="margin-bottom:2px;"><a href="#part3">Part Three — The Living Journal</a></li>
+            <li style="margin-bottom:2px;"><a href="#part4">Part Four — The AI Sherpa in Practice</a></li>
+            <li style="margin-bottom:2px;"><a href="#part5">Part Five — The Field Guides</a></li>
+          </ol>
+        </li>
+      </ol>
+      <ol start="5">
+        <li><a href="#scope">Out of Scope</a></li>
+        <li><a href="#market">Market Positioning</a></li>
+        <li><a href="#supplements">Supplementary Materials</a></li>
+        <li><a href="#oq">Open Questions Log</a></li>
+      </ol>
+    </div>
+  </div>
+
+
+  <!-- 1. CONCEPT -->
+  <div class="section" id="concept">
+    <div class="section-number">Section 1</div>
+    <h2 class="section-title">Book Concept and Thesis</h2>
+
+    <div class="thesis-block">
+      <div class="thesis-label">Thesis</div>
+      <div class="thesis-sentence">"AI deployed in experiential learning contexts is categorically different from AI deployed in classroom contexts — it is a Sherpa, not a teacher — which means that every design principle imported from AI-in-education literature into experiential learning programs produces the wrong tool for the wrong relationship, and this matters because the cost is not just inefficiency but the active undermining of the developmental process that makes consequential experience educative in the first place."</div>
+      <p><strong style="color:var(--bb-4);">Concept:</strong> This book teaches experiential learning professionals to use AI as a structured developmental companion — before, during, and after the experience — filling the gap left by Kolb (theoretical framework, no AI infrastructure), Schön (reflection model, no scalable tool), and every institutional assessment rubric that produces a form instead of a living document.</p>
+      <p><strong style="color:var(--bb-4);">Success condition:</strong> The reader can design and deploy an AI-assisted reflection infrastructure — experience map, living journal, and AI Sherpa — that develops practical wisdom in students at a scale and depth no single advisor could achieve alone.</p>
+      <p><strong style="color:var(--bb-4);">The payoff:</strong> When the Sherpa relationship is correctly understood and correctly designed, the developmental potential of experiential learning — practical wisdom, narrative identity, judgment under real stakes — can be realized at scale for the first time. Not because AI replaces the human advisor, but because AI carries the reflection infrastructure that no single human advisor could carry for 200 students simultaneously, freeing the advisor to do the interpretive and strategic work that only a human who knows the student as a person can do.</p>
+    </div>
+
+    <div class="pebble-block">
+      <div class="pebble-label">The Pebble — the book's founding case</div>
+      <p>A student completes a six-month co-op at a Boston financial services firm. Well-evaluated. Offered a return position. Her co-op coordinator asks what she learned. She says: "I got really good at Excel modeling." Three years later she is struggling with exactly the judgment problems — organizational navigation, advocacy for her own analysis, responding to being wrong in public — that the co-op had six months to develop. It did not. This is not a student failure. It is a design failure. The book is built on that sentence.</p>
+    </div>
+  </div>
+
+
+  <!-- 2. LEARNER -->
+  <div class="section" id="learner">
+    <div class="section-number">Section 2</div>
+    <h2 class="section-title">Learner Profile</h2>
+
+    <h3>Primary reader</h3>
+    <p>An experiential learning professional at a university, professional school, or corporate early career program — co-op coordinator, study abroad advisor, clinical placement director, apprenticeship program manager, experiential learning faculty lead, career development professional.</p>
+
+    <table>
+      <tr><th>What they already know</th><th>What they do not know</th></tr>
+      <tr><td>Kolb's four-stage cycle by reflex; reflection frameworks and debrief protocols; their institution's placement infrastructure and constraints; that some students extract enormous developmental value from placements while others complete the same experience and learn almost nothing.</td><td>What AI can actually do in a non-classroom context; that AI can hold longitudinal context across a student's journal; that the placement decision itself can be made analytically against a developmental profile; that their advisor role changes — does not disappear — when a Sherpa handles the scaffolding at scale.</td></tr>
+    </table>
+
+    <h4>Prior misconceptions to dismantle</h4>
+    <ul>
+      <li>"AI gives every student the same response" — the generic chatbot problem</li>
+      <li>"The same experience works for everyone who wants it" — optimizing for preference rather than developmental fit</li>
+      <li>"AI is a student-facing tool" — missing the advisor-facing half of the system</li>
+    </ul>
+
+    <p><strong>Motivation type:</strong> Professional with a mission. Will tolerate theory only if immediately connected to practice.</p>
+
+    <h3>Secondary reader</h3>
+    <p>Graduate students in higher education administration, student affairs, and instructional design who encounter this book in a course. The book works for this reader but is not designed for them.</p>
+  </div>
+
+
+  <!-- 3. ARC -->
+  <div class="section" id="arc">
+    <div class="section-number">Section 3</div>
+    <h2 class="section-title">Three-Act Learning Arc</h2>
+
+    <div class="callout callout-info">
+      <strong>Arc statement:</strong> This book takes the practitioner from the recognition that most students' experiential learning potential is lost to a design failure — by first naming the failure and diagnosing why the wrong tools make it worse, then building the three-part infrastructure that constitutes the right tool, then demonstrating the judgment the system requires at its hardest moments: the end of the experience, the boundary the Sherpa must not cross, and the advisor conversation that the system makes possible.
+    </div>
+
+    <table>
+      <tr><th>Act</th><th>Chapters</th><th>What it does</th></tr>
+      <tr><td><strong>Act One — The Problem</strong></td><td>1–2</td><td>Establishes the design failure; names the wrong model; introduces the framework</td></tr>
+      <tr><td><strong>Act Two — The Infrastructure</strong></td><td>3–10</td><td>Builds the complete Sherpa system: taxonomy, experience map, living journal, MVAL, failure documentation, Sherpa Before and During</td></tr>
+      <tr><td><strong>Act Three — The Synthesis</strong></td><td>11–13</td><td>Refiguration protocol; the thesis boundary; the advisor shift</td></tr>
+      <tr><td><strong>Outside arc — Demonstration</strong></td><td>14–18</td><td>Five domain field guides; the arc running under domain-specific constraints</td></tr>
+    </table>
+
+    <h3>Transition conditions</h3>
+    <div class="transition-grid">
+      <div class="tt-card">
+        <div class="tt-label">Act One → Act Two</div>
+        <p>The practitioner holds three commitments: the developmental gap is a design failure (not a student failure), AI's role is categorically a Sherpa relationship (not a teaching relationship), and they are willing to challenge a student's placement preference on developmental grounds. Without these three, the Act Two tools are misused.</p>
+      </div>
+      <div class="tt-card">
+        <div class="tt-label">Act Two → Act Three</div>
+        <p>The practitioner can produce a developmental profile, design a living journal calibrated to that profile, configure and deploy Sherpa Before and During, and distinguish a Sherpa response that supports reflection from one that substitutes for it. Without these, Chapter 12 (the thesis chapter) lands as a warning, not an argument.</p>
+      </div>
+    </div>
+
+    <div class="callout callout-note">
+      <strong>Navigation note for readers:</strong> Chapters 1–13 build the complete foundational argument and the full Sherpa infrastructure — read in sequence for professional development, staff onboarding, or graduate coursework. Chapters 14–18 are fully self-contained domain field guides — enter at the chapter written for your role. A Construct Quick Reference at the opening of each field guide provides the operational definitions you need to begin immediately.
+    </div>
+  </div>
+
+
+  <!-- 4. CHAPTERS -->
+  <div class="section" id="chapters">
+    <div class="section-number">Section 4</div>
+    <h2 class="section-title">Chapter-by-Chapter Specifications</h2>
+
+
+    <!-- PART ONE -->
+    <div class="part-header" id="part1">
+      <div class="part-label">Part One · Chapters 1–2</div>
+      <h3>Foundations: The Argument</h3>
+      <p>Sequential read. Two chapters. Makes the case and gives the diagnostic framework.</p>
+    </div>
+
+    <!-- CH 1 -->
+    <div class="chapter-block">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 1</span>
+          <span class="ch-title">The Gap: Why Having an Experience Is Not the Same as Learning from One</span>
+          <span class="ch-tag">Act One · Practitioner-facing</span>
+        </div>
+        <div class="ch-sub">The practitioner diagnoses the design failure that converts developmental potential into resume lines — and names the 200-student structural constraint that no single advisor has ever been able to solve alone.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr><td>LO-1.1</td><td><span class="bloom-tag bloom-analyze">Analyze</span></td><td>Distinguish between an experience that produces a resume line and one that produces practical wisdom — by naming the specific infrastructure conditions that determine which outcome occurs.</td><td>Yes</td></tr>
+          <tr><td>LO-1.2</td><td><span class="bloom-tag bloom-analyze">Analyze</span></td><td>Diagnose the reflection gap in their own program — identify where the infrastructure breaks down and what students are losing.</td><td>Yes</td></tr>
+          <tr><td>LO-1.3</td><td><span class="bloom-tag bloom-understand">Understand</span></td><td>Articulate why classroom AI tools are the wrong model for experiential learning, in terms specific enough for a conversation with a dean.</td><td>Yes</td></tr>
+          <tr><td>LO-1.4</td><td><span class="bloom-tag bloom-apply">Apply</span></td><td>Name the 200-student problem and connect it to a specific failure they have observed in their own practice.</td><td>Yes</td></tr>
+        </table>
+
+        <div class="opening-case">
+          <div class="oc-label">Opening Case</div>
+          <p>The Boston co-op student — six months, well-evaluated, Excel skills instead of judgment. The recognition case. Thirty end-of-semester reflections, two that are different, one advisor who recognizes the difference and cannot produce more of it.</p>
+        </div>
+
+        <div class="worked-example">
+          <div class="we-label">Worked Example Domain</div>
+          <p>University co-op, engineering discipline.</p>
+        </div>
+
+        <div class="bridge-block">
+          <strong>Bridge to Ch. 2</strong>
+          "Naming the failure is not enough. To build the solution, we need a framework precise enough to design against..."
+        </div>
+      </div>
+    </div>
+
+
+    <!-- CH 2 -->
+    <div class="chapter-block" style="border-top:1px solid var(--bb-7);">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 2</span>
+          <span class="ch-title">The Framework: Ricoeur, Kolb, and the Three Movements of Experiential Learning</span>
+          <span class="ch-tag">Act One · Practitioner-facing <span class="flag-spiral">Spiral — introduces Ricoeur</span></span>
+        </div>
+        <div class="ch-sub">The practitioner maps a student's experience arc onto Ricoeur's three phases and identifies where in Kolb's cycle their program infrastructure is strongest and where it breaks down.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="callout callout-warn">
+          <strong>Author briefing — dropout risk chapter.</strong> Student narrative precedes framework name. Theory earns its place through recognition, not instruction. Act One transition condition must be drafted with care before editorial review (OQ-004).
+        </div>
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr><td>LO-2.1</td><td><span class="bloom-tag bloom-apply">Apply</span></td><td>Map a specific student's experience arc onto Ricoeur's three phases.</td><td>Yes</td></tr>
+          <tr><td>LO-2.2</td><td><span class="bloom-tag bloom-analyze">Analyze</span></td><td>Identify where in Kolb's four-stage cycle their program infrastructure breaks down.</td><td>Yes</td></tr>
+          <tr><td>LO-2.3</td><td><span class="bloom-tag bloom-apply">Apply</span></td><td>Explain the refiguration concept to a student in motivating language — without using Ricoeur's terminology.</td><td>Yes</td></tr>
+          <tr><td>LO-2.4</td><td><span class="bloom-tag bloom-create">Create</span></td><td>Design a reflection prompt for each of Ricoeur's three phases.</td><td>Yes</td></tr>
+        </table>
+
+        <div class="opening-case">
+          <div class="oc-label">Opening Case</div>
+          <p>A nursing student who said "I just knew what to do" after a code — and could not articulate the knowing that saved a patient's life. Prefiguration / configuration / refiguration named through her story before the terms appear.</p>
+        </div>
+
+        <div class="worked-example">
+          <div class="we-label">Worked Example Domain</div>
+          <p>Study abroad, liberal arts college — reflection essays rich with description, thin on analysis; director reframes "not developmentally ready" as "asked the wrong question."</p>
+        </div>
+
+        <div class="callout callout-info">
+          <strong>Practitioner test (OQ-014):</strong> Nursing student narrative to be tested with 3 practitioners before editorial review — all must say "I know this student."
+        </div>
+
+        <div class="bridge-block">
+          <strong>Bridge / Act One → Act Two transition</strong>
+          Act One transition condition stated explicitly before the reader turns to Chapter 3.
+        </div>
+      </div>
+    </div>
+
+
+    <!-- PART TWO -->
+    <div class="part-header" id="part2">
+      <div class="part-label">Part Two · Chapters 3–5</div>
+      <h3>The Experience Map</h3>
+      <p>Sequential in professional development context; re-enterable by task.</p>
+    </div>
+
+    <!-- CH 3 -->
+    <div class="chapter-block">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 3</span>
+          <span class="ch-title">The Taxonomy: Profiling What a Student Needs to Develop</span>
+          <span class="ch-tag">Act Two · Practitioner-facing</span>
+        </div>
+        <div class="ch-sub">The practitioner applies the seven-tier taxonomy to produce a developmental profile — the information no interest inventory provides and no placement decision should be made without.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="callout callout-warn">
+          <strong>Most load-bearing chapter in the book.</strong> Its absence degrades the entire system. Chapter 3's final exercise must produce a working developmental profile — Chapter 4 opens by using one.
+        </div>
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr><td>LO-3.1</td><td><span class="bloom-tag bloom-apply">Apply</span></td><td>Apply the seven-tier taxonomy to profile a specific student — naming current strengths and capacity gaps.</td><td>Yes</td></tr>
+          <tr><td>LO-3.2</td><td><span class="bloom-tag bloom-analyze">Analyze</span></td><td>Identify what a standard interest inventory reveals and what it conceals about developmental needs.</td><td>Yes</td></tr>
+          <tr><td>LO-3.3</td><td><span class="bloom-tag bloom-analyze">Analyze</span></td><td>Distinguish between a student who is underdeveloped in a capacity and one who has never been exposed to the conditions that develop it.</td><td>Yes</td></tr>
+          <tr><td>LO-3.4</td><td><span class="bloom-tag bloom-create">Create</span></td><td>Design a profiling conversation that surfaces developmental gaps a student would not self-report on a form.</td><td>Yes</td></tr>
+        </table>
+
+        <div class="opening-case">
+          <div class="oc-label">Opening Case</div>
+          <p>Two students, same major, same GPA, same expressed interest — interest inventory produces identical recommendations; the taxonomy produces a profile that reveals why they are not the same.</p>
+        </div>
+
+        <div class="worked-example">
+          <div class="we-label">Worked Example Domain</div>
+          <p>University co-op, business discipline — second-cycle student whose performance review said "excellent" and whose developmental profile said "half-formed."</p>
+        </div>
+
+        <div class="bridge-block">
+          <strong>Bridge to Ch. 4</strong>
+          "The developmental profile names what the student needs to build. The next question is: which experience builds it?"
+        </div>
+      </div>
+    </div>
+
+
+    <!-- CH 4 -->
+    <div class="chapter-block" style="border-top:1px solid var(--bb-7);">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 4</span>
+          <span class="ch-title">The Experience Map: Matching Developmental Need to Placement Type</span>
+          <span class="ch-tag">Act Two · Hybrid (practitioner designs; student receives)</span>
+        </div>
+        <div class="ch-sub">The practitioner builds a structured placement recommendation — an experience map — that translates a developmental profile into a specific placement choice with reasoning the student can understand and the advisor can defend.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr><td>LO-4.1</td><td><span class="bloom-tag bloom-create">Create</span></td><td>Build an experience map for a specific student.</td><td>Yes</td></tr>
+          <tr><td>LO-4.2</td><td><span class="bloom-tag bloom-apply">Apply</span></td><td>Make the case to a student for a placement they would not have chosen for themselves — using their developmental profile as the argument.</td><td>Yes</td></tr>
+          <tr><td>LO-4.3</td><td><span class="bloom-tag bloom-evaluate">Evaluate</span></td><td>Evaluate two placement options against a student's developmental profile with explicit trade-off analysis.</td><td>Yes</td></tr>
+          <tr><td>LO-4.4</td><td><span class="bloom-tag bloom-analyze">Analyze</span></td><td>Identify placement recommendation patterns driven by availability rather than developmental fit — and name the cost.</td><td>Yes</td></tr>
+        </table>
+
+        <div class="opening-case">
+          <div class="oc-label">Opening Case</div>
+          <p>The London case — US student whose developmental profile indicates London but who wants Boston. The advisor has the experience map. Does the advisor have the language?</p>
+        </div>
+
+        <div class="worked-example">
+          <div class="we-label">Worked Example Domain</div>
+          <p>Study abroad program — the London case documented as the experience map in action.</p>
+        </div>
+
+        <div class="bridge-block">
+          <strong>Bridge to Ch. 5</strong>
+          "The experience map tells the student where to go and why. But arriving at the right place is not enough. What the student pays attention to when they get there determines what they bring back."
+        </div>
+      </div>
+    </div>
+
+
+    <!-- CH 5 -->
+    <div class="chapter-block" style="border-top:1px solid var(--bb-7);">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 5</span>
+          <span class="ch-title">Pre-Experience Preparation: The Question to Carry In</span>
+          <span class="ch-tag">Act Two · Pivot chapter · Hybrid</span>
+        </div>
+        <div class="ch-sub">The practitioner designs a pre-experience preparation protocol that translates the developmental profile into one or two focused developmental questions — and configures the Sherpa for the work before the experience begins.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr><td>LO-5.1</td><td><span class="bloom-tag bloom-create">Create</span></td><td>Design a pre-experience preparation protocol that translates the developmental profile into focused developmental questions.</td><td>Yes</td></tr>
+          <tr><td>LO-5.2</td><td><span class="bloom-tag bloom-analyze">Analyze</span></td><td>Distinguish between orientation and developmental preparation.</td><td>Yes</td></tr>
+          <tr><td>LO-5.3</td><td><span class="bloom-tag bloom-apply">Apply</span></td><td>Brief a student on what the Sherpa will be watching for — in a way that increases attentiveness without producing performance anxiety.</td><td>Yes</td></tr>
+          <tr><td>LO-5.4</td><td><span class="bloom-tag bloom-apply">Apply</span></td><td>Configure the Sherpa for a specific student's pre-experience profile.</td><td>Yes</td></tr>
+        </table>
+
+        <div class="opening-case">
+          <div class="oc-label">Opening Case</div>
+          <p>Two students, same London employer, different preparation — one leaves with a checklist, one leaves with a question. Six months later, different journals.</p>
+        </div>
+
+        <div class="worked-example">
+          <div class="we-label">Worked Example Domain</div>
+          <p>Clinical placement, social work — second-year student whose focused question is "Where do I notice that I am managing my own distress rather than being present to the client's?"</p>
+        </div>
+
+        <div class="bridge-block">
+          <strong>Bridge to Part Three</strong>
+          "The preparation is complete... What is not yet running is the companion that reads the journal, recognizes the patterns, and asks the questions that turn documentation into development."
+        </div>
+      </div>
+    </div>
+
+
+    <!-- PART THREE -->
+    <div class="part-header" id="part3">
+      <div class="part-label">Part Three · Chapters 6–8</div>
+      <h3>The Living Journal</h3>
+      <p>Sequential in professional development context; re-enterable as implementation reference.</p>
+    </div>
+
+    <!-- CH 6 -->
+    <div class="chapter-block">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 6</span>
+          <span class="ch-title">The Living Journal: What It Is and Why Visual Matters</span>
+          <span class="ch-tag">Act Two · Student-facing infrastructure</span>
+        </div>
+        <div class="ch-sub">The practitioner designs a living journal structure that captures the texture of lived experience — visual, integrated, honest — and understands why the visual dimension is developmental, not decorative.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr><td>LO-6.1</td><td><span class="bloom-tag bloom-analyze">Analyze</span></td><td>Distinguish a living journal from current documentation formats — naming what it captures that current formats do not.</td><td>Yes</td></tr>
+          <tr><td>LO-6.2</td><td><span class="bloom-tag bloom-apply">Apply</span></td><td>Explain the developmental function of visual documentation to a student who has never kept a visual journal.</td><td>Yes</td></tr>
+          <tr><td>LO-6.3</td><td><span class="bloom-tag bloom-create">Create</span></td><td>Design a living journal structure for a specific deployment context.</td><td>Yes</td></tr>
+          <tr><td>LO-6.4</td><td><span class="bloom-tag bloom-evaluate">Evaluate</span></td><td>Evaluate a sample student journal against the living journal criteria.</td><td>Yes</td></tr>
+        </table>
+
+        <div class="opening-case">
+          <div class="oc-label">Opening Case</div>
+          <p>A study abroad student's text journal vs. the photograph she took in the Makola market — and the analytical precision the image held that the text did not produce until she was asked about it.</p>
+        </div>
+
+        <div class="worked-example">
+          <div class="we-label">Worked Example Domain</div>
+          <p>Electrical trades apprenticeship — the panel sketch with the error circled, the question about the journeyman's hands.</p>
+        </div>
+
+        <div class="bridge-block">
+          <strong>Bridge to Ch. 7</strong>
+          "Documentation without structure produces narrative, not analysis. The next chapter introduces the MVAL protocol..."
+        </div>
+      </div>
+    </div>
+
+
+    <!-- CH 7 -->
+    <div class="chapter-block" style="border-top:1px solid var(--bb-7);">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 7</span>
+          <span class="ch-title">The MVAL Protocol: Structuring Reflection for Practical Wisdom</span>
+          <span class="ch-tag">Act Two · Both-facing</span>
+        </div>
+        <div class="ch-sub">The practitioner applies the MVAL protocol to structure student journal entries into analysis — and teaches the protocol to students in a way that produces internalization rather than mechanical compliance.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="callout callout-warn">
+          <strong>Author briefing (OQ-009):</strong> Must position MVAL as an adaptation of a broader class of structured reflection protocols — not as a Boyle System advertisement. This framing must be established before contributor assignment.
+        </div>
+
+        <div class="ch-sub-label">MVAL Fields</div>
+        <p style="font-size:14px;">What happened &nbsp;/&nbsp; Why it mattered &nbsp;/&nbsp; How you responded &nbsp;/&nbsp; Environment &nbsp;/&nbsp; Results &nbsp;/&nbsp; Questions</p>
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr><td>LO-7.1</td><td><span class="bloom-tag bloom-apply">Apply</span></td><td>Apply the MVAL protocol to a specific student entry — producing an analysis of developmental progress and Sherpa probe direction.</td><td>Yes</td></tr>
+          <tr><td>LO-7.2</td><td><span class="bloom-tag bloom-apply">Apply</span></td><td>Teach the MVAL protocol to a student in a way that produces internalization.</td><td>Yes</td></tr>
+          <tr><td>LO-7.3</td><td><span class="bloom-tag bloom-analyze">Analyze</span></td><td>Diagnose what is missing from a student's MVAL entry and design a Sherpa prompt that addresses the gap without naming it prescriptively.</td><td>Yes</td></tr>
+          <tr><td>LO-7.4</td><td><span class="bloom-tag bloom-create">Create</span></td><td>Adapt the MVAL protocol for a specific deployment domain.</td><td>Yes</td></tr>
+        </table>
+
+        <div class="opening-case">
+          <div class="oc-label">Opening Case</div>
+          <p>The client meeting — same event, unstructured entry vs. MVAL-structured entry. The unstructured entry produces a note to self. The MVAL entry produces the question the student will still be thinking about next week.</p>
+        </div>
+
+        <div class="worked-example">
+          <div class="we-label">Worked Example Domain</div>
+          <p>Corporate early career rotational program — first-year analyst whose "environment" field consistently describes the room rather than the organizational dynamics.</p>
+        </div>
+
+        <div class="bridge-block">
+          <strong>Bridge to Ch. 8</strong>
+          "MVAL gives the student a structure for documenting what happened and why it mattered. But there is one category of event that MVAL alone cannot address — not because the protocol fails, but because the student's instinct is to omit the event entirely."
+        </div>
+      </div>
+    </div>
+
+
+    <!-- CH 8 -->
+    <div class="chapter-block" style="border-top:1px solid var(--bb-7);">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 8</span>
+          <span class="ch-title">Failure as First-Class Artifact: Documenting What Went Wrong</span>
+          <span class="ch-tag">Act Two · Both-facing <span class="flag-author">Author briefing</span></span>
+        </div>
+        <div class="ch-sub">The practitioner designs a failure documentation protocol that creates structural safety for honest reflection — because failures are the primary raw material for the learning that only consequential experience can produce.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="callout callout-note">
+          <strong>Author briefing:</strong> This chapter is affirmative, not remedial. Failure documentation is not the medicine you take when things go wrong. It is the practice that determines whether consequential experience produces wisdom.
+        </div>
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr><td>LO-8.1</td><td><span class="bloom-tag bloom-create">Create</span></td><td>Design a failure documentation protocol with genuine structural safety.</td><td>Yes</td></tr>
+          <tr><td>LO-8.2</td><td><span class="bloom-tag bloom-analyze">Analyze</span></td><td>Distinguish a failure entry that produces developmental reflection from one that produces self-criticism without analysis — and design Sherpa prompts that move students from the latter to the former.</td><td>Yes</td></tr>
+          <tr><td>LO-8.3</td><td><span class="bloom-tag bloom-evaluate">Evaluate</span></td><td>Identify program design features that discourage failure documentation and propose one structural change.</td><td>Yes</td></tr>
+          <tr><td>LO-8.4</td><td><span class="bloom-tag bloom-analyze">Analyze</span></td><td>Use a student's failure documentation to identify a developmental pattern not visible from success entries alone.</td><td>Yes</td></tr>
+        </table>
+
+        <div class="opening-case">
+          <div class="oc-label">Opening Case — Primary documented failure case</div>
+          <p>A senior co-op student with two journals — the official one (the highlight reel) and the personal notebook (the developmental record). He kept two because the official one was not safe for the honest material. That is not a student failure. That is a program design failure.</p>
+        </div>
+
+        <div class="worked-example">
+          <div class="we-label">Worked Example Domain</div>
+          <p>Clinical placement, nursing — the medication error documented procedurally in the official journal, developmentally in the private section.</p>
+        </div>
+
+        <div class="bridge-block">
+          <strong>Bridge to Part Four</strong>
+          "The infrastructure is built... What is not yet running is the companion that reads the journal, recognizes the patterns, and asks the questions that turn documentation into development."
+        </div>
+      </div>
+    </div>
+
+
+    <!-- PART FOUR -->
+    <div class="part-header" id="part4">
+      <div class="part-label">Part Four · Chapters 9–13</div>
+      <h3>The AI Sherpa in Practice</h3>
+      <p>Sequential in professional development context; re-enterable as deployment reference. Five chapters covering Act Two deployment (9–10) and Act Three synthesis (11–13).</p>
+    </div>
+
+    <!-- CH 9 -->
+    <div class="chapter-block">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 9</span>
+          <span class="ch-title">The Sherpa Before: Profile, Map, and Focused Attention</span>
+          <span class="ch-tag">Act Two · Practitioner-facing <span class="flag-spiral">First deployment chapter</span></span>
+        </div>
+        <div class="ch-sub">The practitioner configures the Sherpa for a specific student's pre-experience profile — translating the developmental map into Sherpa parameters before the experience begins.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="callout callout-critical">
+          <strong>⚑ OQ-013 (Urgent):</strong> "Getting Started" minimum viable deployment note must be present in this chapter — two pages, required for the publisher proposal. This is the acquisitions editor's primary question. Lead author writes before Chapter 9 first draft.
+        </div>
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr><td>LO-9.1</td><td><span class="bloom-tag bloom-apply">Apply</span></td><td>Configure a Sherpa for a specific student's pre-experience profile — translating the experience map into Sherpa parameters.</td><td>Yes</td></tr>
+          <tr><td>LO-9.2</td><td><span class="bloom-tag bloom-create">Create</span></td><td>Design the pre-experience Sherpa conversation sequence for a student entering a high-stakes placement.</td><td>Yes</td></tr>
+          <tr><td>LO-9.3</td><td><span class="bloom-tag bloom-analyze">Analyze</span></td><td>Distinguish between a Sherpa that prepares a student for an experience and one that reduces the experience's developmental challenge.</td><td>Yes</td></tr>
+        </table>
+
+        <div class="opening-case">
+          <div class="oc-label">Opening Case</div>
+          <p>The practitioner who configured the same generic Sherpa for 200 students and found it producing the same three prompts for everyone — and the specific configuration that changes that.</p>
+        </div>
+
+        <div class="worked-example">
+          <div class="we-label">Worked Example Domain</div>
+          <p>Northeastern co-op, business analytics — second-cycle student, Tier 5 and Tier 6 focus, pattern recognition flags for attribution patterns.</p>
+        </div>
+
+        <div class="bridge-block">
+          <strong>Bridge to Ch. 10</strong>
+          "The Sherpa is configured. The experience has begun... The question now is: what does the Sherpa do when a journal entry arrives that tells it something important is happening?"
+        </div>
+      </div>
+    </div>
+
+
+    <!-- CH 10 -->
+    <div class="chapter-block" style="border-top:1px solid var(--bb-7);">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 10</span>
+          <span class="ch-title">The Sherpa During: Companion, Not Coach</span>
+          <span class="ch-tag">Act Two → Act Three threshold · Both-facing <span class="flag-author">Author briefing</span></span>
+        </div>
+        <div class="ch-sub">The practitioner deploys the Sherpa's core during-experience function — pattern recognition and Socratic question — and masters the distinction between a Sherpa response that supports reflection and one that substitutes for it.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="callout callout-warn">
+          <strong>Author briefing:</strong> The worked example is load-bearing. The London student's Week 3 entry and the Sherpa's single-sentence response is the moment the "question not answer" principle becomes operational. If this example is generic, the principle stays theoretical.
+        </div>
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr><td>LO-10.1</td><td><span class="bloom-tag bloom-create">Create</span></td><td>Design a Sherpa prompt sequence for a student whose journal entries suggest avoidance of a developmental challenge.</td><td>Yes</td></tr>
+          <tr><td>LO-10.2</td><td><span class="bloom-tag bloom-analyze">Analyze</span></td><td>Distinguish between a Sherpa response that supports reflection and one that substitutes for it.</td><td>Yes</td></tr>
+          <tr><td>LO-10.3</td><td><span class="bloom-tag bloom-apply">Apply</span></td><td>Apply the three core Sherpa prompts — What surprised you? What did you commit to? What would you do differently? — to a specific student entry.</td><td>Yes</td></tr>
+          <tr><td>LO-10.4</td><td><span class="bloom-tag bloom-evaluate">Evaluate</span></td><td>Identify the point in a student's experience arc where the Sherpa should escalate to a human advisor.</td><td>Yes</td></tr>
+        </table>
+
+        <div class="opening-case">
+          <div class="oc-label">Opening Case</div>
+          <p>Same journal entry, two Sherpa responses. Response A gives advice (three sentences). Response B asks "What did you start to say?" One produces strategy. One produces the judgment the student withheld.</p>
+        </div>
+
+        <div class="worked-example">
+          <div class="we-label">Worked Example Domain — Load-bearing</div>
+          <p>Study abroad, the London student — Week 3, the team meeting where she went invisible, the Sherpa's one-sentence prompt, and Week 3 Entry 8 written two days later.</p>
+        </div>
+
+        <div class="bridge-block">
+          <strong>Bridge / Act Two → Act Three transition</strong>
+          "The experience is ending... Most of the time that reflection will produce a summary. Occasionally — in programs with the right infrastructure — it will produce something different."
+        </div>
+      </div>
+    </div>
+
+
+    <!-- CH 11 -->
+    <div class="chapter-block" style="border-top:1px solid var(--bb-7);">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 11</span>
+          <span class="ch-title">The Sherpa After: Refiguration and the Capstone Narrative</span>
+          <span class="ch-tag">Act Three · Both-facing <span class="flag-spiral">Ricoeur spiral return</span></span>
+        </div>
+        <div class="ch-sub">The practitioner designs the post-experience Sherpa sequence that guides a student through Ricoeur's third phase — from the raw material of the journal to a coherent narrative of what changed and why.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="callout callout-warn">
+          <strong>Domain note (OQ-008):</strong> Chapter 11 opening must use a corporate early career domain — clinical domain is at its three-case cap. Character Thread D (the business junior) is the primary longitudinal case.
+        </div>
+
+        <div class="callout callout-info">
+          <strong>Spiral opening required:</strong> "Chapter 2 introduced Ricoeur's three phases as a framework for understanding what is happening when an experience becomes formative. This chapter asks a harder question: how do you design the conditions that make refiguration happen reliably, rather than waiting to see if it happens on its own?"
+        </div>
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr><td>LO-11.1</td><td><span class="bloom-tag bloom-create">Create</span></td><td>Design a post-experience Sherpa sequence that guides a student through Ricoeur's refiguration phase.</td><td>Yes</td></tr>
+          <tr><td>LO-11.2</td><td><span class="bloom-tag bloom-evaluate">Evaluate</span></td><td>Evaluate a student's capstone reflection against the refiguration criteria — distinguishing integration from summary.</td><td>Yes</td></tr>
+          <tr><td>LO-11.3</td><td><span class="bloom-tag bloom-create">Create</span></td><td>Design a capstone reflection protocol for their specific deployment context.</td><td>Yes</td></tr>
+        </table>
+
+        <div class="opening-case">
+          <div class="oc-label">Opening Case — Character Thread D</div>
+          <p>Corporate early career domain. "I spent the first two months of this placement reporting what happened in rooms. In the third month I started reporting what I did in rooms."</p>
+        </div>
+
+        <div class="ch-sub-label">Capstone Criteria</div>
+        <p style="font-size:14px;">Specific journal evidence &nbsp;/&nbsp; Self-revision &nbsp;/&nbsp; Forward projection &nbsp;/&nbsp; Unresolved questions</p>
+
+        <div class="bridge-block">
+          <strong>Bridge to Ch. 12</strong>
+          "The student has refigured... And somewhere in that process — in the before, the during, or the after — there were moments where the Sherpa could have done something it shouldn't have."
+        </div>
+      </div>
+    </div>
+
+
+    <!-- CH 12 -->
+    <div class="chapter-block" style="border-top:1px solid var(--bb-7);">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 12</span>
+          <span class="ch-title">What the Sherpa Cannot Do: The Boundary That Makes Development Possible</span>
+          <span class="ch-tag">Act Three · Both-facing <span class="flag-thesis">Thesis chapter</span></span>
+        </div>
+        <div class="ch-sub">The practitioner identifies and corrects Sherpa dependency — and understands why the boundary between guidance and doing is not a limitation of the tool but the condition that makes the developmental process work.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="callout callout-critical">
+          <strong>Author briefing (fourth and final):</strong> This chapter is written as argument, not disclaimer. The boundary is not a risk to manage. It is the design principle that makes the system work. Every sentence defends that claim. Written by the lead author, not a contributor. First chapter reviewed by the editor after drafting.
+        </div>
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr><td>LO-12.1</td><td><span class="bloom-tag bloom-analyze">Analyze</span></td><td>Identify Sherpa dependency — recognize journal entry patterns and student behaviors signaling avoidance of judgment rather than development of it.</td><td>Yes</td></tr>
+          <tr><td>LO-12.2</td><td><span class="bloom-tag bloom-apply">Apply</span></td><td>Redesign a Sherpa prompt that is producing dependency — transform a response that answers into a question that requires the student to answer.</td><td>Yes</td></tr>
+          <tr><td>LO-12.3</td><td><span class="bloom-tag bloom-apply">Apply</span></td><td>Articulate the boundary to a student who is frustrated by the Sherpa's refusal to give answers.</td><td>Yes</td></tr>
+          <tr><td>LO-12.4</td><td><span class="bloom-tag bloom-evaluate">Evaluate</span></td><td>Evaluate their deployed Sherpa configuration against the dependency risk criteria.</td><td>Yes</td></tr>
+        </table>
+
+        <div class="opening-case">
+          <div class="oc-label">Opening Case — Primary documented failure case</div>
+          <p>The clinical rotation student whose entries became shorter and more question-shaped until she was writing to get an answer rather than to do analysis. "The Sherpa keeps asking me questions instead of helping me." Her frustration is honest. Her misunderstanding is architectural.</p>
+        </div>
+
+        <div class="ch-sub-label">Five Dependency Patterns</div>
+        <p style="font-size:14px;">Entry length decreasing &nbsp;/&nbsp; Entries question-shaped &nbsp;/&nbsp; MVAL "questions" field dominant &nbsp;/&nbsp; Emotional escalation at Sherpa questions &nbsp;/&nbsp; Waiting rather than deciding</p>
+
+        <div class="bridge-block">
+          <strong>Bridge to Ch. 13</strong>
+          "The Sherpa is doing what it was designed to do... What remains is the practitioner's own role in this system — not the Sherpa's role, but the human advisor's."
+        </div>
+      </div>
+    </div>
+
+
+    <!-- CH 13 -->
+    <div class="chapter-block" style="border-top:1px solid var(--bb-7);">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 13</span>
+          <span class="ch-title">The Advisor Shift: From Gap-Filling to Strategy</span>
+          <span class="ch-tag">Act Three — Arc resolution · Practitioner-facing</span>
+        </div>
+        <div class="ch-sub">The practitioner redesigns their advising protocol for a Sherpa-supported context — and discovers that the advisor role, freed from scaffolding work the Sherpa now carries, becomes more powerful, not smaller.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="callout callout-info">
+          <strong>Closing note:</strong> Chapter 13 is the arc resolution. The liberation reframe must be structural, not inspirational — demonstrated through the redesigned conversation protocol and the caseload management system, not through aspirational language.
+        </div>
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr><td>LO-13.1</td><td><span class="bloom-tag bloom-create">Create</span></td><td>Redesign their advising conversation protocol for a Sherpa-supported context.</td><td>Yes</td></tr>
+          <tr><td>LO-13.2</td><td><span class="bloom-tag bloom-analyze">Analyze</span></td><td>Distinguish between a gap-filling advising conversation and a strategic one.</td><td>Yes</td></tr>
+          <tr><td>LO-13.3</td><td><span class="bloom-tag bloom-apply">Apply</span></td><td>Use the Sherpa's journal pattern summary as the opening document for an advising conversation.</td><td>Yes</td></tr>
+          <tr><td>LO-13.4</td><td><span class="bloom-tag bloom-create">Create</span></td><td>Design a caseload management protocol for a Sherpa-supported advising context.</td><td>Yes</td></tr>
+        </table>
+
+        <div class="opening-case">
+          <div class="oc-label">Opening Case</div>
+          <p>The same co-op coordinator with the same student across two cycles. First cycle: "what happened, what did you learn." Second cycle with the Sherpa: "the Sherpa flagged three recurring patterns. The one I want to talk about is this one. Tell me what you think it means for where you go next."</p>
+        </div>
+
+        <div class="worked-example">
+          <div class="we-label">Worked Example Domain</div>
+          <p>Co-op program — Character Thread D's second cycle debrief, using the Sherpa's pattern summary as the opening document.</p>
+        </div>
+
+        <div class="bridge-block">
+          <strong>Bridge to Part Five</strong>
+          "The argument is complete... What remains is the demonstration — not the proof, which is already made, but the showing: what the full system looks like when it is running in five different domains."
+        </div>
+      </div>
+    </div>
+
+
+    <!-- PART FIVE -->
+    <div class="part-header" id="part5">
+      <div class="part-label">Part Five · Chapters 14–18</div>
+      <h3>The Field Guides</h3>
+      <p>Outside the arc. Domain demonstration. Fully self-contained. Enter at your chapter.</p>
+    </div>
+
+    <div class="fieldguide-structure">
+      <div class="fg-label">Shared structure — all five field guide chapters</div>
+      <ul>
+        <li>"If you are starting here" navigation note</li>
+        <li>Construct Quick Reference (six constructs, one page, identical closing line)</li>
+        <li>Domain context (2–3 pages — specific enough for practitioner recognition in paragraph 1)</li>
+        <li>Full system deployment guide (pre-experience / during / after)</li>
+        <li>Domain-specific failure modes (3–5)</li>
+        <li>Stakeholder section (includes at least one stakeholder conflict)</li>
+        <li>Implementation checklist (12–18 items, binary completion criteria)</li>
+        <li>Three domain-specific assessable exercises</li>
+        <li>Further resources (5–8 annotated sources)</li>
+      </ul>
+      <div class="callout callout-warn" style="margin-top:10px;">
+        <strong>⚑ OQ-005 (Open):</strong> Construct Quick Reference closing line must be identical across all five Part Five chapters — must be finalized before Part Five drafting begins.
+      </div>
+    </div>
+
+
+    <!-- CH 14 -->
+    <div class="chapter-block">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 14</span>
+          <span class="ch-title">The Co-op Coordinator's Field Guide</span>
+          <span class="ch-tag">Field Guide · Self-contained</span>
+        </div>
+        <div class="ch-sub">Full system deployment for six-month university co-op placements — including multi-cycle developmental arcs, employer partner relationships, and the Northeastern model as the flagship case.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="ch-sub-label">Domain Context</div>
+        <p style="font-size:14px;">Six-month placements, multi-cycle structure, employer evaluation integration, Northeastern model as benchmark. The specific challenge: employer is a stakeholder in performance evaluation; journal privacy must be designed, not assumed.</p>
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr><td>LO-14.1</td><td><span class="bloom-tag bloom-apply">Apply</span></td><td>Deploy the full Sherpa infrastructure for a six-month co-op placement.</td><td>Yes</td></tr>
+          <tr><td>LO-14.2</td><td><span class="bloom-tag bloom-create">Create</span></td><td>Design a multi-cycle developmental arc across two or three placements.</td><td>Yes</td></tr>
+          <tr><td>LO-14.3</td><td><span class="bloom-tag bloom-apply">Apply</span></td><td>Adapt the Sherpa configuration for employer relationship complexity.</td><td>Yes</td></tr>
+          <tr><td>LO-14.4</td><td><span class="bloom-tag bloom-evaluate">Evaluate</span></td><td>Evaluate developmental outcomes of a co-op cohort using journal pattern data.</td><td>Yes</td></tr>
+          <tr><td>LO-14.5</td><td><span class="bloom-tag bloom-apply">Apply</span></td><td>Make the case to an employer partner for the living journal and Sherpa infrastructure.</td><td>Yes</td></tr>
+        </table>
+
+        <div class="worked-example">
+          <div class="we-label">Flagship Case — Character Thread D</div>
+          <p>Three-cycle arc, Northeastern co-op model, first cycle abroad through senior-year strategy placement.</p>
+        </div>
+
+        <div class="ch-sub-label">Domain-Specific Failure Modes</div>
+        <ul style="font-size:14px;">
+          <li>Employer-visibility suppression of failure documentation</li>
+          <li>Multi-cycle profile drift (each advisor starts from scratch)</li>
+          <li>The return-offer trap (strong performance review concealing developmental plateau)</li>
+        </ul>
+
+        <div class="callout callout-info">
+          <strong>Stakeholder conflict:</strong> Employer's evaluation interest vs. student journal privacy — explicitly designed and resolved.
+        </div>
+      </div>
+    </div>
+
+
+    <!-- CH 15 -->
+    <div class="chapter-block" style="border-top:1px solid var(--bb-7);">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 15</span>
+          <span class="ch-title">The Study Abroad Advisor's Field Guide</span>
+          <span class="ch-tag">Field Guide · Self-contained</span>
+        </div>
+        <div class="ch-sub">Full system deployment for international placements — with specific configuration for cross-cultural disorientation as a developmental resource and re-entry as a designed protocol, not an afterthought.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="ch-sub-label">Domain Context</div>
+        <p style="font-size:14px;">Highest density of Tier 3 developmental opportunity; highest rate of unrealized potential. The specific challenge: disorientation is a developmental resource, not a logistical problem. Re-entry is the most underdesigned phase.</p>
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr><td>LO-15.1</td><td><span class="bloom-tag bloom-apply">Apply</span></td><td>Deploy the full Sherpa infrastructure for a study abroad placement with cross-cultural disorientation configuration.</td><td>Yes</td></tr>
+          <tr><td>LO-15.2</td><td><span class="bloom-tag bloom-create">Create</span></td><td>Design an experience map that makes the developmental case for a specific international placement.</td><td>Yes</td></tr>
+          <tr><td>LO-15.3</td><td><span class="bloom-tag bloom-apply">Apply</span></td><td>Configure Sherpa prompts for the disorientation phase.</td><td>Yes</td></tr>
+          <tr><td>LO-15.4</td><td><span class="bloom-tag bloom-create">Create</span></td><td>Design a re-entry protocol that prevents developmental gains from dissipating in the transition home.</td><td>Yes</td></tr>
+          <tr><td>LO-15.5</td><td><span class="bloom-tag bloom-evaluate">Evaluate</span></td><td>Evaluate a study abroad student's journal for evidence of cross-cultural capacity development — distinguishing observation of cultural difference from genuine perspective-taking.</td><td>Yes</td></tr>
+        </table>
+
+        <div class="worked-example">
+          <div class="we-label">Flagship Case — Character Thread C</div>
+          <p>The London student, full arc from experience map through refiguration.</p>
+        </div>
+
+        <div class="ch-sub-label">Domain-Specific Failure Modes</div>
+        <ul style="font-size:14px;">
+          <li>Disorientation managed as logistical problem rather than developmental resource</li>
+          <li>Re-entry without designed integration (refiguration abandoned at the airport)</li>
+          <li>The tourist journal (rich description, zero perspective-taking)</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- CH 16 -->
+    <div class="chapter-block" style="border-top:1px solid var(--bb-7);">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 16</span>
+          <span class="ch-title">The Clinical Placement Director's Field Guide</span>
+          <span class="ch-tag">Field Guide · Self-contained</span>
+        </div>
+        <div class="ch-sub">Full system deployment in the highest-stakes experiential learning context — with specific design for failure documentation under liability constraints, clinical error processing, and professional identity formation under evaluation pressure.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="callout callout-critical">
+          <strong>⚑ OQ-006 (Critical):</strong> Mandatory reporting boundary language requires institutional legal review before publication. Privacy boundary template must not be released before legal review is complete. Long lead time — initiate now.
+        </div>
+
+        <div class="ch-sub-label">Domain Context</div>
+        <p style="font-size:14px;">Nursing, medicine, allied health, social work, law. Errors have real consequences. Failure documentation carries liability. Student is being evaluated for professional licensure. The specific challenge: clinical errors are simultaneously the most important developmental artifacts and the most likely to be suppressed or documented defensively.</p>
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr><td>LO-16.1</td><td><span class="bloom-tag bloom-apply">Apply</span></td><td>Deploy the full Sherpa infrastructure in a clinical placement context with failure documentation safety design.</td><td>Yes</td></tr>
+          <tr><td>LO-16.2</td><td><span class="bloom-tag bloom-create">Create</span></td><td>Design a failure documentation protocol for a clinical context that satisfies reflection and does not conflict with mandatory reporting.</td><td>Yes</td></tr>
+          <tr><td>LO-16.3</td><td><span class="bloom-tag bloom-apply">Apply</span></td><td>Configure Sherpa prompts for a student processing a clinical error or near-miss.</td><td>Yes</td></tr>
+          <tr><td>LO-16.4</td><td><span class="bloom-tag bloom-analyze">Analyze</span></td><td>Distinguish between a student developing clinical judgment and one developing clinical compliance — using journal entries as evidence.</td><td>Yes</td></tr>
+          <tr><td>LO-16.5</td><td><span class="bloom-tag bloom-create">Create</span></td><td>Adapt the capstone reflection protocol for clinical professional identity formation.</td><td>Yes</td></tr>
+        </table>
+
+        <div class="worked-example">
+          <div class="we-label">Flagship Longitudinal Case — Character Thread B</div>
+          <p>The nursing student from Chapter 2, full clinical arc through professional identity formation.</p>
+        </div>
+
+        <div class="ch-sub-label">Domain-Specific Failure Modes</div>
+        <ul style="font-size:14px;">
+          <li>Mandatory reporting conflict with private documentation</li>
+          <li>Clinical error suppression under evaluation pressure</li>
+          <li>The compliance-not-judgment development pattern</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- CH 17 -->
+    <div class="chapter-block" style="border-top:1px solid var(--bb-7);">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 17</span>
+          <span class="ch-title">The Workforce Development Coordinator's Field Guide</span>
+          <span class="ch-tag">Field Guide · Self-contained</span>
+        </div>
+        <div class="ch-sub">Full system deployment in trades and apprenticeship contexts — with specific adaptations for embodied skill development, the master-apprentice relationship, and the living journal as a visual document of physical learning.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="callout callout-info">
+          <strong>Author briefing:</strong> The trades chapter is not simplified content for less-educated learners. Trades apprentices develop expert judgment in domains requiring both physical precision and conceptual mastery. The adaptation is translation, not simplification.
+        </div>
+
+        <div class="ch-sub-label">Domain Context</div>
+        <p style="font-size:14px;">Electricians, plumbers, HVAC, welding, construction. The primary learning is in the hands. The master-apprentice relationship is the oldest Sherpa relationship in human history. The specific challenge: a text-only journal is inadequate for capturing embodied skill development — the visual dimension is the primary documentation mode, not an enhancement.</p>
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr><td>LO-17.1</td><td><span class="bloom-tag bloom-apply">Apply</span></td><td>Deploy the full Sherpa infrastructure in a trades apprenticeship context with embodied skill adaptations.</td><td>Yes</td></tr>
+          <tr><td>LO-17.2</td><td><span class="bloom-tag bloom-create">Create</span></td><td>Design a living journal format appropriate for embodied skill development.</td><td>Yes</td></tr>
+          <tr><td>LO-17.3</td><td><span class="bloom-tag bloom-apply">Apply</span></td><td>Configure Sherpa prompts for the master-apprentice relationship.</td><td>Yes</td></tr>
+          <tr><td>LO-17.4</td><td><span class="bloom-tag bloom-apply">Apply</span></td><td>Make the case for Sherpa infrastructure to a trades program administrator skeptical of documentation approaches.</td><td>Yes</td></tr>
+          <tr><td>LO-17.5</td><td><span class="bloom-tag bloom-create">Create</span></td><td>Adapt the experience map for workforce development contexts.</td><td>Yes</td></tr>
+        </table>
+
+        <div class="worked-example">
+          <div class="we-label">Flagship Case — Character Thread E</div>
+          <p>The electrical apprentice, full deployment from taxonomy profile through multi-year apprenticeship arc.</p>
+        </div>
+
+        <div class="callout callout-info">
+          <strong>Theoretical connection:</strong> The Pirsig tradition (<em>Zen and the Art of Motorcycle Maintenance</em>) and the <em>AI and the Art of Motorcycle Maintenance</em> companion volume — quality as a relationship between the craftsperson and the work.
+        </div>
+      </div>
+    </div>
+
+
+    <!-- CH 18 -->
+    <div class="chapter-block" style="border-top:1px solid var(--bb-7);">
+      <div class="chapter-header">
+        <div class="ch-row">
+          <span class="ch-num">Chapter 18</span>
+          <span class="ch-title">The Corporate Early Career Program Manager's Field Guide</span>
+          <span class="ch-tag">Field Guide · Self-contained</span>
+        </div>
+        <div class="ch-sub">Full system deployment for rotational programs and first assignments — with specific adaptations for organizational culture navigation, the student-to-professional transition, and the dual-use refiguration document.</div>
+      </div>
+      <div class="chapter-body">
+
+        <div class="callout callout-critical">
+          <strong>⚑ OQ-007 (Critical):</strong> Dual-use refiguration document requires explicit program policy and consent framework design before production begins. The tension between employee ownership and program data interest must be named honestly — not resolved by clever document design.
+        </div>
+
+        <div class="ch-sub-label">Domain Context</div>
+        <p style="font-size:14px;">Structured rotational programs, first assignments, transition from student to professional. The specific challenge: organizational culture navigation is the primary developmental variable and the thing most likely to be documented around rather than through.</p>
+
+        <div class="ch-sub-label">Learning Outcomes</div>
+        <table class="lo-table">
+          <tr><th>ID</th><th>Bloom's</th><th>Learning outcome</th><th>Assessable</th></tr>
+          <tr><td>LO-18.1</td><td><span class="bloom-tag bloom-apply">Apply</span></td><td>Deploy the full Sherpa infrastructure in a corporate early career context with organizational culture navigation configuration.</td><td>Yes</td></tr>
+          <tr><td>LO-18.2</td><td><span class="bloom-tag bloom-create">Create</span></td><td>Design an experience map for a corporate rotational program.</td><td>Yes</td></tr>
+          <tr><td>LO-18.3</td><td><span class="bloom-tag bloom-apply">Apply</span></td><td>Configure the Sherpa for organizational culture navigation without producing political risk.</td><td>Yes</td></tr>
+          <tr><td>LO-18.4</td><td><span class="bloom-tag bloom-create">Create</span></td><td>Adapt the refiguration protocol for a dual-use corporate context.</td><td>Yes</td></tr>
+          <tr><td>LO-18.5</td><td><span class="bloom-tag bloom-evaluate">Evaluate</span></td><td>Evaluate developmental outcomes of an early career cohort using journal pattern data and produce a program-level recommendation.</td><td>Yes</td></tr>
+        </table>
+
+        <div class="worked-example">
+          <div class="we-label">Flagship Case</div>
+          <p>Corporate rotational analyst — organizational culture as the developmental variable that no case study could have taught.</p>
+        </div>
+
+        <div class="ch-sub-label">Domain-Specific Failure Modes</div>
+        <ul style="font-size:14px;">
+          <li>Culture navigation documented around rather than through</li>
+          <li>Dual-use document eroding employee developmental ownership</li>
+          <li>Rotation sequence optimized for organizational exposure rather than developmental arc</li>
+        </ul>
+      </div>
+    </div>
+  </div><!-- /chapters -->
+
+
+  <!-- 5. SCOPE -->
+  <div class="section" id="scope">
+    <div class="section-number">Section 5</div>
+    <h2 class="section-title">Out of Scope</h2>
+
+    <table>
+      <tr><th>Item</th><th>Reason</th><th>Acknowledged in</th></tr>
+      <tr><td>Grading and assessment of reflective journals</td><td>Undermines the thesis</td><td>Preface</td></tr>
+      <tr><td>Equity and access in experiential learning</td><td>Different book — companion volume</td><td>Preface</td></tr>
+      <tr><td>Disability-inclusive design</td><td>Outside author expertise for this edition</td><td>Preface</td></tr>
+      <tr><td>Multilingual and international student contexts</td><td>Technology-dependent exclusion</td><td>Ch. 15 sidebar</td></tr>
+      <tr><td>AI ethics framework</td><td>Handled through design, not standalone</td><td>Ch. 1 or preface</td></tr>
+      <tr><td>Classroom AI tools and content delivery</td><td>Explicitly rejected</td><td>Preface redirect</td></tr>
+      <tr><td>Platform-specific implementation guides</td><td>Platform-agnostic by design</td><td>OQ-010 audit</td></tr>
+      <tr><td>Research methodology for studying Sherpa effectiveness</td><td>Different reader</td><td>Research gap acknowledgment</td></tr>
+      <tr><td>Student-facing instruction in using the Sherpa</td><td>Different book</td><td>Companion guide opportunity</td></tr>
+      <tr><td>Longitudinal outcome research</td><td>Does not yet exist at scale</td><td>Contested claims acknowledgment</td></tr>
+      <tr><td>Generative AI as student writing tool</td><td>Different domain</td><td>Ch. 12 dependency section</td></tr>
+      <tr><td>Institutional policy and compliance frameworks</td><td>Changing too rapidly</td><td>Preface + OQ-010</td></tr>
+    </table>
+
+    <div class="callout callout-note">
+      Two visible second books: a research and evidence base companion monograph (3–5 years post-publication) and an equity, access, and inclusive design extension volume (higher priority — companion volume in development, noted in preface).
+    </div>
+  </div>
+
+
+  <!-- 6. MARKET -->
+  <div class="section" id="market">
+    <div class="section-number">Section 6</div>
+    <h2 class="section-title">Market Positioning</h2>
+
+    <p><strong>Primary positioning:</strong> The only practitioner handbook at the intersection of experiential learning and AI — not AI for classroom delivery, but AI as a developmental companion for students in consequential real-world experiences.</p>
+
+    <table>
+      <tr><th>Comparable text</th><th>What it does</th><th>Why this book instead</th></tr>
+      <tr><td>Kolb</td><td>Describes the cycle</td><td>This book builds the infrastructure to make it reliable</td></tr>
+      <tr><td>Schön</td><td>Describes what experts do</td><td>This book develops that capacity in students at scale</td></tr>
+      <tr><td>Kuh</td><td>Proves experiential learning works</td><td>This book addresses why it sometimes doesn't</td></tr>
+      <tr><td>Eyler &amp; Giles</td><td>Identifies reflection quality as the mediating variable</td><td>This book produces it</td></tr>
+      <tr><td>Mollick</td><td>Addresses classroom AI</td><td>This book addresses the application Mollick does not reach</td></tr>
+    </table>
+
+    <h3>Primary adoption channel</h3>
+    <p>Institutional staff development budget — an experiential learning director deploying this as a professional development curriculum for their team.</p>
+
+    <h3>Secondary channels</h3>
+    <p>Individual practitioner purchase through conference sales; graduate course adoption; corporate talent development programs.</p>
+  </div>
+
+
+  <!-- 7. SUPPLEMENTS -->
+  <div class="section" id="supplements">
+    <div class="section-number">Section 7</div>
+    <h2 class="section-title">Supplementary Materials</h2>
+
+    <table>
+      <tr><th>Feature</th><th>Priority</th><th>Status</th></tr>
+      <tr><td>Two-anatomy chapter structure enforced</td><td>Essential</td><td>Specified</td></tr>
+      <tr><td>Five Part Five field guides</td><td>Essential</td><td>Documented</td></tr>
+      <tr><td>Construct Quick Reference (Part Five)</td><td>Essential</td><td>Template specified — OQ-005 open</td></tr>
+      <tr><td>Facilitator guides (13 Type A chapters)</td><td>Essential</td><td>Template specified</td></tr>
+      <tr><td>Implementation checklists (5 Part Five chapters)</td><td>Essential</td><td>Template specified</td></tr>
+      <tr><td>MVAL reference card (downloadable)</td><td>Important</td><td>Ready for design post-manuscript</td></tr>
+      <tr><td>Experience map template (downloadable)</td><td>Important</td><td>Ready for design post-manuscript</td></tr>
+      <tr><td>Sherpa configuration template (downloadable)</td><td>Important</td><td>Ready for design post-manuscript</td></tr>
+      <tr><td>Capstone reflection protocol (downloadable)</td><td>Important</td><td>Ready for design post-manuscript</td></tr>
+      <tr><td>Compiled instructor manual</td><td>Valuable</td><td>Within 90 days of publication</td></tr>
+      <tr><td>Slide decks (reduced set, 5 slides/session)</td><td>Valuable</td><td>Within 6 months of publication</td></tr>
+      <tr><td>Failure documentation template</td><td>Valuable</td><td><strong>Blocked — OQ-006 legal review</strong></td></tr>
+    </table>
+  </div>
+
+
+  <!-- 8. OPEN QUESTIONS -->
+  <div class="section" id="oq">
+    <div class="section-number">Section 8</div>
+    <h2 class="section-title">Open Questions Log</h2>
+
+    <div class="callout callout-critical">
+      <strong>Priority action items before anything else:</strong> OQ-013 (write the "Getting Started" note — two pages, required for the publisher proposal) · OQ-012 (create character continuity sheets for B, C, D, E — required before contributor recruitment) · OQ-006 (initiate legal review for Chapter 16 mandatory reporting language — long lead time, start now).
+    </div>
+
+    <div class="oq-block">
+      <div class="oq-header"><span class="oq-id">OQ-006</span><span class="oq-priority critical">Critical</span><span class="oq-title">Chapter 16 mandatory reporting language — legal review required</span></div>
+      <div class="oq-body">Legal liability risk. Chapter 16 mandatory reporting boundary template cannot ship before institutional legal review. Owner: Author + publisher legal. Failure documentation template for supplementary materials is blocked pending this review.</div>
+    </div>
+
+    <div class="oq-block">
+      <div class="oq-header"><span class="oq-id">OQ-007</span><span class="oq-priority critical">Critical</span><span class="oq-title">Chapter 18 dual-use refiguration document — employee consent framework required</span></div>
+      <div class="oq-body">Employee consent and ownership framework required before production begins. The tension between employee developmental ownership and program talent development data must be named honestly — not resolved by clever document design. Owner: Author.</div>
+    </div>
+
+    <div class="oq-block">
+      <div class="oq-header"><span class="oq-id">OQ-012</span><span class="oq-priority urgent">Urgent</span><span class="oq-title">Character continuity sheets for B, C, D, E — required before contributor recruitment</span></div>
+      <div class="oq-body">Characters B–E appear across multiple chapters and contributors. Continuity sheets must be created by the lead author (not volunteer) before first contributor assignment. Without this, character consistency across chapters cannot be guaranteed.</div>
+    </div>
+
+    <div class="oq-block">
+      <div class="oq-header"><span class="oq-id">OQ-013</span><span class="oq-priority urgent">Urgent</span><span class="oq-title">"Getting Started" minimum viable deployment note — required for publisher proposal</span></div>
+      <div class="oq-body">Two pages. This is the acquisitions editor's primary question. Must be written by the lead author before Chapter 9 first draft. Practitioners cannot identify a deployment path after Chapter 9 without it.</div>
+    </div>
+
+    <div class="oq-block">
+      <div class="oq-header"><span class="oq-id">OQ-003</span><span class="oq-priority open">Open</span><span class="oq-title">Act Two bridge language — [Author to refine] drafts</span></div>
+      <div class="oq-body">Chapter bridges are draft placeholders. Must be refined before editorial review. Owner: Author.</div>
+    </div>
+
+    <div class="oq-block">
+      <div class="oq-header"><span class="oq-id">OQ-004</span><span class="oq-priority open">Open</span><span class="oq-title">Chapter 2 closing transition condition — load-bearing for Act Two</span></div>
+      <div class="oq-body">Must be drafted with care before Chapter 2 editorial review. Owner: Author.</div>
+    </div>
+
+    <div class="oq-block">
+      <div class="oq-header"><span class="oq-id">OQ-005</span><span class="oq-priority open">Open</span><span class="oq-title">Construct Quick Reference closing line — must be identical across all five Part Five chapters</span></div>
+      <div class="oq-body">Must be finalized before Part Five drafting begins. Owner: Author.</div>
+    </div>
+
+    <div class="oq-block">
+      <div class="oq-header"><span class="oq-id">OQ-008</span><span class="oq-priority open">Open</span><span class="oq-title">Chapter 11 domain substitution — clinical domain at three-case cap</span></div>
+      <div class="oq-body">Substitute corporate early career domain for Chapter 11 opening. Character Thread D is the designated primary longitudinal case. Owner: Author.</div>
+    </div>
+
+    <div class="oq-block">
+      <div class="oq-header"><span class="oq-id">OQ-009</span><span class="oq-priority open">Open</span><span class="oq-title">Chapter 7 MVAL framing — not a Boyle System advertisement</span></div>
+      <div class="oq-body">Must position MVAL as an adaptation of a broader class of structured reflection protocols before contributor assignment. Owner: Author.</div>
+    </div>
+
+    <div class="oq-block">
+      <div class="oq-header"><span class="oq-id">OQ-010</span><span class="oq-priority open">Open</span><span class="oq-title">Platform-agnostic language audit — named AI products tie shelf life to vendors</span></div>
+      <div class="oq-body">Named AI products in main text tie shelf life to vendor release cycles. Audit required before final manuscript submission. Owner: Author + editor.</div>
+    </div>
+
+    <div class="oq-block">
+      <div class="oq-header"><span class="oq-id">OQ-011</span><span class="oq-priority open">Open</span><span class="oq-title">Equity acknowledgment language — preface requires practitioner input</span></div>
+      <div class="oq-body">Preface must acknowledge equity gap with input from community college practitioner. Owner: Author + community college practitioner.</div>
+    </div>
+
+    <div class="oq-block">
+      <div class="oq-header"><span class="oq-id">OQ-014</span><span class="oq-priority open">Open</span><span class="oq-title">Chapter 2 narrative practitioner test</span></div>
+      <div class="oq-body">Nursing student narrative to be tested with 3 practitioners before editorial review — all must say "I know this student." Owner: Author.</div>
+    </div>
+
+    <div class="oq-block">
+      <div class="oq-header"><span class="oq-id">OQ-015</span><span class="oq-priority open">Open</span><span class="oq-title">Second edition rapid cycle plan for AI capability claims</span></div>
+      <div class="oq-body">Negotiate rapid edition cycle rights before contract signing. Owner: Author + editor.</div>
+    </div>
+
+    <div class="oq-block">
+      <div class="oq-header"><span class="oq-id">OQ-001</span><span class="oq-priority resolved">Resolved</span><span class="oq-title">Part Four chapter count — five chapters confirmed</span></div>
+      <div class="oq-body">Resolved at /l3.</div>
+    </div>
+
+    <div class="oq-block">
+      <div class="oq-header"><span class="oq-id">OQ-002</span><span class="oq-priority resolved">Resolved</span><span class="oq-title">Chapter 12 author briefing — incorporated four times</span></div>
+      <div class="oq-body">Incorporated across /l1, /l2, /c1, /g1.</div>
+    </div>
+  </div>
+
+
+  <div style="font-size:13px; color:var(--bb-6); border-top:1px solid var(--bb-7); padding-top:20px; margin-top:40px;">
+    <em>The AI Sherpa: A Practitioner's Guide for Experiential Learning — TIC TOC v1.0 · 2026-03-21</em><br>
+    18 chapters across 5 parts. 13 open questions active. 2 critical (OQ-006, OQ-007). 2 urgent (OQ-012, OQ-013). Pending /g2 audit and author review before production begins.
+  </div>
+
+</div><!-- /page-wrapper -->
+
+<footer>
+  Built with <a href="https://www.bearbrown.co" target="_blank" rel="noopener">bearbrown.co</a> ·
+  AI tools for educators, creators &amp; founders
+</footer>
+
+</body>
+</html>

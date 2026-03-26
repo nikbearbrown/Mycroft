@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AImagineering: The Full Design Pipeline — Irreducibly Human course syllabus</title>
+  <meta name="description" content="Graduate course syllabus for engineers and technical practitioners at Northeastern University who use AI tools in design work. Covers the complete AImagineering pipeline — Empathize, Define, Ideate, Prototype, Test, Commit — with explicit focus on the human judgment calls AI cannot perform, culminating in a Commit document the student can stand behind.">
+  <meta name="keywords" content="AImagineering, design thinking, AI-assisted design, Irreducibly Human, graduate engineering, Northeastern University, Commit stage, human judgment in AI, design pipeline, course syllabus, Botspeak, Nik Bear Brown">
+
+  <style>
+    :root {
+      --bb-1: #1a0a00;
+      --bb-2: #8B3A0F;
+      --bb-3: #C0392B;
+      --bb-4: #E8A020;
+      --bb-5: #D4500A;
+      --bb-6: #B8860B;
+      --bb-7: #C8A96E;
+      --bb-8: #F0E6D0;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bb-8);
+      color: var(--bb-1);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 17px;
+      line-height: 1.75;
+      padding: 0;
+    }
+
+    /* ── Header ── */
+    .doc-header {
+      background-color: var(--bb-2);
+      color: var(--bb-8);
+      padding: 52px 40px 44px;
+      border-bottom: 5px solid var(--bb-5);
+    }
+
+    .doc-header .series-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bb-7);
+      margin-bottom: 14px;
+    }
+
+    .doc-header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--bb-8);
+      margin-bottom: 10px;
+    }
+
+    .doc-header .subtitle {
+      font-size: 1.1rem;
+      color: var(--bb-7);
+      font-style: italic;
+    }
+
+    /* ── Version stamp ── */
+    .version-meta {
+      background-color: var(--bb-1);
+      color: var(--bb-7);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 8px 40px;
+    }
+
+    /* ── Main layout ── */
+    .doc-body {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 52px 40px 60px;
+    }
+
+    /* ── Lead section (intro paragraphs before h2) ── */
+    .lead-section {
+      border-left: 4px solid var(--bb-4);
+      padding-left: 24px;
+      margin-bottom: 44px;
+    }
+
+    .lead-section p {
+      margin-bottom: 1.2em;
+      font-size: 1.05rem;
+    }
+
+    .lead-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── Section headings ── */
+    h2 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--bb-2);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-bottom: 2px solid var(--bb-7);
+      padding-bottom: 8px;
+      margin-top: 52px;
+      margin-bottom: 22px;
+    }
+
+    h3 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--bb-5);
+      margin-top: 36px;
+      margin-bottom: 12px;
+    }
+
+    h4 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--bb-6);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 28px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin-bottom: 1.1em;
+    }
+
+    /* ── Course info block ── */
+    .course-info {
+      background-color: #fff;
+      border: 1px solid var(--bb-7);
+      border-left: 5px solid var(--bb-2);
+      border-radius: 4px;
+      padding: 24px 28px;
+      margin-bottom: 36px;
+    }
+
+    .course-info table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.92rem;
+    }
+
+    .course-info td {
+      padding: 6px 12px 6px 0;
+      vertical-align: top;
+    }
+
+    .course-info td:first-child {
+      font-weight: 700;
+      color: var(--bb-2);
+      white-space: nowrap;
+      width: 140px;
+    }
+
+    /* ── Outcomes list ── */
+    .outcomes-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .outcomes-list li {
+      padding: 10px 0 10px 28px;
+      position: relative;
+      border-bottom: 1px solid var(--bb-7);
+      font-size: 0.97rem;
+    }
+
+    .outcomes-list li:last-child {
+      border-bottom: none;
+    }
+
+    .outcomes-list li::before {
+      content: '→';
+      color: var(--bb-4);
+      font-weight: 700;
+      position: absolute;
+      left: 0;
+    }
+
+    /* ── Act headers ── */
+    .act-header {
+      background-color: var(--bb-2);
+      color: var(--bb-8);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 10px 18px;
+      border-radius: 3px;
+      margin-top: 44px;
+      margin-bottom: 24px;
+      display: inline-block;
+    }
+
+    /* ── Week cards ── */
+    .week-card {
+      background-color: #fff;
+      border: 1px solid var(--bb-7);
+      border-radius: 4px;
+      padding: 22px 26px;
+      margin-bottom: 18px;
+    }
+
+    .week-card .week-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bb-5);
+      margin-bottom: 4px;
+    }
+
+    .week-card h4 {
+      font-size: 1rem;
+      color: var(--bb-1);
+      text-transform: none;
+      letter-spacing: 0;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .week-card p {
+      font-size: 0.93rem;
+      color: var(--bb-1);
+      margin-bottom: 10px;
+    }
+
+    .week-card .deliverable-tag {
+      display: inline-block;
+      background-color: var(--bb-8);
+      border: 1px solid var(--bb-7);
+      border-radius: 3px;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--bb-6);
+      padding: 3px 10px;
+      margin-top: 4px;
+    }
+
+    /* ── Callout / note blocks ── */
+    .callout {
+      background-color: #fff8ec;
+      border-left: 4px solid var(--bb-4);
+      padding: 16px 20px;
+      margin: 24px 0;
+      border-radius: 0 4px 4px 0;
+      font-size: 0.95rem;
+    }
+
+    .callout strong {
+      color: var(--bb-5);
+    }
+
+    /* ── Assessment block ── */
+    .assessment-note {
+      background-color: var(--bb-1);
+      color: var(--bb-8);
+      padding: 24px 28px;
+      border-radius: 4px;
+      margin: 28px 0;
+      font-size: 0.94rem;
+      line-height: 1.65;
+    }
+
+    .assessment-note strong {
+      color: var(--bb-4);
+    }
+
+    /* ── Commit elements list ── */
+    .commit-list {
+      list-style: none;
+      padding: 0;
+      counter-reset: commit-counter;
+    }
+
+    .commit-list li {
+      counter-increment: commit-counter;
+      padding: 10px 0 10px 44px;
+      position: relative;
+      border-bottom: 1px solid var(--bb-7);
+      font-size: 0.95rem;
+    }
+
+    .commit-list li:last-child {
+      border-bottom: none;
+    }
+
+    .commit-list li::before {
+      content: counter(commit-counter);
+      position: absolute;
+      left: 0;
+      top: 10px;
+      background-color: var(--bb-2);
+      color: var(--bb-8);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .commit-list li strong {
+      color: var(--bb-2);
+    }
+
+    /* ── Graduation statement ── */
+    .graduation-statement {
+      border: 2px solid var(--bb-4);
+      border-radius: 4px;
+      padding: 24px 28px;
+      margin: 32px 0;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--bb-1);
+      background-color: #fffdf5;
+      line-height: 1.7;
+    }
+
+    .graduation-statement::before {
+      content: '"';
+      font-size: 3rem;
+      color: var(--bb-4);
+      line-height: 0;
+      vertical-align: -0.5em;
+      margin-right: 4px;
+    }
+
+    /* ── Footer byline ── */
+    .course-byline {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.85rem;
+      color: var(--bb-6);
+      border-top: 1px solid var(--bb-7);
+      padding-top: 20px;
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .course-byline a {
+      color: var(--bb-5);
+    }
+
+    strong {
+      color: var(--bb-2);
+    }
+
+    em {
+      color: var(--bb-6);
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--bb-7);
+      margin: 40px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="doc-header">
+    <div class="series-label">Irreducibly Human Series · Northeastern University · College of Engineering</div>
+    <h1>AImagineering: The Full Design Pipeline</h1>
+    <div class="subtitle">Irreducibly Human: What AI Can't Do</div>
+  </header>
+
+  <div class="version-meta">Research Report | March 2026 | Ingested via Dev the Dev</div>
+
+  <main class="doc-body">
+
+    <!-- ── Intro ── -->
+    <div class="lead-section">
+      <p>Design thinking courses have always had a dirty secret: most of the semester is spent making the artifact.</p>
+      <p>Sketching, prototyping, iterating — the physical production of a thing to test with a user. The cognitive work of design — understanding who has the problem, deciding which problem is worth solving, choosing among fifty plausible directions, committing to one with your name on the consequences — gets compressed into the margins. Not because it is less important. Because making was hard, and it consumed the time.</p>
+      <p>AI has eliminated that excuse.</p>
+      <p>A brief that would have produced a working prototype in a week now produces one in an afternoon. Thirty concept sketches that once required a sprint now require a prompt. The constraint that forced design courses to spend eighty percent of their time on production has collapsed — and it has exposed what was always the harder work underneath it. That work is not making. It is thinking.</p>
+      <p>This course is what design thinking looks like when making is no longer the bottleneck.</p>
+    </div>
+
+    <p>The shift sounds like a gift. It is not straightforward. When ideation is a tool operation rather than a cognitive achievement, the discipline required to do it well changes entirely. The engineer who can generate fifty concepts in an afternoon now faces a problem the design sprint methodology was not built to address: how do you choose? Not which concept is most polished — the tool makes them all polished. Which concept is worth building. Which problem was worth solving in the first place. Whether the brief you were handed was even asking the right question. And at the end, when you have built and tested something: what do you actually commit to, and what are you accountable for if it fails?</p>
+
+    <p>Design Thinking as it is typically taught ends at Test. Prototype, test, iterate — and then, implicitly, hand the results to someone else. That omission was tolerable when the pipeline took a semester. It is not tolerable when AI compresses the pipeline to three weeks and leaves the human with nothing to do but make decisions.</p>
+
+    <div class="callout">
+      <strong>The missing stage is the Commit</strong> — a specific course of action, with its evidential basis stated, its uncertainty acknowledged, and its accountability owned. No AI tool makes a Commit. That is the point of this course.
+    </div>
+
+    <!-- ── Course information ── -->
+    <h2>Course information</h2>
+    <div class="course-info">
+      <table>
+        <tr>
+          <td>Course title</td>
+          <td>Irreducibly Human: What AI Can't Do — AImagineering: The Full Design Pipeline</td>
+        </tr>
+        <tr>
+          <td>Credit hours</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>Delivery</td>
+          <td>In-person | Lecture/Seminar (weekly) + TA-led Studio Lab (weekly)</td>
+        </tr>
+        <tr>
+          <td>Level</td>
+          <td>Graduate</td>
+        </tr>
+        <tr>
+          <td>Prerequisite</td>
+          <td>Botspeak or equivalent AI fluency foundation</td>
+        </tr>
+        <tr>
+          <td>Instructor</td>
+          <td>Nik Bear Brown · <a href="mailto:ni.brown@neu.edu">ni.brown@neu.edu</a></td>
+        </tr>
+        <tr>
+          <td>Series</td>
+          <td>Part of the Irreducibly Human series at Northeastern University — College of Engineering. Companion courses: Conducting AI, Causal Reasoning.</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- ── Who this course is for ── -->
+    <h2>Who this course is for</h2>
+    <p>This course is for engineers and technical practitioners who use AI tools in design work — and who have noticed that generating outputs is no longer the hard part.</p>
+
+    <h3>What this course assumes</h3>
+    <p>Botspeak proficiency or equivalent — you understand the difference between pattern completion and knowledge retrieval, you have used AI tools at specification-and-delegation level, and you have been asked to evaluate AI-generated design outputs rather than just produce them. No prior design thinking training required.</p>
+
+    <h3>What this course does not assume</h3>
+    <p>Prior engineering design coursework. Human-centered design, UX, or product development background. Any particular domain — the pipeline applies across engineering disciplines and the Studio Lab is structured to develop it in yours.</p>
+
+    <div class="callout">
+      <strong>A note for students with prior design thinking training:</strong> Students who arrive with design methodology background sometimes find the early weeks disorienting — specifically, the course's insistence that conventional Design Thinking ends at Test and omits the most consequential stage. That disorientation is the course working as intended. The Commit is not a harder version of the prototype review. It is a different professional operation entirely. Students who treat this course as advanced prompting will produce technically correct exercises and miss it. Students who approach the Commit as genuinely new terrain will get the most from it.
+    </div>
+
+    <!-- ── What you will leave with ── -->
+    <h2>What you will leave with</h2>
+    <p>The complete AImagineering pipeline — Empathize, Define, Ideate, Prototype, Test, Commit — applied to a real design problem in your own domain, with explicit documentation of every human judgment call that an AI tool could not have made on your behalf.</p>
+    <p>A <strong>Commit document</strong>: a specific course of action you are willing to stand behind, with the evidence stated, the uncertainty acknowledged, and the accountability owned — not a recommendation, not a direction, not a set of options. A decision.</p>
+
+    <div class="graduation-statement">
+      I can stand in front of a design problem, resist the pull to generate immediately, ask the right human questions first, direct AI tools with authority rather than dependency, and commit to a course of action I can defend on its merits — not just its polish.
+    </div>
+
+    <!-- ── What this course builds ── -->
+    <h2>What this course builds</h2>
+    <p>By the end of this course, students can:</p>
+    <ul class="outcomes-list">
+      <li>Identify the grain of at least three AI tools — what each does naturally, what it resists, and where the human must supply what the tool cannot — and apply this to tool selection for specific design stages</li>
+      <li>Conduct an empathy investigation that produces at least one finding an AI simulation of the user could not have generated, and explain why plausible user simulations are insufficient for design that serves specific people in specific contexts</li>
+      <li>Reframe a given design brief into at least two alternative problem definitions, evaluate each against explicit criteria, and defend a selection in a live presentation that fields peer objection</li>
+      <li>Direct an AI ideation session producing a defined quantity of genuinely distinct concepts, then apply human curatorial judgment to select and develop the most promising three with written defense</li>
+      <li>Construct a prototype using AI acceleration while documenting the identification decisions — what to build and why — that the AI could not supply without human input</li>
+      <li>Evaluate prototype test results using the three legitimacy types — pragmatic, moral, and cognitive — identifying where human interpretive judgment is required beyond what the data shows</li>
+      <li>Commit to a design direction by producing a Commit document that specifies a course of action, its evidential basis, acknowledged uncertainty, and stated accountability — and that survives structured peer critique</li>
+      <li>Name, in every major deliverable, one judgment call that required their values, domain knowledge, or accountability that an AI tool could not have made on their behalf</li>
+    </ul>
+
+    <!-- ── Assessment ── -->
+    <h2>How the course is assessed</h2>
+
+    <div class="assessment-note">
+      Grading is structured around a premise the course does not hide: <strong>AI tools handle the generation. What is being assessed is everything before and after.</strong>
+    </div>
+
+    <p>Every assignment requires an <strong>AI Use Disclosure</strong> — not as compliance, but as the primary assessment instrument. Students document what they used, how they used it, what they changed, and — this field is not optional — <em>what the AI could not do</em>. Specifically: at least one judgment call that required their values, domain knowledge, or professional accountability. The disclosure that cannot name one such judgment call has not demonstrated that the student performed the irreducibly human layer of the design work.</p>
+
+    <p>The <strong>Irreducibly Human section</strong> of the final pipeline presentation carries 50% of the final project grade. Not because the design work is less important — because the honest, specific account of what required human judgment is exactly what the course is building.</p>
+
+    <p>Relative grading applies at the top of the scale, comparing students on depth of design judgment and specificity of the human judgment call identification. Absolute grading applies below the threshold.</p>
+
+    <!-- ── Structure ── -->
+    <h2>How the course is structured</h2>
+    <p>The course runs in three acts, each one targeting a different part of the pipeline that AI cannot perform.</p>
+
+    <!-- ACT ONE -->
+    <div class="act-header">Act One — The Material and the Human · Weeks 1–7</div>
+
+    <p><strong>Act One</strong> is everything before a concept is generated. It opens with an experiment: thirty minutes, a brief, AI tools open. The output is good. That is not the point. The act then builds the capacities that need to happen before the tool runs: understanding the grain of the tool you're using and what it resists; conducting an empathy investigation that produces something a plausible AI persona would not; and reframing the brief itself, because the brief as given is a hypothesis, and it is often the wrong one. Act One closes with the midterm: a novel design situation, no scaffolding, demonstrate all four pre-ideation capacities as practice. The Act One gate is not whether the reframe is clever. It is whether the student can defend it against a skeptic.</p>
+
+    <div class="week-card">
+      <div class="week-label">Week 1</div>
+      <h4>The Thirty-Minute Designer</h4>
+      <p>The course opens with an experiment before any theory arrives. A brief is on the table. Thirty minutes. AI tools open. The output is good. Session B names what was assumed: a taxonomy of the human judgment the session skipped — about the user, the problem, the context, the values at stake, and what would happen if the output failed. The course argument is stated directly: AI has made ideation easy, which means everything before and after ideation is now the work of design.</p>
+      <span class="deliverable-tag">Reading Response #1 — 30 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Weeks 2–3</div>
+      <h4>Finding the Grain</h4>
+      <p>A community health intervention designed entirely with a language model produces communication that is coherent, complete, and addressed to the community rather than from it. The grain as the explanation — every AI tool has affordances and resistances that shape what it produces, and working against the grain without knowing it produces the wrong kind of output. Students map the grain of their primary tool against their capstone domain brief: what it does naturally, what it resists, one specific design decision that changes because of this knowledge.</p>
+      <span class="deliverable-tag">Studio Exercise #1 — 25 pts</span>&nbsp;
+      <span class="deliverable-tag">Reading Response #2 — 30 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Weeks 4–5</div>
+      <h4>What Simulation Cannot Feel</h4>
+      <p>An AI-generated user persona next to a field note from an actual conversation. They are not the same document. AI personas are trained on population patterns — they produce plausible users, not specific ones. The empathy investigation protocol goes where simulation cannot: the unexpected, the contradictory, the embodied. Students conduct a genuine empathy investigation with minimum two human contacts and identify at least one finding that would not appear in any AI-generated persona for their user group — and name one design decision that would have been wrong without it.</p>
+      <span class="deliverable-tag">Studio Exercise #2 — 25 pts</span>&nbsp;
+      <span class="deliverable-tag">Reading Response #3 — 30 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Weeks 6–7</div>
+      <h4>The Brief Is a Hypothesis</h4>
+      <p>The brief as given is a hypothesis, and it is often the wrong one. "Design a faster horse" generates a very different AI output than "help people move between places efficiently" — the choice of brief is a human judgment made before any tool runs. Students apply the reframe protocol to their capstone brief, produce three alternative problem definitions, evaluate each against explicit criteria, and defend a selection in a live three-minute presentation that fields peer objection. The reframe is not a design decision. It is a values decision. The Act One midterm follows: novel brief, no scaffolding, all four pre-ideation capacities demonstrated as practice.</p>
+      <span class="deliverable-tag">Studio Exercise #3 — 25 pts</span>&nbsp;
+      <span class="deliverable-tag">Midterm — 100 pts</span>
+    </div>
+
+    <!-- ACT TWO -->
+    <div class="act-header">Act Two — The Human Capacities · Weeks 8–13</div>
+
+    <p><strong>Act Two</strong> moves through the pipeline stages where AI assists but does not decide. The Dreamer's week — the only week AI owns the session — generates fifty concepts and immediately faces the harder problem: how do you choose among fifty plausible outputs? Curation requires criteria, and criteria require judgment. The Realist builds, but every build begins with identification decisions that are not in the brief. The Critic tests, and the test results answer pragmatic questions while leaving moral and cognitive legitimacy entirely to the human interpreter. Act Two closes with the Pipeline Protocol Checkpoint — the full design process documented to the point of test, with every human judgment call named.</p>
+
+    <div class="week-card">
+      <div class="week-label">Week 8</div>
+      <h4>One Week for the Dreamer</h4>
+      <p>This is the Dreamer's week — the only week AI owns the session. The Dreamer's job is not to evaluate. It is to generate without premature constraint. Students direct an AI ideation session producing minimum thirty concepts for their capstone reframe, then face the harder problem: curation. Choosing among fifty plausible outputs requires criteria, and criteria require judgment. Why do the surprising concepts survive when the plausible ones shouldn't? Students reduce thirty concepts to three with explicit criteria and a 300-word written defense of each selection.</p>
+      <span class="deliverable-tag">Studio Exercise #4 — 25 pts</span>&nbsp;
+      <span class="deliverable-tag">Reading Response #4 — 30 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Weeks 9–11</div>
+      <h4>The Realist Builds</h4>
+      <p>AI builds the interface in an afternoon. The identification decisions the human must supply are not in the build brief until the human puts them there: which metric is most motivating, where to surface it in the user journey, what happens when a user sees demoralizing data. These are judgment calls that shape what gets built — and none of them are generated by the tool. Students write a complete build specification that makes every identification decision explicit, then build a low-fidelity prototype using AI acceleration with all identification decisions documented. The prototype answers a specific question. It is not a finished product.</p>
+      <span class="deliverable-tag">Studio Exercise #5 — 25 pts</span>&nbsp;
+      <span class="deliverable-tag">Studio Exercise #6 — 25 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Weeks 12–13</div>
+      <h4>The Critic Tests</h4>
+      <p>The test results are in. They show the prototype works. The question the data cannot answer: should it? The three legitimacy types — pragmatic (does it work), moral (should it exist), cognitive (can it be trusted) — structure the interpretation. AI achieves pragmatic legitimacy readily. It does not adjudicate the other two. Students conduct testing with minimum five users and produce an interpretive judgment document that addresses all three legitimacy types and names what the data cannot resolve.</p>
+      <span class="deliverable-tag">Reading Response #5 — 30 pts</span>&nbsp;
+      <span class="deliverable-tag">Pipeline Protocol Checkpoint — 100 pts</span>
+    </div>
+
+    <!-- ACT THREE -->
+    <div class="act-header">Act Three — The Commit · Weeks 14–15</div>
+
+    <p><strong>Act Three</strong> is the stage Design Thinking omits — and it was invisible when prototyping was hard. AI has made the omission catastrophic. One week of instruction, one week of presentation.</p>
+
+    <h3>The five required elements of the Commit document</h3>
+    <ol class="commit-list">
+      <li><strong>The decision</strong> — a specific course of action, not a recommendation</li>
+      <li><strong>The evidence</strong> — direct citations from the test phase</li>
+      <li><strong>The uncertainty</strong> — what is not known before deployment</li>
+      <li><strong>The accountability</strong> — what the designer is responsible for if it fails</li>
+      <li><strong>The revision condition</strong> — what new information would change the decision</li>
+    </ol>
+
+    <div class="week-card">
+      <div class="week-label">Week 14</div>
+      <h4>The Commit</h4>
+      <p>Students produce a Commit document meeting all five required elements. The peer critique round is mandatory and supervised — it cannot be completed by reading alone, because it requires reviewing a real Commit document with real stakes and delivering written feedback that names specific failures of specificity, evidence, honesty about uncertainty, and accountability.</p>
+      <span class="deliverable-tag">Studio Exercise #7 (supervised peer critique) — 25 pts</span>&nbsp;
+      <span class="deliverable-tag">Peer Review Checkpoint — 100 pts</span>
+    </div>
+
+    <div class="week-card">
+      <div class="week-label">Week 15</div>
+      <h4>Full Pipeline Presentations</h4>
+      <p>The terminal deliverable: the complete AImagineering pipeline presented as a narrative of judgment — not the output, but every human decision from brief to Commit, in sequence, with the metacognitive switches named. The Irreducibly Human section carries half the grade: three specific judgment calls that required values, domain knowledge, or accountability; one judgment call that was tried-as-delegation and then reclaimed; and an honest assessment of the collaboration — where AI was genuinely useful, where it produced confident-sounding noise, and what the student would do differently. The pipeline graduation statement closes it — earned, not recited.</p>
+      <span class="deliverable-tag">Full Pipeline Presentation — 250 pts</span>
+    </div>
+
+    <!-- ── Participation note ── -->
+    <hr>
+    <p><strong>Studio Lab participation</strong> (100 pts) is assessed continuously across all 15 weeks. The lowest-scoring Studio Exercise is dropped — 8 of 9 count toward the final grade. Week 7's reframe defense and Week 14's Commit peer critique cannot be made up by reading alone — both sessions depend on the presence of peers whose work you are responding to and who are responding to yours.</p>
+
+    <!-- ── Byline ── -->
+    <div class="course-byline">
+      Irreducibly Human: What AI Can't Do — AImagineering: The Full Design Pipeline · Graduate seminar · College of Engineering · Northeastern University · 4 credit hours · Prerequisite: Botspeak or equivalent · Instructor: Nik Bear Brown · <a href="mailto:ni.brown@neu.edu">ni.brown@neu.edu</a>
+    </div>
+
+  </main>
+
+  <footer style="text-align:center; padding:20px; font-size:11px; color:#999; border-top:1px solid #e0e0e0; margin-top:40px;">
+    Built with <a href="https://www.bearbrown.co" target="_blank" rel="noopener" style="color:#999;">bearbrown.co</a> · AI tools for educators, creators &amp; founders
+  </footer>
+
+</body>
+</html>
