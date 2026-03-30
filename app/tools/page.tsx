@@ -1,4 +1,5 @@
 import { join } from 'path'
+import { readFileSync } from 'fs'
 import type { Metadata } from 'next'
 import { sql } from '@/lib/db'
 import { scanHtmlDir } from '@/lib/html-meta'
@@ -47,6 +48,13 @@ export default async function ToolsPage() {
   const linkTools = dbTools.filter(t => !slugSet.has(t.slug))
   const allTools = [...artifactTools, ...linkTools]
 
+  // Read curated filter tags from filters.json
+  let filterTags: string[] = []
+  try {
+    const raw = readFileSync(join(process.cwd(), 'public', 'artifacts', 'filters.json'), 'utf-8')
+    filterTags = JSON.parse(raw)
+  } catch {}
+
   return (
     <div className="container px-4 md:px-6 mx-auto py-12">
       <div className="max-w-4xl mx-auto">
@@ -54,7 +62,7 @@ export default async function ToolsPage() {
         <p className="text-muted-foreground mb-8">
           A curated directory of AI tools for educators, students, and professionals.
         </p>
-        <ToolsBrowser tools={allTools} />
+        <ToolsBrowser tools={allTools} filterTags={filterTags} />
       </div>
     </div>
   )
