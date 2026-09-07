@@ -160,3 +160,19 @@ workflow changes.
 - **Outputs:** Updated `scripts/regulatory-intel/workflow.dev.json` (`Normalize Data` node); `scripts/regulatory-intel/UNKNOWN-SOURCE-INVESTIGATION.md`.
 - **Result:** Partial, honest fix — 10/18 recovered. The remaining 8 are genuinely unclassifiable from title alone (generic overview pieces with no named regulator, or one item that's a different regulator entirely — the UK FCA, correctly left as Unknown Source since this pipeline doesn't track it).
 - **Open issues:** The remaining 8 would need real content/NLP analysis to close, at a materially higher false-positive risk — left open per the explicitly-flagged tradeoff before starting. B3 (Google News URL unwrap) still open.
+
+## 2026-08-31 -- Project 29 regulatory workflow: B3 fix (Google News URL unwrap)
+
+- **Recipe:** Project 29 regulatory intelligence hardening (Layer 1), follow-up to the 2026-07-24, 2026-08-30 (A7/B2/Unknown-Source) entries.
+- **Inputs:** `scripts/regulatory-intel/workflow.dev.json` (`Normalize Data` node); live Google News feeds.
+- **Commands / actions:**
+  - Confirmed live: modern Google News redirect links have no `url=` param and don't 302 to the real article; the real URL is only obtainable via the same internal `batchexecute` RPC call (`Fbv4je`) the Google News web page itself uses, keyed by a `data-n-a-id`/`data-n-a-ts`/`data-n-a-sg` triple embedded in the redirect page.
+  - Prototyped in Python: 1 item, then 20/20 (10 per feed) decoded successfully.
+  - Ported to the exact JS to go in the node; tested directly in Node (native `fetch`): 16/16 decoded.
+  - Caught a critical ordering bug before deploying: `identifySource()`'s Google News branch depends on the link still being `news.google.com` — the old code's classification call happened after the (broken, no-op) unwrap, so it accidentally worked; with unwrapping now actually working, classifying after unwrapping would have silently broken the B2/Unknown-Source-Investigation fixes for every Google News item. Fixed by classifying on the original `rawLink` before unwrapping.
+  - Added `gnewsSeen`/`gnewsUnwrapped` counters to the run summary log, so a future silent degradation (e.g. Google changing the internal API) shows up in the log instead of links quietly going back to being useless redirects.
+  - Full end-to-end test of the actual post-fix node code (via `$input.all()` + top-level await, matching n8n's Code node execution model): 6 live FINRA Google News items + 3 live SEC items — all 6 unwrapped to real publisher URLs, all 6 still correctly classified `FINRA Enforcement News`, SEC items unaffected.
+  - Ran `node scripts/conformance.mjs scripts/regulatory-intel/workflow.dev.json` — valid JSON.
+- **Outputs:** Updated `scripts/regulatory-intel/workflow.dev.json` (`Normalize Data` node); `scripts/regulatory-intel/B3-VERIFICATION.md`.
+- **Result:** B3 closed. Google News links now resolve to real, working article URLs instead of opaque redirects, with graceful fallback and visible seen/unwrapped counts on any failure.
+- **Open issues:** Not verified here — whether the fellow's specific live n8n instance's Code node supports `fetch`/top-level `await` (confirm when pasting in); this relies on an undocumented Google endpoint that could change without notice (mitigated by fallback + logging, not guaranteed); request volume adds ~400 extra requests per run (deliberately sequential, not parallelized, to reduce rate-limit risk). Remaining 8 "Unknown Source" items (from the prior investigation) still open.
